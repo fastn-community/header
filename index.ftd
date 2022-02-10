@@ -57,6 +57,7 @@ reference-width: fill
 
 
 -- pd.code: with design elements of light mode
+if: not $fpm.dark-mode
 
 \-- header:
 site-logo: /logo.png
@@ -68,6 +69,23 @@ logo-width: 78
 background: #F8FAFC
 text-color: #3E4255
 active-text-color: #5967CD
+width: fill
+link-height: 16
+
+
+-- pd.code: with design elements of light mode
+if: $fpm.dark-mode
+
+\-- header:
+site-logo: /logo.png
+site-url: /
+toc-top-right: $toc-top-right
+toc-bottom-left: $toc-bottom-left
+toc-bottom-right: $toc-bottom-right
+logo-width: 78
+background: #2B2B2B
+text-color: #F7CE46
+active-text-color: #F7CE46
 width: fill
 link-height: 16
 
