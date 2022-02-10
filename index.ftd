@@ -1,0 +1,6 @@
+-- import: fifthtry.github.io/package-doc/doc as pd
+
+-- pd.package: Header
+name: fifthtry.github.io/header
+
+This component can be used as a site header.
