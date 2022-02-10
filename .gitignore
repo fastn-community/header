@@ -1,2 +1,4 @@
 .build
 .packages
+.build
+.DS_Store

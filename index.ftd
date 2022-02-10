@@ -4,3 +4,65 @@
 name: fifthtry.github.io/header
 
 This component can be used as a site header.
+
+
+-- pd.component: Header
+name: fifthtry.github.io/header.header
+
+This is the main header.
+
+-- pd.code:
+
+\-- header:
+site-log: /logo.png
+site-url: /
+toc-top-right: $toc-top-right
+toc-bottom-left: $toc-bottom-left
+toc-bottom-right: $toc-bottom-right
+
+
+-- pd.output:
+reference: header.png
+reference-width: fill
+
+/-- header:
+site-log: /logo.png
+site-url: /
+toc-top-right: $toc-top-right
+toc-bottom-left: $toc-bottom-left
+toc-bottom-right: $toc-bottom-right
+
+-- pd.code: with design elements
+
+\-- header:
+site-log: /logo.png
+site-url: /
+toc-top-right: $toc-top-right
+toc-bottom-left: $toc-bottom-left
+toc-bottom-right: $toc-bottom-right
+logo-width: 78
+background: #2B2B2B
+text-color: #F7CE46
+active-text-color: #F7CE46
+link-height: 16
+
+-- pd.output:
+reference: header-2.png
+reference-width: fill
+
+
+
+
+
+-- record toc-item:
+caption title:
+string url:
+toc-item list children:
+
+-- toc-item list toc-top-right:
+$processor$: toc-v2
+
+- Roadmap: /roadmap/
+- Journal: /journal/
+
+
