@@ -7,13 +7,13 @@ string url:
 toc-item list children:
 
 -- toc-item list toc-top-right:
-$processor$: toc-v2
+$processor$: toc
 
 - Roadmap: /roadmap/
 - Journal: /journal/
 
 -- toc-item list toc-bottom-left:
-$processor$: toc-v2
+$processor$: toc
 
 - Home: /home/
 - Payments: /payments/
@@ -24,7 +24,7 @@ $processor$: toc-v2
 
 
 -- toc-item list toc-bottom-right:
-$processor$: toc-v2
+$processor$: toc
 
 - APIs & SKDs: /api-skd/
 - Support: /support/
