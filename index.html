@@ -5,11 +5,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
         <title>Header</title>
         <script type="ftd" id="ftd-data">{
+  "@b@0,0,0": {
+    "value": "",
+    "dependencies": {
+      "0,1,4,0,1": "[{\"dependency_type\":\"Visible\",\"condition\":\"$IsNotNull$\",\"parameters\":{}}]"
+    }
+  },
   "@b@0,1": {
     "value": "",
     "dependencies": {
       "0,1,0": "[{\"dependency_type\":\"Style\",\"condition\":\"$IsNull$\",\"parameters\":{\"padding-bottom\":{\"value\":{\"value\":\"16px\",\"important\":false},\"default\":{\"value\":\"8px\",\"important\":false}}}}]",
       "0,1,1": "[{\"dependency_type\":\"Visible\",\"condition\":\"$IsNotNull$\",\"parameters\":{}}]"
+    }
+  },
+  "@body@0,0,0,1": {
+    "value": "",
+    "dependencies": {
+      "0,1,4,0,1": "[{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]"
+    }
+  },
+  "@body@0,0,2": {
+    "value": "This is the main header.",
+    "dependencies": {
+      "0,1,4,2": "[{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]"
+    }
+  },
+  "@body@0,1": {
+    "value": "-- header:\nsite-log: /logo.png\nsite-url: /\ntoc-top-right: $toc-top-right\ntoc-bottom-left: $toc-bottom-left\ntoc-bottom-right: $toc-bottom-right",
+    "dependencies": {
+      "0,1,5,1": "[{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]",
+      "0,1,5,2": "[{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]"
     }
   },
   "@body@0,1,1": {
@@ -18,10 +43,69 @@
       "0,1,1": "[{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]"
     }
   },
+  "@body@0,2,0": {
+    "value": "-- header:\nsite-log: /logo.png\nsite-url: /\ntoc-top-right: $toc-top-right\ntoc-bottom-left: $toc-bottom-left\ntoc-bottom-right: $toc-bottom-right\nlogo-width: 78\nbackground: #2B2B2B\ntext-color: #F7CE46\nactive-text-color: #F7CE46\nlink-height: 16",
+    "dependencies": {
+      "0,1,6,2,0,1:output-container-external:0,1,6": "[{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]",
+      "0,1,6,2,0,2:output-container-external:0,1,6": "[{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]"
+    }
+  },
   "@body@0,3": {
     "value": "This component can be used as a site header.",
     "dependencies": {
       "0,1,3": "[{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]"
+    }
+  },
+  "@caption@0,1": {
+    "value": "",
+    "dependencies": {
+      "0,1,5,0": "[{\"dependency_type\":\"Visible\",\"condition\":\"$IsNotNull$\",\"parameters\":{}},{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]",
+      "0,1,5,1": "[{\"dependency_type\":\"Style\",\"condition\":\"$IsNull$\",\"parameters\":{\"border-top-left-radius\":{\"value\":{\"value\":\"4px\",\"important\":true},\"default\":null}}},{\"dependency_type\":\"Style\",\"condition\":\"$IsNull$\",\"parameters\":{\"border-top-right-radius\":{\"value\":{\"value\":\"4px\",\"important\":true},\"default\":null}}}]",
+      "0,1,5,2": "[{\"dependency_type\":\"Style\",\"condition\":\"$IsNull$\",\"parameters\":{\"border-bottom-left-radius\":{\"value\":{\"value\":\"4px\",\"important\":true},\"default\":null}}},{\"dependency_type\":\"Style\",\"condition\":\"$IsNull$\",\"parameters\":{\"border-bottom-right-radius\":{\"value\":{\"value\":\"4px\",\"important\":true},\"default\":null}}},{\"dependency_type\":\"Style\",\"condition\":\"$IsNull$\",\"parameters\":{\"border-top-left-radius\":{\"value\":{\"value\":\"4px\",\"important\":true},\"default\":null}}},{\"dependency_type\":\"Style\",\"condition\":\"$IsNull$\",\"parameters\":{\"border-top-right-radius\":{\"value\":{\"value\":\"4px\",\"important\":true},\"default\":null}}}]"
+    }
+  },
+  "@caption@0,2": {
+    "value": "Output",
+    "dependencies": {
+      "0,1,6,0": "[{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]"
+    }
+  },
+  "@caption@0,2,0": {
+    "value": "with design elements",
+    "dependencies": {
+      "0,1,6,2,0,0:output-container-external:0,1,6": "[{\"dependency_type\":\"Visible\",\"condition\":\"$IsNotNull$\",\"parameters\":{}},{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]",
+      "0,1,6,2,0,1:output-container-external:0,1,6": "[{\"dependency_type\":\"Style\",\"condition\":\"$IsNull$\",\"parameters\":{\"border-top-left-radius\":{\"value\":{\"value\":\"4px\",\"important\":true},\"default\":null}}},{\"dependency_type\":\"Style\",\"condition\":\"$IsNull$\",\"parameters\":{\"border-top-right-radius\":{\"value\":{\"value\":\"4px\",\"important\":true},\"default\":null}}}]",
+      "0,1,6,2,0,2:output-container-external:0,1,6": "[{\"dependency_type\":\"Style\",\"condition\":\"$IsNull$\",\"parameters\":{\"border-bottom-left-radius\":{\"value\":{\"value\":\"4px\",\"important\":true},\"default\":null}}},{\"dependency_type\":\"Style\",\"condition\":\"$IsNull$\",\"parameters\":{\"border-bottom-right-radius\":{\"value\":{\"value\":\"4px\",\"important\":true},\"default\":null}}},{\"dependency_type\":\"Style\",\"condition\":\"$IsNull$\",\"parameters\":{\"border-top-left-radius\":{\"value\":{\"value\":\"4px\",\"important\":true},\"default\":null}}},{\"dependency_type\":\"Style\",\"condition\":\"$IsNull$\",\"parameters\":{\"border-top-right-radius\":{\"value\":{\"value\":\"4px\",\"important\":true},\"default\":null}}}]"
+    }
+  },
+  "@caption@0,2,1": {
+    "value": "Output",
+    "dependencies": {
+      "0,1,6,2,1,0:output-container-external:0,1,6": "[{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]"
+    }
+  },
+  "@reference@0,2": {
+    "value": "header.png",
+    "dependencies": {
+      "0,1,6,1": "[{\"dependency_type\":\"Visible\",\"condition\":\"$IsNotNull$\",\"parameters\":{}},{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]"
+    }
+  },
+  "@reference@0,2,1": {
+    "value": "header-2.png",
+    "dependencies": {
+      "0,1,6,2,1,1:output-container-external:0,1,6": "[{\"dependency_type\":\"Visible\",\"condition\":\"$IsNotNull$\",\"parameters\":{}},{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]"
+    }
+  },
+  "@title@0,0,0": {
+    "value": "Header",
+    "dependencies": {
+      "0,1,4,0,0": "[{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]"
+    }
+  },
+  "@title@0,0,1": {
+    "value": "Component Name",
+    "dependencies": {
+      "0,1,4,1,0": "[{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]"
     }
   },
   "@title@0,1": {
@@ -34,6 +118,12 @@
     "value": "Package Name",
     "dependencies": {
       "0,1,2,0": "[{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]"
+    }
+  },
+  "@value@0,0,1": {
+    "value": "fifthtry.github.io/header.header",
+    "dependencies": {
+      "0,1,4,1,1": "[{\"dependency_type\":\"Value\",\"condition\":null,\"parameters\":{}}]"
     }
   },
   "@value@0,2": {
@@ -54,7 +144,28 @@
       "0,1,2": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"background-color\":{\"value\":{\"value\":\"rgba(43,48,59,1)\",\"important\":false},\"default\":{\"value\":\"rgba(253,246,227,1)\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"border-color\":{\"value\":{\"value\":\"rgba(58,64,78,1)\",\"important\":false},\"default\":null}}}]",
       "0,1,2,0": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"color\":{\"value\":{\"value\":\"rgba(235,203,139,1)\",\"important\":false},\"default\":null}}}]",
       "0,1,2,1": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"color\":{\"value\":{\"value\":\"rgba(220,220,220,1)\",\"important\":false},\"default\":null}}}]",
-      "0,1,3": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"color\":{\"value\":{\"value\":\"rgba(220,220,220,1)\",\"important\":false},\"default\":{\"value\":\"rgba(0,0,0,1)\",\"important\":false}}}}]"
+      "0,1,3": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"color\":{\"value\":{\"value\":\"rgba(220,220,220,1)\",\"important\":false},\"default\":{\"value\":\"rgba(0,0,0,1)\",\"important\":false}}}}]",
+      "0,1,4,0,0": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"color\":{\"value\":{\"value\":\"rgba(220,220,220,1)\",\"important\":false},\"default\":{\"value\":\"rgba(0,0,0,1)\",\"important\":false}}}}]",
+      "0,1,4,0,1": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"color\":{\"value\":{\"value\":\"rgba(220,220,220,1)\",\"important\":false},\"default\":{\"value\":\"rgba(0,0,0,1)\",\"important\":false}}}}]",
+      "0,1,4,1": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"background-color\":{\"value\":{\"value\":\"rgba(43,48,59,1)\",\"important\":false},\"default\":{\"value\":\"rgba(253,246,227,1)\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"border-color\":{\"value\":{\"value\":\"rgba(58,64,78,1)\",\"important\":false},\"default\":null}}}]",
+      "0,1,4,1,0": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"color\":{\"value\":{\"value\":\"rgba(235,203,139,1)\",\"important\":false},\"default\":null}}}]",
+      "0,1,4,1,1": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"color\":{\"value\":{\"value\":\"rgba(220,220,220,1)\",\"important\":false},\"default\":null}}}]",
+      "0,1,4,2": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"color\":{\"value\":{\"value\":\"rgba(220,220,220,1)\",\"important\":false},\"default\":{\"value\":\"rgba(0,0,0,1)\",\"important\":false}}}}]",
+      "0,1,5,1": "[{\"dependency_type\":\"Visible\",\"condition\":\"true\",\"parameters\":{}}]",
+      "0,1,5,2": "[{\"dependency_type\":\"Visible\",\"condition\":\"false\",\"parameters\":{}}]",
+      "0,1,6,2,0,1:output-container-external:0,1,6": "[{\"dependency_type\":\"Visible\",\"condition\":\"true\",\"parameters\":{}}]",
+      "0,1,6,2,0,2:output-container-external:0,1,6": "[{\"dependency_type\":\"Visible\",\"condition\":\"false\",\"parameters\":{}}]"
+    }
+  },
+  "fpm#mobile": {
+    "value": "true",
+    "dependencies": {
+      "0,1,5,0": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"font-size\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"16px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-bottom\":{\"value\":{\"value\":\"7px\",\"important\":false},\"default\":{\"value\":\"10px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-left\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"20px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-right\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"20px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-top\":{\"value\":{\"value\":\"7px\",\"important\":false},\"default\":{\"value\":\"10px\",\"important\":false}}}}]",
+      "0,1,5,1": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"font-size\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"16px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-bottom\":{\"value\":{\"value\":\"0px\",\"important\":false},\"default\":{\"value\":\"10px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-left\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"20px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-right\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"20px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-top\":{\"value\":{\"value\":\"0px\",\"important\":false},\"default\":{\"value\":\"10px\",\"important\":false}}}}]",
+      "0,1,5,2": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"font-size\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"16px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-bottom\":{\"value\":{\"value\":\"0px\",\"important\":false},\"default\":{\"value\":\"10px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-left\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"20px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-right\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"20px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-top\":{\"value\":{\"value\":\"0px\",\"important\":false},\"default\":{\"value\":\"10px\",\"important\":false}}}}]",
+      "0,1,6,2,0,0:output-container-external:0,1,6": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"font-size\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"16px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-bottom\":{\"value\":{\"value\":\"7px\",\"important\":false},\"default\":{\"value\":\"10px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-left\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"20px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-right\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"20px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-top\":{\"value\":{\"value\":\"7px\",\"important\":false},\"default\":{\"value\":\"10px\",\"important\":false}}}}]",
+      "0,1,6,2,0,1:output-container-external:0,1,6": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"font-size\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"16px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-bottom\":{\"value\":{\"value\":\"0px\",\"important\":false},\"default\":{\"value\":\"10px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-left\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"20px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-right\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"20px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-top\":{\"value\":{\"value\":\"0px\",\"important\":false},\"default\":{\"value\":\"10px\",\"important\":false}}}}]",
+      "0,1,6,2,0,2:output-container-external:0,1,6": "[{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"font-size\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"16px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-bottom\":{\"value\":{\"value\":\"0px\",\"important\":false},\"default\":{\"value\":\"10px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-left\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"20px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-right\":{\"value\":{\"value\":\"14px\",\"important\":false},\"default\":{\"value\":\"20px\",\"important\":false}}}},{\"dependency_type\":\"Style\",\"condition\":\"true\",\"parameters\":{\"padding-top\":{\"value\":{\"value\":\"0px\",\"important\":false},\"default\":{\"value\":\"10px\",\"important\":false}}}}]"
     }
   },
   "fpm#mobile-breakpoint": {
@@ -66,7 +177,16 @@
     "dependencies": {}
   }
 }</script>
-        <script type="ftd" id="ftd-external-children">{}</script>
+        <script type="ftd" id="ftd-external-children">{
+  "output-container-external:0,1,6": [
+    {
+      "condition": [
+        "output-container:0,1,6,2"
+      ],
+      "set_at": "output-container:0,1,6,2"
+    }
+  ]
+}</script>
         <style>html {
     height: 100%;
     width: 100%;
@@ -237,7 +357,61 @@ body.fpm-dark .ft_md a:visited code {
 <div data-id="0,1,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(0,0,0,1); display: none; font-family: apple-system; font-weight: 400; padding-bottom: 8px; padding-top: 16px; text-align: left; white-space: initial" class="ft_md"></div>
 <div data-id="0,1,2:main" data-spacing="margin-left:7px" style="align-items: flex-start; background-color: rgba(253,246,227,1); border-radius: 4px; border-style: solid; border-width: 1px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding: 10px; white-space: initial; width: 100%" class="ft_md"><div data-id="0,1,2,0:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-weight: 700; text-align: left; white-space: initial" class="ft_md">Package Name</div>
 <div data-id="0,1,2,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: monospace; font-weight: 400; margin-left: 7px; text-align: left; transform: translateY(2px) ; white-space: initial" class="ft_md">fifthtry.github.io/header</div></div>
-<div data-id="0,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(0,0,0,1); font-family: apple-system; font-weight: 400; padding-bottom: 8px; padding-top: 16px; text-align: left; white-space: initial" class="ft_md">This component can be used as a site header.</div></div></div></div>
+<div data-id="0,1,3:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(0,0,0,1); font-family: apple-system; font-weight: 400; padding-bottom: 8px; padding-top: 16px; text-align: left; white-space: initial" class="ft_md">This component can be used as a site header.</div>
+<div data-id="0,1,4:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; white-space: initial; width: 100%" class="ft_md"><div data-id="0,1,4,0:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 12px; white-space: initial; width: 100%" class="ft_md"><div data-id="0,1,4,0,0:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(0,0,0,1); font-family: apple-system; font-size: 27px; font-weight: 700; line-height: 36px; padding-bottom: 8px; padding-top: 16px; text-align: left; white-space: initial" class="ft_md">Header</div>
+<div data-id="0,1,4,0,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(0,0,0,1); display: none; font-family: apple-system; font-weight: 400; padding-bottom: 8px; padding-top: 16px; text-align: left; white-space: initial" class="ft_md"></div></div>
+<div data-id="0,1,4,1:main" data-spacing="margin-left:7px" style="align-items: flex-start; background-color: rgba(253,246,227,1); border-radius: 4px; border-style: solid; border-width: 1px; box-sizing: border-box; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: flex-start; padding: 10px; white-space: initial; width: 100%" class="ft_md"><div data-id="0,1,4,1,0:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-weight: 700; text-align: left; white-space: initial" class="ft_md">Component Name</div>
+<div data-id="0,1,4,1,1:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; font-family: monospace; font-weight: 400; margin-left: 7px; text-align: left; transform: translateY(2px) ; white-space: initial" class="ft_md">fifthtry.github.io/header.header</div></div>
+<div data-id="0,1,4,2:main" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; color: rgba(0,0,0,1); font-family: apple-system; font-weight: 400; padding-bottom: 8px; padding-top: 16px; text-align: left; white-space: initial" class="ft_md">This is the main header.</div></div>
+<div data-id="0,1,5:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 12px; padding-top: 12px; white-space: initial; width: 100%" class="ft_md"><div data-id="0,1,5,0:main" style="background-color: rgba(58,64,78,1); border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-top-right-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(220,220,220,1); display: none; font-family: Open sans; font-size: 14px; font-weight: 400; padding-bottom: 7px; padding-left: 14px; padding-right: 14px; padding-top: 7px; text-align: left; white-space: initial; width: 100%" class="ft_md"></div>
+<div data-id="0,1,5,1:main" style="background-color: rgba(43,48,59,1); border-bottom-left-radius: 4px !important; border-bottom-right-radius: 4px !important; border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-top-right-radius: 4px !important; border-width: 1px; box-sizing: border-box; color: rgba(77,77,77,1); display: none; font-size: 14px; font-weight: 400; line-height: 25px; overflow-x: auto; padding-bottom: 0px; padding-left: 14px; padding-right: 14px; padding-top: 0px; text-align: left; white-space: initial; width: 100%" class="ft_md"><pre style="background-color:#2b303b;"><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">header</span><span style="color:#65737e;">:
+</span><span style="color:#b48ead;">site-log</span><span style="color:#65737e;">: </span><span style="color:#d08770;">/logo.png
+</span><span style="color:#b48ead;">site-url</span><span style="color:#65737e;">: </span><span style="color:#d08770;">/
+</span><span style="color:#b48ead;">toc-top-right</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$toc-top-right
+</span><span style="color:#b48ead;">toc-bottom-left</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$toc-bottom-left
+</span><span style="color:#b48ead;">toc-bottom-right</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$toc-bottom-right
+</span></pre>
+</div>
+<div data-id="0,1,5,2:main" style="background-color: rgba(253,246,227,1); border-bottom-left-radius: 4px !important; border-bottom-right-radius: 4px !important; border-color: rgba(128,128,128,1); border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-top-right-radius: 4px !important; border-width: 1px; box-sizing: border-box; color: rgba(77,77,77,1); font-size: 14px; font-weight: 400; line-height: 25px; overflow-x: auto; padding-bottom: 0px; padding-left: 14px; padding-right: 14px; padding-top: 0px; text-align: left; white-space: initial; width: 100%" class="ft_md"><pre style="background-color:#fdf6e3;"><span style="color:#93a1a1;">-- </span><span style="color:#b58900;">header</span><span style="color:#93a1a1;">:
+</span><span style="color:#268bd2;">site-log</span><span style="color:#93a1a1;">: </span><span style="color:#cb4b16;">/logo.png
+</span><span style="color:#268bd2;">site-url</span><span style="color:#93a1a1;">: </span><span style="color:#cb4b16;">/
+</span><span style="color:#268bd2;">toc-top-right</span><span style="color:#93a1a1;">: </span><span style="color:#cb4b16;">$toc-top-right
+</span><span style="color:#268bd2;">toc-bottom-left</span><span style="color:#93a1a1;">: </span><span style="color:#cb4b16;">$toc-bottom-left
+</span><span style="color:#268bd2;">toc-bottom-right</span><span style="color:#93a1a1;">: </span><span style="color:#cb4b16;">$toc-bottom-right
+</span></pre>
+</div></div>
+<div data-id="0,1,6:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-top: 12px; white-space: initial; width: 100%" class="ft_md"><div data-id="0,1,6,0:main" style="background-color: rgba(174,213,129,1); border-radius: 0px; border-style: solid; border-top-left-radius: 2px !important; border-top-right-radius: 2px !important; border-width: 0px; box-sizing: border-box; color: rgba(255,255,255,1); font-size: 12px; font-weight: 400; padding-bottom: 3px; padding-left: 10px; padding-right: 10px; padding-top: 3px; text-align: left; white-space: initial" class="ft_md">Output</div>
+<img alt="" data-id="0,1,6,1:main" src="header.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; padding-bottom: 20px; white-space: initial; width: 100%">
+<div data-id="output-container:0,1,6,2:main" style="align-items: flex-start; background-color: rgba(246,250,255,1); border-color: rgba(221,237,255,1); border-radius: 2px; border-style: solid; border-width: 1px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 30px; padding-left: 20px; padding-right: 20px; padding-top: 30px; white-space: initial; width: 100%" class="ft_md"><div data-ext-id="output-container-external:0,1,6:main" data-id="0,1,6,2,0:output-container-external:0,1,6:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 12px; padding-top: 12px; white-space: initial; width: 100%" class="ft_md"><div data-id="0,1,6,2,0,0:output-container-external:0,1,6:main" style="background-color: rgba(58,64,78,1); border-radius: 0px; border-style: solid; border-top-left-radius: 4px !important; border-top-right-radius: 4px !important; border-width: 0px; box-sizing: border-box; color: rgba(220,220,220,1); font-family: Open sans; font-size: 14px; font-weight: 400; padding-bottom: 7px; padding-left: 14px; padding-right: 14px; padding-top: 7px; text-align: left; white-space: initial; width: 100%" class="ft_md">with design elements</div>
+<div data-id="0,1,6,2,0,1:output-container-external:0,1,6:main" style="background-color: rgba(43,48,59,1); border-bottom-left-radius: 4px !important; border-bottom-right-radius: 4px !important; border-radius: 0px; border-style: solid; border-width: 1px; box-sizing: border-box; color: rgba(77,77,77,1); display: none; font-size: 14px; font-weight: 400; line-height: 25px; overflow-x: auto; padding-bottom: 0px; padding-left: 14px; padding-right: 14px; padding-top: 0px; text-align: left; white-space: initial; width: 100%" class="ft_md"><pre style="background-color:#2b303b;"><span style="color:#65737e;">-- </span><span style="color:#ebcb8b;">header</span><span style="color:#65737e;">:
+</span><span style="color:#b48ead;">site-log</span><span style="color:#65737e;">: </span><span style="color:#d08770;">/logo.png
+</span><span style="color:#b48ead;">site-url</span><span style="color:#65737e;">: </span><span style="color:#d08770;">/
+</span><span style="color:#b48ead;">toc-top-right</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$toc-top-right
+</span><span style="color:#b48ead;">toc-bottom-left</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$toc-bottom-left
+</span><span style="color:#b48ead;">toc-bottom-right</span><span style="color:#65737e;">: </span><span style="color:#d08770;">$toc-bottom-right
+</span><span style="color:#b48ead;">logo-width</span><span style="color:#65737e;">: </span><span style="color:#d08770;">78
+</span><span style="color:#b48ead;">background</span><span style="color:#65737e;">: </span><span style="color:#d08770;">#2B2B2B
+</span><span style="color:#b48ead;">text-color</span><span style="color:#65737e;">: </span><span style="color:#d08770;">#F7CE46
+</span><span style="color:#b48ead;">active-text-color</span><span style="color:#65737e;">: </span><span style="color:#d08770;">#F7CE46
+</span><span style="color:#b48ead;">link-height</span><span style="color:#65737e;">: </span><span style="color:#d08770;">16
+</span></pre>
+</div>
+<div data-id="0,1,6,2,0,2:output-container-external:0,1,6:main" style="background-color: rgba(253,246,227,1); border-color: rgba(128,128,128,1); border-radius: 0px; border-style: solid; border-width: 1px; box-sizing: border-box; color: rgba(77,77,77,1); font-size: 14px; font-weight: 400; line-height: 25px; overflow-x: auto; padding-bottom: 0px; padding-left: 14px; padding-right: 14px; padding-top: 0px; text-align: left; white-space: initial; width: 100%" class="ft_md"><pre style="background-color:#fdf6e3;"><span style="color:#93a1a1;">-- </span><span style="color:#b58900;">header</span><span style="color:#93a1a1;">:
+</span><span style="color:#268bd2;">site-log</span><span style="color:#93a1a1;">: </span><span style="color:#cb4b16;">/logo.png
+</span><span style="color:#268bd2;">site-url</span><span style="color:#93a1a1;">: </span><span style="color:#cb4b16;">/
+</span><span style="color:#268bd2;">toc-top-right</span><span style="color:#93a1a1;">: </span><span style="color:#cb4b16;">$toc-top-right
+</span><span style="color:#268bd2;">toc-bottom-left</span><span style="color:#93a1a1;">: </span><span style="color:#cb4b16;">$toc-bottom-left
+</span><span style="color:#268bd2;">toc-bottom-right</span><span style="color:#93a1a1;">: </span><span style="color:#cb4b16;">$toc-bottom-right
+</span><span style="color:#268bd2;">logo-width</span><span style="color:#93a1a1;">: </span><span style="color:#cb4b16;">78
+</span><span style="color:#268bd2;">background</span><span style="color:#93a1a1;">: </span><span style="color:#cb4b16;">#2B2B2B
+</span><span style="color:#268bd2;">text-color</span><span style="color:#93a1a1;">: </span><span style="color:#cb4b16;">#F7CE46
+</span><span style="color:#268bd2;">active-text-color</span><span style="color:#93a1a1;">: </span><span style="color:#cb4b16;">#F7CE46
+</span><span style="color:#268bd2;">link-height</span><span style="color:#93a1a1;">: </span><span style="color:#cb4b16;">16
+</span></pre>
+</div></div>
+<div data-ext-id="output-container-external:0,1,6:main" data-id="0,1,6,2,1:output-container-external:0,1,6:main" style="align-items: flex-start; border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-top: 12px; white-space: initial; width: 100%" class="ft_md"><div data-id="0,1,6,2,1,0:output-container-external:0,1,6:main" style="background-color: rgba(174,213,129,1); border-radius: 0px; border-style: solid; border-top-left-radius: 2px !important; border-top-right-radius: 2px !important; border-width: 0px; box-sizing: border-box; color: rgba(255,255,255,1); font-size: 12px; font-weight: 400; padding-bottom: 3px; padding-left: 10px; padding-right: 10px; padding-top: 3px; text-align: left; white-space: initial" class="ft_md">Output</div>
+<img alt="" data-id="0,1,6,2,1,1:output-container-external:0,1,6:main" src="header-2.png" style="border-radius: 0px; border-style: solid; border-width: 0px; box-sizing: border-box; padding-bottom: 20px; white-space: initial; width: 100%">
+<div data-id="output-container:0,1,6,2,1,2:output-container-external:0,1,6:main" style="align-items: flex-start; background-color: rgba(246,250,255,1); border-color: rgba(221,237,255,1); border-radius: 2px; border-style: solid; border-width: 1px; box-sizing: border-box; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; padding-bottom: 30px; padding-left: 20px; padding-right: 20px; padding-top: 30px; white-space: initial; width: 100%" class="ft_md"></div></div></div></div></div></div></div>
         <script>
             // all ftd_utils are meant to be pure functions only: they can only depend on the
 // input passed, not on closures or global data etc
