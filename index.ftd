@@ -55,14 +55,8 @@ toc-bottom-right: $toc-bottom-right
 reference: header.png
 reference-width: fill
 
-/-- header:
-site-logo: /logo.png
-site-url: /
-toc-top-right: $toc-top-right
-toc-bottom-left: $toc-bottom-left
-toc-bottom-right: $toc-bottom-right
 
--- pd.code: with design elements
+-- pd.code: with design elements of light mode
 
 \-- header:
 site-logo: /logo.png
@@ -71,27 +65,44 @@ toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
 logo-width: 78
+background: #F8FAFC
+text-color: #3E4255
+active-text-color: #5967CD
+width: fill
+link-height: 16
+
+
+-- pd.output:
+
+-- header:
+if: not $fpm.dark-mode
+site-logo: site-logo-black.png
+site-url: /
+toc-top-right: $toc-top-right
+toc-bottom-left: $toc-bottom-left
+toc-bottom-right: $toc-bottom-right
+logo-width: 78
+background: #F8FAFC
+text-color: #3E4255
+active-text-color: #5967CD
+link-height: 16
+width: fill
+
+
+-- header:
+if: $fpm.dark-mode
 background: #2B2B2B
 text-color: #F7CE46
 active-text-color: #F7CE46
-link-height: 16
-
--- pd.output:
-reference: header-2.png
-reference-width: fill
-
--- header:
 site-logo: site-logo.png
 site-url: /
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
 logo-width: 78
-background: #2B2B2B
-text-color: #F7CE46
-active-text-color: #F7CE46
 link-height: 16
 width: fill
+
 
 
 
