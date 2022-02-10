@@ -81,7 +81,7 @@ reference: header-2.png
 reference-width: fill
 
 -- header:
-site-logo: /site-logo.png
+site-logo: site-logo.png
 site-url: /
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
