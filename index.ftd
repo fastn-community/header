@@ -62,7 +62,7 @@ link-height: 16
 
 
 -- pd.output:
-reference: header-2.png
+reference: header-black-1200.png
 reference-width: fill
 
 
@@ -112,7 +112,7 @@ optional string logo-height:
 string background: #F8FAFC 
 string text-color: #3E4255
 string active-text-color: #5967CD 
-optional string link-height: 
+integer link-height: 16 
 string width: fill
 width: $width
 padding-horizontal: 25
@@ -159,6 +159,7 @@ link: $obj.url
 text-color: $text-color
 active-text-color: $active-text-color
 current-url: $current-url
+link-height: $link-height
 
 --- container: bottom-row
 
@@ -176,6 +177,7 @@ $loop$: $toc-bottom-right as $obj
 link: $obj.url
 text-color: $text-color
 active-text-color: $active-text-color
+link-height: $link-height
 
 
 
@@ -188,8 +190,8 @@ active-text-color: $active-text-color
 
 -- ftd.text site-url: $title
 caption title:
-size: 16
-font: Lato-700
+size: 24
+font: Roboto-700
 line-height: 22
 align: center
 white-space: nowrap
@@ -209,11 +211,11 @@ string link:
 optional string text-color:
 optional string active-text-color:
 optional string current-url:
+integer link-height: 16
 size: 14
 font: Roboto
-style: bold
 link: $link
-line-height: 16
+line-height: $link-height
 align: center
 white-space: nowrap
 color: $text-color
@@ -237,11 +239,11 @@ string link:
 optional string text-color:
 optional string active-text-color:
 optional string current-url:
+integer link-height: 16
 size: 14
 font: Roboto
-style: bold
 link: $link
-line-height: 16
+line-height: $link-height
 align: center
 padding-bottom: 15
 white-space: nowrap
@@ -265,11 +267,11 @@ string link:
 optional string text-color:
 optional string active-text-color:
 optional string current-url:
+integer link-height: 16
 size: 14
 font: Roboto
-style: bold
 link: $link
-line-height: 16
+line-height: $link-height
 align: center
 white-space: nowrap
 color: $text-color
