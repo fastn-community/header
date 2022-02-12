@@ -18,7 +18,7 @@ This is the main header.
 -- pd.code:
 
 \-- header:
-site-logo: /logo.png
+site-logo: logo.png
 site-url: /
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
@@ -35,7 +35,7 @@ color: red
 size: 48
 
 --- header:
-site-logo: /logo-text.png
+site-logo: logo-text.png
 site-url: /
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
@@ -46,7 +46,7 @@ toc-bottom-right: $toc-bottom-right
 -- pd.code: with design elements of light mode
 
 \-- header:
-site-logo: /logo.png
+site-logo: logo.png
 site-url: /
 current-url: /
 toc-top-right: $toc-top-right
