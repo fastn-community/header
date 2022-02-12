@@ -15,7 +15,11 @@ name: fifthtry.github.io/header.header
 
 This is the main header.
 
--- pd.code:
+
+
+-- pd.output: Basic usage example
+reference: header-1200.png
+reference-width: fill
 
 \-- header:
 site-logo: logo.png
@@ -24,15 +28,7 @@ toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
 current-url: /
-
--- pd.output:
-reference: header-1200.png
-reference-width: fill
-
-
-/--- ftd.text: un-comment the next line and delete this line
-color: red
-size: 48
+link-style: bold
 
 --- header:
 site-logo: logo-text.png
@@ -40,10 +36,13 @@ site-url: /
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
+link-style: bold
 
 
 
--- pd.code: with design elements of light mode
+-- pd.output: with design elements of light mode
+reference: header-black-1200.png
+reference-width: fill
 
 \-- header:
 site-logo: logo.png
@@ -58,14 +57,6 @@ text-color: #F7CE46
 active-text-color: #F7CE46
 width: fill
 link-height: 16
-
-
-
--- pd.output:
-reference: header-black-1200.png
-reference-width: fill
-
-
 
 --- header:
 background: #2B2B2B
@@ -109,6 +100,7 @@ toc-item list toc-bottom-left:
 toc-item list toc-bottom-right:
 optional string logo-width: 
 optional string logo-height: 
+string link-style: regular
 string background: #F8FAFC 
 string text-color: #3E4255
 string active-text-color: #5967CD 
@@ -160,6 +152,7 @@ text-color: $text-color
 active-text-color: $active-text-color
 current-url: $current-url
 link-height: $link-height
+link-style: $link-style
 
 --- container: bottom-row
 
@@ -178,6 +171,7 @@ link: $obj.url
 text-color: $text-color
 active-text-color: $active-text-color
 link-height: $link-height
+link-style: $link-style
 
 
 
@@ -212,8 +206,10 @@ optional string text-color:
 optional string active-text-color:
 optional string current-url:
 integer link-height: 16
+optional string link-style:
 size: 14
 font: Roboto
+style: $link-style
 link: $link
 line-height: $link-height
 align: center
@@ -240,8 +236,10 @@ optional string text-color:
 optional string active-text-color:
 optional string current-url:
 integer link-height: 16
+optional string link-style:
 size: 14
 font: Roboto
+style: $link-style
 link: $link
 line-height: $link-height
 align: center
@@ -268,8 +266,10 @@ optional string text-color:
 optional string active-text-color:
 optional string current-url:
 integer link-height: 16
+optional string link-style:
 size: 14
 font: Roboto
+style: $link-style
 link: $link
 line-height: $link-height
 align: center
