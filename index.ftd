@@ -221,7 +221,7 @@ white-space: nowrap
 color: $text-color
 color if $current-url == $link: $active-text-color
 border-bottom if $current-url == $link: 2
-border-color if $current-url == $link: #5967CD
+border-color if $current-url == $link: $active-text-color
 padding-horizontal if $current-url == $link: 12
 
 
@@ -250,7 +250,7 @@ white-space: nowrap
 color: $text-color
 color if $current-url == $link: $active-text-color
 border-bottom if $current-url == $link: 2
-border-color if $current-url == $link: #5967CD
+border-color if $current-url == $link: $active-text-color
 padding-horizontal if $current-url == $link: 12
 
 
@@ -277,7 +277,7 @@ white-space: nowrap
 color: $text-color
 color if $current-url == $link: $active-text-color
 border-bottom if $current-url == $link: 2
-border-color if $current-url == $link: #5967CD
+border-color if $current-url == $link: $active-text-color
 padding-horizontal if $current-url == $link: 12
 
 
