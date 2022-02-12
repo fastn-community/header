@@ -26,16 +26,16 @@ toc-bottom-right: $toc-bottom-right
 current-url: /
 
 -- pd.output:
-reference: header.png
+reference: header-1200.png
 reference-width: fill
 
 
---- ftd.text: un-comment the next line and delete this line
+/--- ftd.text: un-comment the next line and delete this line
 color: red
 size: 48
 
-/--- header:
-site-logo: /logo.png
+--- header:
+site-logo: /logo-text.png
 site-url: /
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
@@ -102,24 +102,25 @@ width: fill
 
 -- ftd.column header:
 optional string site-logo:
-string site-url:
-string current-url:
+string site-url: /
+string current-url: /payments/
 toc-item list toc-top-right:
 toc-item list toc-bottom-left:
 toc-item list toc-bottom-right:
-optional string logo-width: 78
-optional string logo-height: 18
-optional string background: #F8FAFC
-optional string text-color: #3E4255
-optional string active-text-color: #5967CD
-optional string link-height: 16
-optional string width: fill
+optional string logo-width: 
+optional string logo-height: 
+string background: #F8FAFC 
+string text-color: #3E4255
+string active-text-color: #5967CD 
+optional string link-height: 
+string width: fill
 width: $width
-padding-horizontal: 20
-padding-vertical: 15
+padding-horizontal: 25
+padding-vertical: 30
+padding-bottom: 0
 color: white
 background-color: $background
-background-color if $fpm.dark-mode: $background
+/background-color if $fpm.dark-mode: $background
 
 --- ftd.row:
 spacing: 10
@@ -130,9 +131,8 @@ width: fill
 src: $site-logo
 if: $site-logo is not null
 width: $logo-width
-if: $logo-width is not null
 height: $logo-height
-if: $logo-width is not null
+
 
 /--- site-url: $site-url
 if: $site-url is not null
@@ -142,7 +142,7 @@ if: $site-url is not null
 --- ftd.row:
 width: fill
 id: bottom-row
-padding-top: 20
+padding-top: 29
 
 --- ftd.column:
 position: left
@@ -206,16 +206,21 @@ white-space: nowrap
 -- ftd.text header-top-right-item: $title
 caption title:
 string link:
-string text-color:
-string active-text-color:
+optional string text-color:
+optional string active-text-color:
+optional string current-url:
 size: 14
-font: Lato
+font: Roboto
+style: bold
 link: $link
-line-height: 12
+line-height: 16
 align: center
 white-space: nowrap
 color: $text-color
-color if $MOUSE-IN: $active-text-color
+color if $current-url == $link: $active-text-color
+border-bottom if $current-url == $link: 2
+border-color if $current-url == $link: #5967CD
+padding-horizontal if $current-url == $link: 12
 
 
 
@@ -229,17 +234,22 @@ color if $MOUSE-IN: $active-text-color
 -- ftd.text header-left-item: $title
 caption title:
 string link:
-string text-color:
-string active-text-color:
-string current-url:
+optional string text-color:
+optional string active-text-color:
+optional string current-url:
 size: 14
-font: Lato
+font: Roboto
+style: bold
 link: $link
 line-height: 16
 align: center
+padding-bottom: 15
 white-space: nowrap
 color: $text-color
 color if $current-url == $link: $active-text-color
+border-bottom if $current-url == $link: 2
+border-color if $current-url == $link: #5967CD
+padding-horizontal if $current-url == $link: 12
 
 
 
@@ -252,16 +262,21 @@ color if $current-url == $link: $active-text-color
 -- ftd.text header-right-item: $title
 caption title:
 string link:
-string text-color:
-string active-text-color:
+optional string text-color:
+optional string active-text-color:
+optional string current-url:
 size: 14
-font: Lato
+font: Roboto
+style: bold
 link: $link
 line-height: 16
 align: center
 white-space: nowrap
 color: $text-color
-color if $MOUSE-IN: $active-text-color
+color if $current-url == $link: $active-text-color
+border-bottom if $current-url == $link: 2
+border-color if $current-url == $link: #5967CD
+padding-horizontal if $current-url == $link: 12
 
 
 
