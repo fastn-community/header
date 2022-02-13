@@ -1,0 +1,389 @@
+-- import: fifthtry.github.io/package-doc/doc as pd
+-- import: fpm
+
+
+
+
+-- pd.package: Header
+name: fifthtry.github.io/header
+
+This component can be used as a site header.
+
+
+-- pd.component: Header
+name: fifthtry.github.io/header.header
+
+This is the main header.
+
+
+
+-- pd.output: Basic usage example
+reference: header-1200.png
+reference-width: fill
+
+\-- header:
+site-logo: logo.png
+site-url: /
+toc-top-right: $toc-top-right
+toc-bottom-left: $toc-bottom-left
+toc-bottom-right: $toc-bottom-right
+current-url: /
+link-style: bold
+
+--- header:
+site-logo: logo-text.png
+site-url: /
+toc-top-right: $toc-top-right
+toc-bottom-left: $toc-bottom-left
+toc-bottom-right: $toc-bottom-right
+link-style: bold
+
+
+
+-- pd.output: with design elements of light mode
+reference: header-black-1200.png
+reference-width: fill
+
+\-- header:
+site-logo: logo.png
+site-url: /
+current-url: /
+toc-top-right: $toc-top-right
+toc-bottom-left: $toc-bottom-left
+toc-bottom-right: $toc-bottom-right
+logo-width: 78
+background: #2B2B2B
+text-color: #F7CE46
+active-text-color: #F7CE46
+width: fill
+link-height: 16
+
+--- header:
+background: #2B2B2B
+text-color: #F7CE46
+active-text-color: #F7CE46
+site-logo: site-logo.png
+site-url: /
+current-url: /payments/
+toc-top-right: $toc-top-right
+toc-bottom-left: $toc-bottom-left
+toc-bottom-right: $toc-bottom-right
+logo-width: 78
+link-height: 16
+width: fill
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- ftd.column header:
+optional string site-logo:
+string site-url: /
+string current-url: /payments/
+toc-item list toc-top-right:
+toc-item list toc-bottom-left:
+toc-item list toc-bottom-right:
+optional string logo-width: 
+optional string logo-height: 
+string link-style: regular
+string background: #F8FAFC 
+string text-color: #3E4255
+string active-text-color: #5967CD 
+integer link-height: 16 
+string width: fill
+width: $width
+padding-horizontal: 25
+padding-vertical: 30
+padding-bottom: 0
+color: white
+background-color: $background
+/background-color if $fpm.dark-mode: $background
+
+--- ftd.row:
+spacing: 10
+link: $site-url
+width: fill
+
+--- ftd.row:
+position: left
+width: fill
+id: right-side-top
+
+--- ftd.image:
+src: $site-logo
+if: $site-logo is not null
+width: $logo-width
+height: $logo-height
+
+
+--- ftd.row:
+position: right
+width: fill
+id: right-side-top
+spacing: 30
+
+--- header-item: $obj.title
+$loop$: $toc-top-right as $obj
+children: $obj.children 
+link: $obj.url
+text-color: $text-color
+active-text-color: $active-text-color
+current-url: $current-url
+link-height: $link-height
+link-style: $link-style
+right: 20
+
+/--- site-url: $site-url
+if: $site-url is not null
+
+--- container: ftd.main
+
+--- ftd.row:
+width: fill
+id: bottom-row
+padding-top: 29
+
+--- ftd.column:
+position: left
+id: left-side
+width: fill
+
+--- ftd.row:
+width: auto
+spacing: 25
+
+--- header-item: $obj.title
+$loop$: $toc-bottom-left as $obj
+children: $obj.children 
+link: $obj.url
+text-color: $text-color
+active-text-color: $active-text-color
+current-url: $current-url
+link-height: $link-height
+link-style: $link-style
+left: -20
+
+--- container: bottom-row
+
+--- ftd.column:
+position: right
+width: auto
+id: right-side
+
+--- ftd.row:
+width: auto
+spacing: 30
+
+--- header-item: $obj.title
+$loop$: $toc-bottom-right as $obj
+children: $obj.children 
+link: $obj.url
+text-color: $text-color
+active-text-color: $active-text-color
+current-url: $current-url
+link-height: $link-height
+link-style: $link-style
+right: 20
+
+
+
+
+
+
+
+
+
+
+
+-- ftd.text site-url: $title
+caption title:
+size: 24
+font: Roboto-700
+line-height: 22
+align: center
+white-space: nowrap
+
+
+
+
+
+
+
+
+
+
+-- ftd.text header-top-right-item: $title
+caption title:
+string link:
+optional string text-color:
+optional string active-text-color:
+optional string current-url:
+integer link-height: 16
+optional string link-style:
+size: 14
+font: Roboto
+style: $link-style
+link: $link
+line-height: $link-height
+align: center
+white-space: nowrap
+color: $text-color
+color if $current-url == $link: $active-text-color
+border-bottom if $current-url == $link: 2
+border-color if $current-url == $link: $active-text-color
+padding-horizontal if $current-url == $link: 12
+
+
+
+
+
+
+
+
+
+
+-- ftd.row header-item: 
+caption title:
+string link:
+toc-item list children: 
+optional string text-color:
+optional string active-text-color:
+optional string current-url:
+integer left: 10
+integer right: 20
+integer link-height: 16
+optional string link-style:
+spacing: 10
+boolean mouseover: false
+$event-mouseenter$: $mouseover = true
+$event-mouseleave$: $mouseover = false
+
+--- ftd.text: $title
+size: 14
+font: Roboto
+style: $link-style
+link: $link
+line-height: $link-height
+align: center
+padding-bottom: 15
+white-space: nowrap
+color: $text-color
+color if $current-url == $link: $active-text-color
+border-bottom if $current-url == $link: 2
+border-color if $current-url == $link: $active-text-color
+padding-horizontal if $current-url == $link: 12
+
+--- ftd.text: ﹀
+if: $children is not empty
+color: $text-color
+position: center
+size: 14
+line-height: $link-height
+
+
+--- show-children:
+if: $mouseover 
+children: $children
+left: $left
+right: $right
+
+
+
+-- ftd.column show-children:
+toc-item list children: 
+optional integer left: 
+optional integer right: 
+if: $children is not empty
+anchor: parent
+left if $left is not null: $left
+right if $right is not null: $right
+top: 30
+background-color: #FFFFFF
+border-width: 1
+border-color: #E8E9ED
+border-radius: 6
+shadow-size: 1
+z-index: 1 
+padding: 5
+
+--- ftd.text: $obj.title
+link: $obj.url
+$loop$: $children as $obj
+color: #818692
+color if $MOUSE-IN: #5868CD
+background-color if $MOUSE-IN: #F1F3FE
+white-space: nowrap
+padding-vertical: 8
+padding-horizontal: 10
+font: Roboto
+size: 14
+line-height: 12
+width: fill
+border-radius: 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- record toc-item:
+caption title:
+string url:
+toc-item list children:
+
+-- toc-item list toc-top-right:
+$processor$: toc
+
+- Roadmap: /roadmap/
+- Journal: /journal/
+  - Home Index: /index/
+  - Docs: /index/
+  - Articles: /index/
+  - Home Pictures: /index/  
+
+-- toc-item list toc-bottom-left:
+$processor$: toc
+
+- Home: /home/
+  - Home Index: /index/
+  - Docs: /index/
+  - Articles: /index/
+  - Home Pictures: /index/  
+- Payments: /payments/
+- Business Operations: /businessops/
+- Developer Tools: /developer-tools/
+- Security: /security/
+- All Products: /all-products/
+
+
+-- toc-item list toc-bottom-right:
+$processor$: toc
+
+- APIs & SKDs: /api-skd/
+  - Home Index: /index/
+  - Docs: /index/
+  - Articles: /index/
+  - Home Pictures: /index/  
+- Support: /support/
