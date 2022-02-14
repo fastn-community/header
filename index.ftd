@@ -81,7 +81,8 @@ toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
 link-style: bold
-
+menu-right: 20
+menu-left: -20
 
 
 -- pd.output: with design elements of light mode
@@ -169,6 +170,8 @@ string current-url: /payments/
 toc-item list toc-top-right: $empty-toc
 toc-item list toc-bottom-left: $empty-toc
 toc-item list toc-bottom-right: $empty-toc
+integer menu-left: 10
+integer menu-right: 10
 optional string logo-width: 
 optional string logo-height: 
 string link-style: regular
@@ -217,7 +220,8 @@ active-text-color: $active-text-color
 current-url: $current-url
 link-height: $link-height
 link-style: $link-style
-right: 20
+menu-right: $menu-right
+menu-left: $menu-left
 
 
 /--- site-url: $site-url
@@ -248,7 +252,8 @@ active-text-color: $active-text-color
 current-url: $current-url
 link-height: $link-height
 link-style: $link-style
-left: -20
+menu-right: $menu-right
+menu-left: $menu-left
 
 --- container: bottom-row
 
@@ -270,8 +275,8 @@ active-text-color: $active-text-color
 current-url: $current-url
 link-height: $link-height
 link-style: $link-style
-right: 20
-
+menu-right: $menu-right
+menu-left: $menu-left
 
 
 
@@ -336,11 +341,12 @@ toc-item list children:
 optional string text-color:
 optional string active-text-color:
 optional string current-url:
-integer left: 10
-integer right: 20
+integer menu-right: 0
+integer menu-left: 0
 integer link-height: 16
 optional string link-style:
 spacing: 10
+align: center
 boolean mouseover: false
 $event-mouse-enter$: $mouseover = true
 $event-mouse-leave$: $mouseover = false
@@ -351,7 +357,6 @@ font: Roboto
 style: $link-style
 link: $link
 line-height: $link-height
-align: center
 padding-bottom: 15
 white-space: nowrap
 color: $text-color
@@ -371,8 +376,8 @@ line-height: $link-height
 --- show-children:
 if: $mouseover 
 children: $children
-left: $left
-right: $right
+left: $menu-left
+right: $menu-right
 
 
 
@@ -392,6 +397,8 @@ border-radius: 6
 shadow-size: 1
 z-index: 1 
 padding: 5
+min-width: 200
+
 
 --- ftd.text: $obj.title
 link: $obj.url
@@ -442,7 +449,7 @@ $processor$: toc
 $processor$: toc
 
 - Home: /home/
-  - Home Index: /index/
+  - Home Bottom: /index/
   - Docs: /index/
   - Articles: /index/
   - Home Pictures: /index/  
@@ -457,7 +464,7 @@ $processor$: toc
 $processor$: toc
 
 - APIs & SKDs: /api-skd/
-  - Home Index: /index/
+  - Home Right: /index/
   - Docs: /index/
   - Articles: /index/
   - Home Pictures: /index/  
