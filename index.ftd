@@ -243,7 +243,7 @@ width: fill
 
 --- ftd.row:
 width: auto
-spacing: 25
+spacing: 12
 
 --- header-item: $obj.title
 $loop$: $toc-bottom-left as $obj
