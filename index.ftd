@@ -374,7 +374,8 @@ color: $text-color
 position: center
 size: 14
 line-height: $link-height
-margin-left: 10
+move-up: 3
+margin-left: 3
 
 --- ftd.column:
 width: 0
