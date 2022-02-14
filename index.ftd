@@ -82,7 +82,7 @@ toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
 link-style: bold
 menu-right: 20
-menu-left: -20
+menu-left: -73
 
 
 -- pd.output: with design elements of light mode
@@ -116,6 +116,7 @@ toc-bottom-right: $toc-bottom-right
 logo-width: 78
 link-height: 16
 width: fill
+menu-left: -73
 
 
 
@@ -151,6 +152,7 @@ site-logo: logo-text.png
 site-url: /
 toc-bottom-left: $toc-bottom-left
 link-style: bold
+menu-left: -73
 
 
 
@@ -221,7 +223,7 @@ current-url: $current-url
 link-height: $link-height
 link-style: $link-style
 menu-right: $menu-right
-menu-left: $menu-left
+/menu-left: $menu-left
 
 
 /--- site-url: $site-url
@@ -252,7 +254,7 @@ active-text-color: $active-text-color
 current-url: $current-url
 link-height: $link-height
 link-style: $link-style
-menu-right: $menu-right
+/menu-right: $menu-right
 menu-left: $menu-left
 
 --- container: bottom-row
@@ -276,7 +278,7 @@ current-url: $current-url
 link-height: $link-height
 link-style: $link-style
 menu-right: $menu-right
-menu-left: $menu-left
+/menu-left: $menu-left
 
 
 
@@ -341,11 +343,11 @@ toc-item list children:
 optional string text-color:
 optional string active-text-color:
 optional string current-url:
-integer menu-right: 0
-integer menu-left: 0
+optional integer menu-right:
+optional integer menu-left:
 integer link-height: 16
 optional string link-style:
-spacing: 10
+/spacing: 10
 align: center
 boolean mouseover: false
 $event-mouse-enter$: $mouseover = true
@@ -364,6 +366,7 @@ color if $current-url == $link: $active-text-color
 border-bottom if $current-url == $link: 2
 border-color if $current-url == $link: $active-text-color
 padding-horizontal if $current-url == $link: 12
+margin-left: 10
 
 --- ftd.text: ﹀
 if: $children is not empty
@@ -371,10 +374,14 @@ color: $text-color
 position: center
 size: 14
 line-height: $link-height
+margin-left: 10
 
+--- ftd.column:
+width: 0
+if: $mouseover
 
 --- show-children:
-if: $mouseover 
+if: $children is not empty
 children: $children
 left: $menu-left
 right: $menu-right
