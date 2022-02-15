@@ -495,7 +495,7 @@ integer link-height: 16
 optional string link-style:
 /spacing: 10
 align: center
-move-left: 22
+/move-left: 22
 boolean mouseover: false
 $event-mouse-enter$: $mouseover = true
 $event-mouse-leave$: $mouseover = false
