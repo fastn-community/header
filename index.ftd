@@ -497,9 +497,10 @@ if: $children is not empty
 color: $text-color
 position: center
 size: 14
+style: bold
 line-height: $link-height
 move-up: 2
-move-left: 10
+move-left: 8
 
 --- ftd.column:
 width: 0
