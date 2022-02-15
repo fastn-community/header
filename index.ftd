@@ -105,6 +105,11 @@ link-height: 16
 width: fill
 menu-left: -73
 menu-right: 0
+menu-bg: #3D3C3C
+menu-hover-bg: #454545
+menu-link: #F6FAFF
+menu-link-active: #F7CE46 
+menu-border: #464040
 
 --- header:
 background: #2B2B2B
@@ -121,6 +126,11 @@ link-height: 16
 width: fill
 menu-left: -73
 menu-right: 0
+menu-bg: #3D3C3C
+menu-hover-bg: #454545
+menu-link: #F6FAFF
+menu-link-active: #F7CE46 
+menu-border: #464040
 
 
 
@@ -187,6 +197,11 @@ string text-color: #3E4255
 string active-text-color: #5967CD 
 integer link-height: 16 
 boolean sidebar-open: false
+string menu-bg: #FFFFFF
+string menu-hover-bg: #f7fafc
+string menu-link: #5469d4
+string menu-link-active: #1a1f36 
+string menu-border: #EEEEEE
 string width: fill
 width: $width
 padding-horizontal if not $fpm.mobile: 25
@@ -195,6 +210,7 @@ padding-bottom: 0
 color: white
 background-color: $background
 /background-color if $fpm.dark-mode: $background
+
 
 --- container: ftd.main
 
@@ -228,6 +244,11 @@ text-color: $text-color
 active-text-color: $active-text-color
 link-height: $link-height
 width: $width
+menu-bg: $menu-bg
+menu-hover-bg: $menu-bg
+menu-link: $menu-link 
+menu-link-active: $menu-link-active
+menu-border: $menu-border
 
 
 --- header-mobile:
@@ -278,6 +299,11 @@ string active-text-color:
 integer link-height: 
 string width: 
 width: $width
+optional string menu-bg:
+optional string menu-hover-bg:
+optional string menu-link:
+optional string menu-link-active:
+optional string menu-border:
 
 --- ftd.row:
 /spacing: 10
@@ -313,6 +339,11 @@ link-height: $link-height
 link-style: $link-style
 menu-right: $menu-right
 /menu-left: $menu-left
+menu-bg: $menu-bg 
+menu-hover-bg: $menu-hover-bg
+menu-link: $menu-link
+menu-link-active: $menu-link-active
+menu-border: $menu-border
 
 
 /--- site-url: $site-url
@@ -345,6 +376,11 @@ link-height: $link-height
 link-style: $link-style
 /menu-right: $menu-right
 menu-left: $menu-left
+menu-bg: $menu-bg 
+menu-hover-bg: $menu-hover-bg
+menu-link: $menu-link
+menu-link-active: $menu-link-active
+menu-border: $menu-border
 
 --- container: bottom-row
 
@@ -368,6 +404,11 @@ link-height: $link-height
 link-style: $link-style
 menu-right: $menu-right
 /menu-left: $menu-left
+menu-bg: $menu-bg 
+menu-hover-bg: $menu-hover-bg
+menu-link: $menu-link
+menu-link-active: $menu-link-active
+menu-border: $menu-border
 
 
 
@@ -427,6 +468,11 @@ optional string active-text-color:
 optional string current-url:
 optional integer menu-right:
 optional integer menu-left:
+optional string menu-bg:
+optional string menu-hover-bg:
+optional string menu-link:
+optional string menu-link-active:
+optional string menu-border:
 integer link-height: 16
 optional string link-style:
 /spacing: 10
@@ -456,8 +502,8 @@ color: $text-color
 position: center
 size: 14
 line-height: $link-height
-move-up: 3
-margin-left: 3
+move-up: 2
+move-left: 10
 
 --- ftd.column:
 width: 0
@@ -468,6 +514,11 @@ if: $children is not empty
 children: $children
 left: $menu-left
 right: $menu-right
+menu-bg: $menu-bg
+menu-hover-bg: $menu-hover-bg
+menu-link: $menu-link
+menu-link-active: $menu-link-active
+menu-border: $menu-border
 
 
 
@@ -653,14 +704,19 @@ z-index: 4
 toc-item list children: 
 optional integer left: 
 optional integer right: 
+optional string menu-bg:
+optional string menu-hover-bg:
+optional string menu-link:
+optional string menu-link-active:
+optional string menu-border:
 if: $children is not empty
 anchor: parent
 left if $left is not null: $left
 right if $right is not null: $right
 top: 30
-background-color: #FFFFFF
+background-color: $menu-bg
 border-width: 1
-border-color: #E8E9ED
+border-color: $menu-border
 border-radius: 6
 shadow-size: 1
 z-index: 1 
@@ -671,9 +727,14 @@ min-width: 200
 --- ftd.text: $obj.title
 link: $obj.url
 $loop$: $children as $obj
-color: #818692
-color if $MOUSE-IN: #5868CD
-background-color if $MOUSE-IN: #F1F3FE
+optional string menu-bg:
+optional string menu-hover-bg:
+optional string menu-link:
+optional string menu-link-active:
+optional string menu-border:
+color: $menu-link
+color if $MOUSE-IN: $menu-link-active
+background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
