@@ -205,9 +205,10 @@ string menu-link-active: #1a1f36
 string menu-border: #EEEEEE
 string width: fill
 width: $width
-padding-horizontal if not $fpm.mobile: 25
-padding-vertical if not $fpm.mobile: 30
-padding-bottom: 0
+padding-left if not $fpm.mobile: 30
+/padding-horizontal if not $fpm.mobile: 25
+padding-top if not $fpm.mobile: 30
+/padding-vertical if not $fpm.mobile: 30
 color: white
 background-color: $background
 /background-color if $fpm.dark-mode: $background
