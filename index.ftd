@@ -205,7 +205,7 @@ string menu-link-active: #1a1f36
 string menu-border: #EEEEEE
 string width: fill
 width: $width
-padding-left if not $fpm.mobile: 30
+padding-left if not $fpm.mobile: 15
 /padding-horizontal if not $fpm.mobile: 25
 padding-top if not $fpm.mobile: 30
 /padding-vertical if not $fpm.mobile: 30
@@ -300,6 +300,7 @@ optional string menu-hover-bg:
 optional string menu-link:
 optional string menu-link-active:
 optional string menu-border:
+move-right: 10
 
 --- ftd.row:
 /spacing: 10
@@ -498,10 +499,9 @@ if: $children is not empty
 color: $text-color
 position: center
 size: 14
-style: bold
 line-height: $link-height
 move-up: 2
-move-left: 8
+move-left: 10
 
 --- ftd.column:
 width: 0
@@ -714,8 +714,12 @@ background-color: $menu-bg
 border-width: 1
 border-color: $menu-border
 border-radius: 6
+shadow-offset-x: 3
+shadow-offset-y: 0
 shadow-size: 1
-z-index: 1 
+shadow-blur: 10
+shadow-color: rgba (0, 0, 0, 0.05)
+z-index: 4
 padding: 5
 min-width: 200
 
