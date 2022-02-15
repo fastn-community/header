@@ -2,6 +2,7 @@
 -- import: fpm
 
 
+-- boolean sidebar-open: false
 
 
 -- pd.package: Header
@@ -54,10 +55,12 @@ $processor$: toc
 $processor$: toc
 
 - APIs & SKDs: /api-skd/
-  - Home Index: /index/
-  - Docs: /index/
-  - Articles: /index/
-  - Home Pictures: /index/
+  - API: /api/
+  - Stripe.js: /index/
+  - CLI: /cli/
+  - ios: /ios/
+  - Android: /android/
+  - React Native: /react-native/
 - Support: /support/
 
 
@@ -179,7 +182,6 @@ menu-right: 0
 
 
 
-
 -- ftd.column header:
 optional string site-logo:
 string site-url: /
@@ -196,7 +198,6 @@ string background: #F8FAFC
 string text-color: #3E4255
 string active-text-color: #5967CD 
 integer link-height: 16 
-boolean sidebar-open: false
 string menu-bg: #FFFFFF
 string menu-hover-bg: #f7fafc
 string menu-link: #5469d4
@@ -212,18 +213,13 @@ background-color: $background
 /background-color if $fpm.dark-mode: $background
 
 
---- container: ftd.main
-
 --- mobile-sidebar:
 if: $sidebar-open
-sidebar-open: $sidebar-open
 
 --- container: ftd.main
 
 --- menu-mobile:
 if: $sidebar-open
-
---- container: ftd.main
 
 
 --- header-desktop:
@@ -268,7 +264,6 @@ background: $background
 text-color: $text-color 
 active-text-color: $active-text-color
 link-height: $link-height
-sidebar-open: $sidebar-open
 width: $width
 
 
@@ -477,6 +472,7 @@ integer link-height: 16
 optional string link-style:
 /spacing: 10
 align: center
+move-left: 22
 boolean mouseover: false
 $event-mouse-enter$: $mouseover = true
 $event-mouse-leave$: $mouseover = false
@@ -525,7 +521,6 @@ menu-border: $menu-border
 
 
 -- ftd.column mobile-sidebar:
-boolean sidebar-open: 
 anchor: window
 top: 0
 bottom: 0
@@ -552,7 +547,6 @@ string background:
 string text-color: 
 string active-text-color:
 integer link-height: 
-boolean sidebar-open:
 string width: 
 width: $width
 background-color: #ccc
@@ -794,10 +788,12 @@ $processor$: toc
 $processor$: toc
 
 - APIs & SKDs: /api-skd/
-  - Home Right: /index/
-  - Docs: /index/
-  - Articles: /index/
-  - Home Pictures: /index/  
+  - API: /api/
+  - Stripe.js: /index/
+  - CLI: /cli/
+  - ios: /ios/
+  - Android: /android/
+  - React Native: /react-native/
 - Support: /support/
 
 
