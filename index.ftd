@@ -186,14 +186,98 @@ string background: #F8FAFC
 string text-color: #3E4255
 string active-text-color: #5967CD 
 integer link-height: 16 
+boolean sidebar-open: false
 string width: fill
 width: $width
-padding-horizontal: 25
-padding-vertical: 30
+padding-horizontal if not $fpm.mobile: 25
+padding-vertical if not $fpm.mobile: 30
 padding-bottom: 0
 color: white
 background-color: $background
 /background-color if $fpm.dark-mode: $background
+
+--- container: ftd.main
+
+--- mobile-sidebar:
+if: $sidebar-open
+sidebar-open: $sidebar-open
+
+--- container: ftd.main
+
+--- menu-mobile:
+if: $sidebar-open
+
+--- container: ftd.main
+
+
+--- header-desktop:
+if: not $fpm.mobile
+site-logo: $site-logo
+site-url: $site-url 
+current-url: $current-url
+toc-top-right: $toc-top-right
+toc-bottom-left: $toc-bottom-left 
+toc-bottom-right: $toc-bottom-right
+menu-left: $menu-left 
+menu-right: $menu-right
+logo-width: $logo-width 
+logo-height: $logo-height 
+link-style: $link-style 
+background: $background  
+text-color: $text-color 
+active-text-color: $active-text-color
+link-height: $link-height
+width: $width
+
+
+--- header-mobile:
+if: $fpm.mobile
+site-logo: $site-logo
+site-url: $site-url 
+current-url: $current-url
+toc-top-right: $toc-top-right
+toc-bottom-left: $toc-bottom-left 
+toc-bottom-right: $toc-bottom-right
+menu-left: $menu-left 
+menu-right: $menu-right
+logo-width: $logo-width 
+logo-height: $logo-height 
+link-style: $link-style 
+background: $background  
+text-color: $text-color 
+active-text-color: $active-text-color
+link-height: $link-height
+sidebar-open: $sidebar-open
+width: $width
+
+
+
+
+
+
+
+
+
+
+
+-- ftd.column header-desktop:
+optional string site-logo:
+string site-url: 
+string current-url:
+toc-item list toc-top-right:
+toc-item list toc-bottom-left: 
+toc-item list toc-bottom-right:
+integer menu-left: 
+integer menu-right:
+optional string logo-width: 
+optional string logo-height: 
+string link-style: 
+string background:  
+string text-color: 
+string active-text-color:
+integer link-height: 
+string width: 
+width: $width
 
 --- ftd.row:
 /spacing: 10
@@ -284,13 +368,6 @@ link-height: $link-height
 link-style: $link-style
 menu-right: $menu-right
 /menu-left: $menu-left
-
-
-
-
-
-
-
 
 
 
@@ -394,6 +471,184 @@ right: $menu-right
 
 
 
+
+
+-- ftd.column mobile-sidebar:
+boolean sidebar-open: 
+anchor: window
+top: 0
+bottom: 0
+left: 0
+right: 0
+background-color:  rgba (227, 227, 227, 0.9)
+z-index: 1
+$event-click$: toggle $sidebar-open
+
+
+-- ftd.row header-mobile:
+optional string site-logo:
+string site-url: 
+string current-url:
+toc-item list toc-top-right:
+toc-item list toc-bottom-left: 
+toc-item list toc-bottom-right:
+integer menu-left: 
+integer menu-right:
+optional string logo-width: 
+optional string logo-height: 
+string link-style: 
+string background:  
+string text-color: 
+string active-text-color:
+integer link-height: 
+boolean sidebar-open:
+string width: 
+width: $width
+background-color: #ccc
+background-color if $fpm.dark-mode: #333
+padding-horizontal: 20
+padding-vertical: 15
+
+
+--- ftd.row:
+position: left
+spacing: 25
+id: left-side
+
+--- ftd.image:
+src: hamburger.png
+width: 24
+height: auto
+$event-click$: toggle $sidebar-open
+position: center
+
+--- ftd.row:
+spacing: 10
+link: $site-url
+
+--- ftd.image:
+src: $site-logo
+width: 78
+height: 32
+
+
+--- site-link: $site-url
+
+--- container: left-side
+
+--- container: ftd.main
+
+--- ftd.column: 
+width: fill
+position: center
+
+--- ftd.row:
+position: right
+spacing: 30
+width: auto
+
+
+
+/--- ftd.image:
+src: images/github-dark.svg
+src: images/github-light.svg
+width: 20
+min-width: 20
+link: $github
+align: center
+
+/--- ftd.image:
+/src: images/dark-mode.svg
+height: 18
+src: images/light-mode.svg
+$event-click$: toggle $fpm.dark-mode
+align: center
+
+
+--- container: ftd.main
+
+-- ftd.column menu-mobile:
+sticky: true
+height: calc 100vh - 0px
+overflow-y: auto
+width: percent 70
+align: top-left
+padding-left: 10
+padding-top: 15
+padding-right: 20
+padding-bottom: 40
+border-right: 1
+border-color: #ebedef
+anchor: window
+left: 0
+top: 0
+background-color: #ccc
+shadow-offset-x: 3
+shadow-offset-y: 0
+shadow-size: 1
+shadow-blur: 10
+shadow-color: rgba (0, 0, 0, 0.05)
+z-index: 4
+
+--- ftd.text: work in progress
+
+
+
+
+
+-- ftd.text site-link: $title
+caption title:
+size: 16
+style: semi-bold
+font: Roboto
+color: white
+color if $fpm.dark-mode: #333
+line-height: 22
+align: center
+white
+
+
+
+
+
+
+-- ftd.row header-item-mobile:
+caption title:
+string link:
+toc-item list children: 
+optional string text-color:
+optional string active-text-color:
+optional string current-url:
+optional integer menu-right:
+optional integer menu-left:
+integer link-height: 16
+optional string link-style:
+toc-item list toc-obj:
+sticky: true
+height: calc 100vh - 0px
+overflow-y: auto
+/width: $toc-mobile-sidebar-width
+align: top-left
+anchor: window
+left: 0
+top: 0
+shadow-offset-x: 3
+shadow-offset-y: 0
+shadow-size: 1
+shadow-blur: 10
+shadow-color: rgba (0, 0, 0, 0.05)
+z-index: 4
+/boolean mouseover: false
+/$event-mouse-enter$: $mouseover = true
+/$event-mouse-leave$: $mouseover = false
+
+
+
+
+
+
+
+
 -- ftd.column show-children:
 toc-item list children: 
 optional integer left: 
@@ -427,6 +682,7 @@ size: 14
 line-height: 12
 width: fill
 border-radius: 4
+
 
 
 
@@ -482,3 +738,9 @@ $processor$: toc
   - Articles: /index/
   - Home Pictures: /index/  
 - Support: /support/
+
+
+
+
+
+
