@@ -66,13 +66,14 @@ reference: header-1200.png
 reference-width: fill
 
 \-- header:
-site-logo: logo.png
+site-logo: logo-text.png
 site-url: /
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
-current-url: /
 link-style: bold
+menu-right: 0
+menu-left: -73
 
 --- header:
 site-logo: logo-text.png
@@ -90,18 +91,20 @@ reference: header-black-1200.png
 reference-width: fill
 
 \-- header:
-site-logo: logo.png
+background: #2B2B2B
+text-color: #F7CE46
+active-text-color: #F7CE46
+site-logo: site-logo.png
 site-url: /
-current-url: /
+current-url: /payments/
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
 logo-width: 78
-background: #2B2B2B
-text-color: #F7CE46
-active-text-color: #F7CE46
-width: fill
 link-height: 16
+width: fill
+menu-left: -73
+menu-right: 0
 
 --- header:
 background: #2B2B2B
@@ -117,7 +120,7 @@ logo-width: 78
 link-height: 16
 width: fill
 menu-left: -73
-menu-right: 13
+menu-right: 0
 
 
 
@@ -154,6 +157,7 @@ site-url: /
 toc-bottom-left: $toc-bottom-left
 link-style: bold
 menu-left: -73
+menu-right: 0
 
 
 
