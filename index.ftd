@@ -221,6 +221,27 @@ if: $sidebar-open
 
 --- menu-mobile:
 if: $sidebar-open
+site-logo: $site-logo
+site-url: $site-url 
+current-url: $current-url
+toc-top-right: $toc-top-right
+toc-bottom-left: $toc-bottom-left 
+toc-bottom-right: $toc-bottom-right
+menu-left: $menu-left 
+menu-right: $menu-right
+logo-width: $logo-width 
+logo-height: $logo-height 
+link-style: $link-style 
+background: $background  
+text-color: $text-color 
+active-text-color: $active-text-color
+link-height: $link-height
+width: $width
+menu-bg: $menu-bg
+menu-hover-bg: $menu-bg
+menu-link: $menu-link 
+menu-link-active: $menu-link-active
+menu-border: $menu-border
 
 
 --- header-desktop:
@@ -615,6 +636,28 @@ align: center
 --- container: ftd.main
 
 -- ftd.column menu-mobile:
+optional string site-logo:
+string site-url: 
+string current-url:
+toc-item list toc-top-right:
+toc-item list toc-bottom-left: 
+toc-item list toc-bottom-right:
+integer menu-left: 
+integer menu-right:
+optional string logo-width: 
+optional string logo-height: 
+string link-style: 
+string background:  
+string text-color: 
+string active-text-color:
+integer link-height: 
+string width: 
+width: $width
+optional string menu-bg:
+optional string menu-hover-bg:
+optional string menu-link:
+optional string menu-link-active:
+optional string menu-border:
 sticky: true
 height: calc 100vh - 0px
 overflow-y: auto
@@ -637,8 +680,25 @@ shadow-blur: 10
 shadow-color: rgba (0, 0, 0, 0.05)
 z-index: 4
 
---- ftd.text: work in progress
+--- ftd.column:
+width: 0
 
+--- header-item: $obj.title
+$loop$: $toc-bottom-left as $obj
+children: $obj.children 
+link: $obj.url
+text-color: $text-color
+active-text-color: $active-text-color
+current-url: $current-url
+link-height: $link-height
+link-style: $link-style
+/menu-right: $menu-right
+menu-left: $menu-left
+menu-bg: $menu-bg 
+menu-hover-bg: $menu-hover-bg
+menu-link: $menu-link
+menu-link-active: $menu-link-active
+menu-border: $menu-border
 
 
 
