@@ -20,14 +20,9 @@ This is the main header.
 -- pd.hidden-code: toc definitions
 
 
-\-- record toc-item:
-caption title:
-string url:
-toc-item list children:
+\-- fpm.toc-item list empty-toc:
 
-\-- toc-item list empty-toc:
-
-\-- toc-item list toc-top-right:
+\-- fpm.toc-item list toc-top-right:
 $processor$: toc
 
 - Roadmap: /roadmap/
@@ -37,7 +32,7 @@ $processor$: toc
   - Articles: /index/
   - Home Pictures: /index/
 
-\-- toc-item list toc-bottom-left:
+\-- fpm.toc-item list toc-bottom-left:
 $processor$: toc
 
 - Home: /home/
@@ -51,7 +46,7 @@ $processor$: toc
 - Security: /security/
 - All Products: /all-products/
 
-\-- toc-item list toc-bottom-right:
+\-- fpm.toc-item list toc-bottom-right:
 $processor$: toc
 
 - APIs & SKDs: /api-skd/
@@ -187,9 +182,9 @@ menu-right: 0
 optional string site-logo:
 string site-url: /
 string current-url: /payments/
-toc-item list toc-top-right: $empty-toc
-toc-item list toc-bottom-left: $empty-toc
-toc-item list toc-bottom-right: $empty-toc
+fpm.toc-item list toc-top-right: $empty-toc
+fpm.toc-item list toc-bottom-left: $empty-toc
+fpm.toc-item list toc-bottom-right: $empty-toc
 integer menu-left: 10
 integer menu-right: 10
 optional string logo-width: 
@@ -303,9 +298,9 @@ width: $width
 optional string site-logo:
 string site-url: 
 string current-url:
-toc-item list toc-top-right:
-toc-item list toc-bottom-left: 
-toc-item list toc-bottom-right:
+fpm.toc-item list toc-top-right:
+fpm.toc-item list toc-bottom-left:
+fpm.toc-item list toc-bottom-right:
 integer menu-left: 
 integer menu-right:
 optional string logo-width: 
@@ -481,7 +476,7 @@ border-color if $current-url == $link: $active-text-color
 -- ftd.row header-item: 
 caption title:
 string link:
-toc-item list children: 
+fpm.toc-item list children:
 optional string text-color:
 optional string active-text-color:
 optional string current-url:
@@ -561,9 +556,9 @@ $event-click$: toggle $sidebar-open
 optional string site-logo:
 string site-url: 
 string current-url:
-toc-item list toc-top-right:
-toc-item list toc-bottom-left: 
-toc-item list toc-bottom-right:
+fpm.toc-item list toc-top-right:
+fpm.toc-item list toc-bottom-left:
+fpm.toc-item list toc-bottom-right:
 integer menu-left: 
 integer menu-right:
 optional string logo-width: 
@@ -642,9 +637,9 @@ align: center
 optional string site-logo:
 string site-url: 
 string current-url:
-toc-item list toc-top-right:
-toc-item list toc-bottom-left: 
-toc-item list toc-bottom-right:
+fpm.toc-item list toc-top-right:
+fpm.toc-item list toc-bottom-left:
+fpm.toc-item list toc-bottom-right:
 integer menu-left: 
 integer menu-right:
 optional string logo-width: 
@@ -725,7 +720,7 @@ white
 -- ftd.row header-item-mobile:
 caption title:
 string link:
-toc-item list children: 
+fpm.toc-item list children:
 optional string text-color:
 optional string active-text-color:
 optional string current-url:
@@ -733,7 +728,7 @@ optional integer menu-right:
 optional integer menu-left:
 integer link-height: 16
 optional string link-style:
-toc-item list toc-obj:
+fpm.toc-item list toc-obj:
 sticky: true
 height: calc 100vh - 0px
 overflow-y: auto
@@ -760,7 +755,7 @@ z-index: 4
 
 
 -- ftd.column show-children:
-toc-item list children: 
+fpm.toc-item list children:
 optional integer left: 
 optional integer right: 
 optional string menu-bg:
@@ -820,15 +815,11 @@ border-radius: 4
 
 
 
--- record toc-item:
-caption title:
-string url:
-toc-item list children:
 
--- toc-item list empty-toc:
+-- fpm.toc-item list empty-toc:
 
 
--- toc-item list toc-top-right:
+-- fpm.toc-item list toc-top-right:
 $processor$: toc
 
 - Roadmap: /roadmap/
@@ -838,7 +829,7 @@ $processor$: toc
   - Articles: /index/
   - Home Pictures: /index/  
 
--- toc-item list toc-bottom-left:
+-- fpm.toc-item list toc-bottom-left:
 $processor$: toc
 
 - Home: /home/
@@ -853,7 +844,7 @@ $processor$: toc
 - All Products: /all-products/
 
 
--- toc-item list toc-bottom-right:
+-- fpm.toc-item list toc-bottom-right:
 $processor$: toc
 
 - APIs & SKDs: /api-skd/
