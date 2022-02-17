@@ -208,7 +208,7 @@ padding-top if not $fpm.mobile: 30
 color: white
 background-color: $background
 /background-color if $fpm.dark-mode: $background
-
+z-index: 10
 
 --- mobile-sidebar:
 if: $sidebar-open
