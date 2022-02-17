@@ -188,7 +188,7 @@ fpm.toc-item list toc-bottom-left: $empty-toc
 fpm.toc-item list toc-bottom-right: $empty-toc
 integer menu-left: 10
 integer menu-right: 10
-optional string logo-width: fill
+optional string logo-width: 
 optional string logo-height: 38
 string link-style: regular
 string background: #F8FAFC 
