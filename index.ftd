@@ -182,6 +182,7 @@ menu-right: 0
 -- ftd.column header:
 optional string site-logo:
 string site-url: /
+string menu-icon: hamburger.png
 string current-url: /payments/
 fpm.toc-item list toc-top-right: $empty-toc
 fpm.toc-item list toc-bottom-left: $empty-toc
@@ -219,6 +220,7 @@ if: $sidebar-open
 --- menu-mobile:
 if: $sidebar-open
 site-logo: $site-logo
+menu-icon: $menu-icon
 site-url: $site-url 
 current-url: $current-url
 toc-top-right: $toc-top-right
@@ -269,6 +271,7 @@ menu-border: $menu-border
 --- header-mobile:
 if: $fpm.mobile
 site-logo: $site-logo
+menu-icon: $menu-icon
 site-url: $site-url 
 current-url: $current-url
 toc-top-right: $toc-top-right
@@ -554,6 +557,7 @@ $event-click$: toggle $sidebar-open
 
 
 -- ftd.row header-mobile:
+string menu-icon:
 optional string site-logo:
 string site-url: 
 string current-url:
@@ -583,7 +587,7 @@ spacing: 25
 id: left-side
 
 --- ftd.image:
-src: hamburger.png
+src: $menu-icon
 width: 24
 height: auto
 $event-click$: toggle $sidebar-open
@@ -636,6 +640,7 @@ align: center
 
 -- ftd.column menu-mobile:
 optional string site-logo:
+string menu-icon:
 string site-url: 
 string current-url:
 fpm.toc-item list toc-top-right:
