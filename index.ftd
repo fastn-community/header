@@ -603,7 +603,7 @@ width: 78
 height: 32
 
 
---- site-link: $site-url
+/--- site-link: $site-url
 
 --- container: left-side
 
