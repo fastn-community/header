@@ -687,6 +687,26 @@ z-index: 4
 --- ftd.column:
 width: 0
 
+
+--- header-item: $obj.title
+$loop$: $toc-top-right as $obj
+children: $obj.children 
+link: $obj.url
+text-color: $text-color
+active-text-color: $active-text-color
+current-url: $current-url
+link-height: $link-height
+link-style: $link-style
+/menu-right: $menu-right
+menu-left: $menu-left
+menu-bg: $menu-bg 
+menu-hover-bg: $menu-hover-bg
+menu-link: $menu-link
+menu-link-active: $menu-link-active
+menu-border: $menu-border
+
+
+
 --- header-item: $obj.title
 $loop$: $toc-bottom-left as $obj
 children: $obj.children 
@@ -703,6 +723,25 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
+
+
+--- header-item: $obj.title
+$loop$: $toc-bottom-right as $obj
+children: $obj.children 
+link: $obj.url
+text-color: $text-color
+active-text-color: $active-text-color
+current-url: $current-url
+link-height: $link-height
+link-style: $link-style
+/menu-right: $menu-right
+menu-left: $menu-left
+menu-bg: $menu-bg 
+menu-hover-bg: $menu-hover-bg
+menu-link: $menu-link
+menu-link-active: $menu-link-active
+menu-border: $menu-border
+
 
 
 
