@@ -281,6 +281,10 @@ current-url: $current-url
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left 
 toc-bottom-right: $toc-bottom-right
+include-dark-mode-switcher: $include-dark-mode-switcher
+menu-border: $menu-border
+menu-bg: $menu-bg
+menu-hover-bg: $menu-hover-bg
 menu-left: $menu-left 
 menu-right: $menu-right
 logo-width: $logo-width 
@@ -573,6 +577,7 @@ string current-url:
 fpm.toc-item list toc-top-right:
 fpm.toc-item list toc-bottom-left:
 fpm.toc-item list toc-bottom-right:
+boolean include-dark-mode-switcher:
 integer menu-left: 
 integer menu-right:
 optional string logo-width: 
@@ -582,6 +587,9 @@ string background:
 string text-color: 
 string active-text-color:
 integer link-height: 
+string menu-hover-bg:
+string menu-border:
+string menu-bg: 
 string width: 
 width: $width
 background-color: $background
@@ -627,6 +635,14 @@ position: right
 spacing: 30
 width: auto
 
+
+--- dms.switcher:
+if: $include-dark-mode-switcher
+background: $menu-bg 
+text-color: $text-color
+menu-hover: $menu-hover-bg
+menu-border: $menu-border
+font-family: Roboto
 
 
 /--- ftd.image:
