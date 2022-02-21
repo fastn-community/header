@@ -575,7 +575,7 @@ string active-text-color:
 integer link-height: 
 string width: 
 width: $width
-background-color: #ccc
+background-color: $background
 background-color if $fpm.dark-mode: #333
 padding-horizontal: 20
 padding-vertical: 15
@@ -676,7 +676,7 @@ border-color: #ebedef
 anchor: window
 left: 0
 top: 0
-background-color: #ccc
+background-color: $background
 shadow-offset-x: 3
 shadow-offset-y: 0
 shadow-size: 1
