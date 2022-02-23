@@ -340,7 +340,7 @@ width: fill
 --- ftd.row:
 position: left
 width: fill
-id: right-side-top
+id: left-side-top
 
 --- ftd.image:
 src: $site-logo
@@ -354,6 +354,9 @@ position: right
 width: fill
 id: right-side-top
 /spacing: 10
+
+--- ftd.row:
+
 
 --- header-item: $obj.title
 $loop$: $toc-top-right as $obj
@@ -372,6 +375,10 @@ menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
 
+/--- container: ftd.main
+
+--- ftd.row:
+margin-right: 20
 
 --- dms.switcher:
 if: $include-dark-mode-switcher
@@ -513,15 +520,16 @@ optional string link-style:
 /spacing: 10
 align: center
 /move-left: 22
-boolean mouseover: false
-$event-mouse-enter$: $mouseover = true
-$event-mouse-leave$: $mouseover = false
+boolean open: false
+$event-click$: toggle $open
+/$event-mouse-enter$: $mouseover = true
+/$event-mouse-leave$: $mouseover = false
 
 --- ftd.text: $title
 size: 14
 font: Roboto
 style: $link-style
-link: $link
+link if $children is empty: $link
 line-height: $link-height
 padding-bottom: 15
 white-space: nowrap
@@ -545,18 +553,22 @@ move-left: 30
 
 --- ftd.column:
 width: 0
-if: $mouseover
+if: $open
 
 --- show-children:
 if: $children is not empty
 children: $children
-left: $menu-left
-right: $menu-right
 menu-bg: $menu-bg
 menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
+
+
+
+
+
+
 
 -- ftd.column mobile-sidebar:
 anchor: window
