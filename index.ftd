@@ -287,6 +287,8 @@ menu-bg: $menu-bg
 menu-hover-bg: $menu-hover-bg
 menu-left: $menu-left 
 menu-right: $menu-right
+menu-link: $menu-link 
+menu-link-active: $menu-link-active
 logo-width: $logo-width 
 logo-height: $logo-height 
 link-style: $link-style 
@@ -380,8 +382,10 @@ margin-right: 20
 --- dms.switcher:
 if: $include-dark-mode-switcher
 background: $menu-bg 
-text-color: $text-color
-menu-hover: $menu-hover-bg
+menu-bg: $menu-bg 
+menu-hover-bg: $menu-hover-bg
+menu-link: $menu-link
+menu-link-active: $menu-link-active
 menu-border: $menu-border
 font-family: Roboto
 
@@ -594,6 +598,8 @@ integer link-height:
 string menu-hover-bg:
 string menu-border:
 string menu-bg: 
+string menu-link: 
+string menu-link-active: 
 string width: 
 width: $width
 background-color: $background
@@ -643,10 +649,13 @@ width: auto
 --- dms.switcher:
 if: $include-dark-mode-switcher
 background: $menu-bg 
-text-color: $text-color
-menu-hover: $menu-hover-bg
+menu-bg: $menu-bg 
+menu-hover-bg: $menu-hover-bg
+menu-link: $menu-link
+menu-link-active: $menu-link-active
 menu-border: $menu-border
 font-family: Roboto
+
 
 
 /--- ftd.image:
