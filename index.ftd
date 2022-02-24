@@ -27,7 +27,7 @@ This is the main header.
 $processor$: toc
 
 - Roadmap: /roadmap/
-- Journal: /journal/
+- Journal: 
   - Home Index: /index/
   - Docs: /index/
   - Articles: /index/
@@ -36,7 +36,7 @@ $processor$: toc
 \-- fpm.toc-item list toc-bottom-left:
 $processor$: toc
 
-- Home: /home/
+- Home: 
   - Home Index: /index/
   - Docs: /index/
   - Articles: /index/
@@ -50,7 +50,7 @@ $processor$: toc
 \-- fpm.toc-item list toc-bottom-right:
 $processor$: toc
 
-- APIs & SKDs: /api-skd/
+- APIs & SKDs: 
   - API: /api/
   - Stripe.js: /index/
   - CLI: /cli/
@@ -504,7 +504,7 @@ border-color if $current-url == $link: $active-text-color
 
 -- ftd.row header-item: 
 caption title:
-string link:
+optional string link:
 fpm.toc-item list children:
 optional string text-color:
 optional string active-text-color:
@@ -540,6 +540,8 @@ border-bottom if $current-url == $link: 2
 border-color if $current-url == $link: $active-text-color
 margin-left: 10
 move-left: 22
+
+
 
 --- ftd.text: ﹀
 if: $children is not empty
@@ -864,15 +866,38 @@ z-index: 4
 padding: 5
 min-width: 150
 
-
---- ftd.text: $obj.title
-link: $obj.url
+--- l:
+obj: $obj
 $loop$: $children as $obj
-optional string menu-bg:
+menu-hover-bg: $menu-hover-bg
+menu-link: $menu-link
+menu-link-active: $menu-link-active
+ 
+
+
+-- ftd.column l:
+fpm.toc-item obj:
 optional string menu-hover-bg:
 optional string menu-link:
 optional string menu-link-active:
-optional string menu-border:
+
+--- ftd.text: $obj.title
+if: $obj.url is not null
+link: $obj.url
+color: $menu-link
+color if $MOUSE-IN: $menu-link-active
+background-color if $MOUSE-IN: $menu-hover-bg
+white-space: nowrap
+padding-vertical: 8
+padding-horizontal: 10
+font: Roboto
+size: 14
+line-height: 12
+width: fill
+border-radius: 4
+
+--- ftd.text: $obj.title
+if: $obj.url is null
 color: $menu-link
 color if $MOUSE-IN: $menu-link-active
 background-color if $MOUSE-IN: $menu-hover-bg
@@ -897,8 +922,6 @@ border-radius: 4
 
 
 
-
-
 -- fpm.toc-item list empty-toc:
 
 
@@ -906,7 +929,7 @@ border-radius: 4
 $processor$: toc
 
 - Roadmap: /roadmap/
-- Journal: /journal/
+- Journal: 
   - Home Index: /index/
   - Docs: /index/
   - Articles: /index/
@@ -915,7 +938,7 @@ $processor$: toc
 -- fpm.toc-item list toc-bottom-left:
 $processor$: toc
 
-- Home: /home/
+- Home: 
   - Home Bottom: /index/
   - Docs: /index/
   - Articles: /index/
@@ -930,7 +953,7 @@ $processor$: toc
 -- fpm.toc-item list toc-bottom-right:
 $processor$: toc
 
-- APIs & SKDs: /api-skd/
+- APIs & SKDs: 
   - API: /api/
   - Stripe.js: /index/
   - CLI: /cli/
