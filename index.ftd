@@ -99,7 +99,7 @@ current-url: /payments/
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
-logo-width: 78
+logo-width: auto
 link-height: 16
 width: fill
 menu-left: -88
@@ -120,7 +120,7 @@ current-url: /payments/
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
-logo-width: 78
+logo-width: auto
 link-height: 16
 width: fill
 menu-left: -88
@@ -192,7 +192,7 @@ fpm.toc-item list toc-bottom-right: $empty-toc
 integer menu-left: 10
 integer menu-right: 10
 optional string logo-width: 
-optional string logo-height: 38
+optional string logo-height: 26
 string link-style: regular
 string background: #F8FAFC 
 string text-color: #3E4255
@@ -207,9 +207,9 @@ string width: fill
 string font-family: Roboto 
 boolean include-dark-mode-switcher: true
 width: $width
-padding-left if not $fpm.mobile: 20
-padding-right if not $fpm.mobile: 10
-padding-top if not $fpm.mobile: 30
+padding-left if not $fpm.mobile: 10
+padding-right if not $fpm.mobile: 0
+padding-top if not $fpm.mobile: 20
 /padding-vertical if not $fpm.mobile: 30
 color: white
 background-color: $background
@@ -379,6 +379,7 @@ font-family: $font-family
 
 --- ftd.row:
 margin-right: 20
+margin-top: -2
 
 --- dms.switcher:
 if: $include-dark-mode-switcher
@@ -398,7 +399,7 @@ if: $site-url is not null
 --- ftd.row:
 width: fill
 id: bottom-row
-padding-top: 29
+padding-top: 25
 
 --- ftd.column:
 position: left
