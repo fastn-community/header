@@ -308,7 +308,6 @@ font-family: $font-family
 
 
 
-
 -- ftd.column header-desktop:
 optional string site-logo:
 string site-url: 
