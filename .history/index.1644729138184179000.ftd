@@ -270,8 +270,8 @@ integer link-height: 16
 optional string link-style:
 spacing: 10
 boolean mouseover: false
-$event-mouseenter$: $mouseover = true
-$event-mouseleave$: $mouseover = false
+$on-mouseenter$: $mouseover = true
+$on-mouseleave$: $mouseover = false
 
 --- ftd.text: $title
 size: 14

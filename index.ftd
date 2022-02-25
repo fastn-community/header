@@ -517,15 +517,17 @@ optional string menu-link:
 optional string menu-link-active:
 optional string menu-border:
 integer link-height: 16
-optional string link-style:
+string link-style:
 /spacing: 10
 align: center
 /move-left: 22
 boolean open: false
 $on-click$: toggle $open
+$on-click-outside$: $open = false
 
 
 --- ftd.text: $title
+if: $link is not null
 size: 14
 font: Roboto
 style: $link-style
@@ -538,6 +540,19 @@ color: $text-color
 color if $current-url == $link: $active-text-color
 border-bottom if $current-url == $link: 2
 border-color if $current-url == $link: $active-text-color
+margin-left: 10
+move-left: 22
+
+--- ftd.text: $title
+if: $link is null
+size: 14
+font: Roboto
+style: $link-style
+line-height: $link-height
+padding-bottom: 15
+white-space: nowrap
+padding-horizontal: 12
+color: $text-color
 margin-left: 10
 move-left: 22
 
@@ -829,8 +844,8 @@ shadow-blur: 10
 shadow-color: rgba (0, 0, 0, 0.05)
 z-index: 4
 /boolean mouseover: false
-/$event-mouse-enter$: $mouseover = true
-/$event-mouse-leave$: $mouseover = false
+/$on-mouse-enter$: $mouseover = true
+/$on-mouse-leave$: $mouseover = false
 
 
 
