@@ -204,6 +204,7 @@ string menu-link: #5469d4
 string menu-link-active: #1a1f36 
 string menu-border: #EEEEEE
 string width: fill
+string font-family: Roboto 
 boolean include-dark-mode-switcher: true
 width: $width
 padding-left if not $fpm.mobile: 20
@@ -244,7 +245,7 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link 
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-
+font-family: $font-family
 
 --- header-desktop:
 if: not $fpm.mobile
@@ -270,7 +271,7 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link 
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-
+font-family: $font-family
 
 --- header-mobile:
 if: $fpm.mobile
@@ -297,7 +298,7 @@ text-color: $text-color
 active-text-color: $active-text-color
 link-height: $link-height
 width: $width
-
+font-family: $font-family
 
 
 
@@ -327,6 +328,7 @@ string active-text-color:
 integer link-height: 
 string width: 
 width: $width
+optional string font-family:
 optional string menu-bg:
 optional string menu-hover-bg:
 optional string menu-link:
@@ -373,7 +375,7 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-
+font-family: $font-family
 
 
 --- ftd.row:
@@ -387,7 +389,7 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-font-family: Roboto
+font-family: $font-family
 
 /--- site-url: $site-url
 if: $site-url is not null
@@ -424,6 +426,7 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
+font-family: $font-family
 
 --- container: bottom-row
 
@@ -452,13 +455,14 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-
+font-family: $font-family
 
 
 -- ftd.text site-url: $title
 caption title:
+optional string font-family:
 size: 24
-font: Roboto-700
+font: $font-family
 line-height: 22
 align: center
 white-space: nowrap
@@ -478,10 +482,11 @@ string link:
 optional string text-color:
 optional string active-text-color:
 optional string current-url:
+optional string font-family:
 integer link-height: 16
 optional string link-style:
 size: 14
-font: Roboto
+font: $font-family
 style: $link-style
 link: $link
 line-height: $link-height
@@ -516,6 +521,7 @@ optional string menu-hover-bg:
 optional string menu-link:
 optional string menu-link-active:
 optional string menu-border:
+optional string font-family:
 integer link-height: 16
 string link-style:
 /spacing: 10
@@ -529,7 +535,7 @@ $on-click-outside$: $open = false
 --- ftd.text: $title
 if: $link is not null
 size: 14
-font: Roboto
+font: $font-family
 style: $link-style
 link: $link
 line-height: $link-height
@@ -546,7 +552,7 @@ move-left: 22
 --- ftd.text: $title
 if: $link is null
 size: 14
-font: Roboto
+font: $font-family
 style: $link-style
 line-height: $link-height
 padding-bottom: 15
@@ -582,6 +588,7 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
+font-family: $font-family
 
 -- ftd.column mobile-sidebar:
 anchor: window
@@ -611,6 +618,7 @@ string link-style:
 string background:  
 string text-color: 
 string active-text-color:
+optional string font-family:
 integer link-height: 
 string menu-hover-bg:
 string menu-border:
@@ -671,7 +679,7 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-font-family: Roboto
+font-family: $font-family
 
 
 
@@ -717,6 +725,7 @@ optional string menu-hover-bg:
 optional string menu-link:
 optional string menu-link-active:
 optional string menu-border:
+optional string font-family:
 sticky: true
 height: calc 100vh - 0px
 overflow-y: auto
@@ -759,7 +768,7 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-
+font-family: $font-family
 
 
 --- header-item: $obj.title
@@ -778,7 +787,7 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-
+font-family: $font-family
 
 --- header-item: $obj.title
 $loop$: $toc-bottom-right as $obj
@@ -796,16 +805,17 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-
+font-family: $font-family
 
 
 
 
 -- ftd.text site-link: $title
 caption title:
+optional string font-family:
 size: 16
 style: semi-bold
-font: Roboto
+font: $font-family
 color: white
 color if $fpm.dark-mode: #333
 line-height: 22
@@ -826,6 +836,7 @@ optional string active-text-color:
 optional string current-url:
 optional integer menu-right:
 optional integer menu-left:
+optional string font-family:
 integer link-height: 16
 optional string link-style:
 fpm.toc-item list toc-obj:
@@ -863,6 +874,7 @@ optional string menu-hover-bg:
 optional string menu-link:
 optional string menu-link-active:
 optional string menu-border:
+optional string font-family:
 if: $children is not empty
 anchor: parent
 left if $left is not null: $left
@@ -887,7 +899,7 @@ $loop$: $children as $obj
 menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
- 
+font-family: $font-family 
 
 
 -- ftd.column l:
@@ -895,6 +907,8 @@ fpm.toc-item obj:
 optional string menu-hover-bg:
 optional string menu-link:
 optional string menu-link-active:
+optional string font-family:
+width: fill
 
 --- ftd.text: $obj.title
 if: $obj.url is not null
@@ -905,7 +919,7 @@ background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
-font: Roboto
+font: $font-family
 size: 14
 line-height: 12
 width: fill
@@ -919,7 +933,7 @@ background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
-font: Roboto
+font: $font-family
 size: 14
 line-height: 12
 width: fill
