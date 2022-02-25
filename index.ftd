@@ -522,7 +522,7 @@ optional string link-style:
 align: center
 /move-left: 22
 boolean open: false
-$event-click$: toggle $open
+$on-click$: toggle $open
 
 
 --- ftd.text: $title
@@ -576,7 +576,7 @@ left: 0
 right: 0
 background-color:  rgba (227, 227, 227, 0.9)
 z-index: 1
-$event-click$: toggle $sidebar-open
+$on-click$: toggle $sidebar-open
 
 
 -- ftd.row header-mobile:
@@ -619,7 +619,7 @@ id: left-side
 src: $menu-icon
 width: 24
 height: auto
-$event-click$: toggle $sidebar-open
+$on-click$: toggle $sidebar-open
 position: center
 
 --- ftd.row:
@@ -672,7 +672,7 @@ align: center
 /src: images/dark-mode.svg
 height: 18
 src: images/light-mode.svg
-$event-click$: toggle $fpm.dark-mode
+$on-click$: toggle $fpm.dark-mode
 align: center
 
 
