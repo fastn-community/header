@@ -379,7 +379,7 @@ font-family: $font-family
 
 --- ftd.row:
 margin-right: 25
-margin-top: -2
+margin-top: -6
 
 --- dms.switcher:
 if: $include-dark-mode-switcher
