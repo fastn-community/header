@@ -378,6 +378,7 @@ font-family: $font-family
 
 
 --- ftd.row:
+if: $include-dark-mode-switcher
 margin-right: 25
 margin-top: -6
 
