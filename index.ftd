@@ -2,6 +2,7 @@
 -- import: fifthtry.github.io/package-doc/doc as pd
 -- import: fpm
 -- import: dms
+-- import: lang
 
 -- boolean sidebar-open: false
 
@@ -376,6 +377,10 @@ menu-link-active: $menu-link-active
 menu-border: $menu-border
 font-family: $font-family
 
+--- lang.switcher:
+if: $fpm.language is not null
+current: $fpm.language
+languages: $fpm.language-toc
 
 --- ftd.row:
 if: $include-dark-mode-switcher
