@@ -419,6 +419,11 @@ margin-right: 15
 if: $fpm.language is not null
 current: $fpm.language
 languages: $fpm.language-toc
+switcher-text: EN
+size: 14
+color: $text-color
+dark-color: #FFFFFF
+horizontal-position: -115
 
 /--- lang.switcher:
 languages: $languages
@@ -720,12 +725,16 @@ menu-border: $menu-border
 font-family: $font-family
 
 
-/--- lang.switcher:
+--- lang.switcher:
 if: $fpm.language is not null
 current: $fpm.language
 languages: $fpm.language-toc
+size: 14
+color: $text-color
+dark-color: #FFFFFF
+horizontal-position: -115
 
---- lang.switcher:
+/--- lang.switcher:
 languages: $languages
 current: English
 switcher-text: EN
@@ -801,30 +810,17 @@ shadow-blur: 10
 shadow-color: rgba (0, 0, 0, 0.05)
 z-index: 4
 
+
 --- ftd.column:
-width: 0
+width: fill
+border-bottom: 1
+border-color: #C4D9DF
+border-color if $fpm.dark-mode: #616161
+margin-bottom: 25
+padding-bottom: 10
 
 
---- header-item: $obj.title
-$loop$: $toc-top-right as $obj
-children: $obj.children 
-link: $obj.url
-text-color: $text-color
-active-text-color: $active-text-color
-current-url: $current-url
-link-height: $link-height
-link-style: $link-style
-/menu-right: $menu-right
-menu-left: $menu-left
-menu-bg: $menu-bg 
-menu-hover-bg: $menu-hover-bg
-menu-link: $menu-link
-menu-link-active: $menu-link-active
-menu-border: $menu-border
-font-family: $font-family
-
-
---- header-item: $obj.title
+--- header-item-mobile: $obj.title
 $loop$: $toc-bottom-left as $obj
 children: $obj.children 
 link: $obj.url
@@ -842,8 +838,48 @@ menu-link-active: $menu-link-active
 menu-border: $menu-border
 font-family: $font-family
 
---- header-item: $obj.title
+--- container: ftd.main
+
+--- ftd.column:
+width: fill
+border-bottom: 1
+border-color: #C4D9DF
+border-color if $fpm.dark-mode: #616161
+margin-bottom: 25
+padding-bottom: 10
+
+
+--- header-item-mobile: $obj.title
 $loop$: $toc-bottom-right as $obj
+children: $obj.children 
+link: $obj.url
+text-color: $text-color
+active-text-color: $active-text-color
+current-url: $current-url
+link-height: $link-height
+link-style: $link-style
+/menu-right: $menu-right
+menu-left: $menu-left
+menu-bg: $menu-bg 
+menu-hover-bg: $menu-hover-bg
+menu-link: $menu-link
+menu-link-active: $menu-link-active
+menu-border: $menu-border
+font-family: $font-family
+
+--- container: ftd.main
+
+--- ftd.column:
+width: fill
+border-bottom: 1
+border-color: #C4D9DF
+border-color if $fpm.dark-mode: #616161
+margin-bottom: 25
+padding-bottom: 10
+
+
+--- header-item-mobile: $obj.title
+$loop$: $toc-top-right as $obj
 children: $obj.children 
 link: $obj.url
 text-color: $text-color
@@ -880,36 +916,85 @@ white
 
 
 
--- ftd.row header-item-mobile:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- ftd.column header-item-mobile: 
 caption title:
-string link:
+optional string link:
 fpm.toc-item list children:
 optional string text-color:
 optional string active-text-color:
 optional string current-url:
 optional integer menu-right:
 optional integer menu-left:
+optional string menu-bg:
+optional string menu-hover-bg:
+optional string menu-link:
+optional string menu-link-active:
+optional string menu-border:
 optional string font-family:
 integer link-height: 16
-optional string link-style:
-fpm.toc-item list toc-obj:
-sticky: true
-height: calc 100vh - 0px
-overflow-y: auto
-/width: $toc-mobile-sidebar-width
-align: top-left
-anchor: window
-left: 0
-top: 0
-shadow-offset-x: 3
-shadow-offset-y: 0
-shadow-size: 1
-shadow-blur: 10
-shadow-color: rgba (0, 0, 0, 0.05)
-z-index: 4
-/boolean mouseover: false
-/$on-mouse-enter$: $mouseover = true
-/$on-mouse-leave$: $mouseover = false
+string link-style:
+width: fill
+align: left
+boolean open: false
+$on-click$: toggle $open
+$on-click-outside$: $open = false
+
+
+--- ftd.text: $title
+if: $link is not null
+size: 14
+font: $font-family
+style: $link-style
+link: $link
+line-height: $link-height
+white-space: nowrap
+padding-horizontal: 10
+color: $text-color
+color if $current-url == $link: $active-text-color
+/border-bottom if $current-url == $link: 2
+/border-color if $current-url == $link: $active-text-color
+
+--- ftd.text: $title
+if: $link is null
+size: 14
+font: $font-family
+style: $link-style
+line-height: $link-height
+white-space: nowrap
+padding-horizontal: 10
+color: $text-color
+
+--- ftd.column:
+if: $children is empty
+padding-bottom: 15
+
+--- show-children-mobile:
+if: $children is not empty
+children: $children
+menu-link: $menu-link
+menu-link-active: $menu-link-active
+font-family: $font-family
+
+
+
+
+
+
 
 
 
@@ -955,6 +1040,29 @@ menu-link-active: $menu-link-active
 font-family: $font-family 
 
 
+
+-- ftd.column show-children-mobile:
+fpm.toc-item list children:
+optional string menu-bg:
+optional string menu-hover-bg:
+optional string menu-link:
+optional string menu-link-active:
+optional string menu-border:
+optional string font-family:
+if: $children is not empty
+padding: 5
+min-width: 150
+padding-left: 15
+
+--- l-mobile:
+obj: $obj
+$loop$: $children as $obj
+menu-link: $menu-link
+menu-link-active: $menu-link-active
+font-family: $font-family 
+
+
+
 -- ftd.column l:
 fpm.toc-item obj:
 optional string menu-hover-bg:
@@ -983,6 +1091,47 @@ if: $obj.url is null
 color: $menu-link
 color if $MOUSE-IN: $menu-link-active
 background-color if $MOUSE-IN: $menu-hover-bg
+white-space: nowrap
+padding-vertical: 8
+padding-horizontal: 10
+font: $font-family
+size: 14
+line-height: 12
+width: fill
+border-radius: 4
+
+
+
+
+
+
+
+
+-- ftd.column l-mobile:
+fpm.toc-item obj:
+optional string menu-link:
+optional string menu-link-active:
+optional string font-family:
+width: fill
+
+--- ftd.text: $obj.title
+if: $obj.url is not null
+link: $obj.url
+color: $menu-link
+color if $MOUSE-IN: $menu-link-active
+white-space: nowrap
+padding-vertical: 8
+padding-horizontal: 10
+font: $font-family
+size: 14
+line-height: 12
+width: fill
+border-radius: 4
+
+--- ftd.text: $obj.title
+if: $obj.url is null
+color: $menu-link
+color if $MOUSE-IN: $menu-link-active
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
