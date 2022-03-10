@@ -10,6 +10,7 @@
 -- ftd.column:
 width: fill
 padding-horizontal: 50
+padding-horizontal if $fpm.mobile: 20
 
 -- pd.package: Header
 name: fifthtry.github.io/header
@@ -66,11 +67,11 @@ $processor$: toc
 
 
 -- pd.output: Basic usage example
-reference: header-1200.png
+reference: -/fifthtry.github.io/header/header-1200.png
 reference-width: fill
 
 \-- header:
-site-logo: logo-text.png
+site-logo: -/fifthtry.github.io/header/logo-text.png
 site-url: /
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
@@ -80,7 +81,7 @@ menu-right: 0
 menu-left: -88
 
 --- header:
-site-logo: logo-text.png
+site-logo: -/fifthtry.github.io/header/logo-text.png
 site-url: /
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
@@ -91,14 +92,14 @@ menu-left: -88
 
 
 -- pd.output: with design elements of light mode
-reference: header-black-1200.png
+reference: -/fifthtry.github.io/header/header-black-1200.png
 reference-width: fill
 
 \-- header:
 background: #2B2B2B
 text-color: #F7CE46
 active-text-color: #F7CE46
-site-logo: site-logo.png
+site-logo: -/fifthtry.github.io/header/site-logo.png
 site-url: /
 current-url: /payments/
 toc-top-right: $toc-top-right
@@ -119,7 +120,7 @@ menu-border: #464040
 background: #2B2B2B
 text-color: #F7CE46
 active-text-color: #F7CE46
-site-logo: site-logo.png
+site-logo: -/fifthtry.github.io/header/site-logo.png
 site-url: /
 current-url: /payments/
 toc-top-right: $toc-top-right
@@ -143,14 +144,14 @@ menu-border: #464040
 -- pd.output: Single Row Header 
 
 \-- header:
-site-logo: logo.png
+site-logo: -/fifthtry.github.io/header/logo.png
 site-url: /
 toc-top-right: $toc-top-right
 current-url: /
 link-style: bold
 
 --- header:
-site-logo: logo-text.png
+site-logo: -/fifthtry.github.io/header/logo-text.png
 site-url: /
 toc-top-right: $toc-top-right
 link-style: bold
@@ -160,7 +161,7 @@ menu-right: 0
 -- pd.output: Header with Left Menu 
 
 \-- header:
-site-logo: logo.png
+site-logo: -/fifthtry.github.io/header/logo.png
 site-url: /
 toc-bottom-left: $toc-bottom-left
 current-url: /
@@ -169,7 +170,7 @@ include-dark-mode-switcher: false
 include-language-switcher: false
 
 --- header:
-site-logo: logo-text.png
+site-logo: -/fifthtry.github.io/header/logo-text.png
 site-url: /
 toc-bottom-left: $toc-bottom-left
 link-style: bold
@@ -193,7 +194,7 @@ include-language-switcher: false
 -- ftd.column header:
 optional string site-logo:
 string site-url: /
-string menu-icon: hamburger.png
+string menu-icon: -/fifthtry.github.io/header/hamburger.png
 string current-url: /payments/
 fpm.toc-item list toc-top-right: $empty-toc
 fpm.toc-item list toc-bottom-left: $empty-toc
@@ -704,7 +705,7 @@ position: center
 
 --- ftd.row:
 position: right
-spacing: 25
+spacing: 15
 width: auto
 
 
@@ -717,6 +718,21 @@ menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
 font-family: $font-family
+
+
+/--- lang.switcher:
+if: $fpm.language is not null
+current: $fpm.language
+languages: $fpm.language-toc
+
+--- lang.switcher:
+languages: $languages
+current: English
+switcher-text: EN
+size: 14
+color: $text-color
+dark-color: #FFFFFF
+horizontal-position: -115
 
 
 
@@ -1034,7 +1050,7 @@ $processor$: toc
 
 
 
-/-- fpm.toc-item list languages:
+-- fpm.toc-item list languages:
 $processor$: toc
 
 - English: /
