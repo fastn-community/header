@@ -163,6 +163,7 @@ toc-bottom-left: $toc-bottom-left
 current-url: /
 link-style: bold
 include-dark-mode-switcher: false
+include-language-switcher: false
 
 --- header:
 site-logo: logo-text.png
@@ -172,6 +173,9 @@ link-style: bold
 menu-left: -88
 menu-right: 0
 include-dark-mode-switcher: false
+include-language-switcher: false
+
+
 
 
 
@@ -208,6 +212,7 @@ string menu-border: #EEEEEE
 string width: fill
 string font-family: $roboto-assets.fonts.Roboto
 boolean include-dark-mode-switcher: true
+boolean include-language-switcher: true
 width: $width
 padding-left if not $fpm.mobile: 10
 padding-right if not $fpm.mobile: 0
@@ -258,6 +263,7 @@ toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left 
 toc-bottom-right: $toc-bottom-right
 include-dark-mode-switcher: $include-dark-mode-switcher
+include-language-switcher: $include-language-switcher
 menu-left: $menu-left 
 menu-right: $menu-right
 logo-width: $logo-width 
@@ -285,6 +291,7 @@ toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left 
 toc-bottom-right: $toc-bottom-right
 include-dark-mode-switcher: $include-dark-mode-switcher
+include-language-switcher: $include-language-switcher
 menu-border: $menu-border
 menu-bg: $menu-bg
 menu-hover-bg: $menu-hover-bg
@@ -318,6 +325,7 @@ fpm.toc-item list toc-top-right:
 fpm.toc-item list toc-bottom-left:
 fpm.toc-item list toc-bottom-right:
 boolean include-dark-mode-switcher:
+boolean include-language-switcher:
 integer menu-left: 
 integer menu-right:
 optional string logo-width: 
@@ -378,10 +386,6 @@ menu-link-active: $menu-link-active
 menu-border: $menu-border
 font-family: $font-family
 
---- lang.switcher:
-if: $fpm.language is not null
-current: $fpm.language
-languages: $fpm.language-toc
 
 --- ftd.row:
 if: $include-dark-mode-switcher
@@ -400,6 +404,28 @@ font-family: $font-family
 
 /--- site-url: $site-url
 if: $site-url is not null
+
+--- ftd.row:
+if: $include-language-switcher
+margin-left: 15
+margin-right: 15
+
+
+--- lang.switcher:
+if: $fpm.language is not null
+current: $fpm.language
+languages: $fpm.language-toc
+
+/--- lang.switcher:
+languages: $languages
+current: English
+switcher-text: EN
+size: 14
+color: $text-color
+dark-color: #FFFFFF
+horizontal-position: -115
+
+
 
 --- container: ftd.main
 
@@ -617,6 +643,7 @@ fpm.toc-item list toc-top-right:
 fpm.toc-item list toc-bottom-left:
 fpm.toc-item list toc-bottom-right:
 boolean include-dark-mode-switcher:
+boolean include-language-switcher:
 integer menu-left: 
 integer menu-right:
 optional string logo-width: 
@@ -1002,3 +1029,12 @@ $processor$: toc
 
 
 
+
+
+/-- fpm.toc-item list languages:
+$processor$: toc
+
+- English: /
+- Hindi: /hi
+- Spanish: /es
+- German: /de
