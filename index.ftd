@@ -7,6 +7,9 @@
 
 -- boolean sidebar-open: false
 
+-- ftd.column:
+width: fill
+padding-horizontal: 50
 
 -- pd.package: Header
 name: fifthtry.github.io/header
