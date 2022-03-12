@@ -79,6 +79,7 @@ toc-bottom-right: $toc-bottom-right
 link-style: bold
 menu-right: 0
 menu-left: -88
+toc: ftd.text: Table of Contents 
 
 --- header:
 site-logo: -/fifthtry.github.io/header/logo-text.png
@@ -89,6 +90,7 @@ toc-bottom-right: $toc-bottom-right
 link-style: bold
 menu-right: 0
 menu-left: -88
+toc: ftd.text: Table of Contents 
 
 
 -- pd.output: with design elements of light mode
@@ -115,6 +117,7 @@ menu-hover-bg: #454545
 menu-link: #F6FAFF
 menu-link-active: #F7CE46 
 menu-border: #464040
+toc: ftd.text: Table of Contents 
 
 --- header:
 background: #2B2B2B
@@ -136,6 +139,7 @@ menu-hover-bg: #454545
 menu-link: #F6FAFF
 menu-link-active: #F7CE46 
 menu-border: #464040
+toc: ftd.text: Table of Contents 
 
 
 
@@ -149,6 +153,7 @@ site-url: /
 toc-top-right: $toc-top-right
 current-url: /
 link-style: bold
+toc: ftd.text: Table of Contents 
 
 --- header:
 site-logo: -/fifthtry.github.io/header/logo-text.png
@@ -156,6 +161,7 @@ site-url: /
 toc-top-right: $toc-top-right
 link-style: bold
 menu-right: 0
+toc: ftd.text: Table of Contents 
 
 
 -- pd.output: Header with Left Menu 
@@ -168,6 +174,7 @@ current-url: /
 link-style: bold
 include-dark-mode-switcher: false
 include-language-switcher: false
+toc: ftd.text: Table of Contents 
 
 --- header:
 site-logo: -/fifthtry.github.io/header/logo-text.png
@@ -178,6 +185,7 @@ menu-left: -88
 menu-right: 0
 include-dark-mode-switcher: false
 include-language-switcher: false
+toc: ftd.text: Table of Contents 
 
 
 
@@ -226,6 +234,8 @@ color: white
 background-color: $background
 /background-color if $fpm.dark-mode: $background
 z-index: 10
+ftd.ui toc:
+
 
 --- mobile-sidebar:
 if: $sidebar-open
@@ -257,6 +267,8 @@ menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
 font-family: $font-family
+toc: $toc
+
 
 --- header-desktop:
 if: not $fpm.mobile
@@ -285,6 +297,7 @@ menu-link-active: $menu-link-active
 menu-border: $menu-border
 font-family: $font-family
 
+
 --- header-mobile:
 if: $fpm.mobile
 site-logo: $site-logo
@@ -312,6 +325,12 @@ active-text-color: $active-text-color
 link-height: $link-height
 width: $width
 font-family: $font-family
+
+
+
+
+
+
 
 
 
@@ -635,6 +654,14 @@ menu-link-active: $menu-link-active
 menu-border: $menu-border
 font-family: $font-family
 
+
+
+
+
+
+
+
+
 -- ftd.column mobile-sidebar:
 anchor: window
 top: 0
@@ -644,6 +671,13 @@ right: 0
 background-color:  rgba (227, 227, 227, 0.9)
 z-index: 1
 $on-click$: toggle $sidebar-open
+
+
+
+
+
+
+
 
 
 -- ftd.row header-mobile:
@@ -747,6 +781,19 @@ align: center
 
 --- container: ftd.main
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- ftd.column menu-mobile:
 optional string site-logo:
 string menu-icon:
@@ -755,6 +802,7 @@ string current-url:
 fpm.toc-item list toc-top-right:
 fpm.toc-item list toc-bottom-left:
 fpm.toc-item list toc-bottom-right:
+ftd.ui toc:
 integer menu-left: 
 integer menu-right:
 optional string logo-width: 
@@ -911,6 +959,35 @@ text-color: $text-color
 text-color-dark: $text-color
 background: $menu-bg
 background-dark-mode: $menu-bg
+
+
+--- container: ftd.main
+
+--- ftd.column:
+width: fill
+border-top: 1
+border-color: #C4D9DF
+border-color if $fpm.dark-mode: #616161
+padding-bottom: 10
+padding-left: 15
+padding-top: 15
+color: #000000
+
+
+/--- ftd.text: tt1 of content
+
+--- toc:
+
+
+
+
+
+
+
+
+
+
+
 
 
 
