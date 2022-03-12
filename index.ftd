@@ -234,7 +234,7 @@ color: white
 background-color: $background
 /background-color if $fpm.dark-mode: $background
 z-index: 10
-ftd.ui toc: ftd.null: 
+ftd.ui toc: ftd.text: empty toc
 
 
 --- mobile-sidebar:
