@@ -419,7 +419,6 @@ margin-top: -6
 if: $include-dark-mode-switcher
 background: $menu-bg 
 menu-bg: $menu-bg 
-menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
@@ -486,7 +485,6 @@ link-style: $link-style
 /menu-right: $menu-right
 menu-left: $menu-left
 menu-bg: $menu-bg 
-menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
@@ -515,7 +513,6 @@ link-style: $link-style
 menu-right: $menu-right
 /menu-left: $menu-left
 menu-bg: $menu-bg 
-menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
@@ -648,7 +645,6 @@ children: $children
 left: $menu-left
 right: $menu-right
 menu-bg: $menu-bg
-menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
@@ -755,7 +751,6 @@ width: auto
 if: $include-dark-mode-switcher
 background: $menu-bg 
 menu-bg: $menu-bg 
-menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
@@ -893,7 +888,6 @@ link-style: $link-style
 /menu-right: $menu-right
 menu-left: $menu-left
 menu-bg: $menu-bg 
-menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
@@ -922,7 +916,6 @@ link-style: $link-style
 /menu-right: $menu-right
 menu-left: $menu-left
 menu-bg: $menu-bg 
-menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
@@ -1126,7 +1119,6 @@ min-width: 150
 --- l:
 obj: $obj
 $loop$: $children as $obj
-menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 font-family: $font-family 
