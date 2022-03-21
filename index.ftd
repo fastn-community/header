@@ -3,7 +3,8 @@
 -- import: fpm
 -- import: dms
 -- import: lang
--- import: fifthtry.github.io/roboto/assets as roboto-assets
+-- import: fifthtry.github.io/header/assets
+
 
 -- boolean sidebar-open: false
 
@@ -67,78 +68,74 @@ $processor$: toc
 
 
 -- pd.output: Basic usage example
-reference: -/fifthtry.github.io/header/header-1200.png
+reference: $assets.files.static.header.header-1200.png
 reference-width: fill
 
 \-- header:
-site-logo: -/fifthtry.github.io/header/logo-text.png
+site-logo: $assets.files.static.header.logo-text.png
 site-url: /
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
-link-style: bold
 menu-right: 0
 menu-left: -88
 toc: ftd.text: Table of Contents 
 
 --- header:
-site-logo: -/fifthtry.github.io/header/logo-text.png
+site-logo: $assets.files.static.header.logo-text.png
 site-url: /
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
-link-style: bold
 menu-right: 0
 menu-left: -88
 toc: ftd.text: Table of Contents 
 
 
 -- pd.output: with design elements of light mode
-reference: -/fifthtry.github.io/header/header-black-1200.png
+reference: $assets.files.static.header.header-black-1200.png
 reference-width: fill
 
 \-- header:
-background: #2B2B2B
-text-color: #F7CE46
-active-text-color: #F7CE46
-site-logo: -/fifthtry.github.io/header/site-logo.png
+background: $fpm.design.color.brand.region
+text-color: $fpm.design.color.brand.on-region
+active-text-color: $fpm.design.color.brand.on-region
+site-logo: $assets.files.static.header.site-logo.png
 site-url: /
 current-url: /payments/
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
 logo-width: auto
-link-height: 16
 width: fill
 menu-left: -88
 menu-right: 0
-menu-bg: #3D3C3C
-menu-hover-bg: #454545
-menu-link: #F6FAFF
-menu-link-active: #F7CE46 
-menu-border: #464040
+menu-bg: $fpm.design.color.brand.region
+menu-hover-bg: $fpm.design.color.brand.region
+menu-link: $fpm.design.color.brand.on-region
+menu-link-active: $fpm.design.color.brand.on-region 
+menu-border: $fpm.design.color.brand.on-region
 toc: ftd.text: Table of Contents 
 
 --- header:
-background: #2B2B2B
-text-color: #F7CE46
-active-text-color: #F7CE46
-site-logo: -/fifthtry.github.io/header/site-logo.png
+background: $fpm.design.color.brand.region
+text-color: $fpm.design.color.brand.on-region
+active-text-color: $fpm.design.color.brand.on-region
+site-logo: $assets.files.static.header.site-logo.png
 site-url: /
 current-url: /payments/
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
 logo-width: auto
-link-height: 16
 width: fill
 menu-left: -88
 menu-right: 0
-menu-bg: #3D3C3C
-menu-hover-bg: #454545
-menu-link: #F6FAFF
-menu-link-active: #F7CE46 
-menu-border: #464040
+menu-bg: $fpm.design.color.brand.region
+menu-hover-bg: $fpm.design.color.brand.region
+menu-link: $fpm.design.color.brand.on-region
+menu-link-active: $fpm.design.color.brand.on-region 
+menu-border: $fpm.design.color.brand.on-region
 toc: ftd.text: Table of Contents 
 
 
@@ -148,7 +145,7 @@ toc: ftd.text: Table of Contents
 -- pd.output: Single Row Header 
 
 \-- header:
-site-logo: -/fifthtry.github.io/header/logo.png
+site-logo: $assets.files.static.header.site-logo.png
 site-url: /
 toc-top-right: $toc-top-right
 current-url: /
@@ -156,7 +153,7 @@ link-style: bold
 toc: ftd.text: Table of Contents 
 
 --- header:
-site-logo: -/fifthtry.github.io/header/logo-text.png
+site-logo: $assets.files.static.header.site-logo.png
 site-url: /
 toc-top-right: $toc-top-right
 link-style: bold
@@ -167,7 +164,7 @@ toc: ftd.text: Table of Contents
 -- pd.output: Header with Left Menu 
 
 \-- header:
-site-logo: -/fifthtry.github.io/header/logo.png
+site-logo: $assets.files.static.header.site-logo.png
 site-url: /
 toc-bottom-left: $toc-bottom-left
 current-url: /
@@ -177,7 +174,7 @@ include-language-switcher: false
 toc: ftd.text: Table of Contents 
 
 --- header:
-site-logo: -/fifthtry.github.io/header/logo-text.png
+site-logo: $assets.files.static.header.logo-text.png
 site-url: /
 toc-bottom-left: $toc-bottom-left
 link-style: bold
@@ -200,9 +197,9 @@ toc: ftd.text: Table of Contents
 
 
 -- ftd.column header:
-optional string site-logo:
+optional ftd.image-src site-logo:
 string site-url: /
-string menu-icon: -/fifthtry.github.io/header/hamburger.png
+ftd.image-src menu-icon: $assets.files.static.header.hamburger.png
 string current-url: /payments/
 fpm.toc-item list toc-top-right: $empty-toc
 fpm.toc-item list toc-bottom-left: $empty-toc
@@ -212,17 +209,15 @@ integer menu-right: 10
 optional string logo-width: 
 optional string logo-height: 26
 string link-style: regular
-string background: #F8FAFC 
-string text-color: #3E4255
-string active-text-color: #5967CD 
-integer link-height: 16 
-string menu-bg: #FFFFFF
-string menu-hover-bg: #f7fafc
-string menu-link: #5469d4
-string menu-link-active: #1a1f36 
-string menu-border: #EEEEEE
+ftd.color background: $fpm.design.color.brand.region 
+ftd.color text-color: $fpm.design.color.brand.on-region
+ftd.color active-text-color: $fpm.design.color.brand.on-region
+ftd.color menu-bg: $fpm.design.color.brand.on-region
+ftd.color menu-hover-bg: $fpm.design.color.brand.on-region
+ftd.color menu-link: $fpm.design.color.brand.on-region
+ftd.color menu-link-active: $fpm.design.color.brand.on-region
+ftd.color menu-border: $fpm.design.color.brand.on-region
 string width: fill
-string font-family: $roboto-assets.fonts.Roboto
 boolean include-dark-mode-switcher: true
 boolean include-language-switcher: true
 width: $width
@@ -230,9 +225,8 @@ padding-left if not $fpm.mobile: 10
 padding-right if not $fpm.mobile: 0
 padding-top if not $fpm.mobile: 20
 /padding-vertical if not $fpm.mobile: 30
-color: white
+color: $fpm.design.color.brand.on-region
 background-color: $background
-/background-color if $fpm.dark-mode: $background
 z-index: 10
 ftd.ui toc: ftd.text: empty toc
 
@@ -259,14 +253,12 @@ link-style: $link-style
 background: $background  
 text-color: $text-color 
 active-text-color: $active-text-color
-link-height: $link-height
 width: $width
 menu-bg: $menu-bg
 menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link 
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-font-family: $font-family
 toc: $toc
 
 
@@ -288,14 +280,12 @@ link-style: $link-style
 background: $background  
 text-color: $text-color 
 active-text-color: $active-text-color
-link-height: $link-height
 width: $width
 menu-bg: $menu-bg
 menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link 
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-font-family: $font-family
 
 
 --- header-mobile:
@@ -322,9 +312,7 @@ link-style: $link-style
 background: $background  
 text-color: $text-color 
 active-text-color: $active-text-color
-link-height: $link-height
 width: $width
-font-family: $font-family
 
 
 
@@ -341,7 +329,7 @@ font-family: $font-family
 
 
 -- ftd.column header-desktop:
-optional string site-logo:
+optional ftd.image-src site-logo:
 string site-url: 
 string current-url:
 fpm.toc-item list toc-top-right:
@@ -354,18 +342,16 @@ integer menu-right:
 optional string logo-width: 
 optional string logo-height: 
 string link-style: 
-string background:  
-string text-color: 
-string active-text-color:
-integer link-height: 
+ftd.color background:  
+ftd.color text-color: 
+ftd.color active-text-color:
+ftd.color menu-bg:
+ftd.color menu-hover-bg:
+ftd.color menu-link:
+ftd.color menu-link-active:
+ftd.color menu-border:
 string width: 
 width: $width
-optional string font-family:
-optional string menu-bg:
-optional string menu-hover-bg:
-optional string menu-link:
-optional string menu-link-active:
-optional string menu-border:
 move-right: 10
 
 --- ftd.row:
@@ -398,8 +384,6 @@ link: $obj.url
 text-color: $text-color
 active-text-color: $active-text-color
 current-url: $current-url
-link-height: $link-height
-link-style: $link-style
 menu-right: $menu-right
 /menu-left: $menu-left
 menu-bg: $menu-bg 
@@ -407,7 +391,6 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-font-family: $font-family
 
 
 --- ftd.row:
@@ -422,7 +405,6 @@ menu-bg: $menu-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-font-family: $font-family
 
 /--- site-url: $site-url
 if: $site-url is not null
@@ -441,20 +423,16 @@ switcher-text: EN
 size: 14
 horizontal-position: -115
 text-color: $text-color
-text-color-dark: $text-color
 background: $menu-bg
-background-dark-mode: $menu-bg
 
-/--- lang.switcher:
+--- lang.switcher:
 languages: $languages
 current: English
 switcher-text: EN
 size: 14
 horizontal-position: -115
 text-color: $text-color
-text-color-dark: $text-color
 background: $menu-bg
-background-dark-mode: $menu-bg
 
 
 --- container: ftd.main
@@ -480,15 +458,13 @@ link: $obj.url
 text-color: $text-color
 active-text-color: $active-text-color
 current-url: $current-url
-link-height: $link-height
-link-style: $link-style
 /menu-right: $menu-right
 menu-left: $menu-left
 menu-bg: $menu-bg 
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-font-family: $font-family
+menu-hover-bg: $menu-hover-bg
 
 --- container: bottom-row
 
@@ -508,23 +484,18 @@ link: $obj.url
 text-color: $text-color
 active-text-color: $active-text-color
 current-url: $current-url
-link-height: $link-height
-link-style: $link-style
 menu-right: $menu-right
 /menu-left: $menu-left
 menu-bg: $menu-bg 
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-font-family: $font-family
+menu-hover-bg: $menu-hover-bg
 
 
 -- ftd.text site-url: $title
 caption title:
-optional string font-family:
-size: 24
-font: $font-family
-line-height: 22
+role: $fpm.design.type.label-large
 align: center
 white-space: nowrap
 
@@ -540,17 +511,13 @@ white-space: nowrap
 -- ftd.text header-top-right-item: $title
 caption title:
 string link:
-optional string text-color:
-optional string active-text-color:
+optional ftd.color text-color:
+optional ftd.color active-text-color:
 optional string current-url:
-optional string font-family:
 integer link-height: 16
 optional string link-style:
-size: 14
-font: $font-family
-style: $link-style
+role: $fpm.design.type.label-large
 link: $link
-line-height: $link-height
 align: center
 white-space: nowrap
 padding-horizontal: 10
@@ -572,22 +539,17 @@ border-color if $current-url == $link: $active-text-color
 caption title:
 optional string link:
 fpm.toc-item list children:
-optional string text-color:
-optional string active-text-color:
+ftd.color text-color:
+ftd.color active-text-color:
 optional string current-url:
 optional integer menu-right:
 optional integer menu-left:
-optional string menu-bg:
-optional string menu-hover-bg:
-optional string menu-link:
-optional string menu-link-active:
-optional string menu-border:
-optional string font-family:
-integer link-height: 16
-string link-style:
-/spacing: 10
+ftd.color menu-bg:
+ftd.color menu-hover-bg:
+ftd.color menu-link:
+ftd.color menu-link-active:
+ftd.color menu-border:
 align: center
-/move-left: 22
 boolean open: false
 $on-click$: toggle $open
 $on-click-outside$: $open = false
@@ -595,11 +557,8 @@ $on-click-outside$: $open = false
 
 --- ftd.text: $title
 if: $link is not null
-size: 14
-font: $font-family
-style: $link-style
+role: $fpm.design.type.label-large
 link: $link
-line-height: $link-height
 padding-bottom: 15
 white-space: nowrap
 padding-horizontal: 10
@@ -612,10 +571,7 @@ move-left: 22
 
 --- ftd.text: $title
 if: $link is null
-size: 14
-font: $font-family
-style: $link-style
-line-height: $link-height
+role: $fpm.design.type.label-large
 padding-bottom: 15
 white-space: nowrap
 padding-horizontal: 10
@@ -629,9 +585,7 @@ move-left: 22
 if: $children is not empty
 color: $text-color
 position: center
-size: 14
-style: bold
-line-height: $link-height
+role: $fpm.design.type.label-large
 move-up: 2
 move-left: 30
 
@@ -648,8 +602,7 @@ menu-bg: $menu-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-font-family: $font-family
-
+menu-hover-bg: $menu-hover-bg
 
 
 
@@ -664,7 +617,7 @@ top: 0
 bottom: 0
 left: 0
 right: 0
-background-color:  rgba (227, 227, 227, 0.9)
+background-color:  $fpm.design.color.brand.region
 z-index: 1
 $on-click$: toggle $sidebar-open
 
@@ -677,8 +630,8 @@ $on-click$: toggle $sidebar-open
 
 
 -- ftd.row header-mobile:
-string menu-icon:
-optional string site-logo:
+ftd.image-src menu-icon:
+ftd.image-src site-logo:
 string site-url: 
 string current-url:
 fpm.toc-item list toc-top-right:
@@ -691,20 +644,17 @@ integer menu-right:
 optional string logo-width: 
 optional string logo-height: 
 string link-style: 
-string background:  
-string text-color: 
-string active-text-color:
-optional string font-family:
-integer link-height: 
-string menu-hover-bg:
-string menu-border:
-string menu-bg: 
-string menu-link: 
-string menu-link-active: 
+ftd.color background:  
+ftd.color text-color: 
+ftd.color active-text-color:
+ftd.color menu-hover-bg:
+ftd.color menu-border:
+ftd.color menu-bg: 
+ftd.color menu-link: 
+ftd.color menu-link-active: 
 string width: 
 width: $width
 background-color: $background
-background-color if $fpm.dark-mode: #333
 padding-horizontal: 20
 padding-vertical: 15
 
@@ -754,7 +704,6 @@ menu-bg: $menu-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-font-family: $font-family
 
 
 
@@ -790,8 +739,8 @@ align: center
 
 
 -- ftd.column menu-mobile:
-optional string site-logo:
-string menu-icon:
+optional ftd.image-src site-logo:
+ftd.image-src menu-icon:
 string site-url: 
 string current-url:
 fpm.toc-item list toc-top-right:
@@ -803,17 +752,16 @@ integer menu-right:
 optional string logo-width: 
 optional string logo-height: 
 string link-style: 
-string background:  
-string text-color: 
-string active-text-color:
-integer link-height: 
+ftd.color background:  
 string width: 
 width: $width
-optional string menu-bg:
-optional string menu-hover-bg:
-optional string menu-link:
-optional string menu-link-active:
-optional string menu-border:
+ftd.color text-color:
+ftd.color active-text-color:
+ftd.color menu-bg:
+ftd.color menu-hover-bg:
+ftd.color menu-link:
+ftd.color menu-link-active:
+ftd.color menu-border:
 optional string font-family:
 sticky: true
 height: calc 100vh - 0px
@@ -825,7 +773,7 @@ padding-top: 15
 padding-right: 20
 padding-bottom: 40
 border-right: 1
-border-color: #ebedef
+border-color: $fpm.design.color.brand.on-region
 anchor: window
 left: 0
 top: 0
@@ -834,15 +782,14 @@ shadow-offset-x: 3
 shadow-offset-y: 0
 shadow-size: 1
 shadow-blur: 10
-shadow-color: rgba (0, 0, 0, 0.05)
+/shadow-color: rgba (0, 0, 0, 0.05)
 z-index: 4
 
 
 --- ftd.column:
 width: fill
 border-bottom: 1
-border-color: #C4D9DF
-border-color if $fpm.dark-mode: #616161
+border-color: $fpm.design.color.brand.on-region
 margin-bottom: 25
 padding-bottom: 10
 
@@ -854,7 +801,6 @@ link: $obj.url
 text-color: $text-color
 active-text-color: $active-text-color
 current-url: $current-url
-link-height: $link-height
 link-style: $link-style
 /menu-right: $menu-right
 menu-left: $menu-left
@@ -863,15 +809,13 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-font-family: $font-family
 
 --- container: ftd.main
 
 --- ftd.column:
 width: fill
 border-bottom: 1
-border-color: #C4D9DF
-border-color if $fpm.dark-mode: #616161
+border-color: $fpm.design.color.brand.on-region
 margin-bottom: 25
 padding-bottom: 10
 
@@ -883,23 +827,21 @@ link: $obj.url
 text-color: $text-color
 active-text-color: $active-text-color
 current-url: $current-url
-link-height: $link-height
 link-style: $link-style
 /menu-right: $menu-right
+menu-hover-bg: $menu-hover-bg
 menu-left: $menu-left
 menu-bg: $menu-bg 
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-font-family: $font-family
 
 --- container: ftd.main
 
 --- ftd.column:
 width: fill
 border-bottom: 1
-border-color: #C4D9DF
-border-color if $fpm.dark-mode: #616161
+border-color: $fpm.design.color.brand.on-region
 margin-bottom: 25
 padding-bottom: 10
 
@@ -911,23 +853,21 @@ link: $obj.url
 text-color: $text-color
 active-text-color: $active-text-color
 current-url: $current-url
-link-height: $link-height
 link-style: $link-style
 /menu-right: $menu-right
+menu-hover-bg: $menu-hover-bg
 menu-left: $menu-left
 menu-bg: $menu-bg 
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-font-family: $font-family
 
 
 --- ftd.column:
 if: $fpm.language is not null
 width: fill
 border-top: 1
-border-color: #C4D9DF
-border-color if $fpm.dark-mode: #616161
+border-color: $fpm.design.color.brand.on-region
 padding-bottom: 10
 padding-left: 15
 padding-top: 15
@@ -939,19 +879,15 @@ current: $fpm.language
 languages: $fpm.language-toc
 size: 14
 text-color: $text-color
-text-color-dark: $text-color
 background: $menu-bg
-background-dark-mode: $menu-bg
 
-/--- lang.switcher:
+--- lang.switcher:
 languages: $languages
 current: English
 switcher-text: EN
 size: 14
 text-color: $text-color
-text-color-dark: $text-color
 background: $menu-bg
-background-dark-mode: $menu-bg
 
 
 --- container: ftd.main
@@ -959,12 +895,11 @@ background-dark-mode: $menu-bg
 --- ftd.column:
 width: fill
 border-top: 1
-border-color: #C4D9DF
-border-color if $fpm.dark-mode: #616161
+border-color: $fpm.design.color.brand.on-region
 padding-bottom: 10
 padding-left: 15
 padding-top: 15
-color: #000000
+color: $fpm.design.color.brand.on-region
 
 
 /--- ftd.text: tt1 of content
@@ -987,14 +922,9 @@ color: #000000
 -- ftd.text site-link: $title
 caption title:
 optional string font-family:
-size: 16
-style: semi-bold
-font: $font-family
-color: white
-color if $fpm.dark-mode: #333
-line-height: 22
+role: $fpm.design.type.label-large
+color: $fpm.design.color.brand.on-region
 align: center
-white
 
 
 
@@ -1020,18 +950,16 @@ white
 caption title:
 optional string link:
 fpm.toc-item list children:
-optional string text-color:
-optional string active-text-color:
 optional string current-url:
 optional integer menu-right:
 optional integer menu-left:
-optional string menu-bg:
-optional string menu-hover-bg:
-optional string menu-link:
-optional string menu-link-active:
-optional string menu-border:
-optional string font-family:
-integer link-height: 16
+ftd.color text-color:
+ftd.color active-text-color:
+ftd.color menu-bg:
+ftd.color menu-hover-bg:
+ftd.color menu-link:
+ftd.color menu-link-active:
+ftd.color menu-border:
 string link-style:
 width: fill
 align: left
@@ -1042,11 +970,8 @@ $on-click-outside$: $open = false
 
 --- ftd.text: $title
 if: $link is not null
-size: 14
-font: $font-family
-style: $link-style
+role: $fpm.design.type.label-large
 link: $link
-line-height: $link-height
 white-space: nowrap
 padding-horizontal: 10
 color: $text-color
@@ -1056,10 +981,7 @@ color if $current-url == $link: $active-text-color
 
 --- ftd.text: $title
 if: $link is null
-size: 14
-font: $font-family
-style: $link-style
-line-height: $link-height
+role: $fpm.design.type.label-large
 white-space: nowrap
 padding-horizontal: 10
 color: $text-color
@@ -1073,8 +995,9 @@ if: $children is not empty
 children: $children
 menu-link: $menu-link
 menu-link-active: $menu-link-active
-font-family: $font-family
-
+menu-bg: $menu-bg
+menu-border: $menu-border
+menu-hover-bg: $menu-hover-bg
 
 
 
@@ -1092,12 +1015,11 @@ font-family: $font-family
 fpm.toc-item list children:
 optional integer left: 
 optional integer right: 
-optional string menu-bg:
-optional string menu-hover-bg:
-optional string menu-link:
-optional string menu-link-active:
-optional string menu-border:
-optional string font-family:
+ftd.color menu-bg:
+ftd.color menu-hover-bg:
+ftd.color menu-link:
+ftd.color menu-link-active:
+ftd.color menu-border:
 if: $children is not empty
 anchor: parent
 left if $left is not null: $left
@@ -1111,7 +1033,7 @@ shadow-offset-x: 3
 shadow-offset-y: 0
 shadow-size: 1
 shadow-blur: 10
-shadow-color: rgba (0, 0, 0, 0.05)
+/shadow-color: rgba (0, 0, 0, 0.05)
 z-index: 4
 padding: 5
 min-width: 150
@@ -1121,18 +1043,16 @@ obj: $obj
 $loop$: $children as $obj
 menu-link: $menu-link
 menu-link-active: $menu-link-active
-font-family: $font-family 
-
+menu-hover-bg: $menu-hover-bg
 
 
 -- ftd.column show-children-mobile:
 fpm.toc-item list children:
-optional string menu-bg:
-optional string menu-hover-bg:
-optional string menu-link:
-optional string menu-link-active:
-optional string menu-border:
-optional string font-family:
+ftd.color menu-bg:
+ftd.color menu-hover-bg:
+ftd.color menu-link:
+ftd.color menu-link-active:
+ftd.color menu-border:
 if: $children is not empty
 padding: 5
 min-width: 150
@@ -1143,16 +1063,14 @@ obj: $obj
 $loop$: $children as $obj
 menu-link: $menu-link
 menu-link-active: $menu-link-active
-font-family: $font-family 
 
 
 
 -- ftd.column l:
 fpm.toc-item obj:
-optional string menu-hover-bg:
-optional string menu-link:
-optional string menu-link-active:
-optional string font-family:
+ftd.color menu-hover-bg:
+ftd.color menu-link:
+ftd.color menu-link-active:
 width: fill
 
 --- ftd.text: $obj.title
@@ -1164,9 +1082,7 @@ background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
-font: $font-family
-size: 14
-line-height: 12
+role: $fpm.design.type.label-large
 width: fill
 border-radius: 4
 
@@ -1178,9 +1094,7 @@ background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
-font: $font-family
-size: 14
-line-height: 12
+role: $fpm.design.type.label-large
 width: fill
 border-radius: 4
 
@@ -1193,9 +1107,8 @@ border-radius: 4
 
 -- ftd.column l-mobile:
 fpm.toc-item obj:
-optional string menu-link:
-optional string menu-link-active:
-optional string font-family:
+ftd.color menu-link:
+ftd.color menu-link-active:
 width: fill
 
 --- ftd.text: $obj.title
@@ -1206,9 +1119,7 @@ color if $MOUSE-IN: $menu-link-active
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
-font: $font-family
-size: 14
-line-height: 12
+role: $fpm.design.type.label-large
 width: fill
 border-radius: 4
 
@@ -1219,9 +1130,7 @@ color if $MOUSE-IN: $menu-link-active
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
-font: $font-family
-size: 14
-line-height: 12
+role: $fpm.design.type.label-large
 width: fill
 border-radius: 4
 

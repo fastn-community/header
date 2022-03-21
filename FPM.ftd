@@ -7,4 +7,3 @@ zip: github.com/fifthtry/header/archive/refs/heads/main.zip
 -- fpm.dependency: fifthtry.github.io/package-doc
 -- fpm.dependency: fifthtry.github.io/dark-mode-switcher as dms
 -- fpm.dependency: fifthtry.github.io/language-switcher as lang
--- fpm.dependency: fifthtry.github.io/roboto
