@@ -719,7 +719,7 @@ align: center
 /src: images/dark-mode.svg
 height: 18
 src: images/light-mode.svg
-$on-click$: toggle $fpm.dark-mode
+$on-click$: toggle $ftd.dark-mode
 align: center
 
 
