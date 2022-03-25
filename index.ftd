@@ -218,8 +218,8 @@ string link-style: regular
 ftd.color background: $fpm.design.color.brand.region 
 ftd.color text-color: $fpm.design.color.brand.on-region
 ftd.color active-text-color: $fpm.design.color.brand.on-region
-ftd.color menu-bg: $fpm.design.color.brand.on-region
-ftd.color menu-hover-bg: $fpm.design.color.brand.on-region
+ftd.color menu-bg: $fpm.design.color.brand.region
+ftd.color menu-hover-bg: $fpm.design.color.brand.region
 ftd.color menu-link: $fpm.design.color.brand.on-region
 ftd.color menu-link-active: $fpm.design.color.brand.on-region
 ftd.color menu-border: $fpm.design.color.brand.on-region
@@ -411,6 +411,7 @@ menu-bg: $menu-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
+
 
 /--- site-url: $site-url
 if: $site-url is not null
@@ -710,6 +711,7 @@ menu-bg: $menu-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
+
 
 
 
