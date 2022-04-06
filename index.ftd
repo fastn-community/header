@@ -103,9 +103,9 @@ reference: $assets.files.static.header.header-black-1200.png
 reference-width: fill
 
 \-- header:
-background: $fpm.design.color.brand.region
-text-color: $fpm.design.color.brand.on-region
-active-text-color: $fpm.design.color.brand.on-region
+background: $fpm.color.main.background.base
+text-color: $fpm.color.main.text
+active-text-color: $fpm.color.main.text
 site-logo: $assets.files.static.header.site-logo.png
 site-url: /
 current-url: /payments/
@@ -116,17 +116,17 @@ logo-width: auto
 width: fill
 menu-left: -88
 menu-right: 0
-menu-bg: $fpm.design.color.brand.region
-menu-hover-bg: $fpm.design.color.brand.region
-menu-link: $fpm.design.color.brand.on-region
-menu-link-active: $fpm.design.color.brand.on-region 
-menu-border: $fpm.design.color.brand.on-region
+menu-bg: $fpm.color.main.background.base
+menu-hover-bg: $fpm.color.main.background.base
+menu-link: $fpm.color.main.text
+menu-link-active: $fpm.color.main.text 
+menu-border: $fpm.color.main.text
 toc: ftd.text: Table of Contents 
 
 --- header:
-background: $fpm.design.color.brand.region
-text-color: $fpm.design.color.brand.on-region
-active-text-color: $fpm.design.color.brand.on-region
+background: $fpm.color.main.background.base
+text-color: $fpm.color.main.text
+active-text-color: $fpm.color.main.text
 site-logo: $assets.files.static.header.site-logo.png
 site-url: /
 current-url: /payments/
@@ -137,11 +137,11 @@ logo-width: auto
 width: fill
 menu-left: -88
 menu-right: 0
-menu-bg: $fpm.design.color.brand.region
-menu-hover-bg: $fpm.design.color.brand.region
-menu-link: $fpm.design.color.brand.on-region
-menu-link-active: $fpm.design.color.brand.on-region 
-menu-border: $fpm.design.color.brand.on-region
+menu-bg: $fpm.color.main.background.base
+menu-hover-bg: $fpm.color.main.background.base
+menu-link: $fpm.color.main.text
+menu-link-active: $fpm.color.main.text 
+menu-border: $fpm.color.main.text
 toc: ftd.text: Table of Contents 
 
 
@@ -220,14 +220,15 @@ integer menu-right: 10
 optional string logo-width: 
 optional string logo-height: 26
 string link-style: regular
-ftd.color background: $fpm.design.color.brand.region 
-ftd.color text-color: $fpm.design.color.brand.on-region
-ftd.color active-text-color: $fpm.design.color.brand.on-region
-ftd.color menu-bg: $fpm.design.color.brand.region
-ftd.color menu-hover-bg: $fpm.design.color.brand.region
-ftd.color menu-link: $fpm.design.color.brand.on-region
-ftd.color menu-link-active: $fpm.design.color.brand.on-region
-ftd.color menu-border: $fpm.design.color.brand.on-region
+ftd.color-scheme colors: $fpm.color.main
+ftd.color background: $fpm.color.main.background.base 
+ftd.color text-color: $fpm.color.main.text
+ftd.color active-text-color: $fpm.color.main.text
+ftd.color menu-bg: $fpm.color.main.background.base
+ftd.color menu-hover-bg: $fpm.color.main.background.base
+ftd.color menu-link: $fpm.color.main.text
+ftd.color menu-link-active: $fpm.color.main.text
+ftd.color menu-border: $fpm.color.main.text
 string width: fill
 boolean include-dark-mode-switcher: true
 boolean include-language-switcher: true
@@ -236,7 +237,7 @@ padding-left if not $is-mobile: 10
 padding-right if not $is-mobile: 0
 padding-top if not $is-mobile: 20
 /padding-vertical if not $is-mobile: 30
-color: $fpm.design.color.brand.on-region
+color: $fpm.color.main.text
 background-color: $background
 z-index: 10
 ftd.ui toc: ftd.text: empty toc
@@ -418,6 +419,7 @@ menu-link-active: $menu-link-active
 menu-border: $menu-border
 
 
+
 /--- site-url: $site-url
 if: $site-url is not null
 
@@ -507,7 +509,7 @@ menu-hover-bg: $menu-hover-bg
 
 -- ftd.text site-url: $title
 caption title:
-role: $fpm.design.type.label-large
+role: $fpm.type.label-large
 align: center
 white-space: nowrap
 
@@ -528,7 +530,7 @@ optional ftd.color active-text-color:
 optional string current-url:
 integer link-height: 16
 optional string link-style:
-role: $fpm.design.type.label-large
+role: $fpm.type.label-large
 link: $link
 align: center
 white-space: nowrap
@@ -569,7 +571,7 @@ $on-click-outside$: $open = false
 
 --- ftd.text: $title
 if: $link is not null
-role: $fpm.design.type.label-large
+role: $fpm.type.label-large
 link: $link
 padding-bottom: 15
 white-space: nowrap
@@ -583,7 +585,7 @@ move-left: 22
 
 --- ftd.text: $title
 if: $link is null
-role: $fpm.design.type.label-large
+role: $fpm.type.label-large
 padding-bottom: 15
 white-space: nowrap
 padding-horizontal: 10
@@ -597,7 +599,7 @@ move-left: 22
 if: $children is not empty
 color: $text-color
 position: center
-role: $fpm.design.type.label-large
+role: $fpm.type.label-large
 move-up: 2
 move-left: 30
 
@@ -629,7 +631,7 @@ top: 0
 bottom: 0
 left: 0
 right: 0
-background-color:  $fpm.design.color.brand.region
+background-color:  $fpm.color.main.background.base
 z-index: 1
 $on-click$: toggle $sidebar-open
 
@@ -786,7 +788,7 @@ padding-top: 15
 padding-right: 20
 padding-bottom: 40
 border-right: 1
-border-color: $fpm.design.color.brand.on-region
+border-color: $fpm.color.main.text
 anchor: window
 left: 0
 top: 0
@@ -802,7 +804,7 @@ z-index: 4
 --- ftd.column:
 width: fill
 border-bottom: 1
-border-color: $fpm.design.color.brand.on-region
+border-color: $fpm.color.main.text
 margin-bottom: 25
 padding-bottom: 10
 
@@ -828,7 +830,7 @@ menu-border: $menu-border
 --- ftd.column:
 width: fill
 border-bottom: 1
-border-color: $fpm.design.color.brand.on-region
+border-color: $fpm.color.main.text
 margin-bottom: 25
 padding-bottom: 10
 
@@ -854,7 +856,7 @@ menu-border: $menu-border
 --- ftd.column:
 width: fill
 border-bottom: 1
-border-color: $fpm.design.color.brand.on-region
+border-color: $fpm.color.main.text
 margin-bottom: 25
 padding-bottom: 10
 
@@ -880,7 +882,7 @@ menu-border: $menu-border
 if: $fpm.language is not null
 width: fill
 border-top: 1
-border-color: $fpm.design.color.brand.on-region
+border-color: $fpm.color.main.text
 padding-bottom: 10
 padding-left: 15
 padding-top: 15
@@ -908,11 +910,11 @@ background: $menu-bg
 --- ftd.column:
 width: fill
 border-top: 1
-border-color: $fpm.design.color.brand.on-region
+border-color: $fpm.color.main.text
 padding-bottom: 10
 padding-left: 15
 padding-top: 15
-color: $fpm.design.color.brand.on-region
+color: $fpm.color.main.text
 
 
 /--- ftd.text: tt1 of content
@@ -935,8 +937,8 @@ color: $fpm.design.color.brand.on-region
 -- ftd.text site-link: $title
 caption title:
 optional string font-family:
-role: $fpm.design.type.label-large
-color: $fpm.design.color.brand.on-region
+role: $fpm.type.label-large
+color: $fpm.color.main.text
 align: center
 
 
@@ -983,7 +985,7 @@ $on-click-outside$: $open = false
 
 --- ftd.text: $title
 if: $link is not null
-role: $fpm.design.type.label-large
+role: $fpm.type.label-large
 link: $link
 white-space: nowrap
 padding-horizontal: 10
@@ -994,7 +996,7 @@ color if $current-url == $link: $active-text-color
 
 --- ftd.text: $title
 if: $link is null
-role: $fpm.design.type.label-large
+role: $fpm.type.label-large
 white-space: nowrap
 padding-horizontal: 10
 color: $text-color
@@ -1095,7 +1097,7 @@ background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
-role: $fpm.design.type.label-large
+role: $fpm.type.label-large
 width: fill
 border-radius: 4
 
@@ -1107,7 +1109,7 @@ background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
-role: $fpm.design.type.label-large
+role: $fpm.type.label-large
 width: fill
 border-radius: 4
 
@@ -1132,7 +1134,7 @@ color if $MOUSE-IN: $menu-link-active
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
-role: $fpm.design.type.label-large
+role: $fpm.type.label-large
 width: fill
 border-radius: 4
 
@@ -1143,7 +1145,7 @@ color if $MOUSE-IN: $menu-link-active
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
-role: $fpm.design.type.label-large
+role: $fpm.type.label-large
 width: fill
 border-radius: 4
 
