@@ -410,7 +410,7 @@ if: $include-dark-mode-switcher
 margin-right: 25
 margin-top: -6
 
---- dms.switcher:
+/--- dms.switcher:
 if: $include-dark-mode-switcher
 background: $menu-bg 
 menu-bg: $menu-bg 
@@ -429,7 +429,7 @@ margin-left: 15
 margin-right: 15
 
 
---- lang.switcher:
+/--- lang.switcher:
 if: $fpm.language is not null
 current: $fpm.language
 languages: $fpm.language-toc
@@ -439,7 +439,7 @@ horizontal-position: -115
 text-color: $text-color
 background: $menu-bg
 
---- lang.switcher:
+/--- lang.switcher:
 languages: $languages
 current: English
 switcher-text: EN
@@ -711,7 +711,7 @@ spacing: 15
 width: auto
 
 
---- dms.switcher:
+/--- dms.switcher:
 if: $include-dark-mode-switcher
 background: $menu-bg 
 menu-bg: $menu-bg 
@@ -878,7 +878,7 @@ menu-link-active: $menu-link-active
 menu-border: $menu-border
 
 
---- ftd.column:
+/--- ftd.column:
 if: $fpm.language is not null
 width: fill
 border-top: 1
@@ -888,7 +888,7 @@ padding-left: 15
 padding-top: 15
 
 
---- lang.switcher:
+/--- lang.switcher:
 if: $fpm.language is not null
 current: $fpm.language
 languages: $fpm.language-toc
@@ -896,7 +896,7 @@ size: 14
 text-color: $text-color
 background: $menu-bg
 
---- lang.switcher:
+/--- lang.switcher:
 languages: $languages
 current: English
 switcher-text: EN
@@ -905,7 +905,7 @@ text-color: $text-color
 background: $menu-bg
 
 
---- container: ftd.main
+/--- container: ftd.main
 
 --- ftd.column:
 width: fill
