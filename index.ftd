@@ -124,7 +124,7 @@ menu-border: $fpm.color.main.text
 toc: ftd.text: Table of Contents 
 
 --- header:
-background: $fpm.color.main.background.base
+background: $fpm.color.main.background.step-1
 text-color: $fpm.color.main.text
 active-text-color: $fpm.color.main.text
 site-logo: $assets.files.static.header.site-logo.png
@@ -221,7 +221,7 @@ optional string logo-width:
 optional string logo-height: 26
 string link-style: regular
 ftd.color-scheme colors: $fpm.color.main
-ftd.color background: $fpm.color.main.background.base 
+ftd.color background: $fpm.color.main.background.step-1 
 ftd.color text-color: $fpm.color.main.text
 ftd.color active-text-color: $fpm.color.main.text
 ftd.color menu-bg: $fpm.color.main.background.base
