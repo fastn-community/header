@@ -80,6 +80,7 @@ reference-width: fill
 \-- header:
 site-logo: $assets.files.static.header.logo-text.png
 site-url: /
+site-name: FTD
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
@@ -90,6 +91,7 @@ toc: ftd.text: Table of Contents
 --- header:
 site-logo: $assets.files.static.header.logo-text.png
 site-url: /
+site-name: FTD
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
@@ -108,6 +110,7 @@ text-color: $fpm.color.main.text
 active-text-color: $fpm.color.main.text
 site-logo: $assets.files.static.header.site-logo.png
 site-url: /
+site-name: FTD
 current-url: /payments/
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
@@ -129,6 +132,7 @@ text-color: $fpm.color.main.text
 active-text-color: $fpm.color.main.text
 site-logo: $assets.files.static.header.site-logo.png
 site-url: /
+site-name: FTD
 current-url: /payments/
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
@@ -158,6 +162,7 @@ toc: ftd.text: Table of Contents
 \-- header:
 site-logo: $assets.files.static.header.site-logo.png
 site-url: /
+site-name: FTD
 toc-top-right: $toc-top-right
 current-url: /
 link-style: bold
@@ -166,6 +171,7 @@ toc: ftd.text: Table of Contents
 --- header:
 site-logo: $assets.files.static.header.site-logo.png
 site-url: /
+site-name: FTD
 toc-top-right: $toc-top-right
 link-style: bold
 menu-right: 0
@@ -177,6 +183,7 @@ toc: ftd.text: Table of Contents
 \-- header:
 site-logo: $assets.files.static.header.site-logo.png
 site-url: /
+site-name: FTD
 toc-bottom-left: $toc-bottom-left
 current-url: /
 link-style: bold
@@ -187,6 +194,7 @@ toc: ftd.text: Table of Contents
 --- header:
 site-logo: $assets.files.static.header.logo-text.png
 site-url: /
+site-name: FTD
 toc-bottom-left: $toc-bottom-left
 link-style: bold
 menu-left: -88
@@ -210,6 +218,7 @@ toc: ftd.text: Table of Contents
 -- ftd.column header:
 optional ftd.image-src site-logo:
 string site-url: /
+optional string site-name: FTD
 ftd.image-src menu-icon: $assets.files.static.header.hamburger.png
 string current-url: /payments/
 fpm.toc-item list toc-top-right: $empty-toc
@@ -253,6 +262,7 @@ if: $sidebar-open
 site-logo: $site-logo
 menu-icon: $menu-icon
 site-url: $site-url 
+site-name: $site-name
 current-url: $current-url
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left 
@@ -278,6 +288,7 @@ toc: $toc
 if: not $is-mobile
 site-logo: $site-logo
 site-url: $site-url 
+site-name: $site-name
 current-url: $current-url
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left 
@@ -305,6 +316,7 @@ if: $is-mobile
 site-logo: $site-logo
 menu-icon: $menu-icon
 site-url: $site-url 
+site-name: $site-name
 current-url: $current-url
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left 
@@ -344,6 +356,7 @@ width: $width
 optional ftd.image-src site-logo:
 string site-url: 
 string current-url:
+optional string site-name: 
 fpm.toc-item list toc-top-right:
 fpm.toc-item list toc-bottom-left:
 fpm.toc-item list toc-bottom-right:
@@ -381,7 +394,13 @@ src: $site-logo
 if: $site-logo is not null
 width: $logo-width
 height: $logo-height
+margin-right: 10
 
+--- ftd.text: $site-name
+if: $site-name is not null
+role: $fpm.type.headline-large
+color: $fpm.color.main.text-strong
+margin-top: -5
 
 --- ftd.row:
 position: right
@@ -645,9 +664,10 @@ $on-click$: toggle $sidebar-open
 
 -- ftd.row header-mobile:
 ftd.image-src menu-icon:
-ftd.image-src site-logo:
+optional ftd.image-src site-logo:
 string site-url: 
 string current-url:
+optional string site-name:
 fpm.toc-item list toc-top-right:
 fpm.toc-item list toc-bottom-left:
 fpm.toc-item list toc-bottom-right:
@@ -686,14 +706,21 @@ $on-click$: toggle $sidebar-open
 position: center
 
 --- ftd.row:
-spacing: 10
+spacing: 15
 link: $site-url
 
 --- ftd.image:
+if: $site-logo is not null
 src: $site-logo
-width: 78
-height: 32
+width: $logo-width
+height: $logo-height
+position: center
 
+--- ftd.text: $site-name
+if: $site-name is not null
+role: $fpm.type.headline-large
+color: $fpm.color.main.text-strong
+position: center
 
 /--- site-link: $site-url
 
@@ -758,6 +785,7 @@ optional ftd.image-src site-logo:
 ftd.image-src menu-icon:
 string site-url: 
 string current-url:
+optional string site-name:
 fpm.toc-item list toc-top-right:
 fpm.toc-item list toc-bottom-left:
 fpm.toc-item list toc-bottom-right:
