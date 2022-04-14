@@ -5,6 +5,7 @@
 -- import: lang
 -- import: fifthtry.github.io/header/assets
 
+section, sub-section, extra
 
 -- boolean sidebar-open: false
 
@@ -36,7 +37,7 @@ This is the main header.
 
 \-- fpm.toc-item list empty-toc:
 
-\-- fpm.toc-item list toc-top-right:
+\-- fpm.toc-item list section:
 $processor$: toc
 
 - Roadmap: /roadmap/
@@ -46,7 +47,7 @@ $processor$: toc
   - Articles: /index/
   - Home Pictures: /index/
 
-\-- fpm.toc-item list toc-bottom-left:
+\-- fpm.toc-item list sub-section:
 $processor$: toc
 
 - Home: 
@@ -60,7 +61,7 @@ $processor$: toc
 - Security: /security/
 - All Products: /all-products/
 
-\-- fpm.toc-item list toc-bottom-right:
+\-- fpm.toc-item list extra:
 $processor$: toc
 
 - APIs & SKDs: 
@@ -81,9 +82,9 @@ reference-width: fill
 site-logo: $assets.files.static.header.logo-text.png
 site-url: /
 site-name: FTD
-toc-top-right: $toc-top-right
-toc-bottom-left: $toc-bottom-left
-toc-bottom-right: $toc-bottom-right
+section: $section
+sub-section: $sub-section
+extra: $extra
 menu-right: 0
 menu-left: -88
 toc: ftd.text: Table of Contents 
@@ -92,9 +93,9 @@ toc: ftd.text: Table of Contents
 site-logo: $assets.files.static.header.logo-text.png
 site-url: /
 site-name: FTD
-toc-top-right: $toc-top-right
-toc-bottom-left: $toc-bottom-left
-toc-bottom-right: $toc-bottom-right
+section: $section
+sub-section: $sub-section
+extra: $extra
 menu-right: 0
 menu-left: -88
 toc: ftd.text: Table of Contents 
@@ -112,9 +113,9 @@ site-logo: $assets.files.static.header.site-logo.png
 site-url: /
 site-name: FTD
 current-url: /payments/
-toc-top-right: $toc-top-right
-toc-bottom-left: $toc-bottom-left
-toc-bottom-right: $toc-bottom-right
+section: $section
+sub-section: $sub-section
+extra: $extra
 logo-width: auto
 width: fill
 menu-left: -88
@@ -134,9 +135,9 @@ active-text-color: $fpm.color.main.text
 site-url: /
 /site-name: FTD
 current-url: /payments/
-toc-top-right: $toc-top-right
-toc-bottom-left: $toc-bottom-left
-toc-bottom-right: $toc-bottom-right
+section: $section
+sub-section: $sub-section
+extra: $extra
 logo-width: auto
 width: fill
 menu-left: -88
@@ -163,7 +164,7 @@ toc: ftd.text: Table of Contents
 site-logo: $assets.files.static.header.site-logo.png
 site-url: /
 site-name: FTD
-toc-top-right: $toc-top-right
+section: $section
 current-url: /
 link-style: bold
 toc: ftd.text: Table of Contents 
@@ -172,7 +173,7 @@ toc: ftd.text: Table of Contents
 site-logo: $assets.files.static.header.site-logo.png
 site-url: /
 site-name: FTD
-toc-top-right: $toc-top-right
+section: $section
 link-style: bold
 menu-right: 0
 toc: ftd.text: Table of Contents 
@@ -184,7 +185,7 @@ toc: ftd.text: Table of Contents
 site-logo: $assets.files.static.header.site-logo.png
 site-url: /
 site-name: FTD
-toc-bottom-left: $toc-bottom-left
+sub-section: $sub-section
 current-url: /
 link-style: bold
 include-dark-mode-switcher: false
@@ -195,7 +196,7 @@ toc: ftd.text: Table of Contents
 site-logo: $assets.files.static.header.logo-text.png
 site-url: /
 site-name: FTD
-toc-bottom-left: $toc-bottom-left
+sub-section: $sub-section
 link-style: bold
 menu-left: -88
 menu-right: 0
@@ -221,9 +222,9 @@ string site-url: /
 optional string site-name:
 ftd.image-src menu-icon: $assets.files.static.header.hamburger.png
 string current-url: /payments/
-fpm.toc-item list toc-top-right: $empty-toc
-fpm.toc-item list toc-bottom-left: $empty-toc
-fpm.toc-item list toc-bottom-right: $empty-toc
+fpm.toc-item list section: $empty-toc
+fpm.toc-item list sub-section: $empty-toc
+fpm.toc-item list extra: $empty-toc
 integer menu-left: 10
 integer menu-right: 10
 optional string logo-width: 
@@ -264,9 +265,9 @@ menu-icon: $menu-icon
 site-url: $site-url 
 site-name: $site-name
 current-url: $current-url
-toc-top-right: $toc-top-right
-toc-bottom-left: $toc-bottom-left 
-toc-bottom-right: $toc-bottom-right
+section: $section
+sub-section: $sub-section 
+extra: $extra
 menu-left: $menu-left 
 menu-right: $menu-right
 logo-width: $logo-width 
@@ -290,9 +291,9 @@ site-logo: $site-logo
 site-url: $site-url 
 site-name: $site-name
 current-url: $current-url
-toc-top-right: $toc-top-right
-toc-bottom-left: $toc-bottom-left 
-toc-bottom-right: $toc-bottom-right
+section: $section
+sub-section: $sub-section 
+extra: $extra
 include-dark-mode-switcher: $include-dark-mode-switcher
 include-language-switcher: $include-language-switcher
 menu-left: $menu-left 
@@ -318,9 +319,9 @@ menu-icon: $menu-icon
 site-url: $site-url 
 site-name: $site-name
 current-url: $current-url
-toc-top-right: $toc-top-right
-toc-bottom-left: $toc-bottom-left 
-toc-bottom-right: $toc-bottom-right
+section: $section
+sub-section: $sub-section 
+extra: $extra
 include-dark-mode-switcher: $include-dark-mode-switcher
 include-language-switcher: $include-language-switcher
 menu-border: $menu-border
@@ -357,9 +358,9 @@ optional ftd.image-src site-logo:
 string site-url: 
 string current-url:
 optional string site-name: 
-fpm.toc-item list toc-top-right:
-fpm.toc-item list toc-bottom-left:
-fpm.toc-item list toc-bottom-right:
+fpm.toc-item list section:
+fpm.toc-item list sub-section:
+fpm.toc-item list extra:
 boolean include-dark-mode-switcher:
 boolean include-language-switcher:
 integer menu-left: 
@@ -415,7 +416,7 @@ id: right-side-top
 /spacing: 10
 
 --- header-item: $obj.title
-$loop$: $toc-top-right as $obj
+$loop$: $section as $obj
 children: $obj.children 
 link: $obj.url
 text-color: $text-color
@@ -491,7 +492,7 @@ width: auto
 /spacing: 12
 
 --- header-item: $obj.title
-$loop$: $toc-bottom-left as $obj
+$loop$: $sub-section as $obj
 children: $obj.children 
 link: $obj.url
 text-color: $text-color
@@ -517,7 +518,7 @@ width: auto
 /spacing: 10
 
 --- header-item: $obj.title
-$loop$: $toc-bottom-right as $obj
+$loop$: $extra as $obj
 children: $obj.children 
 link: $obj.url
 text-color: $text-color
@@ -696,9 +697,9 @@ optional ftd.image-src site-logo:
 string site-url: 
 string current-url:
 optional string site-name:
-fpm.toc-item list toc-top-right:
-fpm.toc-item list toc-bottom-left:
-fpm.toc-item list toc-bottom-right:
+fpm.toc-item list section:
+fpm.toc-item list sub-section:
+fpm.toc-item list extra:
 boolean include-dark-mode-switcher:
 boolean include-language-switcher:
 integer menu-left: 
@@ -816,9 +817,9 @@ ftd.image-src menu-icon:
 string site-url: 
 string current-url:
 optional string site-name:
-fpm.toc-item list toc-top-right:
-fpm.toc-item list toc-bottom-left:
-fpm.toc-item list toc-bottom-right:
+fpm.toc-item list section:
+fpm.toc-item list sub-section:
+fpm.toc-item list extra:
 ftd.ui toc:
 integer menu-left: 
 integer menu-right:
@@ -868,7 +869,7 @@ padding-bottom: 10
 
 
 --- header-item-mobile: $obj.title
-$loop$: $toc-bottom-left as $obj
+$loop$: $sub-section as $obj
 children: $obj.children 
 link: $obj.url
 text-color: $text-color
@@ -894,7 +895,7 @@ padding-bottom: 10
 
 
 --- header-item-mobile: $obj.title
-$loop$: $toc-bottom-right as $obj
+$loop$: $extra as $obj
 children: $obj.children 
 link: $obj.url
 text-color: $text-color
@@ -920,7 +921,7 @@ padding-bottom: 10
 
 
 --- header-item-mobile: $obj.title
-$loop$: $toc-top-right as $obj
+$loop$: $section as $obj
 children: $obj.children 
 link: $obj.url
 text-color: $text-color
@@ -1222,7 +1223,7 @@ border-radius: 4
 -- fpm.toc-item list empty-toc:
 
 
--- fpm.toc-item list toc-top-right:
+-- fpm.toc-item list section:
 $processor$: toc
 
 - Roadmap: /roadmap/
@@ -1232,7 +1233,7 @@ $processor$: toc
   - Articles: /index/
   - Home Pictures: /index/  
 
--- fpm.toc-item list toc-bottom-left:
+-- fpm.toc-item list sub-section:
 $processor$: toc
 
 - Home
@@ -1247,7 +1248,7 @@ $processor$: toc
 - All Products: /all-products/
 
 
--- fpm.toc-item list toc-bottom-right:
+-- fpm.toc-item list extra:
 $processor$: toc
 
 - APIs & SKDs: 
