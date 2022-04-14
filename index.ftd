@@ -80,7 +80,7 @@ reference-width: fill
 \-- header:
 site-logo: $assets.files.static.header.logo-text.png
 site-url: /
-site-title: FTD
+site-name: FTD
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
@@ -91,7 +91,7 @@ toc: ftd.text: Table of Contents
 --- header:
 site-logo: $assets.files.static.header.logo-text.png
 site-url: /
-site-title: FTD
+site-name: FTD
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
 toc-bottom-right: $toc-bottom-right
@@ -110,7 +110,7 @@ text-color: $fpm.color.main.text
 active-text-color: $fpm.color.main.text
 site-logo: $assets.files.static.header.site-logo.png
 site-url: /
-site-title: FTD
+site-name: FTD
 current-url: /payments/
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
@@ -132,7 +132,7 @@ text-color: $fpm.color.main.text
 active-text-color: $fpm.color.main.text
 /site-logo: $assets.files.static.header.site-logo.png
 site-url: /
-/site-title: FTD
+/site-name: FTD
 current-url: /payments/
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left
@@ -162,7 +162,7 @@ toc: ftd.text: Table of Contents
 \-- header:
 site-logo: $assets.files.static.header.site-logo.png
 site-url: /
-site-title: FTD
+site-name: FTD
 toc-top-right: $toc-top-right
 current-url: /
 link-style: bold
@@ -171,7 +171,7 @@ toc: ftd.text: Table of Contents
 --- header:
 site-logo: $assets.files.static.header.site-logo.png
 site-url: /
-site-title: FTD
+site-name: FTD
 toc-top-right: $toc-top-right
 link-style: bold
 menu-right: 0
@@ -183,7 +183,7 @@ toc: ftd.text: Table of Contents
 \-- header:
 site-logo: $assets.files.static.header.site-logo.png
 site-url: /
-site-title: FTD
+site-name: FTD
 toc-bottom-left: $toc-bottom-left
 current-url: /
 link-style: bold
@@ -194,7 +194,7 @@ toc: ftd.text: Table of Contents
 --- header:
 site-logo: $assets.files.static.header.logo-text.png
 site-url: /
-site-title: FTD
+site-name: FTD
 toc-bottom-left: $toc-bottom-left
 link-style: bold
 menu-left: -88
@@ -218,7 +218,7 @@ toc: ftd.text: Table of Contents
 -- ftd.column header:
 optional ftd.image-src site-logo:
 string site-url: /
-optional string site-title:
+optional string site-name:
 ftd.image-src menu-icon: $assets.files.static.header.hamburger.png
 string current-url: /payments/
 fpm.toc-item list toc-top-right: $empty-toc
@@ -262,7 +262,7 @@ if: $sidebar-open
 site-logo: $site-logo
 menu-icon: $menu-icon
 site-url: $site-url 
-site-title: $site-title
+site-name: $site-name
 current-url: $current-url
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left 
@@ -288,7 +288,7 @@ toc: $toc
 if: not $is-mobile
 site-logo: $site-logo
 site-url: $site-url 
-site-title: $site-title
+site-name: $site-name
 current-url: $current-url
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left 
@@ -316,7 +316,7 @@ if: $is-mobile
 site-logo: $site-logo
 menu-icon: $menu-icon
 site-url: $site-url 
-site-title: $site-title
+site-name: $site-name
 current-url: $current-url
 toc-top-right: $toc-top-right
 toc-bottom-left: $toc-bottom-left 
@@ -356,7 +356,7 @@ width: $width
 optional ftd.image-src site-logo:
 string site-url: 
 string current-url:
-optional string site-title: 
+optional string site-name: 
 fpm.toc-item list toc-top-right:
 fpm.toc-item list toc-bottom-left:
 fpm.toc-item list toc-bottom-right:
@@ -396,8 +396,8 @@ width: $logo-width
 height: $logo-height
 margin-right: 10
 
---- ftd.text: $site-title
-if: $site-title is not null
+--- ftd.text: $site-name
+if: $site-name is not null
 role: $fpm.type.headline-large
 color: $fpm.color.main.text-strong
 margin-top: -5
@@ -405,7 +405,7 @@ margin-top: -5
 
 --- fallback-title:
 if: $site-logo is null
-site-title: $site-title
+site-name: $site-name
 
 
 --- ftd.row:
@@ -532,6 +532,12 @@ menu-border: $menu-border
 menu-hover-bg: $menu-hover-bg
 
 
+
+
+
+
+
+
 -- ftd.text site-url: $title
 caption title:
 role: $fpm.type.label-large
@@ -547,11 +553,11 @@ white-space: nowrap
 
 
 -- ftd.row fallback-title:
-optional string site-title:
+optional string site-name:
 
 
 --- ftd.text: LOGO
-if: $site-title is null
+if: $site-name is null
 role: $fpm.type.headline-large
 color: $fpm.color.main.text-strong
 
@@ -634,8 +640,7 @@ padding-horizontal: 10
 color: $text-color
 margin-left: 10
 move-left: 22
-
-
+cursor: auto
 
 --- ftd.text: ﹀
 if: $children is not empty
@@ -690,7 +695,7 @@ ftd.image-src menu-icon:
 optional ftd.image-src site-logo:
 string site-url: 
 string current-url:
-optional string site-title:
+optional string site-name:
 fpm.toc-item list toc-top-right:
 fpm.toc-item list toc-bottom-left:
 fpm.toc-item list toc-bottom-right:
@@ -739,15 +744,15 @@ width: $logo-width
 height: $logo-height
 position: center
 
---- ftd.text: $site-title
-if: $site-title is not null
+--- ftd.text: $site-name
+if: $site-name is not null
 role: $fpm.type.headline-large
 color: $fpm.color.main.text-strong
 position: center
 
 --- fallback-title:
 if: $site-logo is null
-site-title: $site-title
+site-name: $site-name
 
 --- container: left-side
 
@@ -810,7 +815,7 @@ optional ftd.image-src site-logo:
 ftd.image-src menu-icon:
 string site-url: 
 string current-url:
-optional string site-title:
+optional string site-name:
 fpm.toc-item list toc-top-right:
 fpm.toc-item list toc-bottom-left:
 fpm.toc-item list toc-bottom-right:
@@ -1230,12 +1235,12 @@ $processor$: toc
 -- fpm.toc-item list toc-bottom-left:
 $processor$: toc
 
-- Home: 
+- Home
   - Home Bottom: /index/
   - Docs: /index/
   - Articles: /index/
   - Home Pictures: /index/  
-- Payments: /payments/
+- Payments
 - Business Operations: /businessops/
 - Developer Tools: /developer-tools/
 - Security: /security/
