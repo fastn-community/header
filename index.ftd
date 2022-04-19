@@ -865,10 +865,11 @@ z-index: 4
 --- ftd.column:
 if: $sections is not empty
 width: fill
-/border-bottom: 1
+border-bottom: 1
 border-color: $fpm.color.main.text
-margin-bottom: 25
 padding-bottom: 10
+margin-bottom: 15
+
 
 --- header-item-mobile: $obj.title
 $loop$: $sections as $obj
@@ -889,11 +890,12 @@ menu-border: $menu-border
 --- container: ftd.main
 
 --- ftd.column:
+if: $sub-sections is not empty
 width: fill
-/border-bottom: 1
+border-bottom: 1
 border-color: $fpm.color.main.text
-margin-bottom: 25
 padding-bottom: 10
+margin-bottom: 10
 
 --- header-item-mobile: $obj.title
 $loop$: $sub-sections as $obj
@@ -918,8 +920,8 @@ if: $extra is not empty
 width: fill
 border-bottom: 1
 border-color: $fpm.color.main.text
-margin-bottom: 25
 padding-bottom: 10
+margin-bottom: 10
 
 --- header-item-mobile: $obj.title
 $loop$: $extra as $obj
@@ -938,7 +940,6 @@ menu-link-active: $menu-link-active
 menu-border: $menu-border
 
 --- container: ftd.main
-
 
 /--- ftd.column:
 if: $fpm.language is not null
@@ -972,15 +973,19 @@ background: $menu-bg
 --- ftd.column:
 if: $toc is not empty
 width: fill
-border-top: 1
-border-color: $fpm.color.main.text
-margin-bottom: 25
+margin-bottom: 10
 padding-bottom: 10
 
---- ftd.text: Table of contents
+--- ftd.text: Table of contents:
 if: $toc is not empty
 color: $text-color
 role: $fpm.type.label-large
+padding-bottom: 10
+border-bottom: 1
+border-color: $fpm.color.main.text
+width: fill
+padding-left: 10
+margin-bottom: 10
 
 --- header-item-mobile: $obj.title
 if: $toc is not empty
