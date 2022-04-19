@@ -861,12 +861,37 @@ z-index: 4
 
 
 --- ftd.column:
+if: $sections is not empty
 width: fill
-border-bottom: 1
+/border-bottom: 1
 border-color: $fpm.color.main.text
 margin-bottom: 25
 padding-bottom: 10
 
+--- header-item-mobile: $obj.title
+$loop$: $sections as $obj
+children: $obj.children 
+link: $obj.url
+text-color: $text-color
+active-text-color: $active-text-color
+current-url: $current-url
+link-style: $link-style
+/menu-right: $menu-right
+menu-hover-bg: $menu-hover-bg
+menu-left: $menu-left
+menu-bg: $menu-bg 
+menu-link: $menu-link
+menu-link-active: $menu-link-active
+menu-border: $menu-border
+
+--- container: ftd.main
+
+--- ftd.column:
+width: fill
+/border-bottom: 1
+border-color: $fpm.color.main.text
+margin-bottom: 25
+padding-bottom: 10
 
 --- header-item-mobile: $obj.title
 $loop$: $sub-sections as $obj
@@ -887,12 +912,12 @@ menu-border: $menu-border
 --- container: ftd.main
 
 --- ftd.column:
+if: $extra is not empty
 width: fill
 border-bottom: 1
 border-color: $fpm.color.main.text
 margin-bottom: 25
 padding-bottom: 10
-
 
 --- header-item-mobile: $obj.title
 $loop$: $extra as $obj
@@ -911,30 +936,6 @@ menu-link-active: $menu-link-active
 menu-border: $menu-border
 
 --- container: ftd.main
-
---- ftd.column:
-width: fill
-border-bottom: 1
-border-color: $fpm.color.main.text
-margin-bottom: 25
-padding-bottom: 10
-
-
---- header-item-mobile: $obj.title
-$loop$: $sections as $obj
-children: $obj.children 
-link: $obj.url
-text-color: $text-color
-active-text-color: $active-text-color
-current-url: $current-url
-link-style: $link-style
-/menu-right: $menu-right
-menu-hover-bg: $menu-hover-bg
-menu-left: $menu-left
-menu-bg: $menu-bg 
-menu-link: $menu-link
-menu-link-active: $menu-link-active
-menu-border: $menu-border
 
 
 /--- ftd.column:
