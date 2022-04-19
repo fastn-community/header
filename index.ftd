@@ -87,7 +87,7 @@ sub-sections: $sub-sections
 extra: $extra
 menu-right: 0
 menu-left: -88
-toc: ftd.text: Table of Contents 
+toc: $empty-toc
 
 --- header:
 site-logo: $assets.files.static.header.logo-text.png
@@ -98,7 +98,7 @@ sub-sections: $sub-sections
 extra: $extra
 menu-right: 0
 menu-left: -88
-toc: ftd.text: Table of Contents 
+toc: $empty-toc
 
 
 -- pd.output: with design elements of light mode
@@ -125,7 +125,7 @@ menu-hover-bg: $fpm.color.main.background.base
 menu-link: $fpm.color.main.text
 menu-link-active: $fpm.color.main.text 
 menu-border: $fpm.color.main.text
-toc: ftd.text: Table of Contents 
+toc: $empty-toc
 
 --- header:
 background: $fpm.color.main.background.step-1
@@ -147,7 +147,7 @@ menu-hover-bg: $fpm.color.main.background.base
 menu-link: $fpm.color.main.text
 menu-link-active: $fpm.color.main.text 
 menu-border: $fpm.color.main.text
-toc: ftd.text: Table of Contents 
+toc: $empty-toc
 
 
 
@@ -167,7 +167,7 @@ site-name: FTD
 sections: $sections
 current-url: /
 link-style: bold
-toc: ftd.text: Table of Contents 
+toc: $empty-toc
 
 --- header:
 site-logo: $assets.files.static.header.site-logo.png
@@ -176,7 +176,7 @@ site-name: FTD
 sections: $sections
 link-style: bold
 menu-right: 0
-toc: ftd.text: Table of Contents 
+toc: $empty-toc
 
 
 -- pd.output: Header with Left Menu 
@@ -190,7 +190,7 @@ current-url: /
 link-style: bold
 include-dark-mode-switcher: false
 include-language-switcher: false
-toc: ftd.text: Table of Contents 
+toc: $empty-toc
 
 --- header:
 site-logo: $assets.files.static.header.logo-text.png
@@ -202,7 +202,7 @@ menu-left: -88
 menu-right: 0
 include-dark-mode-switcher: false
 include-language-switcher: false
-toc: ftd.text: Table of Contents 
+toc: $empty-toc
 
 
 
@@ -225,6 +225,7 @@ string current-url: /payments/
 fpm.toc-item list sections: $empty-toc
 fpm.toc-item list sub-sections: $empty-toc
 fpm.toc-item list extra: $empty-toc
+fpm.toc-item list toc: $empty-toc
 integer menu-left: 10
 integer menu-right: 10
 optional string logo-width: 
@@ -250,7 +251,6 @@ padding-top if not $is-mobile: 20
 color: $fpm.color.main.text
 background-color: $background
 z-index: 10
-ftd.ui toc: ftd.text: empty toc
 
 
 --- mobile-sidebar:
@@ -320,7 +320,8 @@ site-url: $site-url
 site-name: $site-name
 current-url: $current-url
 sections: $sections
-sub-sections: $sub-sections 
+sub-sections: $sub-sections
+toc: $toc
 extra: $extra
 include-dark-mode-switcher: $include-dark-mode-switcher
 include-language-switcher: $include-language-switcher
@@ -700,6 +701,7 @@ optional string site-name:
 fpm.toc-item list sections:
 fpm.toc-item list sub-sections:
 fpm.toc-item list extra:
+fpm.toc-item list toc:
 boolean include-dark-mode-switcher:
 boolean include-language-switcher:
 integer menu-left: 
@@ -820,7 +822,7 @@ optional string site-name:
 fpm.toc-item list sections:
 fpm.toc-item list sub-sections:
 fpm.toc-item list extra:
-ftd.ui toc:
+fpm.toc-item list toc:
 integer menu-left: 
 integer menu-right:
 optional string logo-width: 
@@ -968,18 +970,34 @@ background: $menu-bg
 /--- container: ftd.main
 
 --- ftd.column:
+if: $toc is not empty
 width: fill
 border-top: 1
 border-color: $fpm.color.main.text
+margin-bottom: 25
 padding-bottom: 10
-padding-left: 15
-padding-top: 15
-color: $fpm.color.main.text
 
+--- ftd.text: Table of contents
+if: $toc is not empty
+color: $text-color
+role: $fpm.type.label-large
 
-/--- ftd.text: tt1 of content
-
---- toc:
+--- header-item-mobile: $obj.title
+if: $toc is not empty
+$loop$: $toc as $obj
+children: $obj.children 
+link: $obj.url
+text-color: $text-color
+active-text-color: $active-text-color
+current-url: $current-url
+link-style: $link-style
+/menu-right: $menu-right
+menu-hover-bg: $menu-hover-bg
+menu-left: $menu-left
+menu-bg: $menu-bg 
+menu-link: $menu-link
+menu-link-active: $menu-link-active
+menu-border: $menu-border
 
 
 
