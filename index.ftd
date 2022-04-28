@@ -129,6 +129,7 @@ menu-link: $fpm.color.main.text
 menu-link-active: $fpm.color.main.text 
 menu-border: $fpm.color.main.text
 toc: $empty-toc
+show-brand: true
 
 --- header:
 background: $fpm.color.main.background.step-1
@@ -151,6 +152,7 @@ menu-link: $fpm.color.main.text
 menu-link-active: $fpm.color.main.text 
 menu-border: $fpm.color.main.text
 toc: $empty-toc
+show-brand: true
 
 
 
@@ -171,6 +173,7 @@ sections: $sections
 current-url: /
 link-style: bold
 toc: $empty-toc
+show-brand: true
 
 --- header:
 site-logo: $assets.files.static.header.site-logo.png
@@ -180,6 +183,7 @@ sections: $sections
 link-style: bold
 menu-right: 0
 toc: $empty-toc
+show-brand: true
 
 
 -- pd.output: Header with Left Menu 
@@ -243,6 +247,7 @@ ftd.color menu-hover-bg: $fpm.color.main.background.base
 ftd.color menu-link: $fpm.color.main.text
 ftd.color menu-link-active: $fpm.color.main.text
 ftd.color menu-border: $fpm.color.main.text
+boolean show-brand: false
 string width: fill
 boolean include-dark-mode-switcher: true
 boolean include-language-switcher: true
@@ -313,6 +318,7 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link 
 menu-link-active: $menu-link-active
 menu-border: $menu-border
+show-brand: $show-brand
 
 
 --- header-mobile:
@@ -380,19 +386,20 @@ ftd.color menu-hover-bg:
 ftd.color menu-link:
 ftd.color menu-link-active:
 ftd.color menu-border:
+boolean show-brand: 
 string width: 
 width: $width
 move-right: 10
-
---- ftd.row:
-/spacing: 10
-link: $site-url
 
 --- ftd.row:
 position: left
 id: left-side-top
 align: left
 width: fill
+
+--- ftd.row:
+/spacing: 10
+link: $site-url
 
 --- ftd.image:
 src: $site-logo
@@ -418,8 +425,10 @@ padding-left: $fpm.space.space-4
 margin-left: $fpm.space.space-4
 
 --- fbs.fifthtry-brand-switcher:
+if: $show-brand
 
 --- container: left-side-top
+
 
 --- ftd.row:
 position: right
