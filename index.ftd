@@ -4,6 +4,9 @@
 -- import: dms
 -- import: lang
 -- import: fifthtry.github.io/header/assets
+-- import: fbs
+
+
 
 section, sub-sections, extra
 
@@ -384,12 +387,12 @@ move-right: 10
 --- ftd.row:
 /spacing: 10
 link: $site-url
-width: fill
 
 --- ftd.row:
 position: left
+id: left-side-top
+align: left
 width: fill
-id: right-side-top
 
 --- ftd.image:
 src: $site-logo
@@ -404,16 +407,24 @@ role: $fpm.type.heading-large
 color: $fpm.color.main.text-strong
 margin-top: -5
 
-
 --- fallback-title:
 if: $site-logo is null
 site-name: $site-name
 
+--- ftd.row:
+width: fill
+border-left: 1
+padding-left: $fpm.space.space-4
+margin-left: $fpm.space.space-4
+
+--- fbs.fifthtry-brand-switcher:
+
+--- container: left-side-top
 
 --- ftd.row:
 position: right
-width: fill
 id: right-side-top
+align: right
 /spacing: 10
 
 --- header-item: $obj.title
