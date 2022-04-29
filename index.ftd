@@ -780,9 +780,12 @@ position: center
 if: $site-logo is null
 site-name: $site-name
 
+--- container: left-side
+
 --- ftd.row:
 width: fill
 border-left: 1
+padding-left: $fpm.space.space-4
 margin-left: $fpm.space.space-4
 
 --- fbs.fifthtry-brand-switcher:
