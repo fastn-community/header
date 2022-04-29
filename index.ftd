@@ -348,6 +348,7 @@ background: $background
 text-color: $text-color 
 active-text-color: $active-text-color
 width: $width
+show-brand: $show-brand
 
 
 
@@ -427,7 +428,7 @@ margin-left: $fpm.space.space-4
 --- fbs.fifthtry-brand-switcher:
 if: $show-brand
 
---- container: left-side-top
+
 
 
 --- ftd.row:
@@ -742,6 +743,7 @@ width: $width
 background-color: $background
 padding-horizontal: 20
 padding-vertical: 15
+boolean show-brand:
 
 
 --- ftd.row:
@@ -776,6 +778,14 @@ position: center
 --- fallback-title:
 if: $site-logo is null
 site-name: $site-name
+
+--- ftd.row:
+width: fill
+border-left: 1
+margin-left: $fpm.space.space-4
+
+--- fbs.fifthtry-brand-switcher:
+if: $show-brand
 
 --- container: left-side
 
