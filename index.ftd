@@ -422,8 +422,8 @@ site-name: $site-name
 --- ftd.row:
 width: fill
 border-left: 1
-padding-left: $fpm.space.space-4
-margin-left: $fpm.space.space-4
+padding-left: $fpm.space.space-5
+margin-left: $fpm.space.space-5
 
 --- fbs.fifthtry-brand-switcher:
 if: $show-brand
@@ -785,8 +785,8 @@ site-name: $site-name
 --- ftd.row:
 width: fill
 border-left: 1
-padding-left: $fpm.space.space-4
-margin-left: $fpm.space.space-4
+padding-left: $fpm.space.space-5
+margin-left: $fpm.space.space-5
 
 --- fbs.fifthtry-brand-switcher:
 if: $show-brand
