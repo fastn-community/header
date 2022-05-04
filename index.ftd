@@ -446,6 +446,7 @@ if: $show-brand
 id: right-side-top
 align: right
 move-right: 30
+padding-top: 16
 
 --- header-item: $obj.title
 $loop$: $sections as $obj
