@@ -7,6 +7,16 @@
 -- import: fbs
 
 
+-- ftd.font-size cta-txt:
+line-height: 16
+size: 16
+letter-spacing: 0
+
+-- ftd.type cta: $fpm.font-display
+desktop: $cta-txt
+mobile: $cta-txt
+xl: $cta-txt
+weight: 700
 
 section, sub-sections, extra
 
@@ -58,7 +68,7 @@ $processor$: toc
   - Docs: /index/
   - Articles: /index/
   - Home Pictures: /index/
-- Payments: /payments/
+- Payments: 
 - Business Operations: /businessops/
 - Developer Tools: /developer-tools/
 - Security: /security/
@@ -68,7 +78,7 @@ $processor$: toc
 $processor$: toc
 
 - APIs & SKDs: 
-  - API: /api/
+  - API: 
   - Stripe.js: /index/
   - CLI: /cli/
   - ios: /ios/
@@ -422,8 +432,8 @@ site-name: $site-name
 --- ftd.row:
 width: fill
 border-left: 1
-padding-left: $fpm.space.space-5
-margin-left: $fpm.space.space-5
+padding-left: $fpm.space.space-4
+margin-left: $fpm.space.space-4
 
 --- fbs.fifthtry-brand-switcher:
 if: $show-brand
@@ -564,7 +574,7 @@ menu-hover-bg: $menu-hover-bg
 
 -- ftd.text site-url: $title
 caption title:
-role: $fpm.type.label-big
+role: $cta
 align: center
 white-space: nowrap
 
@@ -602,7 +612,7 @@ optional ftd.color active-text-color:
 optional string current-url:
 integer link-height: 16
 optional string link-style:
-role: $fpm.type.label-big
+role: $cta
 link: $link
 align: center
 white-space: nowrap
@@ -643,7 +653,7 @@ $on-click-outside$: $open = false
 
 --- ftd.text: $title
 if: $link is not null
-role: $fpm.type.label-big
+role: $cta
 link: $link
 padding-bottom: 15
 white-space: nowrap
@@ -657,11 +667,11 @@ move-left: 22
 
 --- ftd.text: $title
 if: $link is null
-role: $fpm.type.label-big
+role: $cta
 padding-bottom: 15
 white-space: nowrap
 padding-horizontal: 10
-color: $text-color
+color: $fpm.color.main.background.step-2
 margin-left: 10
 move-left: 22
 cursor: auto
@@ -670,7 +680,7 @@ cursor: auto
 if: $children is not empty
 color: $text-color
 position: center
-role: $fpm.type.label-big
+role: $cta
 move-up: 2
 move-left: 30
 
@@ -785,8 +795,8 @@ site-name: $site-name
 --- ftd.row:
 width: fill
 border-left: 1
-padding-left: $fpm.space.space-5
-margin-left: $fpm.space.space-5
+padding-left: $fpm.space.space-4
+margin-left: $fpm.space.space-4
 
 --- fbs.fifthtry-brand-switcher:
 if: $show-brand
@@ -1013,7 +1023,7 @@ padding-bottom: 10
 --- ftd.text: Table of contents:
 if: $toc is not empty
 color: $text-color
-role: $fpm.type.label-big
+role: $cta
 padding-bottom: 10
 border-bottom: 1
 border-color: $fpm.color.main.text
@@ -1054,7 +1064,7 @@ menu-border: $menu-border
 -- ftd.text site-link: $title
 caption title:
 optional string font-family:
-role: $fpm.type.label-big
+role: $cta
 color: $fpm.color.main.text
 align: center
 
@@ -1102,7 +1112,7 @@ $on-click-outside$: $open = false
 
 --- ftd.text: $title
 if: $link is not null
-role: $fpm.type.label-big
+role: $cta
 link: $link
 white-space: nowrap
 padding-horizontal: 10
@@ -1113,10 +1123,10 @@ color if $current-url == $link: $active-text-color
 
 --- ftd.text: $title
 if: $link is null
-role: $fpm.type.label-big
+role: $cta
 white-space: nowrap
 padding-horizontal: 10
-color: $text-color
+color: $fpm.color.main.background.step-2
 
 --- ftd.column:
 if: $children is empty
@@ -1214,19 +1224,19 @@ background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
-role: $fpm.type.label-big
+role: $cta
 width: fill
 border-radius: 4
 
 --- ftd.text: $obj.title
 if: $obj.url is null
-color: $menu-link
-color if $MOUSE-IN: $menu-link-active
+color: $fpm.color.main.background.step-2
+/color if $MOUSE-IN: $menu-link-active
 background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
-role: $fpm.type.label-big
+role: $cta
 width: fill
 border-radius: 4
 
@@ -1251,18 +1261,18 @@ color if $MOUSE-IN: $menu-link-active
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
-role: $fpm.type.label-big
+role: $cta
 width: fill
 border-radius: 4
 
 --- ftd.text: $obj.title
 if: $obj.url is null
-color: $menu-link
+color: $fpm.color.main.background.step-2
 color if $MOUSE-IN: $menu-link-active
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
-role: $fpm.type.label-big
+role: $cta
 width: fill
 border-radius: 4
 
@@ -1310,7 +1320,7 @@ $processor$: toc
 $processor$: toc
 
 - APIs & SKDs: 
-  - API: /api/
+  - API:
   - Stripe.js: /index/
   - CLI: /cli/
   - ios: /ios/
