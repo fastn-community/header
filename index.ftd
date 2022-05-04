@@ -9,7 +9,7 @@
 
 -- ftd.font-size cta-txt:
 line-height: 16
-size: 16
+size: 14
 letter-spacing: 0
 
 -- ftd.type cta: $fpm.font-display
