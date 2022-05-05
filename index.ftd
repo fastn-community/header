@@ -172,7 +172,6 @@ show-brand: true
 
 
 
-
 -- pd.output: Single Row Header 
 
 \-- header:
@@ -217,9 +216,10 @@ sub-sections: $sub-sections
 link-style: bold
 menu-left: -88
 menu-right: 0
-include-dark-mode-switcher: false
+/include-dark-mode-switcher: false
 include-language-switcher: false
 toc: $empty-toc
+
 
 
 
@@ -386,7 +386,7 @@ optional string logo-width:
 optional string logo-height: 
 string link-style: 
 ftd.color background:  
-ftd.color text-color: 
+ftd.color text-color:
 ftd.color active-text-color:
 ftd.color menu-bg:
 ftd.color menu-hover-bg:

@@ -1,0 +1,31 @@
+-- import: fpm
+
+
+
+-- fpm.toc-item list toc-top-right:
+$processor$: toc
+
+- services:/roadmap/
+- about us:/about us/
+
+
+-- header:
+titleName:xyz
+logo:xyz
+toc-top-right: $toc-top-right
+
+
+
+-- ftd.column header:
+string titleName:
+string logo:
+fpm.toc-item list toc-top-right:$empty-toc
+
+ 
+--- ftd.text:$titleName
+
+--- ftd.text:$logo
+
+
+---header-nav-right:
+toc-top-right: $toc-top-right
