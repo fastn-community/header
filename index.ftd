@@ -873,8 +873,6 @@ optional string logo-width:
 optional string logo-height: 
 string link-style: 
 ftd.color background:  
-string width: 
-width: $width
 ftd.color text-color:
 ftd.color active-text-color:
 ftd.color menu-bg:
@@ -883,6 +881,8 @@ ftd.color menu-link:
 ftd.color menu-link-active:
 ftd.color menu-border:
 optional string font-family:
+string width: 
+width: $width
 sticky: true
 height: calc 100vh - 0px
 overflow-y: auto
@@ -893,7 +893,7 @@ padding-top: 15
 padding-right: 20
 padding-bottom: 40
 border-right: 1
-border-color: $fpm.color.main.text
+border-color: $fpm.color.main.border
 anchor: window
 left: 0
 top: 0
@@ -910,7 +910,7 @@ z-index: 4
 if: $sections is not empty
 width: fill
 border-bottom: 1
-border-color: $fpm.color.main.text
+border-color: $fpm.color.main.border
 padding-bottom: 10
 margin-bottom: 15
 
@@ -937,7 +937,7 @@ menu-border: $menu-border
 if: $sub-sections is not empty
 width: fill
 border-bottom: 1
-border-color: $fpm.color.main.text
+border-color: $fpm.color.main.border
 padding-bottom: 10
 margin-bottom: 10
 
@@ -963,7 +963,7 @@ menu-border: $menu-border
 if: $extra is not empty
 width: fill
 border-bottom: 1
-border-color: $fpm.color.main.text
+border-color: $fpm.color.main.border
 padding-bottom: 10
 margin-bottom: 10
 
@@ -989,7 +989,7 @@ menu-border: $menu-border
 if: $fpm.language is not null
 width: fill
 border-top: 1
-border-color: $fpm.color.main.text
+border-color: $fpm.color.main.border
 padding-bottom: 10
 padding-left: 15
 padding-top: 15
@@ -1026,7 +1026,7 @@ color: $text-color
 role: $cta
 padding-bottom: 10
 border-bottom: 1
-border-color: $fpm.color.main.text
+border-color: $fpm.color.main.border
 width: fill
 padding-left: 10
 margin-bottom: 10
@@ -1126,7 +1126,7 @@ if: $link is null
 role: $cta
 white-space: nowrap
 padding-horizontal: 10
-color: $fpm.color.main.background.step-2
+color: $text-color
 
 --- ftd.column:
 if: $children is empty
@@ -1169,7 +1169,7 @@ right if $right is not null: $right
 top: 30
 background-color: $menu-bg
 border-width: 1
-border-color: $menu-border
+border-color: $fpm.color.main.border
 border-radius: 6
 shadow-offset-x: 3
 shadow-offset-y: 0
@@ -1186,6 +1186,15 @@ $loop$: $children as $obj
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-hover-bg: $menu-hover-bg
+
+
+
+
+
+
+
+
+
 
 
 -- ftd.column show-children-mobile:
@@ -1205,6 +1214,13 @@ obj: $obj
 $loop$: $children as $obj
 menu-link: $menu-link
 menu-link-active: $menu-link-active
+
+
+
+
+
+
+
 
 
 
