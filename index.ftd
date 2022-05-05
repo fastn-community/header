@@ -424,6 +424,8 @@ color: $fpm.color.main.text-strong
 if: $site-logo is null
 site-name: $site-name
 
+--- container: left-side-top
+
 --- ftd.row:
 width: fill
 border-left: 1
