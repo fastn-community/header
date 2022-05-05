@@ -9,7 +9,7 @@
 
 -- ftd.font-size cta-txt:
 line-height: 16
-size: 14
+size: 16
 letter-spacing: 0
 
 -- ftd.type cta: $fpm.font-display
@@ -257,6 +257,10 @@ ftd.color menu-hover-bg: $fpm.color.main.background.base
 ftd.color menu-link: $fpm.color.main.text
 ftd.color menu-link-active: $fpm.color.main.text
 ftd.color menu-border: $fpm.color.main.text
+optional string nav-title: 
+optional string nav-title-url:
+optional string nav-sub-title:
+optional string nav-sub-title-url:
 boolean show-brand: false
 string width: fill
 boolean include-dark-mode-switcher: true
@@ -1190,6 +1194,13 @@ menu-link-active: $menu-link-active
 menu-hover-bg: $menu-hover-bg
 
 
+
+
+
+
+
+
+
 -- ftd.column show-children-mobile:
 fpm.toc-item list children:
 ftd.color menu-bg:
@@ -1232,8 +1243,7 @@ border-radius: 4
 
 --- ftd.text: $obj.title
 if: $obj.url is null
-color: $menu-link
-color if $MOUSE-IN: $menu-link-active
+color: $fpm.color.main.background.step-2
 background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
 padding-vertical: 8
@@ -1259,24 +1269,20 @@ width: fill
 if: $obj.url is not null
 link: $obj.url
 color: $menu-link
-color if $MOUSE-IN: $menu-link-active
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
 role: $cta
 width: fill
-border-radius: 4
 
 --- ftd.text: $obj.title
 if: $obj.url is null
-color: $menu-link
-color if $MOUSE-IN: $menu-link-active
+color: $fpm.color.main.background.step-2
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
 role: $cta
 width: fill
-border-radius: 4
 
 
 
