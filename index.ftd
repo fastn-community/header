@@ -9,7 +9,7 @@
 
 -- ftd.font-size cta-txt:
 line-height: 16
-size: 14
+size: 16
 letter-spacing: 0
 
 -- ftd.type cta: $fpm.font-display
@@ -873,6 +873,8 @@ optional string logo-width:
 optional string logo-height: 
 string link-style: 
 ftd.color background:  
+string width: 
+width: $width
 ftd.color text-color:
 ftd.color active-text-color:
 ftd.color menu-bg:
@@ -881,8 +883,6 @@ ftd.color menu-link:
 ftd.color menu-link-active:
 ftd.color menu-border:
 optional string font-family:
-string width: 
-width: $width
 sticky: true
 height: calc 100vh - 0px
 overflow-y: auto
@@ -893,7 +893,7 @@ padding-top: 15
 padding-right: 20
 padding-bottom: 40
 border-right: 1
-border-color: $fpm.color.main.border
+border-color: $fpm.color.main.text
 anchor: window
 left: 0
 top: 0
@@ -910,7 +910,7 @@ z-index: 4
 if: $sections is not empty
 width: fill
 border-bottom: 1
-border-color: $fpm.color.main.border
+border-color: $fpm.color.main.text
 padding-bottom: 10
 margin-bottom: 15
 
@@ -937,7 +937,7 @@ menu-border: $menu-border
 if: $sub-sections is not empty
 width: fill
 border-bottom: 1
-border-color: $fpm.color.main.border
+border-color: $fpm.color.main.text
 padding-bottom: 10
 margin-bottom: 10
 
@@ -963,7 +963,7 @@ menu-border: $menu-border
 if: $extra is not empty
 width: fill
 border-bottom: 1
-border-color: $fpm.color.main.border
+border-color: $fpm.color.main.text
 padding-bottom: 10
 margin-bottom: 10
 
@@ -989,7 +989,7 @@ menu-border: $menu-border
 if: $fpm.language is not null
 width: fill
 border-top: 1
-border-color: $fpm.color.main.border
+border-color: $fpm.color.main.text
 padding-bottom: 10
 padding-left: 15
 padding-top: 15
@@ -1026,7 +1026,7 @@ color: $text-color
 role: $cta
 padding-bottom: 10
 border-bottom: 1
-border-color: $fpm.color.main.border
+border-color: $fpm.color.main.text
 width: fill
 padding-left: 10
 margin-bottom: 10
@@ -1126,7 +1126,7 @@ if: $link is null
 role: $cta
 white-space: nowrap
 padding-horizontal: 10
-color: $text-color
+color: $fpm.color.main.background.step-2
 
 --- ftd.column:
 if: $children is empty
@@ -1169,7 +1169,7 @@ right if $right is not null: $right
 top: 30
 background-color: $menu-bg
 border-width: 1
-border-color: $fpm.color.main.border
+border-color: $menu-border
 border-radius: 6
 shadow-offset-x: 3
 shadow-offset-y: 0
@@ -1186,8 +1186,6 @@ $loop$: $children as $obj
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-hover-bg: $menu-hover-bg
-
-
 
 
 
@@ -1217,13 +1215,6 @@ menu-link-active: $menu-link-active
 
 
 
-
-
-
-
-
-
-
 -- ftd.column l:
 fpm.toc-item obj:
 ftd.color menu-hover-bg:
@@ -1246,8 +1237,7 @@ border-radius: 4
 
 --- ftd.text: $obj.title
 if: $obj.url is null
-color: $menu-link
-color if $MOUSE-IN: $menu-link-active
+color: $fpm.color.main.background.step-2
 background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
 padding-vertical: 8
@@ -1273,24 +1263,20 @@ width: fill
 if: $obj.url is not null
 link: $obj.url
 color: $menu-link
-color if $MOUSE-IN: $menu-link-active
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
 role: $cta
 width: fill
-border-radius: 4
 
 --- ftd.text: $obj.title
 if: $obj.url is null
-color: $menu-link
-color if $MOUSE-IN: $menu-link-active
+color: $fpm.color.main.background.step-2
 white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
 role: $cta
 width: fill
-border-radius: 4
 
 
 
