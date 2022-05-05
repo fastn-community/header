@@ -329,6 +329,10 @@ menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
 show-brand: $show-brand
+nav-title: $nav-title
+nav-title-url: $nav-title-url
+nav-sub-title: $nav-sub-title
+nav-sub-title-url: $nav-sub-title-url
 
 
 --- header-mobile:
@@ -400,6 +404,10 @@ ftd.color menu-border:
 boolean show-brand: 
 string width: 
 width: $width
+optional string nav-title: 
+optional string nav-title-url:
+optional string nav-sub-title:
+optional string nav-sub-title-url:
 padding-horizontal: 48
 padding-vertical: 20
 
@@ -515,7 +523,7 @@ background: $menu-bg
 --- ftd.row:
 if: $sub-sections is not empty
 width: fill
-move-left: 20
+/move-left: 20
 padding-top: 20
 
 --- ftd.row:
@@ -523,9 +531,32 @@ width: fill
 id: bottom-row
 
 --- ftd.column:
+if: $nav-title is not null
+width: fill
+
+--- ftd.text: $nav-title
+if: $nav-title-url is not null
+role: $cta
+color: $fpm.color.main.accent.tertiary
+link: $nav-title-url
+padding-bottom: $fpm.space.space-2
+
+
+--- ftd.text: $nav-sub-title
+if: $nav-sub-title is not null
+role: $fpm.type.fine-print
+color: $fpm.color.main.text
+link: $nav-sub-title
+
+--- container: bottom-row
+
+--- ftd.column:
 id: left-side
 width: fill
+width if $nav-title is not null: auto
+align if $nav-title is not null: center
 align: left
+
 
 --- ftd.row:
 width: auto
@@ -551,6 +582,7 @@ menu-hover-bg: $menu-hover-bg
 --- ftd.column:
 width: auto
 id: right-side
+align if $nav-title is not null: center
 align: right
 move-right: 20
 
@@ -664,7 +696,7 @@ role: $cta
 link: $link
 /padding-bottom: 15
 white-space: nowrap
-padding-horizontal: 10
+padding-left: 10
 color: $text-color
 color if $current-url == $link: $active-text-color
 border-bottom if $current-url == $link: 2
@@ -676,10 +708,9 @@ if: $link is null
 role: $cta
 /padding-bottom: 15
 white-space: nowrap
-padding-horizontal: 10
+padding-left: 10
 color: $text-color
-margin-left: 10
-move-left: 30
+margin-left: 20
 cursor: auto
 
 --- ftd.text: ﹀
@@ -687,8 +718,9 @@ if: $children is not empty
 color: $text-color
 position: center
 role: $cta
+padding-left: 5
 move-down: 5
-move-left: 30
+
 
 --- ftd.column:
 width: 0
