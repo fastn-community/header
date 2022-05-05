@@ -257,6 +257,10 @@ ftd.color menu-hover-bg: $fpm.color.main.background.base
 ftd.color menu-link: $fpm.color.main.text
 ftd.color menu-link-active: $fpm.color.main.text
 ftd.color menu-border: $fpm.color.main.text
+optional string nav-title: 
+optional string nav-title-url:
+optional string nav-sub-title:
+optional string nav-sub-title-url:
 boolean show-brand: false
 string width: fill
 boolean include-dark-mode-switcher: true
