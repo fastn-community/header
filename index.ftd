@@ -172,7 +172,6 @@ show-brand: true
 
 
 
-
 -- pd.output: Single Row Header 
 
 \-- header:
@@ -220,6 +219,7 @@ menu-right: 0
 include-dark-mode-switcher: false
 include-language-switcher: false
 toc: $empty-toc
+
 
 
 
@@ -386,7 +386,7 @@ optional string logo-width:
 optional string logo-height: 
 string link-style: 
 ftd.color background:  
-ftd.color text-color: 
+ftd.color text-color:
 ftd.color active-text-color:
 ftd.color menu-bg:
 ftd.color menu-hover-bg:
@@ -423,6 +423,8 @@ color: $fpm.color.main.text-strong
 --- fallback-title:
 if: $site-logo is null
 site-name: $site-name
+
+--- container: left-side-top
 
 --- ftd.row:
 width: fill
