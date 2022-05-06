@@ -1164,7 +1164,6 @@ $on-click-outside$: $open = false
 if: $link is not null
 role: $cta
 link: $link
-white-space: nowrap
 padding-horizontal: 10
 color: $text-color
 color if $current-url == $link: $active-text-color
@@ -1174,7 +1173,6 @@ color if $current-url == $link: $active-text-color
 --- ftd.text: $title
 if: $link is null
 role: $cta
-white-space: nowrap
 padding-horizontal: 10
 color: $fpm.color.main.background.step-2
 
@@ -1313,7 +1311,6 @@ width: fill
 if: $obj.url is not null
 link: $obj.url
 color: $menu-link
-white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
 role: $cta
@@ -1322,7 +1319,6 @@ width: fill
 --- ftd.text: $obj.title
 if: $obj.url is null
 color: $fpm.color.main.background.step-2
-white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
 role: $cta
