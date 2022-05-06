@@ -537,7 +537,7 @@ background: $menu-bg
 if: $nav-title is not null
 width: fill
 /move-left: 20
-padding-top: 20
+padding-top: $fpm.space.space-6
 
 --- ftd.row:
 width: fill
@@ -559,7 +559,7 @@ padding-bottom: $fpm.space.space-2
 if: $nav-sub-title is not null
 role: $fpm.type.fine-print
 color: $fpm.color.main.text
-link: $nav-sub-title
+link: $nav-sub-title-url
 
 --- container: bottom-row
 
