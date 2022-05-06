@@ -8,7 +8,7 @@
 
 
 -- ftd.font-size cta-txt:
-line-height: 16
+line-height: 20
 size: 16
 letter-spacing: 0
 
@@ -1277,7 +1277,7 @@ color: $menu-link
 color if $MOUSE-IN: $menu-link-active
 background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
-padding-vertical: 8
+padding-vertical: 4
 padding-horizontal: 10
 role: $cta
 width: fill
@@ -1288,7 +1288,7 @@ if: $obj.url is null
 color: $fpm.color.main.background.step-2
 background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
-padding-vertical: 8
+padding-vertical: 4
 padding-horizontal: 10
 role: $cta
 width: fill
