@@ -571,8 +571,6 @@ align if $nav-title is not null: center
 align: left
 
 
-
-
 --- ftd.row:
 width: auto
 /spacing: 12
