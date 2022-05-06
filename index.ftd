@@ -114,6 +114,7 @@ menu-left: -88
 toc: $empty-toc
 
 
+
 -- pd.output: with design elements of light mode
 reference: $assets.files.static.header.header-black-1200.png
 reference-width: fill
@@ -163,7 +164,7 @@ menu-link-active: $fpm.color.main.text
 menu-border: $fpm.color.main.text
 toc: $empty-toc
 show-brand: true
-
+login-button: true
 
 
 
@@ -193,6 +194,8 @@ link-style: bold
 menu-right: 0
 toc: $empty-toc
 show-brand: true
+login-button: true
+
 
 
 -- pd.output: Header with Left Menu 
@@ -208,6 +211,7 @@ include-dark-mode-switcher: false
 include-language-switcher: false
 toc: $empty-toc
 
+
 --- header:
 site-logo: $assets.files.static.header.logo-text.png
 site-url: /
@@ -219,6 +223,7 @@ menu-right: 0
 include-dark-mode-switcher: false
 include-language-switcher: false
 toc: $empty-toc
+login-button: true
 
 
 
@@ -262,6 +267,7 @@ optional string nav-title-url:
 optional string nav-sub-title:
 optional string nav-sub-title-url:
 boolean show-brand: false
+boolean login-button: false
 string width: fill
 boolean include-dark-mode-switcher: true
 boolean include-language-switcher: true
@@ -329,6 +335,7 @@ menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
 show-brand: $show-brand
+login-button: $login-button
 nav-title: $nav-title
 nav-title-url: $nav-title-url
 nav-sub-title: $nav-sub-title
@@ -402,6 +409,7 @@ ftd.color menu-link:
 ftd.color menu-link-active:
 ftd.color menu-border:
 boolean show-brand: 
+boolean login-button:
 string width: 
 width: $width
 optional string nav-title: 
@@ -473,7 +481,8 @@ menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
 
-
+--- login-signup:
+if: $login-button
 --- ftd.row:
 if: $include-dark-mode-switcher
 margin-right: 25
@@ -518,10 +527,14 @@ text-color: $text-color
 background: $menu-bg
 
 
+
+
+
+
 --- container: ftd.main
 
 --- ftd.row:
-if: $sub-sections is not empty
+if: $nav-title is not null
 width: fill
 /move-left: 20
 padding-top: 20
@@ -556,6 +569,8 @@ width: fill
 width if $nav-title is not null: auto
 align if $nav-title is not null: center
 align: left
+
+
 
 
 --- ftd.row:
@@ -604,7 +619,6 @@ menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
 menu-hover-bg: $menu-hover-bg
-
 
 
 
@@ -1381,3 +1395,64 @@ $processor$: toc
 - Hindi: /hi
 - Spanish: /es
 - German: /de
+
+
+
+-- ftd.row login-signup:
+optional string login:Login
+optional string sign-in: Sign-in
+optional ftd.image-src icon-github: $assets.files.static.icon-github.svg 
+spacing: 20
+margin-left: 4
+margin-top: -10
+
+--- ftd.row:
+width: fill
+border-left: 1
+padding-left: $fpm.space.space-5
+margin-left: $fpm.space.space-5
+border-color: $fpm.color.main.border
+
+--- ftd.text: $login
+role: $cta
+color: $fpm.color.main.cta-primary.base
+padding-vertical: 10
+link: https://cdoc.fifthtry.com/initiate-github-login/
+
+--- container: ftd.main
+
+--- github-button:
+sign-in: $sign-in
+icon-github: $icon-github
+
+
+-- ftd.row github-button:
+optional string sign-in: 
+optional string github-cta:
+optional string width:
+optional ftd.image-src icon-github: $assets.files.static.icon-github.svg 
+optional string link: https://github.com/apps/continuous-documentation
+padding-horizontal: $fpm.space.space-4
+padding-vertical: $fpm.space.space-2
+color: $fpm.color.main.background.step-1
+background-color: $fpm.color.main.cta-primary.base
+border-radius: 4
+width: $width
+spacing: 4
+cursor: pointer
+link: $link
+margin-top: -4
+align: center
+
+--- ftd.text: $sign-in
+white-space: nowrap
+role: $cta
+align: center
+text-align: center
+padding-top: 2
+color: $fpm.color.main.background.step-1
+
+--- ftd.image:
+src: $icon-github
+
+
