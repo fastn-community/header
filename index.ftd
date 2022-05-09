@@ -266,6 +266,8 @@ optional string nav-title:
 optional string nav-title-url:
 optional string nav-sub-title:
 optional string nav-sub-title-url:
+optional string login-btn-txt: Login
+optional string sign-in-txt: Sign up
 boolean show-brand: false
 boolean login-button: false
 string width: fill
@@ -336,6 +338,8 @@ menu-link-active: $menu-link-active
 menu-border: $menu-border
 show-brand: $show-brand
 login-button: $login-button
+login-btn-txt: $login-btn-txt
+sign-in-txt: $sign-in-txt 
 nav-title: $nav-title
 nav-title-url: $nav-title-url
 nav-sub-title: $nav-sub-title
@@ -399,7 +403,9 @@ integer menu-left:
 integer menu-right:
 optional string logo-width: 
 optional string logo-height: 
-string link-style: 
+string link-style:
+optional string login-btn-txt:
+optional string sign-in-txt: 
 ftd.color background:  
 ftd.color text-color:
 ftd.color active-text-color:
@@ -483,6 +489,9 @@ menu-border: $menu-border
 
 --- login-signup:
 if: $login-button
+login: $login-btn-txt
+sign-in: $sign-in-txt
+
 --- ftd.row:
 if: $include-dark-mode-switcher
 margin-right: 25
@@ -1393,8 +1402,8 @@ $processor$: toc
 
 
 -- ftd.row login-signup:
-optional string login:Login
-optional string sign-in: Sign-in
+optional string login:
+optional string sign-in: 
 optional ftd.image-src icon-github: $assets.files.static.icon-github.svg 
 spacing: 20
 margin-left: 4
@@ -1448,5 +1457,7 @@ color: $fpm.color.main.background.step-1
 
 --- ftd.image:
 src: $icon-github
+height: 16
+width: auto
 
 
