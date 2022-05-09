@@ -462,7 +462,7 @@ if: $show-brand
 --- ftd.row:
 id: right-side-top
 align: right
-move-right: 30
+move-right: 22
 padding-top: 20
 z-index: 1000
 
@@ -534,7 +534,6 @@ background: $menu-bg
 --- container: ftd.main
 
 --- ftd.row:
-if: $nav-title is not null
 width: fill
 /move-left: 20
 padding-top: $fpm.space.space-6
@@ -568,12 +567,13 @@ id: left-side
 width: fill
 width if $nav-title is not null: auto
 align if $nav-title is not null: center
-align: left
+align: right
 
 
 --- ftd.row:
 width: auto
 /spacing: 12
+align: right
 
 --- header-item: $obj.title
 $loop$: $sub-sections as $obj
