@@ -7,6 +7,18 @@
 -- import: fbs
 
 
+-- ftd.font-size login-cta-txt:
+line-height: 16
+size: 14
+letter-spacing: 0
+
+-- ftd.type login-cta: $fpm.font-display
+desktop: $login-cta-txt
+mobile: $login-cta-txt
+xl: $login-cta-txt
+weight: 700
+
+
 -- ftd.font-size cta-txt:
 line-height: 20
 size: 16
@@ -1449,10 +1461,9 @@ align: center
 
 --- ftd.text: $sign-in
 white-space: nowrap
-role: $cta
+role: $login-cta
 align: center
 text-align: center
-padding-top: 2
 color: $fpm.color.main.background.step-1
 
 --- ftd.image:
