@@ -1,4 +1,3 @@
-
 -- import: fifthtry.github.io/package-doc/doc as pd
 -- import: fpm
 -- import: dms
@@ -44,6 +43,7 @@ if: $ftd.device == mobile
 width: fill
 padding-horizontal: 50
 padding-horizontal if $is-mobile: 20
+background-color: $fpm.color.main.background.base
 
 -- pd.package: Header
 name: fifthtry.github.io/header
