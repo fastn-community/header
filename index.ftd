@@ -1,4 +1,3 @@
-
 -- import: fifthtry.github.io/package-doc/doc as pd
 -- import: fpm
 -- import: dms
@@ -17,8 +16,20 @@ mobile: $heading-small-txt
 xl: $heading-small-txt
 weight: 700
 
--- ftd.font-size cta-txt:
+-- ftd.font-size login-cta-txt:
 line-height: 16
+size: 14
+letter-spacing: 0
+
+-- ftd.type login-cta: $fpm.font-display
+desktop: $login-cta-txt
+mobile: $login-cta-txt
+xl: $login-cta-txt
+weight: 700
+
+
+-- ftd.font-size cta-txt:
+line-height: 20
 size: 16
 letter-spacing: 0
 
@@ -42,6 +53,7 @@ if: $ftd.device == mobile
 width: fill
 padding-horizontal: 50
 padding-horizontal if $is-mobile: 20
+background-color: $fpm.color.main.background.base
 
 -- pd.package: Header
 name: fifthtry.github.io/header
@@ -127,6 +139,7 @@ nav-sub-title: Lack Of Documentation Is Costing You
 nav-sub-title-url: blog/cost/
 nav-sub-section-title: Overview
 nav-sub-section-title-url: /
+
 
 
 
@@ -356,6 +369,8 @@ menu-link-active: $menu-link-active
 menu-border: $menu-border
 show-brand: $show-brand
 login-button: $login-button
+login-btn-txt: $login-btn-txt
+sign-in-txt: $sign-in-txt 
 nav-title: $nav-title
 nav-title-url: $nav-title-url
 nav-sub-title: $nav-sub-title
@@ -421,7 +436,9 @@ integer menu-left:
 integer menu-right:
 optional string logo-width: 
 optional string logo-height: 
-string link-style: 
+string link-style:
+optional string login-btn-txt:
+optional string sign-in-txt: 
 ftd.color background:  
 ftd.color text-color:
 ftd.color active-text-color:
@@ -504,6 +521,7 @@ menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
 
+
 --- ftd.row:
 if: $login-button
 
@@ -562,10 +580,9 @@ background: $menu-bg
 --- container: ftd.main
 
 --- ftd.row:
-if: $nav-title is not null
 width: fill
 /move-left: 20
-padding-top: 20
+padding-top: $fpm.space.space-6
 
 --- ftd.row:
 width: fill
@@ -606,6 +623,7 @@ link: $nav-sub-section-title-url
 white-space: nowrap
 
 
+
 --- container: bottom-row
 
 --- ftd.column:
@@ -613,12 +631,13 @@ id: left-side
 width: fill
 width if $nav-title is not null: auto
 align if $nav-title is not null: center
-align: left
+align: right
 
 
 --- ftd.row:
 width: auto
 /spacing: 12
+align: right
 
 --- header-item: $obj.title
 $loop$: $sub-sections as $obj
@@ -1210,7 +1229,6 @@ $on-click-outside$: $open = false
 if: $link is not null
 role: $cta
 link: $link
-white-space: nowrap
 padding-horizontal: 10
 color: $text-color
 color if $current-url == $link: $active-text-color
@@ -1220,7 +1238,6 @@ color if $current-url == $link: $active-text-color
 --- ftd.text: $title
 if: $link is null
 role: $cta
-white-space: nowrap
 padding-horizontal: 10
 color: $fpm.color.main.background.step-2
 
@@ -1325,7 +1342,7 @@ color: $menu-link
 color if $MOUSE-IN: $menu-link-active
 background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
-padding-vertical: 8
+padding-vertical: 4
 padding-horizontal: 10
 role: $cta
 width: fill
@@ -1336,7 +1353,7 @@ if: $obj.url is null
 color: $fpm.color.main.background.step-2
 background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
-padding-vertical: 8
+padding-vertical: 4
 padding-horizontal: 10
 role: $cta
 width: fill
@@ -1359,7 +1376,6 @@ width: fill
 if: $obj.url is not null
 link: $obj.url
 color: $menu-link
-white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
 role: $cta
@@ -1368,7 +1384,6 @@ width: fill
 --- ftd.text: $obj.title
 if: $obj.url is null
 color: $fpm.color.main.background.step-2
-white-space: nowrap
 padding-vertical: 8
 padding-horizontal: 10
 role: $cta
@@ -1451,7 +1466,6 @@ margin-left: 4
 margin-top: -10
 width: fill
 
-
 --- ftd.row:
 width: fill
 border-left: 1
@@ -1492,13 +1506,15 @@ align: center
 
 --- ftd.text: $sign-in
 white-space: nowrap
-role: $cta
+role: $login-cta
 align: center
 text-align: center
-padding-top: 2
 color: $fpm.color.main.background.step-1
 
 --- ftd.image:
 src: $icon-github
+height: 16
+width: auto
+
 
 
