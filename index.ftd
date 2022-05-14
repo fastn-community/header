@@ -5,6 +5,16 @@
 -- import: fifthtry.github.io/header/assets
 -- import: fbs
 
+-- ftd.font-size heading-small-txt:
+line-height: 36
+size: 24
+letter-spacing: 0
+
+-- ftd.type heading-small: $fpm.font-display
+desktop: $heading-small-txt
+mobile: $heading-small-txt
+xl: $heading-small-txt
+weight: 700
 
 -- ftd.font-size login-cta-txt:
 line-height: 16
@@ -28,6 +38,9 @@ desktop: $cta-txt
 mobile: $cta-txt
 xl: $cta-txt
 weight: 700
+
+
+
 
 section, sub-sections, extra
 
@@ -120,10 +133,16 @@ site-url: /
 site-name: FTD
 sections: $sections
 sub-sections: $sub-sections
-extra: $extra
 menu-right: 0
 menu-left: -88
 toc: $empty-toc
+nav-title: Blog
+nav-title-url: blog/
+nav-sub-title: Lack Of Documentation Is Costing You
+nav-sub-title-url: blog/cost/
+
+
+
 
 
 
@@ -140,8 +159,6 @@ site-url: /
 site-name: FTD
 current-url: /payments/
 sections: $sections
-sub-sections: $sub-sections
-extra: $extra
 logo-width: auto
 width: fill
 menu-left: -88
@@ -153,6 +170,10 @@ menu-link-active: $fpm.color.main.text
 menu-border: $fpm.color.main.text
 toc: $empty-toc
 show-brand: true
+nav-title: Blog
+nav-title-url: blog/
+nav-sub-title: Lack Of Documentation Is Costing You
+nav-sub-title-url: blog/cost/
 
 --- header:
 background: $fpm.color.main.background.step-1
@@ -278,6 +299,8 @@ optional string nav-title:
 optional string nav-title-url:
 optional string nav-sub-title:
 optional string nav-sub-title-url:
+optional string nav-sub-section-title:
+optional string nav-sub-section-title-url:
 optional string login-btn-txt: Login
 optional string sign-in-txt: Sign up
 boolean show-brand: false
@@ -356,6 +379,8 @@ nav-title: $nav-title
 nav-title-url: $nav-title-url
 nav-sub-title: $nav-sub-title
 nav-sub-title-url: $nav-sub-title-url
+nav-sub-section-title: $nav-sub-section-title
+nav-sub-section-title-url: $nav-sub-section-title
 
 
 --- header-mobile:
@@ -434,8 +459,13 @@ optional string nav-title:
 optional string nav-title-url:
 optional string nav-sub-title:
 optional string nav-sub-title-url:
+optional string nav-sub-section-title:
+optional string nav-sub-section-title-url:
+
+--- ftd.row:
+width: fill
+padding-vertical: 24
 padding-horizontal: 48
-padding-vertical: 20
 
 --- ftd.row:
 position: left
@@ -480,7 +510,6 @@ if: $show-brand
 --- ftd.row:
 id: right-side-top
 align: right
-move-right: 22
 padding-top: 20
 z-index: 1000
 
@@ -499,12 +528,15 @@ menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
 
---- login-signup:
+
+--- ftd.row:
 if: $login-button
+
+--- login-signup:
 login: $login-btn-txt
 sign-in: $sign-in-txt
 
---- ftd.row:
+/--- ftd.row:
 if: $include-dark-mode-switcher
 margin-right: 25
 margin-top: -6
@@ -522,7 +554,7 @@ menu-border: $menu-border
 /--- site-url: $site-url
 if: $site-url is not null
 
---- ftd.row:
+/--- ftd.row:
 if: $fpm.language is not null
 margin-left: 15
 margin-right: 15
@@ -549,37 +581,54 @@ background: $menu-bg
 
 
 
-
-
-
 --- container: ftd.main
 
 --- ftd.row:
 width: fill
-/move-left: 20
-padding-top: $fpm.space.space-6
+background-color: $fpm.color.main.background.step-1
+padding-horizontal: 48
 
 --- ftd.row:
 width: fill
 id: bottom-row
 
+
 --- ftd.column:
 if: $nav-title is not null
 width: fill
+padding-vertical: 24
 
 --- ftd.text: $nav-title
 if: $nav-title-url is not null
-role: $cta
-color: $fpm.color.main.accent.tertiary
+role: $heading-small
+color: $fpm.color.main.text-strong
 link: $nav-title-url
 padding-bottom: $fpm.space.space-2
 
+--- ftd.row:
+width: fill
+spacing: 8
 
 --- ftd.text: $nav-sub-title
 if: $nav-sub-title is not null
-role: $fpm.type.fine-print
-color: $fpm.color.main.text
+role: $fpm.type.label-small
+color: $fpm.color.main.text-strong
 link: $nav-sub-title-url
+white-space: nowrap
+
+--- ftd.text: ->
+if: $nav-sub-section-title is not null
+role: $fpm.type.label-small
+color: $fpm.color.main.text-strong
+white-space: nowrap
+
+--- ftd.text:$nav-sub-section-title
+if: $nav-sub-section-title-url is not null
+role: $fpm.type.label-small
+color: $fpm.color.main.text-strong
+link: $nav-sub-section-title-url
+white-space: nowrap
+
 
 --- container: bottom-row
 
@@ -589,12 +638,18 @@ width: fill
 width if $nav-title is not null: auto
 align if $nav-title is not null: center
 align: right
+padding-vertical if $nav-title is not null: 0
+padding-vertical if $sub-sections is not empty: 24
+
+
+
 
 
 --- ftd.row:
 width: auto
 /spacing: 12
 align: right
+
 
 --- header-item: $obj.title
 $loop$: $sub-sections as $obj
@@ -618,7 +673,7 @@ width: auto
 id: right-side
 align if $nav-title is not null: center
 align: right
-move-right: 20
+
 
 --- ftd.row:
 width: auto
@@ -665,6 +720,7 @@ optional string site-name:
 
 --- ftd.text: LOGO
 if: $site-name is null
+move-left: 2
 role: $fpm.type.heading-large
 color: $fpm.color.main.text-strong
 
@@ -790,11 +846,6 @@ $on-click$: toggle $sidebar-open
 
 
 
-
-
-
-
-
 -- ftd.row header-mobile:
 ftd.image-src menu-icon:
 optional ftd.image-src site-logo:
@@ -872,7 +923,6 @@ margin-left: $fpm.space.space-4
 --- fbs.fifthtry-brand-switcher:
 if: $show-brand
 
---- container: left-side
 
 --- container: ftd.main
 
@@ -975,7 +1025,33 @@ shadow-size: 1
 shadow-blur: 10
 /shadow-color: rgba (0, 0, 0, 0.05)
 z-index: 4
+spacing: 8
 
+--- ftd.column:
+width: fill
+padding-top: 8
+border-bottom: 1
+border-color: $fpm.color.main.text
+
+--- ftd.image:
+src: $site-logo
+
+
+--- ftd.row:
+width: fill
+link:/
+spacing : 2
+padding-vertical: 24 
+
+--- ftd.text: All Fifthtry Products
+role: $login-cta
+color:$fpm.color.main.cta-primary.base
+
+--- ftd.text: ->
+role: $login-cta
+color:$fpm.color.main.cta-primary.base
+
+--- container:  ftd.main
 
 --- ftd.column:
 if: $sections is not empty
@@ -984,7 +1060,6 @@ border-bottom: 1
 border-color: $fpm.color.main.text
 padding-bottom: 10
 margin-bottom: 15
-
 
 --- header-item-mobile: $obj.title
 $loop$: $sections as $obj
@@ -1138,8 +1213,6 @@ optional string font-family:
 role: $cta
 color: $fpm.color.main.text
 align: center
-
-
 
 
 
@@ -1420,6 +1493,7 @@ optional ftd.image-src icon-github: $assets.files.static.icon-github.svg
 spacing: 20
 margin-left: 4
 margin-top: -10
+width: fill
 
 --- ftd.row:
 width: fill
@@ -1470,5 +1544,6 @@ color: $fpm.color.main.background.step-1
 src: $icon-github
 height: 16
 width: auto
+
 
 
