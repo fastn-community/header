@@ -673,7 +673,7 @@ width: auto
 id: right-side
 align if $nav-title is not null: center
 align: right
-/move-right: 20
+
 
 --- ftd.row:
 width: auto
@@ -1487,8 +1487,8 @@ $processor$: toc
 
 
 -- ftd.row login-signup:
-optional string login:Login
-optional string sign-in: Sign-in
+optional string login:
+optional string sign-in: 
 optional ftd.image-src icon-github: $assets.files.static.icon-github.svg 
 spacing: 20
 margin-left: 4
