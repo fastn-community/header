@@ -596,7 +596,7 @@ id: bottom-row
 --- ftd.column:
 if: $nav-title is not null
 width: fill
-padding-vertical: 24
+padding-bottom: 24
 
 --- ftd.text: $nav-title
 if: $nav-title-url is not null
