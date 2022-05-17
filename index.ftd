@@ -79,20 +79,12 @@ This is the main header.
 $processor$: toc
 
 - Roadmap: /roadmap/
-- Journal: 
-  - Home Index: /index/
-  - Docs: /index/
-  - Articles: /index/
-  - Home Pictures: /index/
+- Journal:
 
 \-- fpm.toc-item list sub-sections:
 $processor$: toc
 
-- Home: 
-  - Home Index: /index/
-  - Docs: /index/
-  - Articles: /index/
-  - Home Pictures: /index/
+- Home:
 - Payments: 
 - Business Operations: /businessops/
 - Developer Tools: /developer-tools/
@@ -102,13 +94,7 @@ $processor$: toc
 \-- fpm.toc-item list extra:
 $processor$: toc
 
-- APIs & SKDs: 
-  - API: 
-  - Stripe.js: /index/
-  - CLI: /cli/
-  - ios: /ios/
-  - Android: /android/
-  - React Native: /react-native/
+- APIs & SKDs:
 - Support: /support/
 
 
@@ -117,7 +103,7 @@ reference: $assets.files.static.header.header-1200.png
 reference-width: fill
 
 \-- header:
-site-logo: $assets.files.static.header.logo-text.png
+site-logo: $assets.files.static.header.logo-text.svg
 site-url: /
 site-name: FTD
 sections: $sections
@@ -128,7 +114,7 @@ menu-left: -88
 toc: $empty-toc
 
 --- header:
-site-logo: $assets.files.static.header.logo-text.png
+site-logo: $assets.files.static.header.logo-text.svg
 site-url: /
 site-name: FTD
 sections: $sections
@@ -154,7 +140,7 @@ reference-width: fill
 background: $fpm.color.main.background.base
 text-color: $fpm.color.main.text
 active-text-color: $fpm.color.main.text
-site-logo: $assets.files.static.header.site-logo.png
+site-logo: $assets.files.static.header.site-logo.svg
 site-url: /
 site-name: FTD
 current-url: /payments/
@@ -179,7 +165,7 @@ nav-sub-title-url: blog/cost/
 background: $fpm.color.main.background.step-1
 text-color: $fpm.color.main.text
 active-text-color: $fpm.color.main.text
-/site-logo: $assets.files.static.header.site-logo.png
+/site-logo: $assets.files.static.header.site-logo.svg
 site-url: /
 /site-name: FTD
 current-url: /payments/
@@ -196,8 +182,7 @@ menu-link: $fpm.color.main.text
 menu-link-active: $fpm.color.main.text 
 menu-border: $fpm.color.main.text
 toc: $empty-toc
-show-brand: true
-login-button: true
+
 
 
 
@@ -209,32 +194,31 @@ login-button: true
 -- pd.output: Single Row Header 
 
 \-- header:
-site-logo: $assets.files.static.header.site-logo.png
+site-logo: $assets.files.static.header.site-logo.svg
 site-url: /
 site-name: FTD
 sections: $sections
 current-url: /
 link-style: bold
 toc: $empty-toc
-show-brand: true
+
 
 --- header:
-site-logo: $assets.files.static.header.site-logo.png
+site-logo: $assets.files.static.header.site-logo.svg
 site-url: /
 site-name: FTD
 sections: $sections
 link-style: bold
 menu-right: 0
 toc: $empty-toc
-show-brand: true
-login-button: true
+
 
 
 
 -- pd.output: Header with Left Menu 
 
 \-- header:
-site-logo: $assets.files.static.header.site-logo.png
+site-logo: $assets.files.static.header.logo-text.svg
 site-url: /
 site-name: FTD
 sub-sections: $sub-sections
@@ -246,7 +230,7 @@ toc: $empty-toc
 
 
 --- header:
-site-logo: $assets.files.static.header.logo-text.png
+site-logo: $assets.files.static.header.logo-text.svg
 site-url: /
 site-name: FTD
 sub-sections: $sub-sections
@@ -256,7 +240,7 @@ menu-right: 0
 include-dark-mode-switcher: false
 include-language-switcher: false
 toc: $empty-toc
-login-button: true
+
 
 
 
@@ -441,7 +425,7 @@ integer menu-right:
 optional string logo-width: 
 optional string logo-height: 
 string link-style:
-optional string login-btn-txt:
+optional string login-btn-txt:  
 optional string sign-in-txt: 
 ftd.color background:  
 ftd.color text-color:
@@ -502,8 +486,11 @@ margin-left: $fpm.space.space-5
 border-color: $fpm.color.main.border
 margin-top: 8
 
+
 --- fbs.fifthtry-brand-switcher:
 if: $show-brand
+
+
 
 --- container: left-side-top
 
@@ -919,6 +906,7 @@ width: fill
 border-left: 1
 padding-left: $fpm.space.space-4
 margin-left: $fpm.space.space-4
+
 
 --- fbs.fifthtry-brand-switcher:
 if: $show-brand
@@ -1437,20 +1425,12 @@ width: fill
 $processor$: toc
 
 - Roadmap: /roadmap/
-- Journal: 
-  - Home Index: /index/
-  - Docs: /index/
-  - Articles: /index/
-  - Home Pictures: /index/  
+- Journal:  
 
 -- fpm.toc-item list sub-sections:
 $processor$: toc
 
-- Home
-  - Home Bottom: /index/
-  - Docs: /index/
-  - Articles: /index/
-  - Home Pictures: /index/  
+- Home 
 - Payments
 - Business Operations: /businessops/
 - Developer Tools: /developer-tools/
@@ -1461,13 +1441,7 @@ $processor$: toc
 -- fpm.toc-item list extra:
 $processor$: toc
 
-- APIs & SKDs: 
-  - API:
-  - Stripe.js: /index/
-  - CLI: /cli/
-  - ios: /ios/
-  - Android: /android/
-  - React Native: /react-native/
+- APIs & SKDs:
 - Support: /support/
 
 
@@ -1485,7 +1459,6 @@ $processor$: toc
 - German: /de
 
 
-
 -- ftd.row login-signup:
 optional string login:
 optional string sign-in: 
@@ -1494,6 +1467,7 @@ spacing: 20
 margin-left: 4
 margin-top: -10
 width: fill
+
 
 --- ftd.row:
 width: fill
