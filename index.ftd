@@ -308,7 +308,7 @@ login-button: true
 optional ftd.image-src site-logo:
 string site-url: /
 optional string site-name:
-ftd.image-src menu-icon: $assets.files.static.header.hamburger.png
+ftd.image-src menu-icon: $assets.files.static.header.hamburger.svg
 string current-url: /payments/
 fpm.toc-item list sections: $empty-toc
 fpm.toc-item list sub-sections: $empty-toc
@@ -655,7 +655,7 @@ padding-bottom: $fpm.space.space-2
 
 --- ftd.row:
 width: fill
-spacing: 8
+
 
 --- ftd.text: $current-subsection.title
 if: $current-subsection.title is not null
@@ -663,12 +663,14 @@ role: $fpm.type.label-small
 color: $fpm.color.main.text-strong
 link: $current-subsection.url
 white-space: nowrap
+margin-right: 8
 
 --- ftd.text: ->
 if: $current-subsection.title is not null
 role: $fpm.type.label-small
 color: $fpm.color.main.text-strong
 white-space: nowrap
+margin-right: 8
 
 --- ftd.text:$current-page.title 
 if: $current-page.title is not null
@@ -676,6 +678,8 @@ role: $fpm.type.label-small
 color: $fpm.color.main.text-strong
 link: $current-page.url 
 white-space: nowrap
+margin-right: 8
+
 
 
 --- container: bottom-row
@@ -685,15 +689,12 @@ id: left-side
 width: fill
 align: right
 padding-vertical if $sub-sections is not empty: 24
-
-
-
+margin-top if $current-subsection.title is not null: 16
 
 
 --- ftd.row:
 width: auto
 align: right
-
 
 --- header-item: $obj.title
 $loop$: $sub-sections as $obj
@@ -710,18 +711,7 @@ menu-link-active: $menu-link-active
 menu-border: $menu-border
 menu-hover-bg: $menu-hover-bg
 
---- container: bottom-row
 
---- ftd.column:
-width: auto
-id: right-side
-align if $nav-title is not null: center
-align: right
-
-
---- ftd.row:
-width: auto
-/spacing: 10
 
 
 
@@ -1033,16 +1023,13 @@ margin-left: $fpm.space.space-4
 
 --- ftd.row:
 width: fill
+if: $current-section.title is not null
 background-color: $fpm.color.main.background.step-1
 id: bottom-row
 
 
-
---- ftd.column:
-width: fill
-
 --- ftd.row:
-
+width: auto
 
 --- ftd.text: $current-section.title
 if: $current-section.title is not null
@@ -1053,6 +1040,7 @@ background-color: $fpm.color.main.cta-tertiary.base
 padding-vertical: 8
 padding-horizontal: 8
 width: fill
+white-space: nowrap
 
 
 --- container: bottom-row
@@ -1582,10 +1570,6 @@ width: fill
 
 
 
-
-
-
-
 -- fpm.toc-item list extra:
 $processor$: toc
 
@@ -1622,10 +1606,7 @@ $processor$: toc
 -- ftd.row login-signup:
 optional string login:
 optional string sign-in: 
-ftd.image-src icon-github: $assets.files.static.icon-github.svg 
-spacing: 20
-margin-left: 4
-margin-top: -10
+ftd.image-src icon-github: $assets.files.static.icon-github.svg
 width: fill
 
 --- login-signup-desktop:
@@ -1645,11 +1626,11 @@ icon-github: $icon-github
 -- ftd.row login-signup-desktop:
 optional string login:
 optional string sign-in: 
-optional ftd.image-src icon-github: 
+optional ftd.image-src icon-github:
 spacing: 20
-margin-left: 4
 margin-top: -10
 width: fill
+
 
 --- ftd.row:
 width: fill
