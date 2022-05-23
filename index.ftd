@@ -807,7 +807,7 @@ link: $link
 white-space: nowrap
 padding-left: 10
 color: $text-color
-color if $is-active: $fpm.color.main.text-strong
+color if $is-active: $fpm.color.main.cta-primary.base
 border-bottom if $current-url == $link: 2
 border-color if $current-url == $link: $active-text-color
 margin-left: 10
@@ -819,7 +819,7 @@ role: $cta
 white-space: nowrap
 padding-left: 10
 color: $text-color
-color if $is-active: $fpm.color.main.text-strong
+color if $is-active: $fpm.color.main.cta-primary.base
 margin-left: 20
 cursor: auto
 
