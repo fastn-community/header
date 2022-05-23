@@ -850,7 +850,7 @@ link: $link
 white-space: nowrap
 padding-left: 10
 color: $fpm.color.main.text
-color if $is-active: $fpm.color.main.text-strong
+color if $is-active: $fpm.color.main.cta-primary.base
 border-bottom if $current-url == $link: 2
 border-color if $current-url == $link: $active-text-color
 margin-left: 10
@@ -862,7 +862,7 @@ role: $login-cta
 white-space: nowrap
 padding-left: 10
 color: $fpm.color.main.text
-color if $is-active: $fpm.color.main.text-strong
+color if $is-active:$fpm.color.main.cta-primary.base
 margin-left: 20
 cursor: auto
 
@@ -909,7 +909,7 @@ link: $link
 white-space: nowrap
 padding-left: 10
 color: $text-color
-color if $is-active: $fpm.color.main.text-strong
+color if $is-active: $fpm.color.main.cta-primary.base
 border-bottom if $current-url == $link: 2
 border-color if $current-url == $link: $active-text-color
 margin-left: 10
@@ -921,7 +921,7 @@ role: $fpm.type.fine-print
 white-space: nowrap
 padding-left: 10
 color: $text-color
-color if $is-active: $fpm.color.main.text-strong
+color if $is-active: $fpm.color.main.cta-primary.base
 margin-left: 20
 cursor: auto
 
@@ -972,6 +972,8 @@ string width:
 width: $width
 background-color: $background
 boolean show-brand:
+/$on-click-outside$: $show-section = false
+
 
 
 --- ftd.row:
@@ -1009,14 +1011,6 @@ position: center
 if: $site-logo is null
 site-name: $site-name
 
---- container: left-side
-
---- ftd.row:
-width: fill
-border-left: 1
-padding-left: $fpm.space.space-4
-margin-left: $fpm.space.space-4
-
 
 
 --- container: ftd.main
@@ -1051,6 +1045,7 @@ spacing: 8
 padding-top: 8
 overflow-x: auto
 
+
 --- header-item-mobile-view: $obj.title
 $loop$: $sub-sections as $obj
 children: $obj.children 
@@ -1076,6 +1071,7 @@ background-color: $fpm.color.main.background.step-2
 id: bottom-row
 padding-horizontal: 8
 $on-click$: toggle $show-section 
+$on-click-outside$: $show-section = false
 
 --- ftd.row:
 width: fill
@@ -1088,6 +1084,10 @@ if: $current-section.title is not null
 role: $bold-copy-large
 color: $fpm.color.main.text-strong
 width: fill
+
+
+--- ftd.row:
+padding-top: 4
 
 --- octicons.triangle-down:
 if: not $show-section 
@@ -1231,7 +1231,7 @@ src: $site-logo
 
 
 --- fbs.fifthtry-brand-switcher:
-
+if: $show-brand
 
 --- container:  ftd.main
 
@@ -1245,6 +1245,7 @@ padding-vertical: 24
 --- header-item-mobile: $obj.title
 $loop$: $sections as $obj
 children: $obj.children 
+is-active: $obj.is-active
 link: $obj.url
 text-color: $text-color
 active-text-color: $active-text-color
@@ -1365,6 +1366,7 @@ fpm.toc-item list children:
 optional string current-url:
 optional integer menu-right:
 optional integer menu-left:
+boolean is-active:
 ftd.color text-color:
 ftd.color active-text-color:
 ftd.color menu-bg:
@@ -1385,6 +1387,7 @@ if: $sections is not empty
 role: $cta
 link: $link
 color: $text-color
+color if $is-active: $fpm.color.main.cta-primary.base
 $on-click$: $show-section= true
 
 
@@ -1504,7 +1507,7 @@ width: fill
 if: $obj.url is not null
 link: $obj.url
 color: $menu-link
-color if $MOUSE-IN: $menu-link-active
+color if $obj.is-active: $fpm.color.main.cta-primary.base
 background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
 padding-vertical: 4
@@ -1516,6 +1519,7 @@ border-radius: 4
 --- ftd.text: $obj.title
 if: $obj.url is null
 color: $fpm.color.main.background.step-2
+color if $obj.is-active: $fpm.color.main.cta-primary.base
 background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
 padding-vertical: 4
@@ -1541,6 +1545,7 @@ width: fill
 if: $obj.url is not null
 link: $obj.url
 color: $menu-link
+color if $obj.is-active: $fpm.color.main.cta-primary.base
 padding-vertical: 8
 padding-horizontal: 10
 role: $cta
