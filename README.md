@@ -4,7 +4,7 @@ The header package(https://github.com/FifthTry/header) can be used as header on 
 
 Basic Usage:
 ```ftd
--- header:
+\-- header:
 site-logo: $assets.files.static.header.logo-text.png
 site-url: /
 site-name: FTD
