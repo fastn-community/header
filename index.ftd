@@ -1071,7 +1071,7 @@ background-color: $fpm.color.main.background.step-2
 id: bottom-row
 padding-horizontal: 8
 $on-click$: toggle $show-section 
-$on-click-outside$: $show-section = false
+/$on-click-outside$: $show-section = false
 
 --- ftd.row:
 width: fill
