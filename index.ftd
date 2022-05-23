@@ -3,7 +3,47 @@
 -- import: dms
 -- import: lang
 -- import: fifthtry.github.io/header/assets
+-- import: fifthtry.github.io/octicon as octicons
 -- import: fbs
+
+-- boolean show-section: false
+
+-- fpm.sitemap-data sitemap:
+$processor$: sitemap
+
+
+-- fpm.toc-item list sections:
+$processor$: toc
+
+- Roadmap: /roadmap/
+- Home Index: /index/
+- Docs: /index/
+- Articles: /index/
+- Home Pictures: /index/  
+
+-- fpm.toc-item list sub-sections:
+$processor$: toc
+
+- Home: / 
+- Payments: /
+- Business Operations: /businessops/
+- Developer Tools: /developer-tools/
+- Security: /security/
+- All Products: /all-products/
+
+
+
+-- ftd.type bold-fine-print: $fpm.type.fine-print.font
+desktop: $fpm.type.fine-print.desktop
+mobile: $fpm.type.fine-print.mobile
+xl: $fpm.type.fine-print.xl
+weight: 700
+
+-- ftd.type bold-copy-large: $fpm.type.copy-large.font
+desktop: $fpm.type.copy-large.desktop
+mobile: $fpm.type.copy-large.mobile
+xl: $fpm.type.copy-large.xl
+weight: 700
 
 -- ftd.font-size heading-small-txt:
 line-height: 36
@@ -79,12 +119,20 @@ This is the main header.
 $processor$: toc
 
 - Roadmap: /roadmap/
-- Journal:
+- Journal: 
+  - Home Index: /index/
+  - Docs: /index/
+  - Articles: /index/
+  - Home Pictures: /index/
 
 \-- fpm.toc-item list sub-sections:
 $processor$: toc
 
-- Home:
+- Home: 
+  - Home Index: /index/
+  - Docs: /index/
+  - Articles: /index/
+  - Home Pictures: /index/
 - Payments: 
 - Business Operations: /businessops/
 - Developer Tools: /developer-tools/
@@ -94,7 +142,13 @@ $processor$: toc
 \-- fpm.toc-item list extra:
 $processor$: toc
 
-- APIs & SKDs:
+- APIs & SKDs: 
+  - API: 
+  - Stripe.js: /index/
+  - CLI: /cli/
+  - ios: /ios/
+  - Android: /android/
+  - React Native: /react-native/
 - Support: /support/
 
 
@@ -103,30 +157,29 @@ reference: $assets.files.static.header.header-1200.png
 reference-width: fill
 
 \-- header:
-site-logo: $assets.files.static.header.logo-text.svg
+site-logo: $assets.files.static.header.logo-text.png
 site-url: /
 site-name: FTD
 sections: $sections
 sub-sections: $sub-sections
-extra: $extra
 menu-right: 0
 menu-left: -88
 toc: $empty-toc
 
 --- header:
-site-logo: $assets.files.static.header.logo-text.svg
+site-logo: $assets.files.static.header.logo-text.png
 site-url: /
 site-name: FTD
+menu-right: 0
 sections: $sections
 sub-sections: $sub-sections
-menu-right: 0
 menu-left: -88
 toc: $empty-toc
 nav-title: Blog
 nav-title-url: blog/
 nav-sub-title: Lack Of Documentation Is Costing You
 nav-sub-title-url: blog/cost/
-
+footer-nav: $footer-list
 
 
 
@@ -140,7 +193,7 @@ reference-width: fill
 background: $fpm.color.main.background.base
 text-color: $fpm.color.main.text
 active-text-color: $fpm.color.main.text
-site-logo: $assets.files.static.header.site-logo.svg
+site-logo: $assets.files.static.header.site-logo.png
 site-url: /
 site-name: FTD
 current-url: /payments/
@@ -165,13 +218,10 @@ nav-sub-title-url: blog/cost/
 background: $fpm.color.main.background.step-1
 text-color: $fpm.color.main.text
 active-text-color: $fpm.color.main.text
-/site-logo: $assets.files.static.header.site-logo.svg
+/site-logo: $assets.files.static.header.site-logo.png
 site-url: /
 /site-name: FTD
 current-url: /payments/
-sections: $sections
-sub-sections: $sub-sections
-extra: $extra
 logo-width: auto
 width: fill
 menu-left: -88
@@ -182,8 +232,9 @@ menu-link: $fpm.color.main.text
 menu-link-active: $fpm.color.main.text 
 menu-border: $fpm.color.main.text
 toc: $empty-toc
-
-
+show-brand: true
+login-button: true
+footer-nav: $footer-list
 
 
 
@@ -194,34 +245,33 @@ toc: $empty-toc
 -- pd.output: Single Row Header 
 
 \-- header:
-site-logo: $assets.files.static.header.site-logo.svg
+site-logo: $assets.files.static.header.site-logo.png
 site-url: /
 site-name: FTD
-sections: $sections
 current-url: /
 link-style: bold
 toc: $empty-toc
-
+show-brand: true
 
 --- header:
-site-logo: $assets.files.static.header.site-logo.svg
+site-logo: $assets.files.static.header.site-logo.png
 site-url: /
 site-name: FTD
-sections: $sections
 link-style: bold
 menu-right: 0
 toc: $empty-toc
-
+show-brand: true
+login-button: true
+footer-nav: $footer-list
 
 
 
 -- pd.output: Header with Left Menu 
 
 \-- header:
-site-logo: $assets.files.static.header.logo-text.svg
+site-logo: $assets.files.static.header.site-logo.png
 site-url: /
 site-name: FTD
-sub-sections: $sub-sections
 current-url: /
 link-style: bold
 include-dark-mode-switcher: false
@@ -230,17 +280,16 @@ toc: $empty-toc
 
 
 --- header:
-site-logo: $assets.files.static.header.logo-text.svg
+site-logo: $assets.files.static.header.logo-text.png
 site-url: /
 site-name: FTD
-sub-sections: $sub-sections
 link-style: bold
 menu-left: -88
 menu-right: 0
 include-dark-mode-switcher: false
 include-language-switcher: false
 toc: $empty-toc
-
+login-button: true
 
 
 
@@ -263,8 +312,12 @@ ftd.image-src menu-icon: $assets.files.static.header.hamburger.png
 string current-url: /payments/
 fpm.toc-item list sections: $empty-toc
 fpm.toc-item list sub-sections: $empty-toc
-fpm.toc-item list extra: $empty-toc
 fpm.toc-item list toc: $empty-toc
+optional fpm.toc-item current-section: 
+optional fpm.toc-item current-subsection: 
+optional fpm.toc-item current-page: 
+fpm.toc-item list footer-nav: $footer-list
+fpm.toc-item list extra: $empty-toc
 integer menu-left: 10
 integer menu-right: 10
 optional string logo-width: 
@@ -286,7 +339,7 @@ optional string nav-sub-title-url:
 optional string nav-sub-section-title:
 optional string nav-sub-section-title-url:
 optional string login-btn-txt: Login
-optional string sign-in-txt: Sign up
+optional string sign-in-txt: 
 boolean show-brand: false
 boolean login-button: false
 string width: fill
@@ -304,6 +357,7 @@ if: $sidebar-open
 --- container: ftd.main
 
 --- menu-mobile:
+show-brand: $show-brand
 if: $sidebar-open
 site-logo: $site-logo
 menu-icon: $menu-icon
@@ -312,7 +366,7 @@ site-name: $site-name
 current-url: $current-url
 sections: $sections
 sub-sections: $sub-sections 
-extra: $extra
+footer-nav: $footer-list
 menu-left: $menu-left 
 menu-right: $menu-right
 logo-width: $logo-width 
@@ -327,7 +381,9 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link 
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-toc: $toc
+login-button: $login-button
+login-btn-txt: $login-btn-txt
+sign-in-txt: $sign-in-txt
 
 
 --- header-desktop:
@@ -337,8 +393,10 @@ site-url: $site-url
 site-name: $site-name
 current-url: $current-url
 sections: $sections
+current-section: $current-section
+current-page: $current-page
+current-subsection: $current-subsection
 sub-sections: $sub-sections 
-extra: $extra
 include-dark-mode-switcher: $include-dark-mode-switcher
 include-language-switcher: $include-language-switcher
 menu-left: $menu-left 
@@ -347,6 +405,7 @@ logo-width: $logo-width
 logo-height: $logo-height 
 link-style: $link-style 
 background: $background  
+extra: $extra
 text-color: $text-color 
 active-text-color: $active-text-color
 width: $width
@@ -377,7 +436,9 @@ current-url: $current-url
 sections: $sections
 sub-sections: $sub-sections
 toc: $toc
-extra: $extra
+current-section: $current-section
+current-page: $current-page
+current-subsection: $current-subsection
 include-dark-mode-switcher: $include-dark-mode-switcher
 include-language-switcher: $include-language-switcher
 menu-border: $menu-border
@@ -416,16 +477,19 @@ string site-url:
 string current-url:
 optional string site-name: 
 fpm.toc-item list sections:
+optional fpm.toc-item current-subsection: 
 fpm.toc-item list sub-sections:
-fpm.toc-item list extra:
+optional fpm.toc-item current-section: 
+optional fpm.toc-item current-page:
 boolean include-dark-mode-switcher:
 boolean include-language-switcher:
+fpm.toc-item list extra:
 integer menu-left: 
 integer menu-right:
 optional string logo-width: 
 optional string logo-height: 
 string link-style:
-optional string login-btn-txt:  
+optional string login-btn-txt:
 optional string sign-in-txt: 
 ftd.color background:  
 ftd.color text-color:
@@ -486,11 +550,8 @@ margin-left: $fpm.space.space-5
 border-color: $fpm.color.main.border
 margin-top: 8
 
-
 --- fbs.fifthtry-brand-switcher:
 if: $show-brand
-
-
 
 --- container: left-side-top
 
@@ -502,8 +563,8 @@ z-index: 1000
 
 --- header-item: $obj.title
 $loop$: $sections as $obj
-children: $obj.children 
 link: $obj.url
+is-active: $obj.is-active
 text-color: $text-color
 active-text-color: $active-text-color
 current-url: $current-url
@@ -573,7 +634,7 @@ background: $menu-bg
 --- ftd.row:
 width: fill
 background-color: $fpm.color.main.background.step-1
-padding-horizontal: 48
+padding-horizontal: 24
 
 --- ftd.row:
 width: fill
@@ -581,39 +642,39 @@ id: bottom-row
 
 
 --- ftd.column:
-if: $nav-title is not null
+if: $current-section is not null
 width: fill
 padding-vertical: 24
 
---- ftd.text: $nav-title
-if: $nav-title-url is not null
+--- ftd.text: $current-section.title
+if: $current-section.title is not null
 role: $heading-small
 color: $fpm.color.main.text-strong
-link: $nav-title-url
+link: $current-section.url
 padding-bottom: $fpm.space.space-2
 
 --- ftd.row:
 width: fill
 spacing: 8
 
---- ftd.text: $nav-sub-title
-if: $nav-sub-title is not null
+--- ftd.text: $current-subsection.title
+if: $current-subsection.title is not null
 role: $fpm.type.label-small
 color: $fpm.color.main.text-strong
-link: $nav-sub-title-url
+link: $current-subsection.url
 white-space: nowrap
 
 --- ftd.text: ->
-if: $nav-sub-section-title is not null
+if: $current-subsection.title is not null
 role: $fpm.type.label-small
 color: $fpm.color.main.text-strong
 white-space: nowrap
 
---- ftd.text:$nav-sub-section-title
-if: $nav-sub-section-title-url is not null
+--- ftd.text:$current-page.title 
+if: $current-page.title is not null
 role: $fpm.type.label-small
 color: $fpm.color.main.text-strong
-link: $nav-sub-section-title-url
+link: $current-page.url 
 white-space: nowrap
 
 
@@ -622,10 +683,7 @@ white-space: nowrap
 --- ftd.column:
 id: left-side
 width: fill
-width if $nav-title is not null: auto
-align if $nav-title is not null: center
 align: right
-padding-vertical if $nav-title is not null: 0
 padding-vertical if $sub-sections is not empty: 24
 
 
@@ -634,13 +692,12 @@ padding-vertical if $sub-sections is not empty: 24
 
 --- ftd.row:
 width: auto
-/spacing: 12
 align: right
 
 
 --- header-item: $obj.title
 $loop$: $sub-sections as $obj
-children: $obj.children 
+is-active: $obj.is-active
 link: $obj.url
 text-color: $text-color
 active-text-color: $active-text-color
@@ -666,20 +723,7 @@ align: right
 width: auto
 /spacing: 10
 
---- header-item: $obj.title
-$loop$: $extra as $obj
-children: $obj.children 
-link: $obj.url
-text-color: $text-color
-active-text-color: $active-text-color
-current-url: $current-url
-menu-right: $menu-right
-/menu-left: $menu-left
-menu-bg: $menu-bg 
-menu-link: $menu-link
-menu-link-active: $menu-link-active
-menu-border: $menu-border
-menu-hover-bg: $menu-hover-bg
+
 
 
 
@@ -750,8 +794,8 @@ border-color if $current-url == $link: $active-text-color
 -- ftd.row header-item: 
 caption title:
 optional string link:
-fpm.toc-item list children:
 ftd.color text-color:
+boolean is-active: 
 ftd.color active-text-color:
 optional string current-url:
 optional integer menu-right:
@@ -767,14 +811,13 @@ $on-click-outside$: $open = false
 
 
 --- ftd.text: $title
-if: $link is not null
 role: $cta
 link: $link
 /padding-bottom: 15
 white-space: nowrap
 padding-left: 10
 color: $text-color
-color if $current-url == $link: $active-text-color
+color if $is-active: $fpm.color.main.text-strong
 border-bottom if $current-url == $link: 2
 border-color if $current-url == $link: $active-text-color
 margin-left: 10
@@ -786,36 +829,111 @@ role: $cta
 white-space: nowrap
 padding-left: 10
 color: $text-color
+color if $is-active: $fpm.color.main.text-strong
 margin-left: 20
 cursor: auto
 
---- ftd.text: ﹀
-if: $children is not empty
-color: $text-color
-position: center
-role: $cta
-padding-left: 5
-move-down: 5
+-- ftd.column header-toc-item-mobile-view: 
+caption title:
+optional string link:
+ftd.color text-color:
+fpm.toc-item list children:
+boolean is-active: 
+ftd.color active-text-color:
+optional string current-url:
+optional integer menu-right:
+optional integer menu-left:
+ftd.color menu-bg:
+ftd.color menu-hover-bg:
+ftd.color menu-link:
+ftd.color menu-link-active:
+ftd.color menu-border:
+boolean open: false
+$on-click$: toggle $open
+$on-click-outside$: $open = false
+
+
+--- ftd.text: $title
+role: $login-cta
+link: $link
+/padding-bottom: 15
+white-space: nowrap
+padding-left: 10
+color: $fpm.color.main.text
+color if $is-active: $fpm.color.main.text-strong
+border-bottom if $current-url == $link: 2
+border-color if $current-url == $link: $active-text-color
+margin-left: 10
+
+--- ftd.text: $title
+if: $link is null
+role: $login-cta
+/padding-bottom: 15
+white-space: nowrap
+padding-left: 10
+color: $fpm.color.main.text
+color if $is-active: $fpm.color.main.text-strong
+margin-left: 20
+cursor: auto
 
 
 --- ftd.column:
-width: 0
-if: $open
+if: $children is empty
+padding-bottom: 15
 
---- show-children:
+
+--- show-children-mobile:
 if: $children is not empty
 children: $children
-left: $menu-left
-right: $menu-right
-menu-bg: $menu-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
+menu-bg: $menu-bg
 menu-border: $menu-border
 menu-hover-bg: $menu-hover-bg
 
 
+-- ftd.column header-item-mobile-view: 
+caption title:
+optional string link:
+ftd.color text-color:
+fpm.toc-item list children:
+boolean is-active: 
+ftd.color active-text-color:
+optional string current-url:
+optional integer menu-right:
+optional integer menu-left:
+ftd.color menu-bg:
+ftd.color menu-hover-bg:
+ftd.color menu-link:
+ftd.color menu-link-active:
+ftd.color menu-border:
+boolean open: false
+$on-click$: toggle $open
+$on-click-outside$: $open = false
 
 
+--- ftd.text: $title
+role: $fpm.type.fine-print
+link: $link
+/padding-bottom: 15
+white-space: nowrap
+padding-left: 10
+color: $text-color
+color if $is-active: $fpm.color.main.text-strong
+border-bottom if $current-url == $link: 2
+border-color if $current-url == $link: $active-text-color
+margin-left: 10
+
+--- ftd.text: $title
+if: $link is null
+role: $fpm.type.fine-print
+/padding-bottom: 15
+white-space: nowrap
+padding-left: 10
+color: $text-color
+color if $is-active: $fpm.color.main.text-strong
+margin-left: 20
+cursor: auto
 
 
 
@@ -833,7 +951,7 @@ $on-click$: toggle $sidebar-open
 
 
 
--- ftd.row header-mobile:
+-- ftd.column header-mobile:
 ftd.image-src menu-icon:
 optional ftd.image-src site-logo:
 string site-url: 
@@ -841,8 +959,10 @@ string current-url:
 optional string site-name:
 fpm.toc-item list sections:
 fpm.toc-item list sub-sections:
-fpm.toc-item list extra:
 fpm.toc-item list toc:
+optional fpm.toc-item current-subsection: 
+optional fpm.toc-item current-section: 
+optional fpm.toc-item current-page:
 boolean include-dark-mode-switcher:
 boolean include-language-switcher:
 integer menu-left: 
@@ -861,8 +981,6 @@ ftd.color menu-link-active:
 string width: 
 width: $width
 background-color: $background
-padding-horizontal: 20
-padding-vertical: 15
 boolean show-brand:
 
 
@@ -870,6 +988,8 @@ boolean show-brand:
 position: left
 spacing: 25
 id: left-side
+padding-horizontal: 20
+padding-vertical: 15
 
 --- ftd.image:
 src: $menu-icon
@@ -908,55 +1028,150 @@ padding-left: $fpm.space.space-4
 margin-left: $fpm.space.space-4
 
 
---- fbs.fifthtry-brand-switcher:
-if: $show-brand
-
 
 --- container: ftd.main
 
---- ftd.column: 
+--- ftd.row:
 width: fill
-position: center
+background-color: $fpm.color.main.background.step-1
+id: bottom-row
+
+
+
+--- ftd.column:
+width: fill
 
 --- ftd.row:
-position: right
-spacing: 15
-width: auto
 
 
-/--- dms.switcher:
-if: $include-dark-mode-switcher
-background: $menu-bg 
+--- ftd.text: $current-section.title
+if: $current-section.title is not null
+role: $fpm.type.label-small
+color: $fpm.color.main.text
+link: $current-section.url
+background-color: $fpm.color.main.cta-tertiary.base
+padding-vertical: 8
+padding-horizontal: 8
+width: fill
+
+
+--- container: bottom-row
+
+--- ftd.row:
+width: fill
+spacing: 8
+padding-top: 8
+overflow-x: auto
+
+--- header-item-mobile-view: $obj.title
+$loop$: $sub-sections as $obj
+children: $obj.children 
+is-active: $obj.is-active
+link: $obj.url
+text-color: $text-color
+active-text-color: $active-text-color
+current-url: $current-url
+/menu-right: $menu-right
+menu-left: $menu-left
 menu-bg: $menu-bg 
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-
-
-
-
-/--- ftd.image:
-src: images/github-dark.svg
-src: images/github-light.svg
-width: 20
-min-width: 20
-link: $github
-align: center
-
-/--- ftd.image:
-/src: images/dark-mode.svg
-height: 18
-src: images/light-mode.svg
-$on-click$: toggle $ftd.dark-mode
-align: center
-
+menu-hover-bg: $menu-hover-bg
 
 --- container: ftd.main
 
+--- ftd.row:
+width: fill
+if: $current-section.title is not null
+background-color: $fpm.color.main.background.step-2
+id: bottom-row
+padding-horizontal: 8
+$on-click$: toggle $show-section 
+
+--- ftd.row:
+width: fill
+padding-vertical: 8
+padding-horizontal: 8
 
 
+--- ftd.text: $current-section.title
+if: $current-section.title is not null
+role: $bold-copy-large
+color: $fpm.color.main.text-strong
+width: fill
+
+--- octicons.triangle-down:
+if: not $show-section 
+
+--- octicons.triangle-up:
+if:  $show-section 
+
+--- container: bottom-row
+
+--- ftd.column: 
+id: items-container
+if :$show-section
+width: fill
+anchor: parent
+background-color: $fpm.color.main.background.step-2
+top: 32
+left:0
+
+--- ftd.row:
+width: fill
+border-bottom: 1
+border-color: $fpm.color.main.text
+padding-bottom: 12
+padding-top: 8
+
+--- ftd.text: $current-section.title
+if: $current-section.title is not null
+role: $fpm.type.label-small
+color: $fpm.color.main.text-strong
+link: $current-subsection.url
+white-space: nowrap
+padding-left: 16
 
 
+--- ftd.text: ->
+if: $current-subsection.title is not null
+role: $fpm.type.label-small
+color: $fpm.color.main.text-strong
+white-space: nowrap
+
+--- ftd.text: $current-subsection.title 
+if:  $current-subsection.title is not null
+role: $fpm.type.label-small
+color: $fpm.color.main.text-strong
+link: $current-page.url 
+white-space: nowrap
+
+
+--- container: items-container
+
+--- ftd.column:
+width: fill
+spacing: 8
+padding-vertical: 12
+padding-horizontal: 24
+overflow-x: auto
+
+--- header-toc-item-mobile-view: $obj.title
+$loop$: $toc as $obj
+children: $obj.children 
+is-active: $obj.is-active
+link: $obj.url
+text-color: $text-color
+active-text-color: $active-text-color
+current-url: $current-url
+/menu-right: $menu-right
+menu-left: $menu-left
+menu-bg: $menu-bg 
+menu-link: $menu-link
+menu-link-active: $menu-link-active
+menu-border: $menu-border
+menu-hover-bg: $menu-hover-bg
 
 
 
@@ -972,10 +1187,9 @@ ftd.image-src menu-icon:
 string site-url: 
 string current-url:
 optional string site-name:
-fpm.toc-item list sections:
+fpm.toc-item list sections: $section
+fpm.toc-item list footer-nav:
 fpm.toc-item list sub-sections:
-fpm.toc-item list extra:
-fpm.toc-item list toc:
 integer menu-left: 
 integer menu-right:
 optional string logo-width: 
@@ -984,6 +1198,7 @@ string link-style:
 ftd.color background:  
 string width: 
 width: $width
+boolean show-brand:
 ftd.color text-color:
 ftd.color active-text-color:
 ftd.color menu-bg:
@@ -992,7 +1207,9 @@ ftd.color menu-link:
 ftd.color menu-link-active:
 ftd.color menu-border:
 optional string font-family:
-sticky: true
+optional string login-btn-txt:
+optional string sign-in-txt:  
+boolean login-button:
 height: calc 100vh - 0px
 overflow-y: auto
 width: percent 70
@@ -1017,7 +1234,7 @@ spacing: 8
 
 --- ftd.column:
 width: fill
-padding-top: 8
+padding-vertical: 24
 border-bottom: 1
 border-color: $fpm.color.main.text
 
@@ -1025,19 +1242,8 @@ border-color: $fpm.color.main.text
 src: $site-logo
 
 
---- ftd.row:
-width: fill
-link:/
-spacing : 2
-padding-vertical: 24 
+--- fbs.fifthtry-brand-switcher:
 
---- ftd.text: All Fifthtry Products
-role: $login-cta
-color:$fpm.color.main.cta-primary.base
-
---- ftd.text: ->
-role: $login-cta
-color:$fpm.color.main.cta-primary.base
 
 --- container:  ftd.main
 
@@ -1046,8 +1252,7 @@ if: $sections is not empty
 width: fill
 border-bottom: 1
 border-color: $fpm.color.main.text
-padding-bottom: 10
-margin-bottom: 15
+padding-vertical: 24
 
 --- header-item-mobile: $obj.title
 $loop$: $sections as $obj
@@ -1065,59 +1270,29 @@ menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
 
---- container: ftd.main
-
---- ftd.column:
-if: $sub-sections is not empty
-width: fill
-border-bottom: 1
-border-color: $fpm.color.main.text
-padding-bottom: 10
-margin-bottom: 10
-
---- header-item-mobile: $obj.title
-$loop$: $sub-sections as $obj
-children: $obj.children 
-link: $obj.url
-text-color: $text-color
-active-text-color: $active-text-color
-current-url: $current-url
-link-style: $link-style
-/menu-right: $menu-right
-menu-left: $menu-left
-menu-bg: $menu-bg 
-menu-hover-bg: $menu-hover-bg
-menu-link: $menu-link
-menu-link-active: $menu-link-active
-menu-border: $menu-border
 
 --- container: ftd.main
 
 --- ftd.column:
-if: $extra is not empty
 width: fill
 border-bottom: 1
 border-color: $fpm.color.main.text
-padding-bottom: 10
-margin-bottom: 10
+padding-vertical: 24
 
---- header-item-mobile: $obj.title
-$loop$: $extra as $obj
-children: $obj.children 
-link: $obj.url
-text-color: $text-color
-active-text-color: $active-text-color
-current-url: $current-url
-link-style: $link-style
-/menu-right: $menu-right
-menu-hover-bg: $menu-hover-bg
-menu-left: $menu-left
-menu-bg: $menu-bg 
-menu-link: $menu-link
-menu-link-active: $menu-link-active
-menu-border: $menu-border
+--- login-signup:
+login: $login-btn-txt
+sign-in: $sign-in-txt
+
 
 --- container: ftd.main
+
+--- ftd.column:
+width: fill
+
+--- footer:
+url: $obj.url
+title: $obj.title
+$loop$: $footer-list as $obj
 
 /--- ftd.column:
 if: $fpm.language is not null
@@ -1148,47 +1323,22 @@ background: $menu-bg
 
 /--- container: ftd.main
 
---- ftd.column:
-if: $toc is not empty
+
+
+
+
+
+
+-- ftd.column footer:
+caption title:
+string url:
 width: fill
-margin-bottom: 10
-padding-bottom: 10
 
---- ftd.text: Table of contents:
-if: $toc is not empty
-color: $text-color
-role: $cta
-padding-bottom: 10
-border-bottom: 1
-border-color: $fpm.color.main.text
-width: fill
-padding-left: 10
-margin-bottom: 10
-
---- header-item-mobile: $obj.title
-if: $toc is not empty
-$loop$: $toc as $obj
-children: $obj.children 
-link: $obj.url
-text-color: $text-color
-active-text-color: $active-text-color
-current-url: $current-url
-link-style: $link-style
-/menu-right: $menu-right
-menu-hover-bg: $menu-hover-bg
-menu-left: $menu-left
-menu-bg: $menu-bg 
-menu-link: $menu-link
-menu-link-active: $menu-link-active
-menu-border: $menu-border
-
-
-
-
-
-
-
-
+--- ftd.text: $title
+role: $login-cta
+link: $url
+color: $fpm.color.main.cta-primary.base
+padding-vertical: 12
 
 
 
@@ -1242,20 +1392,17 @@ $on-click$: toggle $open
 $on-click-outside$: $open = false
 
 
---- ftd.text: $title
-if: $link is not null
+--- ftd.text: $title 
+if: $sections is not empty
 role: $cta
 link: $link
-padding-horizontal: 10
 color: $text-color
-color if $current-url == $link: $active-text-color
-/border-bottom if $current-url == $link: 2
-/border-color if $current-url == $link: $active-text-color
+$on-click$: $show-section= true
 
---- ftd.text: $title
+
+--- ftd.text: $title 
 if: $link is null
 role: $cta
-padding-horizontal: 10
 color: $fpm.color.main.background.step-2
 
 --- ftd.column:
@@ -1274,8 +1421,22 @@ menu-hover-bg: $menu-hover-bg
 
 
 
+-- ftd.row section-scrollbar:
+fpm.toc-item list sub-sections:
+
+--- ftd.row:
+width: fill
+--- section-scroll:
+title: $obj.title
+link: $obj.url
+$loop$: $sub-sections as $obj
 
 
+-- ftd.row section-scroll:
+caption title:
+string link:
+
+--- ftd.text: $title
 
 
 
@@ -1334,7 +1495,6 @@ ftd.color menu-link-active:
 ftd.color menu-border:
 if: $children is not empty
 padding: 5
-min-width: 150
 padding-left: 15
 
 --- l-mobile:
@@ -1361,7 +1521,7 @@ background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
 padding-vertical: 4
 padding-horizontal: 10
-role: $cta
+role: $login-cta
 width: fill
 border-radius: 4
 
@@ -1372,7 +1532,7 @@ background-color if $MOUSE-IN: $menu-hover-bg
 white-space: nowrap
 padding-vertical: 4
 padding-horizontal: 10
-role: $cta
+role: $login-cta
 width: fill
 border-radius: 4
 
@@ -1421,32 +1581,31 @@ width: fill
 -- fpm.toc-item list empty-toc:
 
 
--- fpm.toc-item list sections:
-$processor$: toc
 
-- Roadmap: /roadmap/
-- Journal:  
 
--- fpm.toc-item list sub-sections:
-$processor$: toc
 
-- Home 
-- Payments
-- Business Operations: /businessops/
-- Developer Tools: /developer-tools/
-- Security: /security/
-- All Products: /all-products/
 
 
 -- fpm.toc-item list extra:
 $processor$: toc
 
-- APIs & SKDs:
+- APIs & SKDs: 
+  - API:
+  - Stripe.js: /index/
+  - CLI: /cli/
+  - ios: /ios/
+  - Android: /android/
+  - React Native: /react-native/
 - Support: /support/
 
 
 
+-- fpm.toc-item list footer-list:
+$processor$: toc
 
+- legal: /legal/
+- support: /support/
+- feedback: /feedback/
 
 
 
@@ -1459,15 +1618,38 @@ $processor$: toc
 - German: /de
 
 
+
 -- ftd.row login-signup:
 optional string login:
 optional string sign-in: 
-optional ftd.image-src icon-github: $assets.files.static.icon-github.svg 
+ftd.image-src icon-github: $assets.files.static.icon-github.svg 
 spacing: 20
 margin-left: 4
 margin-top: -10
 width: fill
 
+--- login-signup-desktop:
+if: not $is-mobile
+login: $login
+sign-in: $sign-in
+icon-github: $icon-github
+
+
+
+--- login-signup-mobile:
+if: $is-mobile
+login: $login
+sign-in: $sign-in
+icon-github: $icon-github
+
+-- ftd.row login-signup-desktop:
+optional string login:
+optional string sign-in: 
+optional ftd.image-src icon-github: 
+spacing: 20
+margin-left: 4
+margin-top: -10
+width: fill
 
 --- ftd.row:
 width: fill
@@ -1489,30 +1671,53 @@ sign-in: $sign-in
 icon-github: $icon-github
 
 
+
+-- ftd.column login-signup-mobile:
+optional string login:
+optional string sign-in: 
+optional ftd.image-src icon-github: $assets.files.static.icon-github.svg 
+spacing: 20
+margin-left: 4
+margin-top: -10
+width: fill
+
+--- ftd.text: $login
+role: $cta
+color: $fpm.color.main.cta-primary.base
+padding-vertical: 10
+link: https://cdoc.fifthtry.com/initiate-github-login/
+
+--- container: ftd.main
+
+--- github-button:
+sign-in: $sign-in
+icon-github: $icon-github
+
 -- ftd.row github-button:
 optional string sign-in: 
 optional string github-cta:
 optional string width:
-optional ftd.image-src icon-github: $assets.files.static.icon-github.svg 
-optional string link: https://github.com/apps/continuous-documentation
-padding-horizontal: $fpm.space.space-4
-padding-vertical: $fpm.space.space-2
-color: $fpm.color.main.background.step-1
-background-color: $fpm.color.main.cta-primary.base
+ftd.image-src icon-github: $assets.files.static.icon-github.svg 
+string link: https://github.com/apps/continuous-documentation
 border-radius: 4
 width: $width
 spacing: 4
 cursor: pointer
 link: $link
 margin-top: -4
-align: center
+align if not $is-mobile: center
+spacing: 20
 
---- ftd.text: $sign-in
+--- ftd.text:
+if: $sign-in is not null
+text: $sign-in
 white-space: nowrap
 role: $login-cta
 align: center
 text-align: center
 color: $fpm.color.main.background.step-1
+
+--- container: ftd.main
 
 --- ftd.image:
 src: $icon-github
