@@ -634,7 +634,7 @@ background: $menu-bg
 --- ftd.row:
 width: fill
 background-color: $fpm.color.main.background.step-1
-padding-horizontal: 24
+padding-horizontal: 48
 
 --- ftd.row:
 width: fill
