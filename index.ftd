@@ -606,6 +606,8 @@ if: $pricing-cta
 
 --- pricing-cta-text: Try for Free
 
+--- container: right-side-top
+
 --- ftd.row:
 if: $login-button
 
@@ -1087,7 +1089,7 @@ site-name: $brand-site-name
 margin-top: $fpm.space.space-2
 
 
---- pricing-cta-text: try for free
+--- pricing-cta-text: Try for Free
 
 
 --- container: ftd.main
