@@ -4,7 +4,7 @@
 -- import: lang
 -- import: fifthtry.github.io/header/assets
 -- import: fifthtry.github.io/octicon as octicons
--- import: fbs
+-- import: ps
 
 -- boolean show-section: false
 
@@ -163,19 +163,25 @@ $processor$: toc
 - Support: /support/
 
 
--- pd.output: Basic usage example
+-- pd.output: Basic usage example with product switcher
 reference: $assets.files.static.header.header-1200.png
 reference-width: fill
 
-\-- header:
+\--- header:
 site-logo: $assets.files.static.header.logo-text.png
 site-url: /
 site-name: FTD
+menu-right: 0
 sections: $sections
 sub-sections: $sub-sections
-menu-right: 0
 menu-left: -88
 toc: $empty-toc
+nav-title: Blog
+nav-title-url: blog/
+nav-sub-title: Lack Of Documentation Is Costing You
+nav-sub-title-url: blog/cost/
+footer-nav: $footer-list
+products: $ps.example-product
 
 --- header:
 site-logo: $assets.files.static.header.logo-text.png
@@ -191,7 +197,7 @@ nav-title-url: blog/
 nav-sub-title: Lack Of Documentation Is Costing You
 nav-sub-title-url: blog/cost/
 footer-nav: $footer-list
-
+products: $ps.example-product
 
 
 
@@ -219,7 +225,6 @@ menu-link: $fpm.color.main.text
 menu-link-active: $fpm.color.main.text 
 menu-border: $fpm.color.main.text
 toc: $empty-toc
-show-brand: true
 nav-title: Blog
 nav-title-url: blog/
 nav-sub-title: Lack Of Documentation Is Costing You
@@ -243,7 +248,6 @@ menu-link: $fpm.color.main.text
 menu-link-active: $fpm.color.main.text 
 menu-border: $fpm.color.main.text
 toc: $empty-toc
-show-brand: true
 login-button: true
 footer-nav: $footer-list
 
@@ -262,7 +266,6 @@ site-name: FTD
 current-url: /
 link-style: bold
 toc: $empty-toc
-show-brand: true
 
 --- header:
 site-logo: $assets.files.static.header.site-logo.png
@@ -271,7 +274,6 @@ site-name: FTD
 link-style: bold
 menu-right: 0
 toc: $empty-toc
-show-brand: true
 login-button: true
 footer-nav: $footer-list
 
@@ -334,6 +336,7 @@ optional fpm.toc-item current-subsection:
 optional fpm.toc-item current-page: 
 fpm.toc-item list footer-nav: $footer-list
 fpm.toc-item list extra: $empty-toc
+ps.product-data list products: $ps.product
 integer menu-left: 10
 integer menu-right: 10
 optional string logo-width: 
@@ -356,7 +359,6 @@ optional string nav-sub-section-title:
 optional string nav-sub-section-title-url:
 optional string login-btn-txt: Login
 optional string sign-in-txt: 
-boolean show-brand: false
 boolean login-button: false
 string width: fill
 boolean include-dark-mode-switcher: true
@@ -374,7 +376,6 @@ if: $sidebar-open
 
 --- menu-mobile:
 parent-brand: $parent-brand
-show-brand: $show-brand
 if: $sidebar-open
 site-logo: $site-logo
 menu-icon: $menu-icon
@@ -402,6 +403,7 @@ menu-border: $menu-border
 login-button: $login-button
 login-btn-txt: $login-btn-txt
 sign-in-txt: $sign-in-txt
+products: $products
 
 
 --- header-desktop:
@@ -433,7 +435,6 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link 
 menu-link-active: $menu-link-active
 menu-border: $menu-border
-show-brand: $show-brand
 login-button: $login-button
 login-btn-txt: $login-btn-txt
 sign-in-txt: $sign-in-txt 
@@ -443,6 +444,7 @@ nav-sub-title: $nav-sub-title
 nav-sub-title-url: $nav-sub-title-url
 nav-sub-section-title: $nav-sub-section-title
 nav-sub-section-title-url: $nav-sub-section-title
+products: $products
 
 
 --- header-mobile:
@@ -479,8 +481,7 @@ background: $background
 text-color: $text-color 
 active-text-color: $active-text-color
 width: $width
-show-brand: $show-brand
-
+products: $products
 
 
 
@@ -496,6 +497,7 @@ show-brand: $show-brand
 
 
 -- ftd.column header-desktop:
+ps.product-data list products:
 optional ftd.image-src site-logo:
 string site-url: 
 string current-url:
@@ -524,7 +526,6 @@ ftd.color menu-hover-bg:
 ftd.color menu-link:
 ftd.color menu-link-active:
 ftd.color menu-border:
-boolean show-brand: 
 boolean login-button:
 string width: 
 width: $width
@@ -575,8 +576,8 @@ margin-left: $fpm.space.space-5
 border-color: $fpm.color.main.border
 margin-top: 8
 
---- fbs.fifthtry-brand-switcher:
-if: $show-brand
+--- ps.switcher:
+products: $products
 
 --- container: left-side-top
 
@@ -976,6 +977,7 @@ top: 20
 
 
 -- ftd.column header-mobile:
+ps.product-data list products: $ps.product
 ftd.image-src menu-icon:
 optional ftd.image-src site-logo:
 optional ftd.image-src brand-site-logo:
@@ -1009,7 +1011,6 @@ ftd.color menu-link-active:
 string width: 
 width: $width
 background-color: $background
-boolean show-brand:
 boolean pricing-cta:
 /$on-click-outside$: $show-section = false
 
@@ -1235,6 +1236,7 @@ menu-hover-bg: $menu-hover-bg
 
 
 -- ftd.column menu-mobile:
+ps.product-data list products:
 optional ftd.image-src site-logo:
 ftd.image-src menu-icon:
 string site-url: 
@@ -1253,7 +1255,6 @@ string link-style:
 ftd.color background:  
 string width: 
 width: calc 100% - 48px
-boolean show-brand:
 ftd.color text-color:
 ftd.color active-text-color:
 ftd.color menu-bg:
@@ -1307,9 +1308,8 @@ src: $site-logo
 --- ftd.row:
 padding-top: $fpm.space.space-4
 
---- fbs.fifthtry-brand-switcher:
-if: $show-brand
-
+--- ps.switcher:
+products: $products
 
 
 
