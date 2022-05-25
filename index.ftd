@@ -601,12 +601,8 @@ menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
 
---- ftd.row:
-if: $pricing-cta
-
 --- pricing-cta-text: Try for Free
-
---- container: right-side-top
+if: $pricing-cta
 
 --- ftd.row:
 if: $login-button
@@ -1090,6 +1086,7 @@ margin-top: $fpm.space.space-2
 
 
 --- pricing-cta-text: Try for Free
+if: $pricing-cta
 
 
 --- container: ftd.main
