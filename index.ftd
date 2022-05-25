@@ -412,7 +412,9 @@ site-logo: $site-logo
 site-url: $site-url 
 site-name: $site-name
 current-url: $current-url
+parent-brand: $parent-brand
 sections: $sections
+brand-caption: $brand-caption
 pricing-cta: $pricing-cta
 current-section: $current-section
 current-page: $current-page
@@ -501,7 +503,9 @@ ps.product-data list products:
 optional ftd.image-src site-logo:
 string site-url: 
 string current-url:
-optional string site-name: 
+optional string site-name:
+optional string brand-caption:
+boolean parent-brand:
 fpm.toc-item list sections:
 optional fpm.toc-item current-subsection: 
 fpm.toc-item list sub-sections:
@@ -546,6 +550,20 @@ position: left
 id: left-side-top
 align: left
 width: fill
+
+--- ftd.column:
+id: logo-text-container
+
+--- ftd.column:
+if: not $parent-brand
+id: iddd
+
+--- ftd.text:
+text: $brand-caption
+color: $fpm.color.main.text-strong
+role: $fpm.type.fine-print
+
+--- container: logo-text-container
 
 --- ftd.row:
 link: $site-url
@@ -694,7 +712,7 @@ white-space: nowrap
 margin-right: 8
 
 --- ftd.text: ->
-if: $current-subsection.title is not null
+if: $current-page.title is not null
 role: $fpm.type.label-small
 color: $fpm.color.main.text-strong
 white-space: nowrap
@@ -1285,15 +1303,14 @@ id: first-container
 width: fill
 border-bottom: 1
 border-color: $fpm.color.main.border
-spacing: 20
 id: logo-container
 padding-bottom: $fpm.space.space-6
 
 --- ftd.column:
 if: not $parent-brand
-spacing: 8
 
 --- ftd.text: $brand-caption
+role: $fpm.type.fine-print
 color: $fpm.color.main.text-strong
 padding-bottom: $fpm.space.space-2
 
@@ -1344,7 +1361,7 @@ menu-border: $menu-border
 
 --- ftd.column:
 width: fill
-border-bottom: 1
+border-bottom if not $parent-brand: 1
 border-color: $fpm.color.main.border
 padding-vertical: $fpm.space.space-6
 
