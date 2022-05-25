@@ -79,6 +79,17 @@ mobile: $cta-txt
 xl: $cta-txt
 weight: 700
 
+-- ftd.font-size label-bold-type:
+line-height: 16
+size: 16
+letter-spacing: 0
+
+-- ftd.type label-bold: $fpm.type.label-small.font
+desktop: $label-bold-type
+mobile: $label-bold-type
+xl: $label-bold-type
+weight: 700
+
 
 
 
@@ -306,8 +317,13 @@ login-button: true
 
 -- ftd.column header:
 optional ftd.image-src site-logo:
+optional ftd.image-src brand-site-logo:
 string site-url: /
 optional string site-name:
+optional string brand-site-url:
+optional string brand-site-name:
+optional boolean parent-brand: 
+boolean pricing-cta: false
 ftd.image-src menu-icon: $assets.files.static.header.hamburger.svg
 string current-url: /payments/
 fpm.toc-item list sections: $empty-toc
@@ -324,8 +340,8 @@ optional string logo-width:
 optional string logo-height: 26
 string link-style: regular
 ftd.color-scheme colors: $fpm.color.main
-ftd.color background: $fpm.color.main.background.step-1 
-ftd.color text-color: $fpm.color.main.text
+ftd.color background: $fpm.color.main.background.base
+ftd.color text-color: $fpm.color.main.text-strong
 ftd.color active-text-color: $fpm.color.main.text
 ftd.color menu-bg: $fpm.color.main.background.base
 ftd.color menu-hover-bg: $fpm.color.main.background.base
@@ -349,7 +365,7 @@ width: $width
 color: $fpm.color.main.text
 background-color: $background
 z-index: 10
-
+optional string brand-caption:
 
 --- mobile-sidebar:
 if: $sidebar-open
@@ -357,10 +373,12 @@ if: $sidebar-open
 --- container: ftd.main
 
 --- menu-mobile:
+parent-brand: $parent-brand
 show-brand: $show-brand
 if: $sidebar-open
 site-logo: $site-logo
 menu-icon: $menu-icon
+brand-caption: $brand-caption
 site-url: $site-url 
 site-name: $site-name
 current-url: $current-url
@@ -393,6 +411,7 @@ site-url: $site-url
 site-name: $site-name
 current-url: $current-url
 sections: $sections
+pricing-cta: $pricing-cta
 current-section: $current-section
 current-page: $current-page
 current-subsection: $current-subsection
@@ -429,6 +448,11 @@ nav-sub-section-title-url: $nav-sub-section-title
 --- header-mobile:
 if: $is-mobile
 site-logo: $site-logo
+pricing-cta: $pricing-cta
+brand-site-logo: $brand-site-logo
+brand-site-name: $brand-site-name
+brand-site-url: $brand-site-url
+parent-brand: $parent-brand
 menu-icon: $menu-icon
 site-url: $site-url 
 site-name: $site-name
@@ -479,6 +503,7 @@ optional string site-name:
 fpm.toc-item list sections:
 optional fpm.toc-item current-subsection: 
 fpm.toc-item list sub-sections:
+boolean pricing-cta:
 optional fpm.toc-item current-section: 
 optional fpm.toc-item current-page:
 boolean include-dark-mode-switcher:
@@ -576,6 +601,10 @@ menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
 
+--- ftd.row:
+if: $pricing-cta
+
+--- pricing-cta-text: Try for Free
 
 --- ftd.row:
 if: $login-button
@@ -634,7 +663,7 @@ background: $menu-bg
 --- ftd.row:
 width: fill
 background-color: $fpm.color.main.background.step-1
-padding-horizontal: 48
+padding-horizontal: 24
 
 --- ftd.row:
 width: fill
@@ -938,14 +967,25 @@ background-color:  $fpm.color.main.background.base
 z-index: 1
 $on-click$: toggle $sidebar-open
 
+--- ftd.image:
+src: $assets.files.static.header.cross.svg
+height: 24
+width: auto
+anchor: window
+right: 16
+top: 20
 
 
 
 -- ftd.column header-mobile:
 ftd.image-src menu-icon:
 optional ftd.image-src site-logo:
+optional ftd.image-src brand-site-logo:
+optional string brand-site-name:
+optional boolean parent-brand:
 string site-url: 
 string current-url:
+optional string brand-site-url:
 optional string site-name:
 fpm.toc-item list sections:
 fpm.toc-item list sub-sections:
@@ -972,26 +1012,32 @@ string width:
 width: $width
 background-color: $background
 boolean show-brand:
+boolean pricing-cta:
 /$on-click-outside$: $show-section = false
 
 
 
 --- ftd.row:
 position: left
-spacing: 25
 id: left-side
-padding-horizontal: 20
-padding-vertical: 15
+padding-horizontal: $fpm.space.space-4
+padding-vertical: $fpm.space.space-5
+width: fill
+
+--- ftd.row:
+width: fill
+id: sidelogo-container
+spacing: 24
 
 --- ftd.image:
 src: $menu-icon
 width: 24
 height: auto
 $on-click$: toggle $sidebar-open
-position: center
 
 --- ftd.row:
 spacing: 15
+if: $parent-brand
 link: $site-url
 
 --- ftd.image:
@@ -1011,6 +1057,37 @@ position: center
 if: $site-logo is null
 site-name: $site-name
 
+--- container: sidelogo-container
+
+--- ftd.row:
+spacing: 15
+if: not  $parent-brand
+link: $brand-site-url
+
+--- ftd.image:
+if: $brand-site-logo is not null
+src: $brand-site-logo
+width: 36
+height: 36
+position: center
+
+--- ftd.text: $brand-site-name
+if: $brand-site-name is not null
+role: $label-bold
+color: $fpm.color.main.text-strong
+position: center
+
+--- fallback-title:
+if: $brand-site-name is not null
+site-name: $brand-site-name
+
+--- container: left-side
+
+--- ftd.row:
+margin-top: $fpm.space.space-2
+
+
+--- pricing-cta-text: try for free
 
 
 --- container: ftd.main
@@ -1069,25 +1146,45 @@ width: fill
 if: $current-section.title is not null
 background-color: $fpm.color.main.background.step-2
 id: bottom-row
-padding-horizontal: 8
+padding-horizontal: $fpm.space.space-5
 $on-click$: toggle $show-section 
 /$on-click-outside$: $show-section = false
 
 --- ftd.row:
 width: fill
-padding-vertical: 8
-padding-horizontal: 8
+if: $current-subsection.title is not null
+padding-vertical: $fpm.space.space-2
+spacing: 4
 
 
---- ftd.text: $current-section.title
-if: $current-section.title is not null
-role: $bold-copy-large
+
+--- ftd.text: $current-subsection.title
+if: $current-subsection.title is not null
+role: $fpm.type.label-small
 color: $fpm.color.main.text-strong
-width: fill
-
+link: $current-subsection.url
+white-space: nowrap
 
 --- ftd.row:
-padding-top: 4
+if: $current-subsection.title is not null
+
+--- ftd.text: ->
+if: $current-page.title is not null
+role: $fpm.type.label-small
+color: $fpm.color.main.text-strong
+white-space: nowrap
+
+--- ftd.text: $current-page.title 
+if:  $current-page.title is not null
+role: $fpm.type.label-small
+color: $fpm.color.main.text-strong
+link: $current-page.url 
+white-space: nowrap
+
+--- container: bottom-row
+
+--- ftd.row:
+padding-top: $fpm.space.space-2
 
 --- octicons.triangle-down:
 if: not $show-section 
@@ -1106,37 +1203,6 @@ background-color: $fpm.color.main.background.step-2
 top: 32
 left:0
 
---- ftd.row:
-width: fill
-border-bottom: 1
-border-color: $fpm.color.main.text
-padding-bottom: 12
-padding-top: 8
-
---- ftd.text: $current-section.title
-if: $current-section.title is not null
-role: $fpm.type.label-small
-color: $fpm.color.main.text-strong
-link: $current-subsection.url
-white-space: nowrap
-padding-left: 16
-
-
---- ftd.text: ->
-if: $current-subsection.title is not null
-role: $fpm.type.label-small
-color: $fpm.color.main.text-strong
-white-space: nowrap
-
---- ftd.text: $current-subsection.title 
-if:  $current-subsection.title is not null
-role: $fpm.type.label-small
-color: $fpm.color.main.text-strong
-link: $current-page.url 
-white-space: nowrap
-
-
---- container: items-container
 
 --- ftd.column:
 width: fill
@@ -1174,7 +1240,9 @@ optional ftd.image-src site-logo:
 ftd.image-src menu-icon:
 string site-url: 
 string current-url:
+optional string brand-caption:
 optional string site-name:
+boolean parent-brand: 
 fpm.toc-item list sections: $section
 fpm.toc-item list footer-nav:
 fpm.toc-item list sub-sections:
@@ -1185,7 +1253,7 @@ optional string logo-height:
 string link-style: 
 ftd.color background:  
 string width: 
-width: $width
+width: calc 100% - 48px
 boolean show-brand:
 ftd.color text-color:
 ftd.color active-text-color:
@@ -1200,38 +1268,51 @@ optional string sign-in-txt:
 boolean login-button:
 height: calc 100vh - 0px
 overflow-y: auto
-width: percent 70
-align: top-left
-padding-left: 10
-padding-top: 15
-padding-right: 20
-padding-bottom: 40
-border-right: 1
-border-color: $fpm.color.main.text
+align: top-left 
+padding-top:$fpm.space.space-5
+padding-horizontal: $fpm.space.space-6
 anchor: window
 left: 0
 top: 0
-background-color: $background
-shadow-offset-x: 3
-shadow-offset-y: 0
-shadow-size: 1
-shadow-blur: 10
-/shadow-color: rgba (0, 0, 0, 0.05)
+background-color: $fpm.color.main.background.step-1
 z-index: 4
-spacing: 8
+
+--- ftd.row:
+width: fill
+id: first-container
 
 --- ftd.column:
 width: fill
-padding-vertical: 24
 border-bottom: 1
-border-color: $fpm.color.main.text
+border-color: $fpm.color.main.border
+spacing: 20
+id: logo-container
+padding-bottom: $fpm.space.space-6
+
+--- ftd.column:
+if: not $parent-brand
+spacing: 8
+
+--- ftd.text: $brand-caption
+color: $fpm.color.main.text-strong
+padding-bottom: $fpm.space.space-2
+
 
 --- ftd.image:
 src: $site-logo
 
 
+
+--- container: logo-container
+
+--- ftd.row:
+padding-top: $fpm.space.space-4
+
 --- fbs.fifthtry-brand-switcher:
 if: $show-brand
+
+
+
 
 --- container:  ftd.main
 
@@ -1239,8 +1320,8 @@ if: $show-brand
 if: $sections is not empty
 width: fill
 border-bottom: 1
-border-color: $fpm.color.main.text
-padding-vertical: 24
+border-color: $fpm.color.main.border
+padding-bottom: 24
 
 --- header-item-mobile: $obj.title
 $loop$: $sections as $obj
@@ -1265,8 +1346,8 @@ menu-border: $menu-border
 --- ftd.column:
 width: fill
 border-bottom: 1
-border-color: $fpm.color.main.text
-padding-vertical: 24
+border-color: $fpm.color.main.border
+padding-vertical: $fpm.space.space-6
 
 --- login-signup:
 login: $login-btn-txt
@@ -1277,6 +1358,9 @@ sign-in: $sign-in-txt
 
 --- ftd.column:
 width: fill
+padding-vertical: $fpm.space.space-6
+if: not $parent-brand
+
 
 --- footer:
 url: $obj.url
@@ -1327,7 +1411,8 @@ width: fill
 role: $login-cta
 link: $url
 color: $fpm.color.main.cta-primary.base
-padding-vertical: 12
+padding-bottom: 32
+
 
 
 
@@ -1382,6 +1467,10 @@ $on-click$: toggle $open
 $on-click-outside$: $open = false
 
 
+--- ftd.row:
+width: fill
+
+
 --- ftd.text: $title 
 if: $sections is not empty
 role: $cta
@@ -1389,12 +1478,10 @@ link: $link
 color: $text-color
 color if $is-active: $fpm.color.main.cta-primary.base
 $on-click$: $show-section= true
+padding-top: 24
 
 
---- ftd.text: $title 
-if: $link is null
-role: $cta
-color: $fpm.color.main.background.step-2
+
 
 --- ftd.column:
 if: $children is empty
@@ -1662,16 +1749,14 @@ icon-github: $icon-github
 optional string login:
 optional string sign-in: 
 optional ftd.image-src icon-github: $assets.files.static.icon-github.svg 
-spacing: 20
-margin-left: 4
-margin-top: -10
+spacing: 32
 width: fill
 
 --- ftd.text: $login
 role: $cta
 color: $fpm.color.main.cta-primary.base
-padding-vertical: 10
 link: https://cdoc.fifthtry.com/initiate-github-login/
+padding-bottom :32
 
 --- container: ftd.main
 
@@ -1711,4 +1796,18 @@ height: 16
 width: auto
 
 
+
+-- ftd.row pricing-cta-text:
+caption title:
+padding-horizontal: $fpm.space.space-2
+padding-vertical: $fpm.space.space-2
+background-color: $fpm.color.main.cta-primary.base
+border-radius: $fpm.space.space-2
+margin-left: $fpm.space.space-5
+margin-top: -6
+
+--- ftd.text: $title
+role: $label-bold
+white-space: nowrap
+color: $fpm.color.main.cta-primary.text
 
