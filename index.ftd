@@ -168,7 +168,7 @@ reference: $assets.files.static.header.header-1200.png
 reference-width: fill
 
 \--- header:
-site-logo: $assets.files.static.header.logo-text.png
+site-logo: $assets.files.static.header.logo-text.svg
 site-url: /
 site-name: FTD
 menu-right: 0
@@ -181,10 +181,10 @@ nav-title-url: blog/
 nav-sub-title: Lack Of Documentation Is Costing You
 nav-sub-title-url: blog/cost/
 footer-nav: $footer-list
-products: $ps.example-product
+/products: $ps.example-product
 
 --- header:
-site-logo: $assets.files.static.header.logo-text.png
+site-logo: $assets.files.static.header.logo-text.svg
 site-url: /
 site-name: FTD
 menu-right: 0
@@ -197,7 +197,7 @@ nav-title-url: blog/
 nav-sub-title: Lack Of Documentation Is Costing You
 nav-sub-title-url: blog/cost/
 footer-nav: $footer-list
-products: $ps.example-product
+/products: $ps.example-product
 
 
 
@@ -210,7 +210,7 @@ reference-width: fill
 background: $fpm.color.main.background.base
 text-color: $fpm.color.main.text
 active-text-color: $fpm.color.main.text
-site-logo: $assets.files.static.header.site-logo.png
+site-logo: $assets.files.static.header.site-logo.svg
 site-url: /
 site-name: FTD
 current-url: /payments/
@@ -234,7 +234,7 @@ nav-sub-title-url: blog/cost/
 background: $fpm.color.main.background.step-1
 text-color: $fpm.color.main.text
 active-text-color: $fpm.color.main.text
-/site-logo: $assets.files.static.header.site-logo.png
+/site-logo: $assets.files.static.header.site-logo.svg
 site-url: /
 /site-name: FTD
 current-url: /payments/
@@ -260,7 +260,7 @@ footer-nav: $footer-list
 -- pd.output: Single Row Header 
 
 \-- header:
-site-logo: $assets.files.static.header.site-logo.png
+site-logo: $assets.files.static.header.site-logo.svg
 site-url: /
 site-name: FTD
 current-url: /
@@ -268,7 +268,7 @@ link-style: bold
 toc: $empty-toc
 
 --- header:
-site-logo: $assets.files.static.header.site-logo.png
+site-logo: $assets.files.static.header.site-logo.svg
 site-url: /
 site-name: FTD
 link-style: bold
@@ -282,7 +282,7 @@ footer-nav: $footer-list
 -- pd.output: Header with Left Menu 
 
 \-- header:
-site-logo: $assets.files.static.header.site-logo.png
+site-logo: $assets.files.static.header.site-logo.svg
 site-url: /
 site-name: FTD
 current-url: /
@@ -293,7 +293,7 @@ toc: $empty-toc
 
 
 --- header:
-site-logo: $assets.files.static.header.logo-text.png
+site-logo: $assets.files.static.header.logo-text.svg
 site-url: /
 site-name: FTD
 link-style: bold
