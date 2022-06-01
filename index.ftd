@@ -701,6 +701,7 @@ padding-bottom: $fpm.space.space-2
 
 --- ftd.row:
 width: fill
+id: selection-container
 
 
 --- ftd.text: $current-subsection.title
@@ -711,12 +712,20 @@ link: $current-subsection.url
 white-space: nowrap
 margin-right: 8
 
---- ftd.text: ->
+--- ftd.row:
+if: $current-subsection.title is not null
+
+--- ftd.row:
 if: $current-page.title is not null
+
+
+--- ftd.text: ->
 role: $fpm.type.label-small
 color: $fpm.color.main.text-strong
 white-space: nowrap
 margin-right: 8
+
+--- container: selection-container
 
 --- ftd.text:$current-page.title 
 if: $current-page.title is not null
@@ -1038,7 +1047,7 @@ boolean pricing-cta:
 position: left
 id: left-side
 padding-horizontal: $fpm.space.space-4
-padding-vertical: $fpm.space.space-5
+padding-vertical: $fpm.space.space-4
 width: fill
 
 --- ftd.row:
@@ -1053,7 +1062,7 @@ height: auto
 $on-click$: toggle $sidebar-open
 
 --- ftd.row:
-spacing: 15
+spacing: 4
 if: $parent-brand
 link: $site-url
 
@@ -1084,7 +1093,7 @@ link: $brand-site-url
 --- ftd.image:
 if: $brand-site-logo is not null
 src: $brand-site-logo
-width: 36
+width: auto
 height: 36
 position: center
 
@@ -1170,10 +1179,10 @@ $on-click$: toggle $show-section
 
 --- ftd.row:
 width: fill
-if: $current-subsection.title is not null
 padding-vertical: $fpm.space.space-2
+padding-vertical if $current-subsection.title is null: $fpm.space.space-4
 spacing: 4
-
+id: selection-container
 
 
 --- ftd.text: $current-subsection.title
@@ -1186,11 +1195,15 @@ white-space: nowrap
 --- ftd.row:
 if: $current-subsection.title is not null
 
---- ftd.text: ->
+--- ftd.row:
 if: $current-page.title is not null
+
+--- ftd.text: ->
 role: $fpm.type.label-small
 color: $fpm.color.main.text-strong
 white-space: nowrap
+
+--- container: selection-container
 
 --- ftd.text: $current-page.title 
 if:  $current-page.title is not null
@@ -1202,6 +1215,7 @@ white-space: nowrap
 --- container: bottom-row
 
 --- ftd.row:
+align: right
 padding-top: $fpm.space.space-2
 
 --- octicons.triangle-down:
