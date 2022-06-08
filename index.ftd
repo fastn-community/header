@@ -1179,8 +1179,7 @@ $on-click$: toggle $show-section
 
 --- ftd.row:
 width: fill
-padding-vertical: $fpm.space.space-2
-padding-vertical if $current-subsection.title is null: $fpm.space.space-4
+padding-vertical: $fpm.space.space-4
 spacing: 4
 id: selection-container
 
@@ -1216,7 +1215,7 @@ white-space: nowrap
 
 --- ftd.row:
 align: right
-padding-top: $fpm.space.space-2
+padding-vertical: $fpm.space.space-3
 
 --- octicons.triangle-down:
 if: not $show-section 
