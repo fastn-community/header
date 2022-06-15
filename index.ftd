@@ -4,6 +4,7 @@
 -- import: lang
 -- import: fifthtry.github.io/header/assets
 -- import: fifthtry.github.io/octicon as octicons
+-- import: fifthtry.github.io/package-doc/code-block as cb
 -- import: ps
 
 -- boolean show-section: false
@@ -116,10 +117,22 @@ This component can be used as a site header.
 
 
 -- pd.component: Header
-name: fifthtry.github.io/header.header
+name: fifthtry.github.io/header
 
 This is the main header.
 
+
+How to use?
+
+Add below lines into `FPM.ftd` file:
+
+
+-- cb.code:
+lang: ftd
+
+\-- fpm.dependency: fifthtry.github.io/header as header
+
+\-- fpm.auto-import: header
 
 -- pd.hidden-code: toc definitions
 
