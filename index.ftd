@@ -1230,11 +1230,18 @@ white-space: nowrap
 align: right
 padding-vertical: $fpm.space.space-3
 
---- octicons.triangle-down:
+--- ftd.image: 
 if: not $show-section 
+src: $assets.files.assets.images.down-arrow.svg
+height: auto
+width: 12
 
---- octicons.triangle-up:
+--- ftd.image: 
 if:  $show-section 
+src: $assets.files.assets.images.up-arro.svg
+height: auto
+width: 12
+
 
 --- container: bottom-row
 
