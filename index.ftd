@@ -3,7 +3,6 @@
 -- import: dms
 -- import: lang
 -- import: fifthtry.github.io/header/assets
--- import: fifthtry.github.io/octicon as octicons
 -- import: fifthtry.github.io/package-doc/code-block as cb
 -- import: ps
 
@@ -1232,13 +1231,13 @@ padding-vertical: $fpm.space.space-3
 
 --- ftd.image: 
 if: not $show-section 
-src: $assets.files.assets.images.down-arrow.svg
+src: $assets.files.static.down-arrow.svg
 height: auto
 width: 12
 
 --- ftd.image: 
 if:  $show-section 
-src: $assets.files.assets.images.up-arro.svg
+src: $assets.files.static.up-arrow.svg
 height: auto
 width: 12
 
