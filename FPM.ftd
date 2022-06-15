@@ -8,7 +8,7 @@ zip: github.com/fifthtry/header/archive/refs/heads/main.zip
 -- fpm.dependency: fifthtry.github.io/dark-mode-switcher as dms
 -- fpm.dependency: fifthtry.github.io/language-switcher as lang
 -- fpm.dependency: fifthtry.github.io/product-switcher as ps
--- fpm.dependency: fifthtry.github.io/octicon 
+
 
 -- fpm.sitemap:
 
