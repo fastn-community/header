@@ -2,7 +2,7 @@
 
 -- fpm.package: fifthtry.github.io/header
 zip: github.com/fifthtry/header/archive/refs/heads/main.zip
-
+base: https://raw.githubusercontent.com/fifthtry/header/main
 
 -- fpm.dependency: fifthtry.github.io/package-doc
 -- fpm.dependency: fifthtry.github.io/dark-mode-switcher as dms
