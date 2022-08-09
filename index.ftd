@@ -1820,7 +1820,6 @@ ftd.image-src icon-github: $assets.files.static.icon-github.svg
 string link: https://github.com/apps/continuous-documentation
 border-radius: 4
 width: $width
-spacing: 4
 cursor: pointer
 link: $link
 margin-top: -4
