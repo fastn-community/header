@@ -338,7 +338,7 @@ optional string brand-site-url:
 optional string brand-site-name:
 optional boolean parent-brand: 
 boolean pricing-cta: false
-ftd.image-src menu-icon: $assets.files.static.header.hamburger.svg
+ftd.image-src menu-icon: $assets.files.static.header.hamburger-dark.svg
 string current-url: /payments/
 fpm.toc-item list sections: $empty-toc
 fpm.toc-item list sub-sections: $empty-toc
@@ -1006,7 +1006,7 @@ z-index: 1
 $on-click$: toggle $sidebar-open
 
 --- ftd.image:
-src: $assets.files.static.header.cross.svg
+src: $assets.files.static.header.cross-dark.svg
 height: 24
 width: auto
 anchor: window
@@ -1231,13 +1231,13 @@ padding-vertical: $fpm.space.space-3
 
 --- ftd.image: 
 if: not $show-section 
-src: $assets.files.static.down-arrow.svg
+src: $assets.files.static.down-arrow-dark.svg
 height: auto
 width: 12
 
 --- ftd.image: 
 if:  $show-section 
-src: $assets.files.static.up-arrow.svg
+src: $assets.files.static.up-arrow-dark.svg
 height: auto
 width: 12
 
