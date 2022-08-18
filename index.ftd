@@ -586,11 +586,15 @@ if: $site-logo is not null
 width: $logo-width
 height: $logo-height
 margin-top: 8
+align: center
 
 --- ftd.text: $site-name
 if: $site-name is not null
-role: $fpm.type.heading-large
+role: $fpm.type.heading-medium
 color: $fpm.color.main.text-strong
+align: center
+margin-left: 16
+white-space: nowrap
 
 --- fallback-title:
 if: $site-logo is null
@@ -757,7 +761,7 @@ width: fill
 align: right
 padding-vertical if $sub-sections is not empty: 24
 margin-top if $current-subsection.title is not null: 16
-
+margin-top if $current-section.title is not null: $fpm.space.space-2
 
 --- ftd.row:
 width: auto
@@ -1006,7 +1010,7 @@ z-index: 1
 $on-click$: toggle $sidebar-open
 
 --- ftd.image:
-src: $assets.files.static.header.cross-dark.svg
+src: $assets.files.static.header.cross.svg
 height: 24
 width: auto
 anchor: window
@@ -1065,16 +1069,17 @@ width: fill
 --- ftd.row:
 width: fill
 id: sidelogo-container
-spacing: 24
+spacing: 16
 
 --- ftd.image:
 src: $menu-icon
 width: 24
 height: auto
 $on-click$: toggle $sidebar-open
+align: center
 
 --- ftd.row:
-spacing: 4
+spacing: 8
 if: $parent-brand
 link: $site-url
 
@@ -1087,7 +1092,7 @@ position: center
 
 --- ftd.text: $site-name
 if: $site-name is not null
-role: $fpm.type.heading-large
+role: $fpm.type.heading-medium
 color: $fpm.color.main.text-strong
 position: center
 
@@ -1182,9 +1187,8 @@ menu-hover-bg: $menu-hover-bg
 
 --- ftd.row:
 width: fill
-if: $current-section.title is not null
 background-color: $fpm.color.main.background.step-2
-id: bottom-row
+id: change-container
 padding-horizontal: $fpm.space.space-5
 $on-click$: toggle $show-section 
 /$on-click-outside$: $show-section = false
@@ -1200,7 +1204,6 @@ id: selection-container
 if: $current-subsection.title is not null
 role: $fpm.type.label-small
 color: $fpm.color.main.text-strong
-link: $current-subsection.url
 white-space: nowrap
 
 --- ftd.row:
@@ -1223,11 +1226,15 @@ color: $fpm.color.main.text-strong
 link: $current-page.url 
 white-space: nowrap
 
---- container: bottom-row
+--- container: change-container
 
 --- ftd.row:
 align: right
-padding-vertical: $fpm.space.space-3
+height: fill
+
+--- ftd.row:
+align: center
+width: fill
 
 --- ftd.image: 
 if: not $show-section 
@@ -1242,11 +1249,10 @@ height: auto
 width: 12
 
 
---- container: bottom-row
+--- container: change-container
 
 --- ftd.column: 
-id: items-container
-if :$show-section
+if: $show-section
 width: fill
 anchor: parent
 background-color: $fpm.color.main.background.step-2
@@ -1332,6 +1338,7 @@ width: fill
 id: first-container
 
 --- ftd.column:
+if: not $parent-brand
 width: fill
 border-bottom: 1
 border-color: $fpm.color.main.border
@@ -1367,7 +1374,7 @@ products: $products
 --- ftd.column:
 if: $sections is not empty
 width: fill
-border-bottom: 1
+border-bottom if: $login-button: 1
 border-color: $fpm.color.main.border
 padding-bottom: 24
 
@@ -1393,9 +1400,12 @@ menu-border: $menu-border
 
 --- ftd.column:
 width: fill
+if: $login-button
 border-bottom if not $parent-brand: 1
 border-color: $fpm.color.main.border
 padding-vertical: $fpm.space.space-6
+
+
 
 --- login-signup:
 login: $login-btn-txt
@@ -1857,4 +1867,3 @@ margin-top: -6
 role: $label-bold
 white-space: nowrap
 color: $fpm.color.main.cta-primary.text
-
