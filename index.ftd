@@ -1582,8 +1582,6 @@ string link:
 
 -- ftd.column show-children:
 fpm.toc-item list children:
-optional integer left: 
-optional integer right: 
 ftd.color menu-bg:
 ftd.color menu-hover-bg:
 ftd.color menu-link:
@@ -1591,8 +1589,6 @@ ftd.color menu-link-active:
 ftd.color menu-border:
 if: $children is not empty
 anchor: parent
-left if $left is not null: $left
-right if $right is not null: $right
 top: 30
 background-color: $menu-bg
 border-width: 1
