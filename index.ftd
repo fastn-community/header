@@ -593,7 +593,7 @@ if: $site-name is not null
 role: $fpm.type.heading-medium
 color: $fpm.color.main.text-strong
 align: center
-margin-left: 16
+margin-left if $site-logo is not null: 16
 white-space: nowrap
 
 --- fallback-title:
