@@ -533,7 +533,6 @@ body.fpm-dark .ft_md a {
 
 
 
-
 @font-face { unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 font-style: normal;
 font-weight: 100;
@@ -849,6 +848,7 @@ font-style: normal;
 font-weight: 900;
 src: url(-/fifthtry.github.io/inter/static/Inter-900-normal-latin.woff2) format('woff2');
 font-family: fifthtry-github-io-inter-Inter }
+
 
 
 
@@ -1177,7 +1177,7 @@ let ftd_utils = {
     },
 
     is_equal_condition: function (value, condition) {
-        let val = value.toString().replaceAll("\"", "");
+        let val = value === null ? "" : value.toString().replaceAll("\"", "");
         return ((value === condition)
             || (condition === "$IsNull$" && (val.trim().length === 0 || value === null))
             || (condition === "$IsNotNull$" && (val.trim().length !== 0 && value !== null))
@@ -1638,10 +1638,10 @@ window.ftd = (function () {
             if (action["parameters"].data !== undefined) {
                 let value = action["parameters"].data[0].value;
                 let reference = JSON.parse(action["parameters"].data[0].reference);
-                let resolved_data = ftd_utils.resolve_reference(value, reference, data, obj);
+                let filtered_data = filter_keys(reference, (key) => !key.startsWith("$"));
+                let resolved_data = ftd_utils.resolve_reference(value, filtered_data, data, obj);
                 let func = resolved_data.function? resolved_data.function.trim().replaceAll("-", "_").toLowerCase(): "http";
-                let method = resolved_data.method? resolved_data.method.trim().toUpperCase(): "GET";
-                window[func](id, method, resolved_data, reference);
+                window[func](id, resolved_data, reference);
             } else {
                 let target = action["target"].trim().replaceAll("-", "_");
                 window[target](id);
@@ -1900,37 +1900,79 @@ window.ftd = (function () {
     return exports;
 })();
 
-function console_print(id, data) {
-    console.log("console_print",data);
-}
+function filter_keys(data, filter_fn) {
+    if (!(data instanceof Object)) {
+        throw "data is not an object";
+    }
 
-function http(id, method="GET", data, reference) {
+    let o = {};
+
+    for(const key of Object.keys(data)) {
+        if (filter_fn(key)) {
+            o[key] = data[key];
+        }
+    }
+
+    return o;
+}
+function http(id, request_data, referenced_data) {
+    let method = request_data.method? request_data.method.trim().toUpperCase(): "GET";
     let xhr = new XMLHttpRequest();
-    xhr.open(method.toUpperCase(), data.url);
+    xhr.open(method, request_data.url);
     xhr.setRequestHeader("Accept", "application/json");
     xhr.setRequestHeader("Content-Type", "application/json");
 
     xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status !== 200) {
-            console.log("Error in calling url: ", data.url, xhr.responseText);
-            return;
-        }
         if (xhr.readyState !== 4) {
+            // this means request is still underway
+            // https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
             return;
         }
+
+        if (xhr.status > 500) {
+            console.log("Error in calling url: ", request_data.url, xhr.responseText);
+            return;
+        }
+
         let response = JSON.parse(xhr.response);
-        console_log("API response", data.url, xhr.response)
-        if (!!response.data && !!response.data.url) {
-            window.location.href = response.data.url;
-        } else if (!!response.data && !!response.data.reload) {
+        if (!!response && !!response.redirect) {
+            // Warning: we don't handle header location redirect
+            window.location.href = response.redirect;
+        } else if (!!response && !!response.reload) {
             window.location.reload();
         } else {
-            for (const key of Object.keys(response.data)) {
-                ftd.set_value(id, key, response.data[key])
+            let data = {};
+
+            if (!!response.errors) {
+                for (key of Object.keys(response.errors)) {
+                    let value = response.errors[key];
+                    if (Array.isArray(value)) {
+                        // django returns a list of strings
+                        value = value.join(" ");
+                        // also django does not append `-error`
+                        key = key + "-error";
+                    }
+                    data[key] = value;
+                }
+            }
+
+            if (!!response.data) {
+                if (!!data) {
+                    console_log("both .errrors and .data are present in response, ignoring .data");
+                } else {
+                    data = response.data;
+                }
+            }
+
+            for (ftd_variable of Object.keys(data)) {
+                if (referenced_data["$" + ftd_variable]) {
+                    ftd_variable = referenced_data["$" + ftd_variable];
+                }
+                ftd.set_value(id, ftd_variable, data[key])
             }
         }
     };
-    xhr.send(JSON.stringify(data));
+    xhr.send(JSON.stringify(request_data));
 }
 
 function redirect(id, data) {
@@ -2160,6 +2202,39 @@ window.ftd.post_init = function () {
         update_theme_color();
     }
 
+
+    window.ftd_warnings_delivered = {};
+
+    window["ls.set_boolean"] = function(_id, resolved_data, reference) {
+        // TODO: we need a better way to detect absence of localStorage
+        if (!window.localStorage && !window.ftd_warnings_delivered["ls.set_boolean"]) {
+            // TODO: we should have `ftd.localStorage-present` or some such, so we can
+            //       show a warning in UI as well, instead of just in console.
+
+            // we are doing this business so we only show the warning once in console
+            window.ftd_warnings_delivered["ls.set_boolean"] = true;
+
+            console.warn("localStorage not available, but ls.set-boolean was used");
+            return;
+        }
+
+        // TODO: we are not using id yet.
+        console.log("ls.set-boolean", reference["variable"], resolved_data["variable"]);
+        window.localStorage.setItem(reference["variable"], resolved_data["variable"]);
+    }
+
+    function scan_local_store() {
+        // TODO: we need a better way to detect absence of localStorage
+        if (!window.localStorage) {
+            return;
+        }
+
+        Object.keys(window.localStorage).forEach(function(key){
+            // TODO: how do we handle id? we are harcoding main here, which is wrong
+            window.ftd.set_value("main", key, window.localStorage.getItem(key));
+        });
+    }
+
     function update_theme_color() {
         let theme_color = window.ftd.get_value("main", FTD_THEME_COLOR);
         if (!!theme_color) {
@@ -2237,7 +2312,9 @@ window.ftd.post_init = function () {
     initialise_dark_mode();
     initialise_device();
     update_markdown_colors();
+    scan_local_store();
 };
+
 
             window.ftd.init("main", "ftd-data", "ftd-external-children");
 
