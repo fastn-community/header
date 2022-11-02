@@ -1223,7 +1223,6 @@ white-space: nowrap
 if:  $current-page.title is not null
 role: $fpm.type.label-small
 color: $fpm.color.main.text-strong
-link: $current-page.url 
 white-space: nowrap
 
 --- container: change-container
