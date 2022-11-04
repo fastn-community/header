@@ -634,6 +634,7 @@ menu-hover-bg: $menu-hover-bg
 menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
+icon: $obj.font-icon
 
 --- pricing-cta-text: Try for Free
 if: $pricing-cta
@@ -780,6 +781,7 @@ menu-link: $menu-link
 menu-link-active: $menu-link-active
 menu-border: $menu-border
 menu-hover-bg: $menu-hover-bg
+icon: $obj.font-icon
 
 
 
@@ -853,6 +855,7 @@ border-color if $current-url == $link: $active-text-color
 
 -- ftd.row header-item: 
 caption title:
+optional ftd.image-src icon:
 optional string link:
 ftd.color text-color:
 boolean is-active: 
@@ -869,6 +872,11 @@ boolean open: false
 $on-click$: toggle $open
 $on-click-outside$: $open = false
 
+--- ftd.image:
+if: $icon is not null
+src: $icon
+max-height: 20
+min-height: 20
 
 --- ftd.text: $title
 role: $cta
