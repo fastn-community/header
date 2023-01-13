@@ -11,9 +11,6 @@ dark: https://www.fifthtry.com/-/fifthtry.com/assets/images/logo-fifthtry-dark.s
 
 -- $ps.current-product: 2
 
--- boolean $show-section: false
-
-
 
 -- boolean login-button: false
 
@@ -94,6 +91,7 @@ optional fpm.toc-item current-section:
 optional fpm.toc-item current-subsection: 
 optional fpm.toc-item current-page: 
 fpm.toc-item list footer-nav: 
+boolean $show-section: false
 fpm.toc-item list extra: 
 ps.product-data list products: 
 integer logo-width: 120
@@ -129,7 +127,7 @@ if: { header.sidebar-open }
 width: fill-container
 background.solid: $inherited.colors.background.overlay
 height.fixed.calc: 100vh
-;; z-index: 10 -- TODO FTD 0.3
+z-index: 10
 
 -- mobile-sidebar:
 if: { header.sidebar-open }
@@ -164,6 +162,7 @@ login-button: $header.login-button
 login-btn-txt: $header.login-btn-txt
 sign-in-txt: $header.sign-in-txt
 products: $header.products
+$show-section: $header.show-section
 
 -- header-desktop:
 if: { ftd.device != "mobile" }
@@ -204,6 +203,7 @@ nav-sub-section-title: $header.nav-sub-section-title
 nav-sub-section-title-url: $header.nav-sub-section-title
 products: $header.products
 
+
 -- header-mobile:
 if: { ftd.device == "mobile" }
 site-logo: $header.site-logo
@@ -237,6 +237,7 @@ background: $header.background
 text-color: $header.text-color 
 active-text-color: $header.active-text-color
 products: $header.products
+$show-section: $header.show-section
 
 -- end: ftd.column
 
@@ -261,7 +262,7 @@ bottom.px: 0
 left.px: 0
 right.px: 0
 background.solid:  $inherited.colors.background.overlay
-;; z-index: 1 -- TODO FTD 0.3
+z-index: 1
 $on-click$: $ftd.toggle($a = $mobile-sidebar.sidebar-open)
 
 -- ftd.image:
@@ -295,6 +296,7 @@ optional string brand-caption:
 optional string site-name:
 boolean parent-brand: 
 fpm.toc-item list sections:
+boolean $show-section:
 fpm.toc-item list footer-nav:
 fpm.toc-item list sub-sections:
 integer logo-width: 120
@@ -323,7 +325,7 @@ overflow-y: auto
 padding-top.px: 20
 padding-horizontal.px: 24
 background.solid: $inherited.colors.background.step-1
-;; z-index: 4 -- TODO FTD 0.3
+z-index: 14
 
 -- ftd.row:
 width: fill-container
@@ -375,6 +377,7 @@ $loop$: $menu-mobile.sections as $obj
 children: $obj.children 
 is-active: $obj.is-active
 link: $obj.url
+$show-section: $menu-mobile.show-section
 text-color: $menu-mobile.text-color
 active-text-color: $menu-mobile.active-text-color
 current-url: $menu-mobile.current-url
@@ -533,7 +536,7 @@ products: $header-desktop.products
 ;; id: right-side-top -- TODO FTD 0.3
 align-self: end
 padding-top.px: 12
-;; z-index: 1000 -- TODO FTD 0.3
+z-index: 1000
 
 -- header-item: $obj.title
 $loop$: $header-desktop.sections as $obj
@@ -681,6 +684,7 @@ optional string brand-site-name:
 boolean parent-brand: false
 string site-url: 
 string current-url:
+boolean $show-section: false
 optional string brand-site-url:
 optional string site-name:
 fpm.toc-item list sections:
@@ -707,7 +711,7 @@ boolean pricing-cta:
 -- ftd.column: 
 width: fill-container
 background.solid: $inherited.colors.background.step-1
-$on-click-outside$: $ftd.set-bool($a = $show-section, v = false)
+$on-click-outside$: $ftd.set-bool($a = $header-mobile.show-section, v = false)
 
 -- ftd.row:
 ;; id: left-side -- TODO FTD 0.3
@@ -833,13 +837,14 @@ width: fill-container
 background.solid: $inherited.colors.background.step-2
 ;; id: change-container -- TODO FTD 0.3
 padding-horizontal.px: 20
-$on-click$: $ftd.toggle($a = $show-section)
+$on-click$: $ftd.toggle($a = $header-mobile.show-section, v=true)
 
 -- ftd.row:
 width: fill-container
 padding-vertical.px: 16
 spacing.px: 4
 ;; id: selection-container -- TODO FTD 0.3
+
 
 -- ftd.text: $header-mobile.current-subsection.title
 if: { header-mobile.current-subsection != NULL }
@@ -880,13 +885,13 @@ align-self: center
 width: fill-container
 
 -- ftd.image: 
-if: { !show-section }
+if: { !header-mobile.show-section }
 src: $assets.files.static.down-arrow-dark.svg
 height: hug-content
 width.fixed.px: 12
 
 -- ftd.image: 
-if: { show-section }
+if: { header-mobile.show-section }
 src: $assets.files.static.up-arrow-dark.svg
 width.fixed.px: 12
 
@@ -895,12 +900,13 @@ width.fixed.px: 12
 -- end: ftd.row
 
 -- ftd.column: 
-if: { show-section }
+if: { header-mobile.show-section }
 width: fill-container
 anchor: parent
 background.solid: $inherited.colors.background.step-2
 top.px: 48
 left.px: 0
+z-index: 999
 
 -- ftd.column:
 width: fill-container
@@ -1265,6 +1271,7 @@ ftd.color active-text-color:
 ftd.color menu-bg:
 ftd.color menu-hover-bg:
 ftd.color menu-link:
+boolean $show-section:
 ftd.color menu-link-active:
 ftd.color menu-border:
 string link-style:
@@ -1284,7 +1291,7 @@ role: $inherited.types.copy-relaxed
 link: $header-item-mobile.link
 color: $header-item-mobile.text-color
 color if { header-item-mobile.is-active }: $inherited.colors.cta-primary.base
-$on-click$: $ftd.set-bool($a = $show-section, v = true)
+$on-click$: $ftd.set-bool($a = $header-item-mobile.show-section, v = true)
 padding-top.px: 24
 
 -- ftd.column:
@@ -1387,7 +1394,7 @@ min-width.fixed.px: 150
 ;; shadow-offset-y: 0 -- TODO FTD 0.3
 ;; shadow-size: 1 -- TODO FTD 0.3
 ;; shadow-blur: 10 -- TODO FTD 0.3
-;; z-index: 4 -- TODO FTD 0.3
+z-index: 4
 
 -- links:
 obj: $obj
