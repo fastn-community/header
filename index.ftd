@@ -907,6 +907,8 @@ background.solid: $inherited.colors.background.step-2
 top.px: 48
 left.px: 0
 z-index: 999
+max-height.fixed.px: 300
+overflow-y: auto
 
 -- ftd.column:
 width: fill-container
