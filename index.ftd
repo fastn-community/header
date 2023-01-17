@@ -529,7 +529,7 @@ products: $header-desktop.products
 -- ftd.row:
 align-self: center
 padding-top.px: 6
-z-index: 1000
+
 
 -- header-item: $obj.title
 $loop$: $header-desktop.sections as $obj
