@@ -577,7 +577,7 @@ width: fill-container
 
 -- ftd.text: $header-desktop.current-section.title
 if: { header-desktop.current-section.title != NULL }
-role: $inherited.types.copy-large
+role: $inherited.types.heading-small
 color: $inherited.colors.text-strong
 link: $header-desktop.current-section.url
 padding-bottom.px: 8
@@ -1032,7 +1032,7 @@ max-height.fixed.px: 20
 min-height.fixed.px: 20
 
 -- ftd.text: $header-item.title
-role: $inherited.types.copy-large
+role: $inherited.types.copy-tight
 link: $header-item.link
 white-space: nowrap
 padding-left.px: 10
@@ -1044,7 +1044,7 @@ margin-left.px: 10
 
 -- ftd.text: $header-item.title
 if: { header-item.link == NULL }
-role: $inherited.types.copy-large
+role: $inherited.types.copy-tight
 white-space: nowrap
 padding-left.px: 10
 color: $header-item.text-color
