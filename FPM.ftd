@@ -6,7 +6,7 @@ download-base-url: https://raw.githubusercontent.com/fifthtry/header/main
 -- fpm.dependency: fifthtry.github.io/package-doc
 ;; -- fpm.dependency: fifthtry.github.io/dark-mode-switcher as dms
 ;; -- fpm.dependency: fifthtry.github.io/language-switcher as lang
--- fpm.dependency: fifthtry.github.io/product-switcher as ps
+-- fpm.dependency: fifthtry.github.io/product-switcher 
 
 
 -- fpm.sitemap:
