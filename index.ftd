@@ -1097,7 +1097,7 @@ align-self: center
 
 -- ftd.text: $header-toc-item-mobile-view.title
 if: { header-toc-item-mobile-view.link != NULL }
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-tight
 link: $header-toc-item-mobile-view.link
 white-space: nowrap
 padding-left.px: 10
@@ -1122,7 +1122,7 @@ align-self: center
 
 -- ftd.text: $header-toc-item-mobile-view.title
 if: { header-toc-item-mobile-view.link == NULL }
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-tight
 white-space: nowrap
 padding-left.px: 10
 color: $inherited.colors.text
@@ -1501,7 +1501,7 @@ color: $links-mobile.menu-link
 color if { links-mobile.obj.is-active }: $inherited.colors.cta-primary.base 
 padding-vertical.px: 8
 padding-horizontal.px: 10
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-tight
 width: fill-container
 
 -- end: ftd.row
@@ -1522,7 +1522,7 @@ align-self: center
 color: $inherited.colors.background.step-2
 padding-vertical.px: 8
 padding-horizontal.px: 10
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-tight
 width: fill-container
 
 -- end: ftd.row
