@@ -20,7 +20,7 @@ dark: https://www.fifthtry.com/-/fifthtry.com/assets/images/logo-fifthtry-dark.s
 
 -- string site-name: Doc Site
 
--- fpm.sitemap-data sitemap:
+-- pr.sitemap-data sitemap:
 $processor$: pr.sitemap
 
 -- pr.toc-item list sections:
