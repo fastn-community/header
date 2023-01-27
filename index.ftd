@@ -710,7 +710,7 @@ width: fill-container
 
 -- ftd.row:
 width: fill-container
-spacing.px: 16
+spacing.fixed.px: 16
 
 -- ftd.image:
 src: $header-mobile.menu-icon
@@ -737,7 +737,7 @@ site-name: $header-mobile.site-name
 
 -- ftd.row:
 if: { !header-mobile.parent-brand }
-spacing.px: 15
+spacing.fixed.px: 15
 link: $header-mobile.brand-site-url
 
 -- ftd.image:
@@ -795,7 +795,7 @@ white-space: nowrap
 
 -- ftd.row:
 width: fill-container
-spacing.px: 8
+spacing.fixed.px: 8
 padding-top.px: 8
 overflow-x: auto
 
@@ -826,7 +826,7 @@ $on-click$: $ftd.toggle($a = $header-mobile.show-section, v=true)
 -- ftd.row:
 width: fill-container
 padding-vertical.px: 16
-spacing.px: 4
+spacing.fixed.px: 4
 
 -- ftd.text: $header-mobile.current-subsection.title
 if: { header-mobile.current-subsection != NULL }
@@ -893,7 +893,7 @@ overflow-y: auto
 
 -- ftd.column:
 width: fill-container
-spacing.px: 8
+spacing.fixed.px: 8
 padding-vertical.px: 12
 padding-horizontal.px: 24
 overflow-x: auto
@@ -1509,7 +1509,7 @@ width: fill-container
 -- ftd.row:
 if: { links-mobile.obj.url == NULL }
 width: fill-container
-spacing.px: 8
+spacing.fixed.px: 8
 
 /-- ftd.image:
 ;; if: { links-mobile.obj.font-icon != NULL } -- TODO FTD 0.3
@@ -1578,7 +1578,7 @@ optional string sign-in:
 optional ftd.image-src icon-github:
 
 -- ftd.row:
-spacing.px: 20
+spacing.fixed.px: 20
 margin-top.px: -10
 width: fill-container
 
@@ -1620,7 +1620,7 @@ optional string sign-in:
 optional ftd.image-src icon-github: $assets.files.static.icon-github.svg 
 
 -- ftd.column:
-spacing.px: 32
+spacing.fixed.px: 32
 width: fill-container
 
 -- ftd.text: $login-signup-mobile.login
@@ -1659,7 +1659,7 @@ cursor: pointer
 link: $github-button.link
 margin-top.px: -4
 align-self if { ftd.device != "mobile" }: center
-spacing.px: 20
+spacing.fixed.px: 20
 
 -- ftd.text:
 if: { github-button.sign-in != NULL }
