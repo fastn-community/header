@@ -363,7 +363,7 @@ products: $menu-mobile.products
 -- end: ftd.row
 
 -- ftd.column:
-if: { !is_empty(menu-mobile.sections) }
+if: { !ftd.is_empty(menu-mobile.sections) }
 width: fill-container
 border-bottom-width.px if { menu-mobile.login-button }: 1
 border-color: $inherited.colors.border
@@ -1131,10 +1131,10 @@ color if { header-toc-item-mobile-view.is-active }: $inherited.colors.cta-primar
 -- end: ftd.row
 
 -- ftd.column:
-if: { !is_empty(header-toc-item-mobile-view.children) }
+if: { !ftd.is_empty(header-toc-item-mobile-view.children) }
 
 -- show-children-mobile:
-if: { !is_empty(header-toc-item-mobile-view.children) }
+if: { !ftd.is_empty(header-toc-item-mobile-view.children) }
 children: $header-toc-item-mobile-view.children
 menu-link: $header-toc-item-mobile-view.menu-link
 menu-link-active: $header-toc-item-mobile-view.menu-link-active
@@ -1278,11 +1278,11 @@ $on-click$: $ftd.set-bool($a = $header-item-mobile.show-section, v = true)
 padding-top.px: 24
 
 -- ftd.column:
-if: { is_empty(header-item-mobile.children) }
+if: { ftd.is_empty(header-item-mobile.children) }
 padding-bottom.px: 15
 
 -- show-children-mobile:
-if: { !is_empty(header-item-mobile.children) }
+if: { !ftd.is_empty(header-item-mobile.children) }
 children: $header-item-mobile.children
 menu-link: $header-item-mobile.menu-link
 menu-link-active: $header-item-mobile.menu-link-active
@@ -1364,7 +1364,7 @@ ftd.color menu-link-active:
 ftd.color menu-border:
 
 -- ftd.column:
-if: { !is_empty(show-children.children) }
+if: { !ftd.is_empty(show-children.children) }
 anchor: parent
 top.px: 30
 background.solid: $show-children.menu-bg
@@ -1453,7 +1453,7 @@ ftd.color menu-link-active:
 ftd.color menu-border:
 
 -- ftd.column:
-if: { !is_empty(show-children-mobile.children) }
+if: { !ftd.is_empty(show-children-mobile.children) }
 padding.px: 5
 padding-left.px: 15
 
