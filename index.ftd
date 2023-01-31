@@ -748,7 +748,7 @@ height.fixed.px: 36
 
 -- ftd.text: $header-mobile.brand-site-name
 if: { header-mobile.brand-site-name != NULL }
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 color: $inherited.colors.text-strong
 
 -- fallback-title:
@@ -937,7 +937,7 @@ menu-hover-bg: $header-mobile.menu-hover-bg
 caption title:
 
 -- ftd.text: $site-url.title
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 align-self: center
 white-space: nowrap
 
@@ -983,7 +983,7 @@ optional ftd.color active-text-color:
 optional string current-url:
 
 -- ftd.text: $header-top-right-item.title
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 link: $header-top-right-item.link
 align-self: center
 white-space: nowrap
@@ -1032,7 +1032,7 @@ max-height.fixed.px: 20
 min-height.fixed.px: 20
 
 -- ftd.text: $header-item.title
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 link: $header-item.link
 white-space: nowrap
 padding-left.px: 10
@@ -1044,7 +1044,7 @@ margin-left.px: 10
 
 -- ftd.text: $header-item.title
 if: { header-item.link == NULL }
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 white-space: nowrap
 padding-left.px: 10
 color: $header-item.text-color
@@ -1097,7 +1097,7 @@ align-self: center
 
 -- ftd.text: $header-toc-item-mobile-view.title
 if: { header-toc-item-mobile-view.link != NULL }
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 link: $header-toc-item-mobile-view.link
 white-space: nowrap
 padding-left.px: 10
@@ -1122,7 +1122,7 @@ align-self: center
 
 -- ftd.text: $header-toc-item-mobile-view.title
 if: { header-toc-item-mobile-view.link == NULL }
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 white-space: nowrap
 padding-left.px: 10
 color: $inherited.colors.text
@@ -1208,7 +1208,7 @@ string url:
 width: fill-container
 
 -- ftd.text: $footer.title
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 link: $footer.url
 color: $inherited.colors.cta-primary.base
 padding-bottom.px: 32
@@ -1230,7 +1230,7 @@ padding-bottom.px: 32
 caption title: 
 
 -- ftd.text: $site-link.title
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 color: $inherited.colors.text
 align-self: center
 
@@ -1270,7 +1270,7 @@ $on-click-outside$: $ftd.set-bool($a = $header-item-mobile.open, v = false)
 width: fill-container
 
 -- ftd.text: $header-item-mobile.title 
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 link: $header-item-mobile.link
 color: $header-item-mobile.text-color
 color if { header-item-mobile.is-active }: $inherited.colors.cta-primary.base
@@ -1415,7 +1415,7 @@ background.solid if $MOUSE-IN: $links.menu-hover-bg
 white-space: nowrap
 padding-vertical.px: 4
 padding-horizontal.px: 10
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 width: fill-container
 border-radius.px: 4
 
@@ -1427,7 +1427,7 @@ background.solid if $MOUSE-IN: $links.menu-hover-bg
 white-space: nowrap
 padding-vertical.px: 4
 padding-horizontal.px: 10
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 width: fill-container
 border-radius.px: 4
 
@@ -1501,7 +1501,7 @@ color: $links-mobile.menu-link
 color if { links-mobile.obj.is-active }: $inherited.colors.cta-primary.base 
 padding-vertical.px: 8
 padding-horizontal.px: 10
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 width: fill-container
 
 -- end: ftd.row
@@ -1522,7 +1522,7 @@ align-self: center
 color: $inherited.colors.background.step-2
 padding-vertical.px: 8
 padding-horizontal.px: 10
-role: $inherited.types.copy-tight
+role: $inherited.types.copy-small
 width: fill-container
 
 -- end: ftd.row
@@ -1590,7 +1590,7 @@ margin-left.px: 20
 border-color: $inherited.colors.border
 
 -- ftd.text: $login-signup-desktop.login
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 color: $inherited.colors.cta-primary.base
 padding-vertical.px: 10
 link: https://cdoc.fifthtry.com/initiate-github-login/
@@ -1624,7 +1624,7 @@ spacing.fixed.px: 32
 width: fill-container
 
 -- ftd.text: $login-signup-mobile.login
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 color: $inherited.colors.cta-primary.base
 link: https://cdoc.fifthtry.com/initiate-github-login/
 padding-bottom.px: 32
@@ -1665,7 +1665,7 @@ spacing.fixed.px: 20
 if: { github-button.sign-in != NULL }
 text: $github-button.sign-in
 white-space: nowrap
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 align-self: center
 text-align: center
 color: $inherited.colors.background.step-1
@@ -1700,7 +1700,7 @@ margin-left.px: 20
 margin-top.px: -6
 
 -- ftd.text: $pricing-cta-text.title
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-regular
 white-space: nowrap
 color: $inherited.colors.cta-primary.text
 
