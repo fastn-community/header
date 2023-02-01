@@ -1,6 +1,6 @@
 -- import: fifthtry.github.io/package-doc/doc as pd
--- import: fpm
--- import: fpm/processors as pr
+-- import: fastn
+-- import: fastn/processors as pr
 -- import: fifthtry.github.io/header/assets
 -- import: fifthtry.github.io/product-switcher as ps
 -- import: fifthtry.github.io/package-doc/code-block as cb
