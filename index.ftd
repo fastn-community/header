@@ -493,7 +493,8 @@ link: $header-desktop.site-url
 -- ftd.image:
 if: { header-desktop.site-logo != NULL }
 src: $header-desktop.site-logo
-width.fixed.px: $header-desktop.logo-width
+width: auto
+max-width.fixed.px: $header-desktop.logo-width
 height.fixed.px: $header-desktop.logo-height
 align-self: center
 
