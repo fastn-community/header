@@ -328,6 +328,7 @@ z-index: 14
 
 -- ftd.row:
 width: fill-container
+align-content: center
 
 -- ftd.column:
 if: { !menu-mobile.parent-brand }
@@ -345,8 +346,15 @@ role: $inherited.types.fine-print
 color: $inherited.colors.text-strong
 padding-bottom.px: 8
 
+-- ftd.column:
+if: { menu-mobile.site-logo != NULL }
+height.fixed.px: 38
+
 -- ftd.image:
 src: $menu-mobile.site-logo
+height.fixed.px: 44
+
+-- end: ftd.column
 
 -- end: ftd.column
 
@@ -685,7 +693,7 @@ optional pr.toc-item current-page:
 boolean include-dark-mode-switcher:
 boolean include-language-switcher:
 integer logo-width: 120
-integer logo-height: 44
+integer logo-height: 38
 string link-style: 
 ftd.color background:  
 ftd.color text-color: 
@@ -706,6 +714,7 @@ $on-click-outside$: $ftd.set-bool($a = $header-mobile.show-section, v = false)
 padding-horizontal.px: 16
 padding-vertical.px: 16
 width: fill-container
+align-content: center
 
 -- ftd.column:
 
@@ -719,11 +728,15 @@ width.fixed.px: 24
 align-self: center
 $on-click$: $ftd.toggle($a = $header-mobile.sidebar-open) 
 
--- ftd.image:
+-- ftd.column:
 if: { header-mobile.site-logo != NULL } 
+height.fixed.px: 38
+
+-- ftd.image:
 src: $header-mobile.site-logo
-width.fixed.px: $header-mobile.logo-width
-height.fixed.px: $header-mobile.logo-height
+height.fixed.px: 44
+
+-- end: ftd.column
 
 -- ftd.text: $header-mobile.site-name
 if: { header-mobile.site-name != NULL }
