@@ -797,7 +797,7 @@ align-self: start
 -- ftd.text: $header-mobile.current-section.title
 if: { header-mobile.current-section != NULL }
 role: $inherited.types.label-small
-color: $inherited.colors.text
+color: $inherited.colors.cta-tertiary.text
 link: $header-mobile.current-section.url
 background.solid: $inherited.colors.cta-tertiary.base
 padding-vertical.px: 8
