@@ -1,8 +1,9 @@
--- import: fifthtry.github.io/package-doc/doc as pd
 -- import: fastn
 -- import: fastn/processors as pr
 -- import: fifthtry.github.io/header/assets
 -- import: fifthtry.github.io/product-switcher as ps
+-- import: fifthtry.github.io/package-doc/doc as pd
+-- import: fifthtry.github.io/package-doc/forest-theme as ft
 -- import: fifthtry.github.io/package-doc/code-block as cb
 
 
@@ -40,6 +41,56 @@ $processor$: pr.toc
 
 
 
+-- ft.page:
+
+-- pd.package: Header
+name: fifthtry.github.io/header
+
+The `Header` package(fifthtry.github.io/header). Use inside `FTD` files
+for your web pages.
+
+The `header` component is already included inside [`doc-site`]
+(fifthtry.github.io/doc-site). If you are using `doc-site` then don't add
+header as fastn dependency.
+
+How to use?
+
+-- cb.code: Add this to your FASTN.ftd
+lang: ftd
+
+\-- fastn.dependency: fifthtry.github.io/header
+
+\-- fastn.auto-import: fifthtry.github.io/header
+
+
+-- pd.component: `header.header` Basic usage example
+name: `-- header.header:`
+
+Use below code snippet to use this header component. Update `site-logo`,
+`site-name` or `site-url` as per your preferences.
+
+-- cb.rendered:
+
+-- cb.rendered.input:
+
+\-- header:
+login-button: $header.login-button
+pricing-cta: $header.pricing-cta
+login-btn-txt: Login
+sign-in-txt:  Sign-in
+sections: $sitemap.sections
+sub-sections: $sitemap.subsections
+current-section: $sitemap.current-section
+current-subsection: $sitemap.current-subsection
+current-page: $sitemap.current-page
+toc: $sitemap.toc
+extra: $header.extra
+site-logo: $header.site-logo
+site-url: $header.site-url
+site-name: $header.site-name
+products: $ps.example-product
+
+-- cb.rendered.output:
 
 -- header:
 login-button: $login-button
@@ -58,6 +109,26 @@ site-url: $site-url
 site-name: $site-name
 logo-height: 38
 products: $ps.example-product
+
+-- end: cb.rendered.output
+
+-- end: cb.rendered
+
+-- ftd.column:
+height.fixed.px: 300
+
+-- end: ftd.column
+
+-- end: ft.page
+
+
+
+
+
+
+
+
+
 
 
 
