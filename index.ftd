@@ -583,7 +583,7 @@ role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 margin-left.px if { header-desktop.site-logo != NULL }: 16
 white-space: nowrap
-margin-top.px: 10
+align-self: center
 
 -- fallback-title:
 if: { header-desktop.site-logo == NULL }
