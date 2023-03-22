@@ -49,9 +49,9 @@ name: fifthtry.github.io/header
 The `Header` package(fifthtry.github.io/header). Use inside `FTD` files
 for your web pages.
 
-The `header` component is already included inside [`doc-site`]
-(fifthtry.github.io/doc-site). If you are using `doc-site` then don't add
-header as fastn dependency.
+The `header` component is already included inside
+[`doc-site`](fifthtry.github.io/doc-site). If you are using `doc-site` then 
+don't add header as fastn dependency.
 
 How to use?
 
