@@ -832,7 +832,6 @@ menu-hover-bg: $header-mobile.menu-hover-bg
 -- end: ftd.row
 
 -- ftd.row:
-if: { !ftd.is_empty($header-mobile.sub-sections) }
 width: fill-container
 background.solid: $inherited.colors.background.step-2
 padding-horizontal.px: 20
@@ -845,6 +844,12 @@ spacing.fixed.px: 4
 
 -- ftd.text: $header-mobile.current-subsection.title
 if: { header-mobile.current-subsection != NULL }
+role: $inherited.types.label-small
+color: $inherited.colors.text-strong
+white-space: nowrap
+
+-- ftd.text: Menu
+if: { header-mobile.current-subsection == NULL }
 role: $inherited.types.label-small
 color: $inherited.colors.text-strong
 white-space: nowrap
