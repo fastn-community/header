@@ -1,2 +1,0 @@
-# header
-FPM Header Component
