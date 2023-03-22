@@ -832,6 +832,7 @@ menu-hover-bg: $header-mobile.menu-hover-bg
 -- end: ftd.row
 
 -- ftd.row:
+if: { !ftd.is_empty($header-mobile.toc) }
 width: fill-container
 background.solid: $inherited.colors.background.step-2
 padding-horizontal.px: 20
