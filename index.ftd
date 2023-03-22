@@ -850,7 +850,7 @@ color: $inherited.colors.text-strong
 white-space: nowrap
 
 -- ftd.text: Menu
-if: { header-mobile.current-subsection == NULL }
+if: { header-mobile.current-subsection == NULL && header-mobile.current-page == NULL }
 role: $inherited.types.label-small
 color: $inherited.colors.text-strong
 white-space: nowrap
