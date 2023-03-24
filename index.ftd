@@ -5,6 +5,7 @@
 -- import: fifthtry.github.io/package-doc/doc as pd
 -- import: fifthtry.github.io/package-doc/forest-theme as ft
 -- import: fifthtry.github.io/package-doc/code-block as cb
+-- import: fifthtry.github.io/package-doc/footer
 
 
 -- ftd.image-src site-logo: 
@@ -42,6 +43,15 @@ $processor$: pr.toc
 
 
 -- ft.page:
+site-name: Header
+show-footer: true
+
+-- ft.page.footer:
+
+-- footer.fastn-footer:
+
+-- end: ft.page.footer
+
 
 -- pd.package: Header
 name: fifthtry.github.io/header
