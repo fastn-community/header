@@ -8,7 +8,7 @@
 
 
 -- site-doc.doc-home: Header with Product Switcher
-github-url: https://fifthtry.github.io/header
+github-url: https://github.com/FifthTry/header/
 color-scheme: \$ftd.default-colors
 typography: \$ftd.default-types
 current-package: fifthtry.github.io/header
