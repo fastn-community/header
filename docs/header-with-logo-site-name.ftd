@@ -7,7 +7,7 @@
 
 
 -- site-doc.doc-home: Basic Header
-github-url: https://fifthtry.github.io/header
+github-url: https://github.com/FifthTry/header/
 color-scheme: \$ftd.default-colors
 typography: \$ftd.default-types
 current-package: fifthtry.github.io/header
@@ -26,7 +26,7 @@ site-name: Docs
 
 -- site-doc.component-doc: `header`
 package-link: https://fifthtry.github.io/header
-github-link: https://github.com/FifthTry/header
+github-link: https://github.com/FifthTry/header/
 package-name: fifthtry.github.io/header
 info: `-- header` can be used as header on your fastn web projects.
 
