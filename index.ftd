@@ -4,13 +4,14 @@
 -- import: fifthtry.github.io/product-switcher as ps
 -- import: fifthtry.github.io/package-doc/doc as pd
 -- import: fifthtry.github.io/package-doc/forest-theme as ft
--- import: fifthtry.github.io/package-doc/code-block as cb
+-- import: fifthtry.github.io/code-block as cb
 -- import: fifthtry.github.io/package-doc/footer
+-- import: fastn-community.github.io/site-doc
 
 
 -- ftd.image-src site-logo: 
-light: https://www.fifthtry.com/-/fifthtry.com/images/dummy-site-logo.png
-dark: https://www.fifthtry.com/-/fifthtry.com/images/dummy-site-logo.png
+light: https://fastn.com/-/fastn.io/images/fastn.svg
+dark: https://fastn.com/-/fastn.io/images/fastn-dark.svg
 
 -- $ps.current-product: 2
 
@@ -42,106 +43,48 @@ $processor$: pr.toc
 
 
 
--- ft.page:
-site-name: Header
-show-footer: true
-
--- ft.page.footer:
-
--- footer.fastn-footer:
-
--- end: ft.page.footer
 
 
--- pd.package: Header
-name: fifthtry.github.io/header
 
-The `Header` package(fifthtry.github.io/header). Use inside `FTD` files
-for your web pages.
 
-The `header` component is already included inside
-[`doc-site`](fifthtry.github.io/doc-site). If you are using `doc-site` then 
-don't add header as fastn dependency.
 
-How to use?
+-- site-doc.doc-home: Header Documentation
+github-url: https://fifthtry.github.io/header
+color-scheme: \$ftd.default-colors
+typography: \$ftd.default-types
+current-package: fifthtry.github.io/header
+show-tabs: false
+site-title: Header
 
--- cb.code: Add this to your FASTN.ftd
+
+-- site-doc.header: What is header?
+
+A website header is the topmost section of a web page that appears above the
+main content and typically spans the entire width of the page. It often
+contains the website's logo, navigation menu, and sometimes other important
+information such as contact details or a search bar. The header is an important
+part of the website's design as it provides users with an immediate sense of
+the website's brand identity and helps them to navigate the site.
+
+
+-- site-doc.header: How to install fastn?
+
+Please, [click here](https://fastn.io/install/) to read fastn installation
+documentation.
+
+
+-- site-doc.header: How to use `header`?
+
+To use `header` add below lines into your FASTN.ftd file:
+
+To learn all types of header [click here](/docs/).
+
+-- cb.code:
 lang: ftd
 
 \-- fastn.dependency: fifthtry.github.io/header
 
-\-- fastn.auto-import: fifthtry.github.io/header
-
-
--- pd.component: `header.header` Basic usage example
-name: `-- header.header:`
-
-Use below code snippet to use this header component. Update `site-logo`,
-`site-name` or `site-url` as per your preferences.
-
--- cb.rendered:
-
--- cb.rendered.input:
-
-\-- header:
-login-button: $header.login-button
-pricing-cta: $header.pricing-cta
-login-btn-txt: Login
-sign-in-txt:  Sign-in
-sections: $sitemap.sections
-sub-sections: $sitemap.subsections
-current-section: $sitemap.current-section
-current-subsection: $sitemap.current-subsection
-current-page: $sitemap.current-page
-toc: $sitemap.toc
-extra: $header.extra
-site-logo: $header.site-logo
-site-url: $header.site-url
-site-name: $header.site-name
-products: $ps.example-product
-
--- cb.rendered.output:
-
--- header:
-login-button: $login-button
-pricing-cta: $pricing-cta
-login-btn-txt: Login
-sign-in-txt:  Sign-in
-sections: $sitemap.sections
-sub-sections: $sitemap.subsections
-current-section: $sitemap.current-section
-current-subsection: $sitemap.current-subsection
-current-page: $sitemap.current-page
-toc: $sitemap.toc
-extra: $extra
-site-logo: $site-logo
-site-url: $site-url
-site-name: $site-name
-logo-height: 38
-products: $ps.example-product
-
--- end: cb.rendered.output
-
--- end: cb.rendered
-
--- ftd.column:
-height.fixed.px: 300
-
--- end: ftd.column
-
--- end: ft.page
-
-
-
-
-
-
-
-
-
-
-
-
+-- end: site-doc.doc-home
 
 
 
@@ -160,7 +103,6 @@ optional string site-name:
 optional string brand-site-url:
 optional string brand-site-name:
 boolean parent-brand: false
-boolean pricing-cta: false
 ftd.image-src menu-icon: $assets.files.static.header.hamburger-dark.svg
 string current-url: /header3/
 pr.toc-item list sections: 
@@ -172,31 +114,13 @@ optional pr.toc-item current-subsection:
 optional pr.toc-item current-page: 
 pr.toc-item list footer-nav: 
 boolean $show-section: false
-pr.toc-item list extra: 
 ps.product-data list products: 
 integer logo-width: 120
 integer logo-height: 44
-string link-style: regular
-ftd.color background: $inherited.colors.background.base
-ftd.color text-color: $inherited.colors.text-strong
-ftd.color active-text-color: $inherited.colors.text
-ftd.color menu-bg: $inherited.colors.background.base
-ftd.color menu-hover-bg: $inherited.colors.background.base
-ftd.color menu-link: $inherited.colors.text
-ftd.color menu-link-active: $inherited.colors.text
-ftd.color menu-border: $inherited.colors.text
-optional string nav-title: 
-optional string nav-title-url:
-optional string nav-sub-title:
-optional string nav-sub-title-url:
-optional string nav-sub-section-title:
-optional string nav-sub-section-title-url:
 optional string login-btn-txt: Login
-optional string sign-in-txt: 
+optional string login-btn-url: index.html
 boolean login-button: false
 string width: 100
-boolean include-dark-mode-switcher: true
-boolean include-language-switcher: true
 optional string brand-caption:
 
 -- ftd.column:
@@ -229,22 +153,14 @@ sub-sections: $header.sub-sections
 footer-nav: $footer-list
 logo-width: $header.logo-width 
 logo-height: $header.logo-height 
-link-style: $header.link-style 
-background: $header.background  
-text-color: $header.text-color 
-active-text-color: $header.active-text-color
-menu-bg: $header.menu-bg
-menu-hover-bg: $header.menu-hover-bg
-menu-link: $header.menu-link 
-menu-link-active: $header.menu-link-active
-menu-border: $header.menu-border
 login-button: $header.login-button
 login-btn-txt: $header.login-btn-txt
-sign-in-txt: $header.sign-in-txt
+login-btn-url: $header.login-btn-url
 products: $header.products
 $show-section: $header.show-section
 
 -- ftd.desktop:
+
 -- header-desktop:
 site-logo: $header.site-logo
 site-url: $header.site-url 
@@ -253,34 +169,15 @@ current-url: $header.current-url
 parent-brand: $header.parent-brand
 sections: $header.sections
 brand-caption: $header.brand-caption
-pricing-cta: $header.pricing-cta
 current-section: $header.current-section
 current-page: $header.current-page
 current-subsection: $header.current-subsection
 sub-sections: $header.sub-sections 
-include-dark-mode-switcher: $header.include-dark-mode-switcher
-include-language-switcher: $header.include-language-switcher
 logo-width: $header.logo-width 
 logo-height: $header.logo-height 
-link-style: $header.link-style 
-background: $header.background  
-extra: $header.extra
-text-color: $header.text-color 
-active-text-color: $header.active-text-color
-menu-bg: $header.menu-bg
-menu-hover-bg: $header.menu-hover-bg
-menu-link: $header.menu-link 
-menu-link-active: $header.menu-link-active
-menu-border: $header.menu-border
 login-button: $header.login-button
 login-btn-txt: $header.login-btn-txt
-sign-in-txt: $header.sign-in-txt 
-nav-title: $header.nav-title
-nav-title-url: $header.nav-title-url
-nav-sub-title: $header.nav-sub-title
-nav-sub-title-url: $header.nav-sub-title-url
-nav-sub-section-title: $header.nav-sub-section-title
-nav-sub-section-title-url: $header.nav-sub-section-title
+login-btn-url: $header.login-btn-url
 products: $header.products
 
 -- end: ftd.desktop
@@ -291,7 +188,6 @@ products: $header.products
 -- header-mobile:
 site-logo: $header.site-logo
 $sidebar-open: $header.sidebar-open
-pricing-cta: $header.pricing-cta
 brand-site-logo: $header.brand-site-logo
 brand-site-name: $header.brand-site-name
 brand-site-url: $header.brand-site-url
@@ -306,19 +202,8 @@ toc: $header.toc
 current-section: $header.current-section
 current-page: $header.current-page
 current-subsection: $header.current-subsection
-include-dark-mode-switcher: $header.include-dark-mode-switcher
-include-language-switcher: $header.include-language-switcher
-menu-border: $header.menu-border
-menu-bg: $header.menu-bg
-menu-hover-bg: $header.menu-hover-bg
-menu-link: $header.menu-link 
-menu-link-active: $header.menu-link-active
 logo-width: $header.logo-width 
 logo-height: $header.logo-height 
-link-style: $header.link-style 
-background: $header.background  
-text-color: $header.text-color 
-active-text-color: $header.active-text-color
 products: $header.products
 $show-section: $header.show-section
 
@@ -386,18 +271,9 @@ pr.toc-item list footer-nav:
 pr.toc-item list sub-sections:
 integer logo-width: 120
 integer logo-height: 44
-string link-style: 
-ftd.color background:  
-ftd.color text-color:
-ftd.color active-text-color:
-ftd.color menu-bg:
-ftd.color menu-hover-bg:
-ftd.color menu-link:
-ftd.color menu-link-active:
-ftd.color menu-border:
 optional string font-family:
 optional string login-btn-txt:
-optional string sign-in-txt:  
+optional string login-btn-url:  
 boolean login-button:
 
 -- ftd.column:
@@ -469,15 +345,6 @@ children: $obj.children
 is-active: $obj.is-active
 link: $obj.url
 $show-section: $menu-mobile.show-section
-text-color: $menu-mobile.text-color
-active-text-color: $menu-mobile.active-text-color
-current-url: $menu-mobile.current-url
-link-style: $menu-mobile.link-style
-menu-hover-bg: $menu-mobile.menu-hover-bg
-menu-bg: $menu-mobile.menu-bg 
-menu-link: $menu-mobile.menu-link
-menu-link-active: $menu-mobile.menu-link-active
-menu-border: $menu-mobile.menu-border
 
 -- end: ftd.column
 
@@ -490,7 +357,7 @@ padding-vertical.px: 24
 
 -- login-signup:
 login: $menu-mobile.login-btn-txt
-sign-in: $menu-mobile.sign-in-txt
+login-btn-url: $menu-mobile.login-btn-url
 
 -- end: ftd.column
 
@@ -530,32 +397,14 @@ boolean parent-brand:
 pr.toc-item list sections:
 optional pr.toc-item current-subsection: 
 pr.toc-item list sub-sections:
-boolean pricing-cta:
 optional pr.toc-item current-section: 
 optional pr.toc-item current-page:
-boolean include-dark-mode-switcher:
-boolean include-language-switcher:
 pr.toc-item list extra:
 integer logo-width: 120
 integer logo-height: 44
-string link-style:
 optional string login-btn-txt:
-optional string sign-in-txt: 
-ftd.color background:  
-ftd.color text-color:
-ftd.color active-text-color:
-ftd.color menu-bg:
-ftd.color menu-hover-bg:
-ftd.color menu-link:
-ftd.color menu-link-active:
-ftd.color menu-border:
+optional string login-btn-url: 
 boolean login-button:
-optional string nav-title: 
-optional string nav-title-url:
-optional string nav-sub-title:
-optional string nav-sub-title-url:
-optional string nav-sub-section-title:
-optional string nav-sub-section-title-url:
 
 -- ftd.column:
 width: fill-container
@@ -587,8 +436,7 @@ link: $header-desktop.site-url
 -- ftd.image:
 if: { header-desktop.site-logo != NULL }
 src: $header-desktop.site-logo
-width: auto
-max-width.fixed.px: $header-desktop.logo-width
+width.fixed.px: $header-desktop.logo-width
 height.fixed.px: $header-desktop.logo-height
 align-self: center
 
@@ -623,32 +471,19 @@ products: $header-desktop.products
 
 -- ftd.row:
 align-self: center
-padding-top.px: 6
-
 
 -- header-item: $obj.title
 $loop$: $header-desktop.sections as $obj
 link: $obj.url
 is-active: $obj.is-active
-text-color: $header-desktop.text-color
-active-text-color: $header-desktop.active-text-color
-current-url: $header-desktop.current-url
-menu-bg: $header-desktop.menu-bg 
-menu-hover-bg: $header-desktop.menu-hover-bg
-menu-link: $header-desktop.menu-link
-menu-link-active: $header-desktop.menu-link-active
-menu-border: $header-desktop.menu-border
 ;;icon: $obj.font-icon -- TODO FTD 0.3
-
--- pricing-cta-text: Try for Free
-if: { header-desktop.pricing-cta }
 
 -- ftd.row:
 if: { header-desktop.login-button }
 
 -- login-signup:
 login: $header-desktop.login-btn-txt
-sign-in: $header-desktop.sign-in-txt
+login-btn-url: $header-desktop.login-btn-url
 
 -- end: ftd.row
 
@@ -657,6 +492,7 @@ sign-in: $header-desktop.sign-in-txt
 -- end: ftd.row
 
 -- ftd.row:
+if: { header-desktop.current-section != NULL }
 width: fill-container
 background.solid: $inherited.colors.background.step-1
 padding-vertical.px: 24
@@ -667,7 +503,6 @@ width: fill-container
 align-self: start
 
 -- ftd.column:
-if: { header-desktop.current-section != NULL }
 width: fill-container
 
 -- ftd.text: $header-desktop.current-section.title
@@ -730,14 +565,6 @@ align-self: end
 $loop$: $header-desktop.sub-sections as $obj
 is-active: $obj.is-active
 link: $obj.url
-text-color: $header-desktop.text-color
-active-text-color: $header-desktop.active-text-color
-current-url: $header-desktop.current-url
-menu-bg: $header-desktop.menu-bg 
-menu-link: $header-desktop.menu-link
-menu-link-active: $header-desktop.menu-link-active
-menu-border: $header-desktop.menu-border
-menu-hover-bg: $header-desktop.menu-hover-bg
 ;; icon: $obj.font-icon -- TODO FTD 0.3
 
 -- end: ftd.row
@@ -749,6 +576,8 @@ menu-hover-bg: $header-desktop.menu-hover-bg
 -- end: ftd.column
 
 -- end: header-desktop
+
+
 
 
 
@@ -776,20 +605,8 @@ pr.toc-item list toc:
 optional pr.toc-item current-subsection: 
 optional pr.toc-item current-section: 
 optional pr.toc-item current-page:
-boolean include-dark-mode-switcher:
-boolean include-language-switcher:
 integer logo-width: 120
 integer logo-height: 38
-string link-style: 
-ftd.color background:  
-ftd.color text-color: 
-ftd.color active-text-color:
-ftd.color menu-hover-bg:
-ftd.color menu-border:
-ftd.color menu-bg: 
-ftd.color menu-link: 
-ftd.color menu-link-active: 
-boolean pricing-cta:
 
 -- ftd.column: 
 width: fill-container
@@ -857,14 +674,6 @@ site-name: $header-mobile.brand-site-name
 
 -- end: ftd.row
 
--- ftd.row:
-margin-top.px: 8
-
--- pricing-cta-text: Try for Free
-if: { header-mobile.pricing-cta }
-
--- end: ftd.row
-
 -- end: ftd.row
 
 -- end: ftd.row
@@ -904,14 +713,6 @@ $loop$: $header-mobile.sub-sections as $obj
 children: $obj.children 
 is-active: $obj.is-active 
 link: $obj.url
-text-color: $header-mobile.text-color
-active-text-color: $header-mobile.active-text-color
-current-url: $header-mobile.current-url
-menu-bg: $header-mobile.menu-bg 
-menu-link: $header-mobile.menu-link
-menu-link-active: $header-mobile.menu-link-active
-menu-border: $header-mobile.menu-border
-menu-hover-bg: $header-mobile.menu-hover-bg
 
 -- end: ftd.row
 
@@ -1010,15 +811,7 @@ $loop$: $header-mobile.toc as $obj
 children: $obj.children 
 is-active: $obj.is-active
 link: $obj.url
-text-color: $header-mobile.text-color
-active-text-color: $header-mobile.active-text-color
-current-url: $header-mobile.current-url
 ;; icon: $obj.font-icon -- TODO FTD 0.3
-menu-bg: $header-mobile.menu-bg 
-menu-link: $header-mobile.menu-link
-menu-link-active: $header-mobile.menu-link-active
-menu-border: $header-mobile.menu-border
-menu-hover-bg: $header-mobile.menu-hover-bg
 
 -- end: ftd.column
 
@@ -1027,7 +820,6 @@ menu-hover-bg: $header-mobile.menu-hover-bg
 -- end: ftd.row
 
 -- end: ftd.column
-
 
 -- end: header-mobile
 
@@ -1082,53 +874,16 @@ color: $inherited.colors.text-strong
 
 
 
--- component header-top-right-item:
-caption title:
-string link:
-optional ftd.color text-color:
-optional ftd.color active-text-color:
-optional string current-url:
-
--- ftd.text: $header-top-right-item.title
-role: $inherited.types.copy-regular
-link: $header-top-right-item.link
-align-self: center
-white-space: nowrap
-padding-horizontal.px: 10
-color: $header-top-right-item.text-color
-color if { header-top-right-item.current-url == header-top-right-item.link }: $header-top-right-item.active-text-color
-;;border-bottom-width.px if { header-top-right-item.current-url == header-top-right-item.link }: 2
-border-color if { header-top-right-item.current-url == header-top-right-item.link }: $header-top-right-item.active-text-color
-
--- end: header-top-right-item
-
-
-
-
-
-
-
-
-
-
 -- component header-item:
 caption title:
 ;; ftd.image-src icon: -- TODO FTD 0.3
 ;; optional ftd.image-src icon: -- TODO FTD 0.3
 optional string link:
-ftd.color text-color:
 boolean is-active: 
-ftd.color active-text-color:
-optional string current-url:
-ftd.color menu-bg:
-ftd.color menu-hover-bg:
-ftd.color menu-link:
-ftd.color menu-link-active:
-ftd.color menu-border:
 boolean $open: false
 
 -- ftd.row: 
-align-self: end
+align-self: center
 $on-click$: $ftd.toggle($a = $header-item.open)
 $on-click-outside$: $ftd.set-bool($a = $header-item.open, v = false)
 
@@ -1139,14 +894,13 @@ max-height.fixed.px: 20
 min-height.fixed.px: 20
 
 -- ftd.text: $header-item.title
+if: { $header-item.title != NULL }
 role: $inherited.types.copy-small
 link: $header-item.link
 white-space: nowrap
 padding-left.px: 10
-color: $header-item.text-color
+color: $inherited.colors.text-strong
 color if { header-item.is-active }: $inherited.colors.cta-primary.base
-;;border-bottom-width.px if { header-item.current-url == header-item.link }: 2
-;;border-color if { header-item.current-url == header-item.link }: $header-item.active-text-color
 margin-left.px: 10
 
 -- ftd.text: $header-item.title
@@ -1154,7 +908,7 @@ if: { header-item.link == NULL }
 role: $inherited.types.copy-small
 white-space: nowrap
 padding-left.px: 10
-color: $header-item.text-color
+color: $inherited.colors.text-strong
 color if { header-item.is-active }: $inherited.colors.cta-primary.base
 margin-left.px: 20
 
@@ -1174,17 +928,9 @@ margin-left.px: 20
 -- component header-toc-item-mobile-view:
 caption title:
 optional string link:
-ftd.color text-color:
 pr.toc-item list children: 
 optional ftd.image-src icon:
 boolean is-active: 
-ftd.color active-text-color:
-optional string current-url:
-ftd.color menu-bg:
-ftd.color menu-hover-bg:
-ftd.color menu-link:
-ftd.color menu-link-active:
-ftd.color menu-border:
 boolean $open: false
 
 -- ftd.column: 
@@ -1210,8 +956,6 @@ white-space: nowrap
 padding-left.px: 10
 color: $inherited.colors.text
 color if { header-toc-item-mobile-view.is-active }: $inherited.colors.cta-primary.base
-;;border-bottom-width.px if { header-toc-item-mobile-view.current-url == header-toc-item-mobile-view.link }: 2
-;;border-color if { header-toc-item-mobile-view.current-url == header-toc-item-mobile-view.link }: $header-toc-item-mobile-view.active-text-color
 margin-left.px: 10
 
 -- end: ftd.row
@@ -1243,11 +987,6 @@ if: { !ftd.is_empty(header-toc-item-mobile-view.children) }
 -- show-children-mobile:
 if: { !ftd.is_empty(header-toc-item-mobile-view.children) }
 children: $header-toc-item-mobile-view.children
-menu-link: $header-toc-item-mobile-view.menu-link
-menu-link-active: $header-toc-item-mobile-view.menu-link-active
-menu-bg: $header-toc-item-mobile-view.menu-bg
-menu-border: $header-toc-item-mobile-view.menu-border
-menu-hover-bg: $header-toc-item-mobile-view.menu-hover-bg
 
 -- end: ftd.column
 
@@ -1267,16 +1006,8 @@ menu-hover-bg: $header-toc-item-mobile-view.menu-hover-bg
 -- component header-item-mobile-view: 
 caption title:
 optional string link:
-ftd.color text-color:
 pr.toc-item list children:
 boolean is-active: 
-ftd.color active-text-color:
-optional string current-url:
-ftd.color menu-bg: 
-ftd.color menu-hover-bg:
-ftd.color menu-link:
-ftd.color menu-link-active:
-ftd.color menu-border:
 boolean $open: false
 
 -- ftd.column:
@@ -1284,14 +1015,13 @@ $on-click$: $ftd.toggle($a = $header-item-mobile-view.open)
 $on-click-outside$: $ftd.set-bool($a = $header-item-mobile-view.open, v = false)
 
 -- ftd.text: $header-item-mobile-view.title
+if: { $header-item-mobile-view.title != NULL }
 role: $inherited.types.fine-print
 link: $header-item-mobile-view.link
 white-space: nowrap
 padding-left.px: 10
-color: $header-item-mobile-view.text-color
+color: $inherited.colors.text-strong
 color if { header-item-mobile-view.is-active }: $inherited.colors.cta-primary.base
-;;border-bottom-width.px if { header-item-mobile-view.current-url == header-item-mobile-view.link }: 2
-border-color if { header-item-mobile-view.current-url == header-item-mobile-view.link }: $header-item-mobile-view.active-text-color
 margin-left.px: 10
 
 -- end: ftd.column
@@ -1350,21 +1080,15 @@ align-self: center
 
 
 
+
+
+
 -- component header-item-mobile:
 caption title:
 optional string link:
 pr.toc-item list children:
-optional string current-url:
 boolean is-active:
-ftd.color text-color:
-ftd.color active-text-color:
-ftd.color menu-bg:
-ftd.color menu-hover-bg:
-ftd.color menu-link:
 boolean $show-section:
-ftd.color menu-link-active:
-ftd.color menu-border:
-string link-style:
 boolean $open: false
 
 -- ftd.column: 
@@ -1379,7 +1103,7 @@ width: fill-container
 -- ftd.text: $header-item-mobile.title 
 role: $inherited.types.copy-regular
 link: $header-item-mobile.link
-color: $header-item-mobile.text-color
+color: $inherited.colors.text-strong
 color if { header-item-mobile.is-active }: $inherited.colors.cta-primary.base
 $on-click$: $ftd.set-bool($a = $header-item-mobile.show-section, v = true)
 padding-top.px: 24
@@ -1391,11 +1115,6 @@ padding-bottom.px: 15
 -- show-children-mobile:
 if: { !ftd.is_empty(header-item-mobile.children) }
 children: $header-item-mobile.children
-menu-link: $header-item-mobile.menu-link
-menu-link-active: $header-item-mobile.menu-link-active
-menu-bg: $header-item-mobile.menu-bg
-menu-border: $header-item-mobile.menu-border
-menu-hover-bg: $header-item-mobile.menu-hover-bg
 
 -- end: ftd.column
 
@@ -1404,6 +1123,7 @@ menu-hover-bg: $header-item-mobile.menu-hover-bg
 -- end: ftd.column
 
 -- end: header-item-mobile
+
 
 
 
@@ -1440,6 +1160,7 @@ $loop$: $section-scrollbar.sub-sections as $obj
 
 
 
+
 -- component section-scroll:
 caption title:
 string link:
@@ -1462,102 +1183,8 @@ link: $section-scroll.link
 
 
 
--- component show-children:
-pr.toc-item list children:
-ftd.color menu-bg:
-ftd.color menu-hover-bg:
-ftd.color menu-link:
-ftd.color menu-link-active:
-ftd.color menu-border:
-
--- ftd.column:
-if: { !ftd.is_empty(show-children.children) }
-anchor: parent
-top.px: 30
-background.solid: $show-children.menu-bg
-border-width.px: 1
-border-color: $show-children.menu-border
-border-radius.px: 6
-padding.px: 5
-min-width.fixed.px: 150
-;; shadow-offset-x: 3 -- TODO FTD 0.3
-;; shadow-offset-y: 0 -- TODO FTD 0.3
-;; shadow-size: 1 -- TODO FTD 0.3
-;; shadow-blur: 10 -- TODO FTD 0.3
-z-index: 4
-
--- links:
-obj: $obj
-$loop$: $show-children.children as $obj
-menu-link: $show-children.menu-link
-menu-link-active: $show-children.menu-link-active
-menu-hover-bg: $show-children.menu-hover-bg
-
--- end: ftd.column
-
--- end: show-children
-
-
-
-
-
-
-
-
--- component links:
-pr.toc-item obj:
-ftd.color menu-hover-bg:
-ftd.color menu-link:
-ftd.color menu-link-active:
-
--- ftd.column:
-width: fill-container
-
--- ftd.text: $links.obj.title
-if: $obj.url is not null
-link: $links.obj.url
-color: $links.menu-link
-color if { links.obj.is-active }: $inherited.colors.cta-primary.base 
-background.solid if $MOUSE-IN: $links.menu-hover-bg
-white-space: nowrap
-padding-vertical.px: 4
-padding-horizontal.px: 10
-role: $inherited.types.copy-regular
-width: fill-container
-border-radius.px: 4
-
--- ftd.text: $links.obj.title
-if: { links.obj.url == NULL }
-color: $inherited.colors.background.step-2
-color if { links.obj.is-active }: $inherited.colors.cta-primary.base 
-background.solid if $MOUSE-IN: $links.menu-hover-bg
-white-space: nowrap
-padding-vertical.px: 4
-padding-horizontal.px: 10
-role: $inherited.types.copy-regular
-width: fill-container
-border-radius.px: 4
-
--- end: ftd.column
-
--- end: links
-
-
-
-
-
-
-
-
-
-
 -- component show-children-mobile:
 pr.toc-item list children:
-ftd.color menu-bg:
-ftd.color menu-hover-bg:
-ftd.color menu-link:
-ftd.color menu-link-active:
-ftd.color menu-border:
 
 -- ftd.column:
 if: { !ftd.is_empty(show-children-mobile.children) }
@@ -1567,8 +1194,6 @@ padding-left.px: 15
 -- links-mobile:
 obj: $obj
 $loop$: $show-children-mobile.children as $obj
-menu-link: $show-children-mobile.menu-link
-menu-link-active: $show-children-mobile.menu-link-active
 
 -- end: ftd.column
 
@@ -1585,8 +1210,7 @@ menu-link-active: $show-children-mobile.menu-link-active
 
 -- component links-mobile:
 pr.toc-item obj:
-ftd.color menu-link:
-ftd.color menu-link-active:
+
 
 -- ftd.column:
 width: fill-container
@@ -1604,7 +1228,7 @@ align-self: center
 
 -- ftd.text: $links-mobile.obj.title
 link: $links-mobile.obj.url
-color: $links-mobile.menu-link
+color: $inherited.colors.text-strong
 color if { links-mobile.obj.is-active }: $inherited.colors.cta-primary.base 
 padding-vertical.px: 8
 padding-horizontal.px: 10
@@ -1646,9 +1270,10 @@ width: fill-container
 
 
 
+
 -- component login-signup:
 optional string login:
-optional string sign-in: 
+optional string login-btn-url: 
 ftd.image-src icon-github: $assets.files.static.icon-github.svg
 
 -- ftd.row:
@@ -1658,7 +1283,7 @@ width: fill-container
 
 -- login-signup-desktop:
 login: $login-signup.login
-sign-in: $login-signup.sign-in
+login-btn-url: $login-signup.login-btn-url
 icon-github: $login-signup.icon-github
 
 -- end: ftd.desktop
@@ -1668,7 +1293,7 @@ icon-github: $login-signup.icon-github
 
 -- login-signup-mobile:
 login: $login-signup.login
-sign-in: $login-signup.sign-in
+login-btn-url: $login-signup.login-btn-url
 icon-github: $login-signup.icon-github
 
 -- end: ftd.mobile
@@ -1688,13 +1313,8 @@ icon-github: $login-signup.icon-github
 
 -- component login-signup-desktop:
 optional string login:
-optional string sign-in: 
+optional string login-btn-url: 
 optional ftd.image-src icon-github:
-
--- ftd.row:
-spacing.fixed.px: 20
-margin-top.px: -10
-width: fill-container
 
 -- ftd.row:
 width: fill-container
@@ -1705,15 +1325,9 @@ border-color: $inherited.colors.border
 
 -- ftd.text: $login-signup-desktop.login
 role: $inherited.types.copy-regular
-color: $inherited.colors.cta-primary.base
+color: $inherited.colors.text-strong
 padding-vertical.px: 10
-link: https://cdoc.fifthtry.com/initiate-github-login/
-
--- end: ftd.row
-
--- github-button:
-sign-in: $login-signup-desktop.sign-in
-icon-github: $login-signup-desktop.icon-github
+link: $login-signup-desktop.login-btn-url
 
 -- end: ftd.row
 
@@ -1730,7 +1344,7 @@ icon-github: $login-signup-desktop.icon-github
 
 -- component login-signup-mobile:
 optional string login:
-optional string sign-in: 
+optional string login-btn-url: 
 optional ftd.image-src icon-github: $assets.files.static.icon-github.svg 
 
 -- ftd.column:
@@ -1739,85 +1353,10 @@ width: fill-container
 
 -- ftd.text: $login-signup-mobile.login
 role: $inherited.types.copy-regular
-color: $inherited.colors.cta-primary.base
-link: https://cdoc.fifthtry.com/initiate-github-login/
+color: $inherited.colors.text-strong
+link: $login-signup-mobile.login-btn-url
 padding-bottom.px: 32
-
--- github-button:
-sign-in: $login-signup-mobile.sign-in
-icon-github: $login-signup-mobile.icon-github
 
 -- end: ftd.column
 
 -- end: login-signup-mobile
-
-
-
-
-
-
-
-
-
-
--- component github-button:
-optional string sign-in: 
-optional string github-cta:
-ftd.image-src icon-github: $assets.files.static.icon-github.svg 
-string link: https://github.com/apps/continuous-documentation
-
--- ftd.row:
-border-radius.px: 4
-width: hug-content
-cursor: pointer
-link: $github-button.link
-margin-top.px: -4
-align-self if { ftd.device != "mobile" }: center
-spacing.fixed.px: 20
-
--- ftd.text:
-if: { github-button.sign-in != NULL }
-text: $github-button.sign-in
-white-space: nowrap
-role: $inherited.types.copy-regular
-align-self: center
-text-align: center
-color: $inherited.colors.background.step-1
-
--- ftd.image:
-src: $github-button.icon-github
-height.fixed.px: 16
-width: hug-content
-
--- end: ftd.row
-
--- end: github-button
-
-
-
-
-
-
-
-
-
-
--- component pricing-cta-text:
-caption title:
-
--- ftd.row:
-padding-horizontal.px: 8
-padding-vertical.px: 8
-background.solid: $inherited.colors.cta-primary.base
-border-radius.px: 8
-margin-left.px: 20
-margin-top.px: -6
-
--- ftd.text: $pricing-cta-text.title
-role: $inherited.types.copy-regular
-white-space: nowrap
-color: $inherited.colors.cta-primary.text
-
--- end: ftd.row
-
--- end: pricing-cta-text

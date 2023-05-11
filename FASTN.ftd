@@ -2,10 +2,9 @@
 
 -- fastn.package: fifthtry.github.io/header
 
--- fastn.dependency: fifthtry.github.io/package-doc
-;; -- fastn.dependency: fifthtry.github.io/dark-mode-switcher as dms
-;; -- fastn.dependency: fifthtry.github.io/language-switcher as lang
+-- fastn.dependency: fastn-community.github.io/site-doc
 -- fastn.dependency: fifthtry.github.io/product-switcher 
+-- fastn.dependency: fifthtry.github.io/code-block
 
 
 
@@ -13,13 +12,14 @@
 
 # Home: /
 
-- Toc-Item - 1: /
-- Toc-Item - 2: /
+## Sub-Sections: /docs/
 
-## Sub-Section - 1: /
-
-## Sub-Section - 2: /
-
+- Basic Header: /docs/
+- Header with Logo: /docs/header-with-logo/
+- Header with Logo & Sitename: /docs/header-with-logo-site-name/
+- Header - Product Switcher: /docs/header-with-ps/
+- Header with Sub-Sections: /docs/header-with-sections/
+- Header with Login: /docs/header-with-login/
 
 # Github
   url: https://github.com/FifthTry/header/
