@@ -79,7 +79,13 @@ To use `header` add below lines into your FASTN.ftd file:
 
 To learn all types of header [click here](/docs/).
 
--- cb.code:
+
+-- site-doc.header: How to use sitemap?
+
+To learn more how to implement `fast.sitemap` go through this 
+[video tutorial](https://fastn.com/clean-urls/-/build/).
+
+-- cb.code: FASTN.ftd dependency
 lang: ftd
 
 \-- fastn.dependency: fifthtry.github.io/header
