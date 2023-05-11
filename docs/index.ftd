@@ -7,7 +7,7 @@
 
 
 -- site-doc.doc-home: Basic Header
-github-url: hhttps://github.com/FifthTry/header/
+github-url: https://github.com/FifthTry/header/
 color-scheme: \$ftd.default-colors
 typography: \$ftd.default-types
 current-package: fifthtry.github.io/header
