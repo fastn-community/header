@@ -10,7 +10,7 @@
 
 -- fastn.sitemap:
 
-# Home: /
+# Home: index.html
 
 ## Sub-Sections: /docs/
 
