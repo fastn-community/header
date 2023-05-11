@@ -1,16 +1,16 @@
 -- import: fastn-community.github.io/site-doc
 -- import: fastn-community.github.io/site-doc
--- import: fifthtry.github.io/header
--- import: fifthtry.github.io/code-block as cb
+-- import: fastn-community.github.io/header
+-- import: fastn-community.github.io/code-block as cb
 
 
 
 
 -- site-doc.doc-home: Basic Header
-github-url: https://github.com/FifthTry/header/
+github-url: https://github.com/fastn-community/header/
 color-scheme: \$ftd.default-colors
 typography: \$ftd.default-types
-current-package: fifthtry.github.io/header
+current-package: fastn-community.github.io/header
 show-tabs: true
 site-title: Header
 
@@ -24,9 +24,9 @@ site-logo: $header.site-logo
 -- end: site-doc.output
 
 -- site-doc.component-doc: `header`
-package-link: https://fifthtry.github.io/header
+package-link: https://fastn-community.github.io/header
 github-link: https://github.com/FifthTry/header
-package-name: fifthtry.github.io/header
+package-name: fastn-community.github.io/header
 info: `-- header` can be used as header on your fastn web projects.
 
 The `header` component is already included inside
@@ -39,12 +39,12 @@ don't add header as fastn dependency.
 -- cb.code: Add `header` dependency into your FASTN.ftd
 lang: ftd
 
-\-- fastn.dependency: fifthtry.github.io/header
+\-- fastn.dependency: fastn-community.github.io/header
 
 -- cb.code: Import `header` into your `.ftd` file
 lang: ftd
 
-\-- import: fifthtry.github.io/header
+\-- import: fastn-community.github.io/header
 
 \-- header.header:
 sections: $header.sitemap.sections

@@ -1,5 +1,5 @@
 # header
-Package name: header URL: fifthtry.github.io/header
+Package name: header URL: fastn-community.github.io/header
 The header package(https://github.com/FifthTry/header) can be used as header on your web pages.
 
 Basic Usage:
