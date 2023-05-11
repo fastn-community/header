@@ -1,17 +1,17 @@
 -- import: fastn
 -- import: fastn/processors as pr
--- import: fifthtry.github.io/header/assets
+-- import: fastn-community.github.io/header/assets
 -- import: fifthtry.github.io/product-switcher as ps
 -- import: fifthtry.github.io/package-doc/doc as pd
 -- import: fifthtry.github.io/package-doc/forest-theme as ft
--- import: fifthtry.github.io/code-block as cb
+-- import: fastn-community.github.io/code-block as cb
 -- import: fifthtry.github.io/package-doc/footer
 -- import: fastn-community.github.io/site-doc
 
 
 -- ftd.image-src site-logo: 
-light: https://fastn.com/-/fastn.io/images/fastn.svg
-dark: https://fastn.com/-/fastn.io/images/fastn-dark.svg
+light: https://fastn.com/-/fastn.com/images/fastn.svg
+dark: https://fastn.com/-/fastn.com/images/fastn-dark.svg
 
 -- $ps.current-product: 2
 
@@ -49,10 +49,10 @@ $processor$: pr.toc
 
 
 -- site-doc.doc-home: Header Documentation
-github-url: https://github.com/FifthTry/header/
+github-url: https://github.com/fastn-community/header/
 color-scheme: \$ftd.default-colors
 typography: \$ftd.default-types
-current-package: fifthtry.github.io/header
+current-package: fastn-community.github.io/header
 show-tabs: false
 site-title: Header
 
@@ -88,7 +88,7 @@ To learn more how to implement `fast.sitemap` go through this
 -- cb.code: FASTN.ftd dependency
 lang: ftd
 
-\-- fastn.dependency: fifthtry.github.io/header
+\-- fastn.dependency: fastn-community.github.io/header
 
 -- end: site-doc.doc-home
 
@@ -438,6 +438,7 @@ role: $inherited.types.fine-print
 
 -- ftd.row:
 link: $header-desktop.site-url
+align-content: center
 
 -- ftd.image:
 if: { header-desktop.site-logo != NULL }

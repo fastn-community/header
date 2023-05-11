@@ -1,10 +1,10 @@
 -- import: fastn
 
--- fastn.package: fifthtry.github.io/header
+-- fastn.package: fastn-community.github.io/header
 
 -- fastn.dependency: fastn-community.github.io/site-doc
 -- fastn.dependency: fifthtry.github.io/product-switcher 
--- fastn.dependency: fifthtry.github.io/code-block
+-- fastn.dependency: fastn-community.github.io/code-block
 
 
 
@@ -22,4 +22,4 @@
 - Header with Login: /docs/header-with-login/
 
 # Github
-  url: https://github.com/FifthTry/header/
+  url: https://github.com/fastn-community/header/
