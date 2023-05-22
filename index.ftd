@@ -452,7 +452,7 @@ link: $header-desktop.site-url
 align-content: center
 
 -- ftd.image:
-if: { header-desktop.site-logo != NULL }
+if: { header-desktop.site-logo != NULL && header-desktop.site-name == NULL }
 src: $header-desktop.site-logo
 width.fixed.px: $header-desktop.logo-width
 height.fixed.px: $header-desktop.logo-height
@@ -460,7 +460,7 @@ align-self: center
 
 -- ftd.text: $header-desktop.site-name
 if: { header-desktop.site-name != NULL }
-role: $inherited.types.heading-medium
+role: $inherited.types.heading-large
 color: $inherited.colors.text-strong
 margin-left.px if { header-desktop.site-logo != NULL }: 16
 white-space: nowrap
@@ -483,7 +483,6 @@ border-color: $inherited.colors.border
 products: $header-desktop.products
 
 -- end: ftd.row
-
 
 -- end: ftd.row
 
@@ -656,6 +655,7 @@ if: { header-mobile.site-logo != NULL }
 height.fixed.px: 38
 
 -- ftd.image:
+if: { header-mobile.site-logo != NULL && header-mobile.site-name == NULL }
 src: $header-mobile.site-logo
 height.fixed.px: 44
 
@@ -663,7 +663,7 @@ height.fixed.px: 44
 
 -- ftd.text: $header-mobile.site-name
 if: { header-mobile.site-name != NULL }
-role: $inherited.types.copy-large
+role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 white-space: nowrap
 align-self: center
