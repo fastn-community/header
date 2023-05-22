@@ -462,7 +462,6 @@ align-self: center
 if: { header-desktop.site-name != NULL }
 role: $inherited.types.heading-large
 color: $inherited.colors.text-strong
-margin-left.px if { header-desktop.site-logo != NULL }: 16
 white-space: nowrap
 align-self: center
 
@@ -650,16 +649,10 @@ width.fixed.px: 24
 align-self: center
 $on-click$: $ftd.toggle($a = $header-mobile.sidebar-open) 
 
--- ftd.column:
-if: { header-mobile.site-logo != NULL } 
-height.fixed.px: 38
-
 -- ftd.image:
 if: { header-mobile.site-logo != NULL && header-mobile.site-name == NULL }
 src: $header-mobile.site-logo
 height.fixed.px: 44
-
--- end: ftd.column
 
 -- ftd.text: $header-mobile.site-name
 if: { header-mobile.site-name != NULL }
