@@ -23,7 +23,8 @@ current-subsection: $header.sitemap.current-subsection
 current-section: $header.sitemap.current-section
 current-page: $header.sitemap.current-page
 site-url: $header.site-url
-site-name: $header.site-name
+site-name: NULL
+site-logo: $header.site-logo
 products: $ps.example-product
 login-button: true
 login-btn-txt: Login
