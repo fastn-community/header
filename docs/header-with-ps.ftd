@@ -20,7 +20,8 @@ site-title: Header
 -- header.header:
 sections: $header.sitemap.sections
 site-url: $header.site-url
-site-name: $header.site-name
+site-logo: $header.site-logo
+site-name: NULL
 products: $ps.example-product
 
 -- end: site-doc.output
