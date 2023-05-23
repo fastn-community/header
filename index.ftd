@@ -130,6 +130,8 @@ string width: 100
 optional string brand-caption:
 boolean full-width: true
 optional ftd.resizing max-width:
+boolean github-icon: false
+optional string github-url: 
 
 -- ftd.column:
 width: fill-container
@@ -166,6 +168,8 @@ login-btn-txt: $header.login-btn-txt
 login-btn-url: $header.login-btn-url
 products: $header.products
 $show-section: $header.show-section
+github-icon: $header.github-icon
+github-url: $header.github-url
 
 -- ftd.desktop:
 
@@ -189,6 +193,8 @@ login-btn-url: $header.login-btn-url
 products: $header.products
 full-width: $header.full-width
 max-width: $header.max-width
+github-icon: $header.github-icon
+github-url: $header.github-url
 
 -- end: ftd.desktop
 
@@ -285,6 +291,9 @@ optional string font-family:
 optional string login-btn-txt:
 optional string login-btn-url:  
 boolean login-button:
+boolean github-icon: 
+optional string github-url: 
+
 
 -- ftd.column:
 width.fixed.calc: 100% - 48px
@@ -372,6 +381,14 @@ login-btn-url: $menu-mobile.login-btn-url
 -- end: ftd.column
 
 -- ftd.column:
+if: { menu-mobile.github-icon }
+
+-- github-button:
+github-url: $menu-mobile.github-url
+
+-- end: ftd.column
+
+-- ftd.column:
 width: fill-container
 padding-vertical.px: 24
 if: { !menu-mobile.parent-brand }
@@ -417,6 +434,8 @@ optional string login-btn-url:
 boolean login-button:
 boolean full-width: true
 optional ftd.resizing max-width:
+boolean github-icon: 
+optional string github-url: 
 
 -- ftd.column:
 width: fill-container
@@ -502,6 +521,10 @@ login: $header-desktop.login-btn-txt
 login-btn-url: $header-desktop.login-btn-url
 
 -- end: ftd.row
+
+-- github-button:
+if: { header-desktop.github-icon }
+github-url: $header-desktop.github-url
 
 -- end: ftd.row
 
@@ -1373,3 +1396,43 @@ padding-bottom.px: 32
 -- end: ftd.column
 
 -- end: login-signup-mobile
+
+
+
+
+
+
+
+
+
+
+-- component github-button:
+string github-url:
+ftd.image-src icon-github: $assets.files.static.icon-github.svg 
+
+-- ftd.column:
+
+-- ftd.desktop:
+
+-- ftd.image:
+src: $github-button.icon-github
+height.fixed.px: 22
+link: $github-button.github-url
+margin-left.px: 10
+align-self: center
+
+-- end: ftd.desktop
+
+-- ftd.mobile:
+
+-- ftd.image:
+src: $github-button.icon-github
+height.fixed.px: 22
+link: $github-button.github-url
+
+-- end: ftd.mobile
+
+-- end: ftd.column
+
+-- end: github-button
+
