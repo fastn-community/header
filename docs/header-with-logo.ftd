@@ -15,6 +15,7 @@ show-tabs: true
 site-title: Header
 
 -- site-doc.output:
+colors: $ftd.default-colors
 
 -- header.header:
 sections: $header.sitemap.sections
