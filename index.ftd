@@ -48,7 +48,7 @@ $processor$: pr.toc
 
 
 
--- site-doc.doc-home: Header Documentation
+-- site-doc.doc-home: fastn package: Header
 github-url: https://github.com/fastn-community/header/
 color-scheme: \$ftd.default-colors
 typography: \$ftd.default-types
@@ -75,20 +75,19 @@ documentation.
 
 -- site-doc.header: How to use `header`?
 
+To learn all types of header [click here](docs/).
+
 To use `header` add below lines into your FASTN.ftd file:
-
-To learn all types of header [click here](/docs/).
-
-
--- site-doc.header: How to use sitemap?
-
-To learn more how to implement `fast.sitemap` go through this 
-[video tutorial](https://fastn.com/clean-urls/-/build/).
 
 -- cb.code: FASTN.ftd dependency
 lang: ftd
 
 \-- fastn.dependency: fastn-community.github.io/header
+
+-- site-doc.header: How to use sitemap?
+
+To learn more how to implement `fast.sitemap` go through this 
+[video tutorial](https://fastn.com/understanding-sitemap/-/build/).
 
 -- end: site-doc.doc-home
 
