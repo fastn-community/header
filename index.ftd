@@ -78,7 +78,7 @@ To learn all types of header [click here](docs/).
 
 To use `header` add below lines into your FASTN.ftd file:
 
--- cb.code: FASTN.ftd dependency
+-- cb.code:
 lang: ftd
 
 \-- fastn.dependency: fastn-community.github.io/header
