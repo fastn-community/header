@@ -12,14 +12,10 @@
 
 # Home: index.html
 
-## Sub-Sections: /docs/
-
-- Basic Header: /docs/
-- Header with Logo: /docs/header-with-logo/
-;; - Header with Logo & Sitename: /docs/header-with-logo-site-name/
-- Header - Product Switcher: /docs/header-with-ps/
-- Header with Sub-Sections: /docs/header-with-sections/
-- Header with Login: /docs/header-with-login/
+## Sub-Section Link: docs/examples/
+- Header Overview: index.html
+- Documentation: /docs/
+- Examples: /docs/examples/
 
 # Github
   url: https://github.com/fastn-community/header/
