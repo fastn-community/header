@@ -49,13 +49,30 @@ $processor$: pr.toc
 
 
 -- site-doc.doc-home: fastn package: Header
-github-url: https://github.com/fastn-community/header/
-color-scheme: \$ftd.default-colors
-typography: \$ftd.default-types
+license-url: https://github.com/fastn-community/header/blob/main/LICENSE
 current-package: fastn-community.github.io/header
 show-tabs: false
 site-title: Header
 
+-- site-doc.output:
+colors: $ftd.default-colors
+
+-- header:
+sections: $sitemap.sections
+sub-sections: $sitemap.subsections
+current-subsection: $sitemap.current-subsection
+current-section: $sitemap.current-section
+current-page: $sitemap.current-page
+site-url: $site-url
+site-name: NULL
+site-logo: $site-logo
+login-button: true
+login-btn-txt: Login
+login-btn-url: index.html
+github-icon: true
+github-url: https://github.com/fastn-community/header/
+
+-- end: site-doc.output
 
 -- site-doc.header: What is header?
 
@@ -65,12 +82,6 @@ contains the website's logo, navigation menu, and sometimes other important
 information such as contact details or a search bar. The header is an important
 part of the website's design as it provides users with an immediate sense of
 the website's brand identity and helps them to navigate the site.
-
-
--- site-doc.header: How to install fastn?
-
-Please, [click here](https://fastn.io/install/) to read fastn installation
-documentation.
 
 -- site-doc.header: How to use `header`?
 
@@ -83,10 +94,53 @@ lang: ftd
 
 \-- fastn.dependency: fastn-community.github.io/header
 
--- site-doc.header: How to use sitemap?
 
-To learn more how to implement `fast.sitemap` go through this 
-[video tutorial](https://fastn.com/understanding-sitemap/-/build/).
+/-- cb.rendered: Demo:
+
+-- cb.rendered.input:
+
+\-- import: fastn-community.github.io/header
+
+\-- header.header:
+sections: $header.sitemap.sections
+sub-sections: $header.sitemap.subsections
+current-subsection: $header.sitemap.current-subsection
+current-section: $header.sitemap.current-section
+current-page: $header.sitemap.current-page
+site-url: $header.site-url
+site-name: NULL
+site-logo: $header.site-logo
+login-button: true
+login-btn-txt: Login
+login-btn-url: index.html
+github-icon: true
+github-url: https://github.com/fastn-community/header/
+
+-- cb.rendered.output:
+
+-- site-doc.output:
+colors: $ftd.default-colors
+
+-- header:
+sections: $sitemap.sections
+sub-sections: $sitemap.subsections
+current-subsection: $sitemap.current-subsection
+current-section: $sitemap.current-section
+current-page: $sitemap.current-page
+site-url: $site-url
+site-name: NULL
+site-logo: $site-logo
+login-button: true
+login-btn-txt: Login
+login-btn-url: index.html
+github-icon: true
+github-url: https://github.com/fastn-community/header/
+
+-- end: site-doc.output
+
+-- end: cb.rendered.output
+
+-- end: cb.rendered
 
 -- end: site-doc.doc-home
 
@@ -366,8 +420,8 @@ $show-section: $menu-mobile.show-section
 -- end: ftd.column
 
 -- ftd.column:
-width: fill-container
 if: { menu-mobile.login-button }
+width: fill-container
 border-bottom-width.px if { !menu-mobile.parent-brand }: 1
 border-color: $inherited.colors.border
 padding-vertical.px: 24
@@ -513,6 +567,7 @@ is-active: $obj.is-active
 
 -- ftd.row:
 if: { header-desktop.login-button }
+align-self: center
 
 -- login-signup:
 login: $header-desktop.login-btn-txt
@@ -1352,8 +1407,6 @@ optional ftd.image-src icon-github:
 
 -- ftd.row:
 width: fill-container
-border-left-width.px: 1
-padding-left.px: 20
 margin-left.px: 20
 border-color: $inherited.colors.border
 
@@ -1409,6 +1462,7 @@ string github-url:
 ftd.image-src icon-github: $assets.files.static.icon-github.svg 
 
 -- ftd.column:
+align-self: center
 
 -- ftd.desktop:
 
