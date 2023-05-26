@@ -74,7 +74,7 @@ github-url: https://github.com/fastn-community/header/
 
 -- end: site-doc.output
 
--- site-doc.header: What is header?
+-- site-doc.header: What is header
 
 A website header is the topmost section of a web page that appears above the
 main content and typically spans the entire width of the page. It often
@@ -83,11 +83,11 @@ information such as contact details or a search bar. The header is an important
 part of the website's design as it provides users with an immediate sense of
 the website's brand identity and helps them to navigate the site.
 
--- site-doc.header: How to use `header`?
+-- site-doc.header: How to use `header`
 
 To learn all types of header [click here](docs/).
 
-To use `header` add below lines into your FASTN.ftd file:
+To use `header` add below lines into your FASTN.ftd document:
 
 -- cb.code:
 lang: ftd

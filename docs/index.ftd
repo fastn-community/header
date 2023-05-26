@@ -21,7 +21,7 @@ The `header` component is already included inside
 don't add header as fastn dependency.
 
 
--- site-doc.header: How to use?
+-- site-doc.header: How to use
 
 -- cb.code: Add `header` dependency into your FASTN.ftd
 lang: ftd
