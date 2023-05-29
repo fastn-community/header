@@ -16,7 +16,18 @@ github-link: https://github.com/FifthTry/header
 package-name: fastn-community.github.io/header
 info: `-- header` can be used as header on your fastn web projects.
 
-The `header` component is already included inside
+
+- **Logo:** Your fastn website logo is placed in the top-left corner of the header.
+  Clicking on the logo leads back to the homepage.
+- **Site Navigation:** Primary navigation which called as sections in
+  `fastn.sitemap`, presented as a horizontal list of links placed in the right
+  side of the logo.
+- **Breadcrumb:** is a navigational aid that helps users understand their current
+  location within a website's hierarchical structure. Is placed below logo.
+- **Sub-sections:** Secondary navigation which called as sub-sections in
+  `fastn.sitemap` is placed at the right side of breadcrumb.
+
+**Note:** The `header` component is already included inside
 [`doc-site`](fifthtry.github.io/doc-site). If you are using `doc-site` then 
 don't add header as fastn dependency.
 
