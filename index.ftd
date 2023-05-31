@@ -64,7 +64,6 @@ current-subsection: $sitemap.current-subsection
 current-section: $sitemap.current-section
 current-page: $sitemap.current-page
 site-url: $site-url
-site-name: NULL
 site-logo: $site-logo
 login-button: true
 login-btn-txt: Login
@@ -523,11 +522,10 @@ link: $header-desktop.site-url
 align-content: center
 
 -- ftd.image:
-if: { header-desktop.site-logo != NULL && header-desktop.site-name == NULL }
+if: { header-desktop.site-logo != NULL }
 src: $header-desktop.site-logo
 width.fixed.px: $header-desktop.logo-width
 height.fixed.px: $header-desktop.logo-height
-align-self: center
 
 -- ftd.text: $header-desktop.site-name
 if: { header-desktop.site-name != NULL }
@@ -535,6 +533,7 @@ role: $inherited.types.heading-large
 color: $inherited.colors.text-strong
 white-space: nowrap
 align-self: center
+margin-left.px if { header-desktop.site-logo != NULL}: 16
 
 -- fallback-title:
 if: { header-desktop.site-logo == NULL }
