@@ -1,16 +1,52 @@
-# header
-Package name: header URL: fastn-community.github.io/header
-The header package(https://github.com/FifthTry/header) can be used as header on your web pages.
+# fastn package: Header
 
-Basic Usage:
+A website header is the topmost section of a web page that appears above the
+main content and typically spans the entire width of the page.
+
+- Package name: `fastn-community.github.io/header`
+
+- License: [Open Source BSD](https://github.com/fastn-community/header/blob/main/LICENSE)
+
+## How to use header
+
+To learn all types of header [click here](https://fastn-community.github.io/header/index.html).
+
+To use header add below lines into your `FASTN.ftd` document:
+
 ```ftd
-\-- header:
-site-logo: $assets.files.static.header.logo-text.png
-site-url: /
-site-name: FTD
-sections: $sections
-sub-sections: $sub-sections
-menu-right: 0
-menu-left: -88
-toc: $empty-toc
+-- fastn.dependency: fastn-community.github.io/header
 ```
+⏱️ Short on time? Check out our [Crash course](https://fastn.com/expander/)!
+
+# How to start `fastn` journey?
+
+- **Install `fastn`**
+
+> `fastn` installation documentation [click here](https://fastn.com/install/)
+
+## What's your role?
+
+- **Frontend**
+
+> Do not know programming but want to get into it! You are in the right place.
+[Click here to learn more](https://fastn.com/expander/)
+
+- **Create Website**
+
+> You want to use fastn to quickly create a website, you are in the right place. 
+[Click here to learn more](https://fastn.com/expander/hello-world/-/build/)
+
+- **Fullstack**
+
+> Are you a developer, or want to be? Want to learn fastn, the full stack web developmnent framework? [Click here to learn more](https://fastn.com/backend/)
+
+- **Design**
+
+> You want to learn or get better web design? this is the place for you.
+[Click here to learn more](https://fastn.com/figma/)
+
+## Loving `fastn`?
+
+Become a `fastn-champion` and help us spread it to more people. [Join our Discord Server](https://discord.gg/bucrdvptYd). 
+
+[Support us by becoming a stargazer](https://github.com/fastn-stack/fastn/)
