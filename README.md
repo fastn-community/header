@@ -16,6 +16,7 @@ To use header add below lines into your `FASTN.ftd` document:
 ```ftd
 -- fastn.dependency: fastn-community.github.io/header
 ```
+
 ⏱️ Short on time? Check out our [Crash course](https://fastn.com/expander/)!
 
 # How to start `fastn` journey?
