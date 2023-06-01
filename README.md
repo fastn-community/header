@@ -3,7 +3,10 @@
 A website header is the topmost section of a web page that appears above the
 main content and typically spans the entire width of the page.
 
-- Package name: `fastn-community.github.io/header`
+- Package name: 
+```ftd 
+fastn-community.github.io/header
+```
 
 - License: [Open Source BSD](https://github.com/fastn-community/header/blob/main/LICENSE)
 
