@@ -12,7 +12,6 @@ show-tabs: false
 
 -- site-doc.component-doc: `header`
 package-link: https://fastn-community.github.io/header
-github-link: https://github.com/FifthTry/header
 package-name: fastn-community.github.io/header
 info: `-- header` can be used as header on your fastn web projects.
 
