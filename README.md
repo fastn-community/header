@@ -8,7 +8,7 @@ main content and typically spans the entire width of the page.
 fastn-community.github.io/header
 ```
 
-To use header add below lines into your `FASTN.ftd` document:
+To use header add below line into your `FASTN.ftd` document:
 ```ftd
 -- fastn.dependency: fastn-community.github.io/header
 ```
