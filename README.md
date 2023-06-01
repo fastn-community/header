@@ -8,17 +8,14 @@ main content and typically spans the entire width of the page.
 fastn-community.github.io/header
 ```
 
-- License: [Open Source BSD](https://github.com/fastn-community/header/blob/main/LICENSE)
-
-## How to use header
-
-To learn all types of header [click here](https://fastn-community.github.io/header/index.html).
-
 To use header add below lines into your `FASTN.ftd` document:
-
 ```ftd
 -- fastn.dependency: fastn-community.github.io/header
 ```
+
+## Documentation
+
+[Read the docs](https://fastn-community.github.io/header/index.html)
 
 ⏱️ Short on time? Check out our [Crash course](https://fastn.com/expander/)!
 
@@ -51,6 +48,10 @@ To use header add below lines into your `FASTN.ftd` document:
 
 ## Loving `fastn`?
 
-Become a `fastn-champion` and help us spread it to more people. [Join our Discord Server](https://discord.gg/bucrdvptYd). 
+Become a `fastn-champion` and help us spread it to more people. [Join our Discord Server](https://discord.gg/bucrdvptYd) 
 
 [Support us by becoming a stargazer](https://github.com/fastn-stack/fastn/)
+
+## License
+
+Header is [Open Source BSD](https://github.com/fastn-community/header/blob/main/LICENSE)
