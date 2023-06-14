@@ -1,57 +1,45 @@
-# fastn package: Header
+# Header
 
-A website header is the topmost section of a web page that appears above the
-main content and typically spans the entire width of the page.
+fastn-community.github.io/header is a fastn header component which contains
+multiple ftd header components can be used on your pages.
 
-- Package name: 
-```ftd 
-fastn-community.github.io/header
-```
+# Preview
 
-To use header add below line into your `FASTN.ftd` document:
-```ftd
--- fastn.dependency: fastn-community.github.io/header
-```
+![Header](.github/assets/header-screenshot.png)
 
-## Documentation
+# Get Rolling
 
-[Read the docs](https://fastn-community.github.io/header/index.html)
+[Click here](https://fastn-community.github.io/header/) to learn how to use this package.
 
-⏱️ Short on time? Check out our [Crash course](https://fastn.com/expander/)!
+# [Dive into the Docs](https://fastn-community.github.io/header/)
 
-# How to start `fastn` journey?
+# See it in Action! 
 
-- **Install `fastn`**
+Explore websites and projects that have utilized this component [here](https://fastn.com/home/)
+for inspiration.
 
-> `fastn` installation documentation [click here](https://fastn.com/install/)
 
-## What's your role?
+# [Changelog](Changelog.md)
 
-- **Frontend**
+# fastn and Curious?
 
-> Do not know programming but want to get into it! You are in the right place.
-[Click here to learn more](https://fastn.com/expander/)
+Discover more of fastn here.
 
-- **Create Website**
+- [Expander Crash Course](https://fastn.com/expander/)
+- [Video Tutorials](https://fastn.com/expander/hello-world/-/build/)
+- [Explore more Templates/ Components/ Package](https://fastn.com/featured/)
 
-> You want to use fastn to quickly create a website, you are in the right place. 
-[Click here to learn more](https://fastn.com/expander/hello-world/-/build/)
+# Become a fastn Contributor
 
-- **Fullstack**
+Here's your roadmap:
 
-> Are you a developer, or want to be? Want to learn fastn, the full stack web developmnent framework? [Click here to learn more](https://fastn.com/backend/)
+1.  Finish the [Expander Crash Course](https://fastn.com/expander/)
+2.  Share your progress and ideas on [Discord](https://discord.gg/bucrdvptYd).
+3.  Let our team guide you on your contributor journey.
 
-- **Design**
+## Become a fastn-trailblazer
 
-> You want to learn or get better web design? this is the place for you.
-[Click here to learn more](https://fastn.com/figma/)
+- [Join our Discord Server](https://discord.gg/bucrdvptYd) to connect with other fastn enthusiasts and stay up to date with the latest developments.
+- [Star us on GitHub](https://github.com/fastn-stack/fastn/)
 
-## Loving `fastn`?
-
-Become a `fastn-champion` and help us spread it to more people. [Join our Discord Server](https://discord.gg/bucrdvptYd) 
-
-[Support us by becoming a stargazer](https://github.com/fastn-stack/fastn/)
-
-## License
-
-Header is [Open Source BSD](https://github.com/fastn-community/header/blob/main/LICENSE)
+## License - [Open Source BSD](https://github.com/fastn-community/header/blob/main/LICENSE)
