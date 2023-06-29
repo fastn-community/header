@@ -13,11 +13,12 @@ show-tabs: false
 -- site-doc.component-doc: `header`
 package-link: https://fastn-community.github.io/header
 package-name: fastn-community.github.io/header
-info: `-- header` can be used as header on your fastn web projects.
+info: `-- header` can be used as header on your [fastn](https://fastn.com/) web projects.
 
 
-- **Logo:** Your fastn website logo is placed in the top-left corner of the header.
-  Clicking on the logo leads back to the homepage.
+- **Logo:** Your [fastn](https://fastn.com/) website logo is placed in the
+    top-left corner of the header. Clicking on the logo leads back to the
+    homepage.
 - **Site Navigation:** Primary navigation which called as sections in
   `fastn.sitemap`, presented as a horizontal list of links placed in the right
   side of the logo.
@@ -28,7 +29,7 @@ info: `-- header` can be used as header on your fastn web projects.
 
 **Note:** The `header` component is already included inside
 [`doc-site`](fifthtry.github.io/doc-site). If you are using `doc-site` then 
-don't add header as fastn dependency.
+don't add header as [fastn](https://fastn.com/) dependency.
 
 
 -- site-doc.header: How to use
@@ -55,32 +56,38 @@ Below are details of all properties of this component.
 -- site-doc.component-property: `sections`
 type: sections list (`required`)
 
-It's used to show `fastn.sitemap` sections.
+It's used to show [`fastn.sitemap`](https://fastn.com/understanding-sitemap/) 
+sections.
 
 -- site-doc.component-property: `sub-sections`
 type: sub-sections list (`optional`)
 
-It's used to show `fastn.sitemap` sub-sections.
+It's used to show [`fastn.sitemap`](https://fastn.com/understanding-sitemap/)
+ sub-sections.
 
 -- site-doc.component-property: `current-section`
 type: current-section title (`optional`)
 
-It's used to show `fastn.sitemap` current-section title.
+It's used to show [`fastn.sitemap`](https://fastn.com/understanding-sitemap/)
+ current-section title.
 
 -- site-doc.component-property: `current-subsection`
 type: current-subsection title (`optional`)
 
-It's used to show `fastn.sitemap` current-subsection title.
+It's used to show [`fastn.sitemap`](https://fastn.com/understanding-sitemap/)
+ current-subsection title.
 
 -- site-doc.component-property: `current-page`
 type: current-page title (`optional`)
 
-It's used to show `fastn.sitemap` current-page title.
+It's used to show [`fastn.sitemap`](https://fastn.com/understanding-sitemap/)
+ current-page title.
 
 -- site-doc.component-property: `current-page`
 type: current-page title (`optional`)
 
-It's used to show `fastn.sitemap` current-page title.
+It's used to show [`fastn.sitemap`](https://fastn.com/understanding-sitemap/)
+ current-page title.
 
 -- site-doc.component-property: `site-url`
 type: String (`optional`)
