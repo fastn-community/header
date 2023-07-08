@@ -9,6 +9,7 @@
 -- site-doc.doc-home: Documentation
 site-title: Header
 show-tabs: false
+github-url: https://github.com/fastn-community/header/
 
 -- site-doc.component-doc: `header`
 package-link: https://fastn-community.github.io/header

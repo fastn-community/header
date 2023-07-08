@@ -9,6 +9,7 @@
 
 -- site-doc.doc-home: Examples
 site-title: Header
+github-url: https://github.com/fastn-community/header/
 
 -- cb.code:
 lang: ftd
