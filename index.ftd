@@ -48,7 +48,7 @@ $processor$: pr.toc
 
 
 
--- site-doc.doc-home: fastn package: Header
+-- site-doc.doc-home: Header
 license-url: https://github.com/fastn-community/header/blob/main/LICENSE
 current-package: fastn-community.github.io/header
 show-tabs: false
