@@ -488,6 +488,7 @@ boolean full-width: true
 optional ftd.resizing max-width:
 boolean github-icon: 
 optional string github-url: 
+pr.toc-item list toc: $sitemap.toc
 
 -- ftd.column:
 width: fill-container
@@ -604,6 +605,7 @@ color: $inherited.colors.text-strong
 link: $header-desktop.current-section.url
 padding-bottom.px: 8
 
+
 -- ftd.row:
 width: fill-container
 
@@ -631,7 +633,12 @@ margin-right.px: 8
 
 -- end: ftd.row 
 
--- ftd.text: $header-desktop.current-page.title 
+-- childs:
+$loop$: $sitemap.toc as $obj 
+item: $obj
+show-arrow: false
+
+/-- ftd.text: $header-desktop.current-page.title 
 if: { header-desktop.current-page != NULL }
 role: $inherited.types.label-small
 color: $inherited.colors.text-strong
@@ -1487,4 +1494,43 @@ link: $github-button.github-url
 -- end: ftd.column
 
 -- end: github-button
+
+
+
+
+
+
+
+
+
+
+-- component childs:
+pr.toc-item item:
+boolean show-arrow: true
+
+-- ftd.row:
+align-content: center
+spacing.fixed.px: 6
+
+-- ftd.text: ->
+if: { childs.item.title != NULL  && childs.item.is-open && childs.show-arrow }
+role: $inherited.types.label-small
+color: $inherited.colors.text-strong
+white-space: nowrap
+
+-- ftd.text: $childs.item.title
+if: { childs.item.title != NULL  && childs.item.is-open }
+color: $inherited.colors.text-strong
+role: $inherited.types.fine-print
+color if { childs.item.is-active }: $inherited.colors.cta-primary.base
+link: $childs.item.url
+
+-- childs:
+if: { childs.item.is-open }
+$loop$: $childs.item.children as $obj
+item: $obj
+
+-- end: ftd.row
+
+-- end: childs
 
