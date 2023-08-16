@@ -183,7 +183,8 @@ optional string brand-caption:
 boolean full-width: true
 optional ftd.resizing max-width:
 boolean github-icon: false
-optional string github-url: 
+optional string github-url:
+ftd.ui list logo-ui:
 
 -- ftd.column:
 width: fill-container
@@ -247,6 +248,7 @@ full-width: $header.full-width
 max-width: $header.max-width
 github-icon: $header.github-icon
 github-url: $header.github-url
+logo-ui: $header.logo-ui
 
 -- end: ftd.desktop
 
@@ -274,6 +276,7 @@ logo-width: $header.logo-width
 logo-height: $header.logo-height 
 products: $header.products
 $show-section: $header.show-section
+logo-ui: $header.logo-ui
 
 -- end: ftd.mobile
 
@@ -489,6 +492,7 @@ optional ftd.resizing max-width:
 boolean github-icon: 
 optional string github-url: 
 pr.toc-item list toc: $sitemap.toc
+ftd.ui list logo-ui:
 
 -- ftd.column:
 width: fill-container
@@ -540,6 +544,11 @@ margin-left.px if { header-desktop.site-logo != NULL}: 16
 -- fallback-title:
 if: { header-desktop.site-logo == NULL }
 site-name: $header-desktop.site-name
+
+-- ftd.row:
+children: $header-desktop.logo-ui
+
+-- end: ftd.row
 
 -- end: ftd.row
 
@@ -708,6 +717,7 @@ optional pr.toc-item current-section:
 optional pr.toc-item current-page:
 integer logo-width: 120
 integer logo-height: 38
+ftd.ui list logo-ui:
 
 -- ftd.column: 
 width: fill-container
@@ -767,6 +777,11 @@ color: $inherited.colors.text-strong
 -- fallback-title:
 if: { header-mobile.brand-site-name != NULL }
 site-name: $header-mobile.brand-site-name
+
+-- ftd.row:
+children: $header-mobile.logo-ui
+
+-- end: ftd.row
 
 -- end: ftd.row
 
