@@ -1524,12 +1524,11 @@ pr.toc-item item:
 boolean show-arrow: true
 
 -- ftd.row:
-if: { childs.item.is-open }
 align-content: center
 spacing.fixed.px: 6
 
 -- ftd.text: ->
-if: { childs.item.title != NULL  && childs.item.is-open && childs.show-arrow }
+if: { childs.item.title != NULL && childs.item.is-open && childs.show-arrow }
 role: $inherited.types.label-small
 color: $inherited.colors.text-strong
 white-space: nowrap
@@ -1549,4 +1548,3 @@ item: $obj
 -- end: ftd.row
 
 -- end: childs
-
