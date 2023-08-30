@@ -1524,6 +1524,7 @@ pr.toc-item item:
 boolean show-arrow: true
 
 -- ftd.row:
+if: { childs.item.is-open }
 align-content: center
 spacing.fixed.px: 6
 
