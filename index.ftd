@@ -1492,7 +1492,7 @@ align-self: center
 src: $github-button.icon-github
 height.fixed.px: 22
 link: $github-button.github-url
-margin-left.px: 10
+margin-left.px: 20
 align-self: center
 
 -- end: ftd.desktop
