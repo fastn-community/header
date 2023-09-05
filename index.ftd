@@ -992,6 +992,7 @@ caption title:
 optional string link:
 boolean is-active: 
 boolean $open: false
+boolean $mouse-in: false
 
 -- ftd.row: 
 align-self: center
@@ -1011,7 +1012,10 @@ link: $header-item.link
 white-space: nowrap
 padding-left.px: 10
 color: $inherited.colors.text-strong
+color if { header-item.mouse-in }: $inherited.colors.cta-primary.base
 color if { header-item.is-active }: $inherited.colors.cta-primary.base
+$on-mouse-leave$: $ftd.set-bool($a = $header-item.mouse-in, v = false)
+$on-mouse-enter$: $ftd.set-bool($a = $header-item.mouse-in, v = true)
 margin-left.px: 10
 
 -- ftd.text: $header-item.title
