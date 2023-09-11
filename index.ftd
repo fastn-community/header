@@ -597,30 +597,9 @@ github-url: $header-desktop.github-url
 
 -- end: ftd.row
 
--- ftd.row:
+-- search-button: 
 if: { $header-desktop.search }
-align-self: center
-padding-horizontal.px: 12
-padding-vertical.px: 10
-border-width.px: 1
-border-color: $inherited.colors.border
-align-content: center
-border-radius.px: 48
-color: $inherited.colors.text-strong
-role: $inherited.types.copy-small
-spacing.fixed.px: 8
-link: $header-desktop.search-url
-margin-left.px: 16
-background.solid: $inherited.colors.background.base
-
--- ftd.image:
-src: $assets.files.static.search-icon.svg
-width.fixed.px: 16
-height.fixed.px: 16
-
--- ftd.text: Search
-
--- end: ftd.row
+search-url: $header-desktop.search-url
 
 -- end: ftd.row
 
@@ -1583,3 +1562,42 @@ item: $obj
 -- end: ftd.row
 
 -- end: childs
+
+
+
+
+
+
+
+
+
+
+-- component search-button:
+string search-url:
+
+-- ftd.row:
+align-self: center
+padding-horizontal.px: 12
+padding-vertical.px: 10
+border-width.px: 1
+border-color: $inherited.colors.border
+align-content: center
+border-radius.px: 48
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-small
+spacing.fixed.px: 8
+link: $search-button.search-url
+margin-left.px: 16
+background.solid: $inherited.colors.background.base
+
+-- ftd.image:
+src: $assets.files.static.search-icon.svg
+width.fixed.px: 16
+height.fixed.px: 16
+
+-- ftd.text: Search
+
+-- end: ftd.row
+
+-- end: search-button
+
