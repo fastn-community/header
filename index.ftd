@@ -1574,6 +1574,7 @@ item: $obj
 
 -- component search-button:
 string search-url:
+boolean $mouse-in: false
 
 -- ftd.row:
 align-self: center
@@ -1589,6 +1590,9 @@ spacing.fixed.px: 8
 link: $search-button.search-url
 margin-left.px: 16
 background.solid: $inherited.colors.background.base
+background.solid if { search-button.mouse-in }: $inherited.colors.cta-primary.hover
+$on-mouse-enter$: $ftd.set-bool($a = $search-button.mouse-in, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $search-button.mouse-in, v = false)
 
 -- ftd.image:
 src: $assets.files.static.search-icon.svg
