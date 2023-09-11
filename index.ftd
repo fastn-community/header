@@ -225,6 +225,8 @@ products: $header.products
 $show-section: $header.show-section
 github-icon: $header.github-icon
 github-url: $header.github-url
+search: $header.search
+search-url: $header.search-url
 
 -- ftd.desktop:
 
@@ -281,6 +283,8 @@ logo-height: $header.logo-height
 products: $header.products
 $show-section: $header.show-section
 logo-ui: $header.logo-ui
+search: $header.search
+search-url: $header.search-url
 
 -- end: ftd.mobile
 
@@ -352,7 +356,8 @@ optional string login-btn-url:
 boolean login-button:
 boolean github-icon: 
 optional string github-url: 
-
+boolean search: 
+optional string search-url:
 
 -- ftd.column:
 width.fixed.calc: 100% - 48px
@@ -444,6 +449,15 @@ if: { menu-mobile.github-icon }
 
 -- github-button:
 github-url: $menu-mobile.github-url
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { menu-mobile.search }
+padding-top.px: 20
+
+-- search-button: 
+search-url: $menu-mobile.search-url
 
 -- end: ftd.column
 
@@ -727,6 +741,8 @@ optional pr.toc-item current-page:
 integer logo-width: 120
 integer logo-height: 38
 ftd.ui list logo-ui:
+boolean search: false
+optional string search-url:
 
 -- ftd.column: 
 width: fill-container
@@ -755,6 +771,7 @@ $on-click$: $ftd.toggle($a = $header-mobile.sidebar-open)
 if: { header-mobile.site-logo != NULL && header-mobile.site-name == NULL }
 src: $header-mobile.site-logo
 height.fixed.px: 44
+link: $header-mobile.site-url
 
 -- ftd.text: $header-mobile.site-name
 if: { header-mobile.site-name != NULL }
@@ -762,6 +779,7 @@ role: $inherited.types.heading-medium
 color: $inherited.colors.text-strong
 white-space: nowrap
 align-self: center
+link: $header-mobile.site-url
 
 -- fallback-title:
 if: { header-mobile.site-logo == NULL }
@@ -795,6 +813,10 @@ children: $header-mobile.logo-ui
 -- end: ftd.row
 
 -- end: ftd.row
+
+-- search-button: 
+if: { $header-mobile.search }
+search-url: $header-mobile.search-url
 
 -- end: ftd.row
 
@@ -1498,7 +1520,7 @@ ftd.image-src icon-github: $assets.files.static.icon-github.svg
 
 -- ftd.column:
 align-self: center
-margin-left.px: 20
+margin-left.px if { ftd.device == "desktop"  }: 20
 
 -- ftd.desktop:
 
@@ -1588,7 +1610,7 @@ color: $inherited.colors.text-strong
 role: $inherited.types.copy-small
 spacing.fixed.px: 8
 link: $search-button.search-url
-margin-left.px: 16
+margin-left.px if { ftd.device == "desktop"  }: 20
 background.solid: $inherited.colors.background.base
 background.solid if { search-button.mouse-in }: $inherited.colors.cta-primary.hover
 $on-mouse-enter$: $ftd.set-bool($a = $search-button.mouse-in, v = true)
