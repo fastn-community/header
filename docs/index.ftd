@@ -132,6 +132,16 @@ type: String ('optional')
 
 It’s used to specify `github-icon` link in `header` component.
 
+-- site-doc.component-property: `search`
+type: Boolean ('optional')
+
+It’s used to enable search button in `header` component.
+
+-- site-doc.component-property: `search-url`
+type: String ('optional')
+
+It’s used to specify search button link in `header` component.
+
 -- end: site-doc.component-doc
 
 -- end: site-doc.doc-home
