@@ -180,7 +180,7 @@ optional string login-btn-url: index.html
 boolean login-button: false
 string width: 100
 optional string brand-caption:
-boolean full-width: true
+boolean fluid-width: true
 optional ftd.resizing max-width:
 boolean github-icon: false
 optional string github-url:
@@ -248,7 +248,7 @@ login-button: $header.login-button
 login-btn-txt: $header.login-btn-txt
 login-btn-url: $header.login-btn-url
 products: $header.products
-full-width: $header.full-width
+fluid-width: $header.fluid-width
 max-width: $header.max-width
 github-icon: $header.github-icon
 github-url: $header.github-url
@@ -505,7 +505,7 @@ integer logo-height: 44
 optional string login-btn-txt:
 optional string login-btn-url: 
 boolean login-button:
-boolean full-width: true
+boolean fluid-width: true
 optional ftd.resizing max-width:
 boolean github-icon: 
 optional string github-url: 
@@ -527,7 +527,7 @@ align-content: center
 
 -- ftd.column:
 width: fill-container
-max-width.fixed.px if { !header-desktop.full-width }: $header-desktop.max-width
+max-width.fixed.px if { !header-desktop.fluid-width }: $header-desktop.max-width
 
 -- ftd.row:
 width: fill-container
@@ -635,7 +635,7 @@ align-content: center
 
 -- ftd.row:
 width: fill-container
-max-width.fixed.px if { !header-desktop.full-width }: $header-desktop.max-width
+max-width.fixed.px if { !header-desktop.fluid-width }: $header-desktop.max-width
 
 -- ftd.row:
 width: fill-container
