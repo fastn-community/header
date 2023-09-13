@@ -521,12 +521,16 @@ align-content: center
 
 -- ftd.column:
 width: fill-container
+padding-vertical.px: 24
+padding-horizontal.px: 48
+align-content: center
+
+-- ftd.column:
+width: fill-container
 max-width.fixed.px if { !header-desktop.full-width }: $header-desktop.max-width
 
 -- ftd.row:
 width: fill-container
-padding-vertical.px: 24
-padding-horizontal.px: 48
 
 -- ftd.row:
 align-self: start
@@ -617,12 +621,21 @@ search-url: $header-desktop.search-url
 
 -- end: ftd.row
 
--- ftd.row:
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
 if: { header-desktop.current-section != NULL }
 width: fill-container
 background.solid: $inherited.colors.background.step-1
 padding-vertical.px: 24
 padding-horizontal.px: 48
+align-content: center
+
+-- ftd.row:
+width: fill-container
+max-width.fixed.px if { !header-desktop.full-width }: $header-desktop.max-width
 
 -- ftd.row:
 width: fill-container
