@@ -1585,7 +1585,7 @@ white-space: nowrap
 -- ftd.text: $childs.item.title
 if: { childs.item.title != NULL  && childs.item.is-open }
 color: $inherited.colors.text-strong
-role: $inherited.types.fine-print
+role: $inherited.types.label-small
 color if { childs.item.is-active }: $inherited.colors.cta-primary.base
 link: $childs.item.url
 
