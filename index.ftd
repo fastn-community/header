@@ -651,11 +651,11 @@ border-color: $inherited.colors.border
 -- end: ftd.column
 
 -- search-button: 
-if: { $header-desktop.search }
+if: { header-desktop.search }
 search-url: $header-desktop.search-url
 
 -- get-started-button: 
-if: { $header-desktop.get-started-url != NULL }
+if: { header-desktop.get-started-url != NULL }
 get-started-url: $header-desktop.get-started-url 
 
 -- end: ftd.row
