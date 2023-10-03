@@ -71,6 +71,8 @@ login-btn-txt: Login
 login-btn-url: index.html
 github-icon: true
 github-url: https://github.com/fastn-community/header/
+get-started: true
+get-started-url: index.html
 
 -- end: site-doc.output
 
@@ -187,6 +189,8 @@ optional string github-url:
 ftd.ui list logo-ui:
 boolean search: false
 optional string search-url:
+boolean get-started: false
+optional string get-started-url:
 optional boolean right-section: false
 
 -- ftd.column:
@@ -256,6 +260,8 @@ github-url: $header.github-url
 logo-ui: $header.logo-ui
 search: $header.search
 search-url: $header.search-url
+get-started: $header.get-started
+get-started-url: $header.get-started-url
 right-section: $header.right-section
 
 -- end: ftd.desktop
@@ -515,6 +521,8 @@ pr.toc-item list toc: $sitemap.toc
 ftd.ui list logo-ui:
 boolean search: false
 optional string search-url:
+boolean get-started: false
+optional string get-started-url:
 optional boolean right-section:
 
 -- ftd.column:
@@ -637,9 +645,30 @@ github-url: $header-desktop.github-url
 
 -- end: ftd.row
 
+-- ftd.column:
+if: { header-desktop.get-started}
+height.fixed.px: 24
+align-self: center
+padding-left.px: 18
+border-right-width.px: 1
+border-color: $inherited.colors.border
+
+-- end: ftd.column
+
 -- search-button: 
 if: { $header-desktop.search }
 search-url: $header-desktop.search-url
+
+-- ftd.row:
+if: {header-desktop.get-started}
+align-content: center
+align-self: center
+
+-- get-started-button: 
+if: { $header-desktop.get-started }
+get-started-url: $header-desktop.get-started-url 
+
+-- end: ftd.row
 
 -- end: ftd.row
 
@@ -1634,12 +1663,12 @@ string search-url:
 boolean $mouse-in: false
 
 -- ftd.row:
+width.fixed.px: 196
 align-self: center
 padding-horizontal.px: 12
 padding-vertical.px: 10
 border-width.px: 1
 border-color: $inherited.colors.border
-align-content: center
 border-radius.px: 48
 color: $inherited.colors.text-strong
 role: $inherited.types.copy-small
@@ -1661,4 +1690,45 @@ height.fixed.px: 16
 -- end: ftd.row
 
 -- end: search-button
+
+
+
+
+
+
+
+
+
+
+-- component get-started-button:
+string get-started-url:
+boolean $mouse-in: false
+
+-- ftd.row:
+width.fixed.px: 198
+align-self: center
+padding-horizontal.px: 24
+padding-vertical.px: 12
+align-content: center
+border-radius.px: 58
+background.solid: $inherited.colors.cta-primary.base
+color: $inherited.colors.text-strong
+role: $inherited.types.copy-small
+spacing.fixed.px: 4
+link: $get-started-button.get-started-url
+margin-left.px if { ftd.device == "desktop"  }: 20
+background.solid if { get-started-button.mouse-in }: $inherited.colors.cta-primary.hover
+$on-mouse-enter$: $ftd.set-bool($a = $get-started-button.mouse-in, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $get-started-button.mouse-in, v = false)
+
+-- ftd.text: Get Started
+
+-- ftd.image:
+src: $assets.files.static.arrow-right.svg
+width.fixed.px: 24
+height.fixed.px: 24
+
+-- end: ftd.row
+
+-- end: get-started-button
 
