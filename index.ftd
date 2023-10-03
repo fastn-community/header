@@ -187,6 +187,7 @@ optional string github-url:
 ftd.ui list logo-ui:
 boolean search: false
 optional string search-url:
+optional boolean right-section: false
 
 -- ftd.column:
 width: fill-container
@@ -255,6 +256,7 @@ github-url: $header.github-url
 logo-ui: $header.logo-ui
 search: $header.search
 search-url: $header.search-url
+right-section: $header.right-section
 
 -- end: ftd.desktop
 
@@ -513,6 +515,7 @@ pr.toc-item list toc: $sitemap.toc
 ftd.ui list logo-ui:
 boolean search: false
 optional string search-url:
+optional boolean right-section:
 
 -- ftd.column:
 width: fill-container
@@ -570,6 +573,19 @@ if: { header-desktop.site-logo == NULL }
 site-name: $header-desktop.site-name
 
 -- ftd.row:
+if: { header-desktop.right-section}
+align-content: center
+align-self: center
+
+-- header-item: $obj.title
+$loop$: $header-desktop.sections as $obj
+link: $obj.url
+is-active: $obj.is-active
+;;icon: $obj.font-icon -- TODO FTD 0.3
+
+-- end: ftd.row
+
+-- ftd.row:
 children: $header-desktop.logo-ui
 
 -- end: ftd.row
@@ -593,11 +609,17 @@ products: $header-desktop.products
 -- ftd.row:
 align-self: center
 
+-- ftd.row:
+if: { !header-desktop.right-section}
+align-self: center
+
 -- header-item: $obj.title
 $loop$: $header-desktop.sections as $obj
 link: $obj.url
 is-active: $obj.is-active
 ;;icon: $obj.font-icon -- TODO FTD 0.3
+
+-- end: ftd.row
 
 -- ftd.row:
 if: { header-desktop.login-button }
