@@ -71,8 +71,6 @@ login-btn-txt: Login
 login-btn-url: index.html
 github-icon: true
 github-url: https://github.com/fastn-community/header/
-get-started: true
-get-started-url: index.html
 
 -- end: site-doc.output
 
@@ -189,7 +187,6 @@ optional string github-url:
 ftd.ui list logo-ui:
 boolean search: false
 optional string search-url:
-boolean get-started: false
 optional string get-started-url:
 optional boolean right-section: false
 
@@ -260,7 +257,6 @@ github-url: $header.github-url
 logo-ui: $header.logo-ui
 search: $header.search
 search-url: $header.search-url
-get-started: $header.get-started
 get-started-url: $header.get-started-url
 right-section: $header.right-section
 
@@ -521,7 +517,6 @@ pr.toc-item list toc: $sitemap.toc
 ftd.ui list logo-ui:
 boolean search: false
 optional string search-url:
-boolean get-started: false
 optional string get-started-url:
 optional boolean right-section:
 
@@ -646,7 +641,7 @@ github-url: $header-desktop.github-url
 -- end: ftd.row
 
 -- ftd.column:
-if: { header-desktop.get-started}
+if: { header-desktop.get-started-url != NULL}
 height.fixed.px: 24
 align-self: center
 padding-left.px: 18
@@ -659,16 +654,9 @@ border-color: $inherited.colors.border
 if: { $header-desktop.search }
 search-url: $header-desktop.search-url
 
--- ftd.row:
-if: {header-desktop.get-started}
-align-content: center
-align-self: center
-
 -- get-started-button: 
-if: { $header-desktop.get-started }
+if: { $header-desktop.get-started-url != NULL }
 get-started-url: $header-desktop.get-started-url 
-
--- end: ftd.row
 
 -- end: ftd.row
 
