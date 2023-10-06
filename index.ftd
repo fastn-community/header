@@ -1700,7 +1700,7 @@ padding-vertical.px: 12
 align-content: center
 border-radius.px: 58
 background.solid: $inherited.colors.cta-primary.base
-color: $inherited.colors.text-strong
+color: $inherited.colors.cta-tertiary.text
 role: $inherited.types.copy-small
 spacing.fixed.px: 4
 link: $get-started-button.get-started-url
