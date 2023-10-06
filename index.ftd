@@ -1672,8 +1672,10 @@ $on-mouse-leave$: $ftd.set-bool($a = $search-button.mouse-in, v = false)
 src: $assets.files.static.search-icon.svg
 width.fixed.px: 16
 height.fixed.px: 16
+align-self: center
 
 -- ftd.text: Search
+align-self: center
 
 -- end: ftd.row
 
@@ -1711,6 +1713,7 @@ $on-mouse-leave$: $ftd.set-bool($a = $get-started-button.mouse-in, v = false)
 
 -- ftd.text: Get Started
 
+
 -- ftd.image:
 src: $assets.files.static.arrow-right.svg
 width.fixed.px: 24
@@ -1719,4 +1722,3 @@ height.fixed.px: 24
 -- end: ftd.row
 
 -- end: get-started-button
-
