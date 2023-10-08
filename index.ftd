@@ -588,10 +588,6 @@ is-active: $obj.is-active
 
 -- end: ftd.row
 
--- ftd.row:
-children: $header-desktop.logo-ui
-
--- end: ftd.row
 
 -- end: ftd.row
 
@@ -656,7 +652,13 @@ search-url: $header-desktop.search-url
 
 -- get-started-button: 
 if: { header-desktop.get-started-url != NULL }
-get-started-url: $header-desktop.get-started-url 
+get-started-url: $header-desktop.get-started-url
+
+-- ftd.row:
+align-self: center
+children: $header-desktop.logo-ui
+
+-- end: ftd.row
 
 -- end: ftd.row
 
