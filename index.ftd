@@ -1697,7 +1697,7 @@ string get-started-url:
 boolean $mouse-in: false
 
 -- ftd.row:
-width.fixed.px: 198
+min-width.fixed.px: 198
 align-self: center
 padding-horizontal.px: 24
 padding-vertical.px: 12
