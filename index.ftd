@@ -1653,7 +1653,7 @@ string search-url:
 boolean $mouse-in: false
 
 -- ftd.row:
-width.fixed.px: 196
+width: hug-content
 align-self: center
 padding-horizontal.px: 12
 padding-vertical.px: 10
