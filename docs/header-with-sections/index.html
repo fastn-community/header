@@ -2506,7 +2506,7 @@ fastn_utils.createNestedObject(global, "fastn_community_github_io_dark_flame_cs_
   dark: "#F3A063"
 }));
 fastn_utils.createNestedObject(global, "fastn_community_github_io_dark_flame_cs_colors__cta_primary_text_", fastn.recordInstance({
-  light: "#ffffff",
+  light: "#ffecd0",
   dark: "#ffffff"
 }));
 fastn_utils.createNestedObject(global, "fastn_community_github_io_dark_flame_cs_colors__cta_primary_text_disabled_", fastn.recordInstance({
@@ -2600,8 +2600,8 @@ fastn_utils.createNestedObject(global, "fastn_community_github_io_dark_flame_cs_
   dark: "#4e6997"
 }));
 fastn_utils.createNestedObject(global, "fastn_community_github_io_dark_flame_cs_colors__cta_tertiary_text_", fastn.recordInstance({
-  light: "#ffffff",
-  dark: "#ffffff"
+  light: "#caf1f6",
+  dark: "#caf1f6"
 }));
 fastn_utils.createNestedObject(global, "fastn_community_github_io_dark_flame_cs_colors__cta_tertiary_text_disabled_", fastn.recordInstance({
   light: "#304655",
@@ -4225,7 +4225,7 @@ let fifthtry_github_io_product_switcher__brand_title = function (parent, inherit
 global["fifthtry_github_io_product_switcher__brand_title"] = fifthtry_github_io_product_switcher__brand_title;
 fastn_utils.createNestedObject(global, "fifthtry_github_io_product_switcher_assets__files.assets.images.down_arrow.svg", fastn.recordInstance({
   light: "-/fifthtry.github.io/product-switcher/assets/images/down-arrow.svg",
-  dark: "-/fifthtry.github.io/product-switcher/assets/images/down-arrow.svg"
+  dark: "-/fifthtry.github.io/product-switcher/assets/images/down-arrow-dark.svg"
 }));
 fastn_utils.createNestedObject(global, "fifthtry_github_io_product_switcher__var_current_product", fastn_utils.clone(global.fifthtry_github_io_product_switcher__current_product));
 let fifthtry_github_io_product_switcher__title_image = function (parent, inherited, args)
@@ -4246,7 +4246,6 @@ let fifthtry_github_io_product_switcher__title_image = function (parent, inherit
       }, parenti0);
     });
     parenti0.setProperty(fastn_dom.PropertyKind.Width, fastn_dom.Resizing.FillContainer, inherited);
-    parenti0.setProperty(fastn_dom.PropertyKind.Background, fastn_dom.BackgroundStyle.Solid(__args__.bg_hover), inherited);
     parenti0.setProperty(fastn_dom.PropertyKind.Children, fastn.mutableList([function (root, inherited) {
       let rooti0 = fastn_dom.createKernel(root, fastn_dom.ElementKind.Row);
       rooti0.setProperty(fastn_dom.PropertyKind.Width, fastn_dom.Resizing.FillContainer, inherited);
@@ -4254,6 +4253,8 @@ let fifthtry_github_io_product_switcher__title_image = function (parent, inherit
       rooti0.setProperty(fastn_dom.PropertyKind.PaddingVertical, fastn_dom.Length.Px(16), inherited);
       rooti0.setProperty(fastn_dom.PropertyKind.PaddingRight, fastn_dom.Length.Px(24), inherited);
       rooti0.setProperty(fastn_dom.PropertyKind.PaddingBottom, fastn_dom.Length.Px(24), inherited);
+      rooti0.setProperty(fastn_dom.PropertyKind.BorderTopLeftRadius, fastn_dom.Length.Px(8), inherited);
+      rooti0.setProperty(fastn_dom.PropertyKind.BorderBottomLeftRadius, fastn_dom.Length.Px(8), inherited);
       rooti0.setProperty(fastn_dom.PropertyKind.Color, fastn.formula([__args__.body_text_color,
       inherited.get("colors").get("text_strong"),
       __args__.index,
@@ -4273,8 +4274,6 @@ let fifthtry_github_io_product_switcher__title_image = function (parent, inherit
           return (fastn_utils.getter(global.fifthtry_github_io_product_switcher__var_current_product) == fastn_utils.getter(__args__.index));
         }()) {
           return fastn_dom.BackgroundStyle.Solid(__args__.bg_color);
-        } else {
-          return fastn_dom.BackgroundStyle.Solid(__args__.bg_hover);
         }
       }
       ), inherited);
@@ -4359,8 +4358,7 @@ let fifthtry_github_io_product_switcher__copy_list = function (parent, inherited
     }, function (root) {
       let rooti0 = fastn_dom.createKernel(root, fastn_dom.ElementKind.Column);
       rooti0.setProperty(fastn_dom.PropertyKind.Width, fastn_dom.Resizing.FillContainer, inherited);
-      rooti0.setProperty(fastn_dom.PropertyKind.BorderTopLeftRadius, fastn_dom.Length.Px(8), inherited);
-      rooti0.setProperty(fastn_dom.PropertyKind.BorderTopRightRadius, fastn_dom.Length.Px(8), inherited);
+      rooti0.setProperty(fastn_dom.PropertyKind.BorderRadius, fastn_dom.Length.Px(8), inherited);
       rooti0.setProperty(fastn_dom.PropertyKind.Background, fastn_dom.BackgroundStyle.Solid(__args__.bg_color), inherited);
       rooti0.setProperty(fastn_dom.PropertyKind.MinHeight, fastn_dom.Resizing.Fixed(fastn_dom.Length.Px(288)), inherited);
       rooti0.setProperty(fastn_dom.PropertyKind.Link, __args__.url, inherited);
@@ -4407,6 +4405,7 @@ let fifthtry_github_io_product_switcher__product_list = function (parent, inheri
     __args__ = fastn_utils.getArgs(__args__, args);
     let parenti0 = fastn_dom.createKernel(parent, fastn_dom.ElementKind.Row);
     parenti0.setProperty(fastn_dom.PropertyKind.Width, fastn_dom.Resizing.FillContainer, inherited);
+    parenti0.setProperty(fastn_dom.PropertyKind.ZIndex, 1, inherited);
     parenti0.setProperty(fastn_dom.PropertyKind.Children, fastn.mutableList([function (root, inherited) {
       let rooti0 = fifthtry_github_io_product_switcher__title_list(root, inherited, {
         brand: __args__.brand,
@@ -4438,6 +4437,17 @@ let fifthtry_github_io_product_switcher__product_list = function (parent, inheri
   }
 }
 global["fifthtry_github_io_product_switcher__product_list"] = fifthtry_github_io_product_switcher__product_list;
+fastn_utils.createNestedObject(global, "fifthtry_github_io_product_switcher__ps_shadow", fastn.recordInstance({
+  x_offset: fastn_dom.Length.Px( - 2),
+  y_offset: fastn_dom.Length.Px(8),
+  blur: fastn_dom.Length.Px(10),
+  spread: fastn_dom.Length.Px(0),
+  color: fastn.recordInstance({
+    dark: "#a9a7a5ba",
+    light: "#a9a7a5ba"
+  }),
+  inset: false
+}));
 let fifthtry_github_io_product_switcher__switcher_desktop = function (parent, inherited, args)
 {
   let __fastn_super_package_name__ = __fastn_package_name__;
@@ -4561,9 +4571,11 @@ let fifthtry_github_io_product_switcher__switcher_desktop = function (parent, in
               }
             }
             ), inherited);
+            rooti0.setProperty(fastn_dom.PropertyKind.ZIndex, 999, inherited);
             rooti0.setProperty(fastn_dom.PropertyKind.Background, fastn_dom.BackgroundStyle.Solid(__args__.bg_hover), inherited);
             rooti0.setProperty(fastn_dom.PropertyKind.MinHeight, fastn_dom.Resizing.Fixed(fastn_dom.Length.Px(255)), inherited);
             rooti0.setProperty(fastn_dom.PropertyKind.MinWidth, fastn_dom.Resizing.Fixed(fastn_dom.Length.Px(460)), inherited);
+            rooti0.setProperty(fastn_dom.PropertyKind.Shadow, global.fifthtry_github_io_product_switcher__ps_shadow, inherited);
             rooti0.setProperty(fastn_dom.PropertyKind.Children, fastn.mutableList([function (root, inherited) {
               let rooti0 = fastn_dom.createKernel(root, fastn_dom.ElementKind.Row);
               rooti0.setProperty(fastn_dom.PropertyKind.Width, fastn_dom.Resizing.FillContainer, inherited);
@@ -7125,23 +7137,23 @@ fastn_utils.createNestedObject(global, "fastn_community_github_io_header__site_l
 }));
 fastn_utils.createNestedObject(global, "fifthtry_github_io_product_switcher_assets__files.assets.images.doc_framework.png", fastn.recordInstance({
   light: "-/fifthtry.github.io/product-switcher/assets/images/doc-framework.png",
-  dark: "-/fifthtry.github.io/product-switcher/assets/images/doc-framework.png"
+  dark: "-/fifthtry.github.io/product-switcher/assets/images/doc-framework-dark.png"
 }));
 fastn_utils.createNestedObject(global, "fifthtry_github_io_product_switcher_assets__files.assets.images.home.png", fastn.recordInstance({
   light: "-/fifthtry.github.io/product-switcher/assets/images/home.png",
-  dark: "-/fifthtry.github.io/product-switcher/assets/images/home.png"
+  dark: "-/fifthtry.github.io/product-switcher/assets/images/home-dark.png"
 }));
 fastn_utils.createNestedObject(global, "fifthtry_github_io_product_switcher_assets__files.assets.images.logo_brand.svg", fastn.recordInstance({
   light: "-/fifthtry.github.io/product-switcher/assets/images/logo-brand.svg",
-  dark: "-/fifthtry.github.io/product-switcher/assets/images/logo-brand.svg"
+  dark: "-/fifthtry.github.io/product-switcher/assets/images/logo-brand-dark.svg"
 }));
 fastn_utils.createNestedObject(global, "fifthtry_github_io_product_switcher_assets__files.assets.images.fastn.png", fastn.recordInstance({
   light: "-/fifthtry.github.io/product-switcher/assets/images/fastn.png",
-  dark: "-/fifthtry.github.io/product-switcher/assets/images/fastn.png"
+  dark: "-/fifthtry.github.io/product-switcher/assets/images/fastn-dark.png"
 }));
 fastn_utils.createNestedObject(global, "fifthtry_github_io_product_switcher_assets__files.assets.images.ftd.png", fastn.recordInstance({
   light: "-/fifthtry.github.io/product-switcher/assets/images/ftd.png",
-  dark: "-/fifthtry.github.io/product-switcher/assets/images/ftd.png"
+  dark: "-/fifthtry.github.io/product-switcher/assets/images/ftd-dark.png"
 }));
 fastn_utils.createNestedObject(global, "fifthtry_github_io_product_switcher__example_product", fastn.mutableList([fastn.recordInstance({
   body: "`cdoc` is an open source web application that integrates with Github and works like continuous integration.\n\n- Initial Setup Flow\n- Self Hosted Flow",
@@ -7275,7 +7287,7 @@ fastn_utils.createNestedObject(global, "fastn_community_github_io_code_block_ass
 }));
 fastn_utils.createNestedObject(global, "fastn_community_github_io_code_block_assets__files.static.tick.svg", fastn.recordInstance({
   light: "-/fastn-community.github.io/code-block/static/tick.svg",
-  dark: "-/fastn-community.github.io/code-block/static/tick.svg"
+  dark: "-/fastn-community.github.io/code-block/static/tick-dark.svg"
 }));
 fastn_utils.createNestedObject(global, "fastn_community_github_io_code_block_assets__files.static.copy_hover.svg", fastn.recordInstance({
   light: "-/fastn-community.github.io/code-block/static/copy-hover.svg",
